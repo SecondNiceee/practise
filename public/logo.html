@@ -311,107 +311,77 @@
             <h2 class="section-title">Подбор логотипа и цветовой палитры</h2>
             
             <div class="logo-grid">
-                <!-- 1. Основной - Кибитка в круге с солнцем -->
+                <!-- 1. Основной - Буква К с тележкой -->
                 <div class="logo-card">
-                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Солнце/полукруг сверху -->
-                        <path d="M70 15 L75 5 L70 8 L65 5 Z" fill="#f39c12"/>
-                        <path d="M55 18 L50 10 L53 14 L48 13 Z" fill="#f39c12"/>
-                        <path d="M85 18 L90 10 L87 14 L92 13 Z" fill="#f39c12"/>
-                        <!-- Кибитка-повозка -->
-                        <path d="M30 55 Q30 35 70 30 Q110 35 110 55" stroke="#e74c3c" stroke-width="4" fill="none" stroke-linecap="round"/>
-                        <rect x="35" y="45" width="70" height="25" rx="4" fill="#f39c12"/>
-                        <rect x="55" y="38" width="30" height="10" rx="2" fill="#e74c3c"/>
-                        <!-- Колёса -->
-                        <circle cx="45" cy="75" r="12" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="45" cy="75" r="4" fill="#2c3e50"/>
-                        <circle cx="95" cy="75" r="12" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="95" cy="75" r="4" fill="#2c3e50"/>
-                        <!-- Спицы -->
-                        <line x1="45" y1="63" x2="45" y2="87" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="33" y1="75" x2="57" y2="75" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="95" y1="63" x2="95" y2="87" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="83" y1="75" x2="107" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                    <svg width="140" height="110" viewBox="0 0 140 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Буква К стилизованная - вертикаль это часть тележки -->
+                        <path d="M35 15 L35 70" stroke="#e74c3c" stroke-width="8" stroke-linecap="round"/>
+                        <!-- Диагонали К -->
+                        <path d="M35 42 L70 15" stroke="#e74c3c" stroke-width="7" stroke-linecap="round"/>
+                        <path d="M35 42 L75 70" stroke="#e74c3c" stroke-width="7" stroke-linecap="round"/>
+                        <!-- Тележка/кибитка интегрированная -->
+                        <path d="M50 55 Q50 42 80 38 Q110 42 110 55" stroke="#f39c12" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <!-- Корпус тележки -->
+                        <rect x="52" y="52" width="56" height="22" rx="4" fill="#f39c12"/>
+                        <!-- Окна -->
+                        <rect x="58" y="56" width="12" height="12" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="74" y="56" width="12" height="12" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="90" y="56" width="12" height="12" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <!-- Колёса детальные -->
+                        <circle cx="62" cy="82" r="12" stroke="#2c3e50" stroke-width="3" fill="white"/>
+                        <circle cx="62" cy="82" r="7" stroke="#2c3e50" stroke-width="1.5" fill="none"/>
+                        <circle cx="62" cy="82" r="3" fill="#2c3e50"/>
+                        <line x1="62" y1="70" x2="62" y2="76" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="62" y1="88" x2="62" y2="94" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="50" y1="82" x2="56" y2="82" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="68" y1="82" x2="74" y2="82" stroke="#2c3e50" stroke-width="1.5"/>
+                        
+                        <circle cx="98" cy="82" r="12" stroke="#2c3e50" stroke-width="3" fill="white"/>
+                        <circle cx="98" cy="82" r="7" stroke="#2c3e50" stroke-width="1.5" fill="none"/>
+                        <circle cx="98" cy="82" r="3" fill="#2c3e50"/>
+                        <line x1="98" y1="70" x2="98" y2="76" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="98" y1="88" x2="98" y2="94" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="86" y1="82" x2="92" y2="82" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="104" y1="82" x2="110" y2="82" stroke="#2c3e50" stroke-width="1.5"/>
                     </svg>
                     <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #2c3e50; margin-top: 10px; letter-spacing: 2px;">КИБИТКА</div>
                     <span class="logo-label">Основной логотип</span>
                 </div>
 
-                <!-- 2. На тёмном фоне - детальная кибитка с градиентом -->
+                <!-- 2. На тёмном фоне - такой же как основной -->
                 <div class="logo-card dark">
-                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ffd700"/>
-                                <stop offset="50%" style="stop-color:#f39c12"/>
-                                <stop offset="100%" style="stop-color:#e67e22"/>
-                            </linearGradient>
-                            <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#e74c3c"/>
-                                <stop offset="100%" style="stop-color:#c0392b"/>
-                            </linearGradient>
-                        </defs>
-                        <!-- Звёзды/искры фона -->
-                        <circle cx="15" cy="15" r="1.5" fill="#f39c12" opacity="0.6"/>
-                        <circle cx="125" cy="20" r="1" fill="#ffd700" opacity="0.5"/>
-                        <circle cx="20" cy="75" r="1" fill="#f39c12" opacity="0.4"/>
-                        <circle cx="120" cy="80" r="1.5" fill="#ffd700" opacity="0.5"/>
-                        <!-- Солнечные лучи сверху -->
-                        <path d="M70 8 L72 2 L70 5 L68 2 Z" fill="url(#goldGrad)"/>
-                        <path d="M55 12 L52 6 L55 9 L51 8 Z" fill="url(#goldGrad)" opacity="0.8"/>
-                        <path d="M85 12 L88 6 L85 9 L89 8 Z" fill="url(#goldGrad)" opacity="0.8"/>
-                        <path d="M42 18 L38 14 L42 16 L39 13 Z" fill="url(#goldGrad)" opacity="0.6"/>
-                        <path d="M98 18 L102 14 L98 16 L101 13 Z" fill="url(#goldGrad)" opacity="0.6"/>
-                        <!-- Крыша кибитки - арка с орнаментом -->
-                        <path d="M25 48 Q25 22 70 15 Q115 22 115 48" stroke="url(#redGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
-                        <!-- Декоративные дуги на крыше -->
-                        <path d="M38 38 Q45 30 52 38" stroke="#f39c12" stroke-width="2" fill="none"/>
-                        <path d="M58 33 Q70 22 82 33" stroke="#f39c12" stroke-width="2.5" fill="none"/>
-                        <path d="M88 38 Q95 30 102 38" stroke="#f39c12" stroke-width="2" fill="none"/>
-                        <!-- Орнамент-точки -->
-                        <circle cx="45" cy="42" r="2" fill="#ffd700"/>
-                        <circle cx="70" cy="38" r="2.5" fill="#ffd700"/>
-                        <circle cx="95" cy="42" r="2" fill="#ffd700"/>
-                        <!-- Корпус кибитки -->
-                        <rect x="30" y="45" width="80" height="25" rx="4" fill="url(#goldGrad)"/>
+                    <svg width="140" height="110" viewBox="0 0 140 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Буква К стилизованная -->
+                        <path d="M35 15 L35 70" stroke="#e74c3c" stroke-width="8" stroke-linecap="round"/>
+                        <!-- Диагонали К -->
+                        <path d="M35 42 L70 15" stroke="#e74c3c" stroke-width="7" stroke-linecap="round"/>
+                        <path d="M35 42 L75 70" stroke="#e74c3c" stroke-width="7" stroke-linecap="round"/>
+                        <!-- Тележка/кибитка интегрированная -->
+                        <path d="M50 55 Q50 42 80 38 Q110 42 110 55" stroke="#f39c12" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <!-- Корпус тележки -->
+                        <rect x="52" y="52" width="56" height="22" rx="4" fill="#f39c12"/>
                         <!-- Окна -->
-                        <rect x="38" y="50" width="14" height="14" rx="2" fill="#2c3e50" stroke="#ffd700" stroke-width="1"/>
-                        <line x1="45" y1="50" x2="45" y2="64" stroke="#ffd700" stroke-width="0.5"/>
-                        <line x1="38" y1="57" x2="52" y2="57" stroke="#ffd700" stroke-width="0.5"/>
-                        <rect x="58" y="50" width="24" height="14" rx="2" fill="#2c3e50" stroke="#ffd700" stroke-width="1"/>
-                        <line x1="70" y1="50" x2="70" y2="64" stroke="#ffd700" stroke-width="0.5"/>
-                        <line x1="58" y1="57" x2="82" y2="57" stroke="#ffd700" stroke-width="0.5"/>
-                        <rect x="88" y="50" width="14" height="14" rx="2" fill="#2c3e50" stroke="#ffd700" stroke-width="1"/>
-                        <line x1="95" y1="50" x2="95" y2="64" stroke="#ffd700" stroke-width="0.5"/>
-                        <line x1="88" y1="57" x2="102" y2="57" stroke="#ffd700" stroke-width="0.5"/>
+                        <rect x="58" y="56" width="12" height="12" rx="2" fill="#2c3e50" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="74" y="56" width="12" height="12" rx="2" fill="#2c3e50" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="90" y="56" width="12" height="12" rx="2" fill="#2c3e50" stroke="#e67e22" stroke-width="1"/>
                         <!-- Колёса детальные -->
-                        <circle cx="42" cy="78" r="14" stroke="#f39c12" stroke-width="3" fill="#2c3e50"/>
-                        <circle cx="42" cy="78" r="9" stroke="#e67e22" stroke-width="1.5" fill="none"/>
-                        <circle cx="42" cy="78" r="4" fill="#ffd700"/>
-                        <!-- Спицы левого колеса -->
-                        <line x1="42" y1="64" x2="42" y2="72" stroke="#f39c12" stroke-width="2"/>
-                        <line x1="42" y1="84" x2="42" y2="92" stroke="#f39c12" stroke-width="2"/>
-                        <line x1="28" y1="78" x2="36" y2="78" stroke="#f39c12" stroke-width="2"/>
-                        <line x1="48" y1="78" x2="56" y2="78" stroke="#f39c12" stroke-width="2"/>
-                        <line x1="32" y1="68" x2="38" y2="74" stroke="#f39c12" stroke-width="1.5"/>
-                        <line x1="46" y1="82" x2="52" y2="88" stroke="#f39c12" stroke-width="1.5"/>
-                        <line x1="52" y1="68" x2="46" y2="74" stroke="#f39c12" stroke-width="1.5"/>
-                        <line x1="38" y1="82" x2="32" y2="88" stroke="#f39c12" stroke-width="1.5"/>
-                        <!-- Правое колесо -->
-                        <circle cx="98" cy="78" r="14" stroke="#f39c12" stroke-width="3" fill="#2c3e50"/>
-                        <circle cx="98" cy="78" r="9" stroke="#e67e22" stroke-width="1.5" fill="none"/>
-                        <circle cx="98" cy="78" r="4" fill="#ffd700"/>
-                        <!-- Спицы правого колеса -->
-                        <line x1="98" y1="64" x2="98" y2="72" stroke="#f39c12" stroke-width="2"/>
-                        <line x1="98" y1="84" x2="98" y2="92" stroke="#f39c12" stroke-width="2"/>
-                        <line x1="84" y1="78" x2="92" y2="78" stroke="#f39c12" stroke-width="2"/>
-                        <line x1="104" y1="78" x2="112" y2="78" stroke="#f39c12" stroke-width="2"/>
-                        <line x1="88" y1="68" x2="94" y2="74" stroke="#f39c12" stroke-width="1.5"/>
-                        <line x1="102" y1="82" x2="108" y2="88" stroke="#f39c12" stroke-width="1.5"/>
-                        <line x1="108" y1="68" x2="102" y2="74" stroke="#f39c12" stroke-width="1.5"/>
-                        <line x1="94" y1="82" x2="88" y2="88" stroke="#f39c12" stroke-width="1.5"/>
+                        <circle cx="62" cy="82" r="12" stroke="#f39c12" stroke-width="3" fill="#2c3e50"/>
+                        <circle cx="62" cy="82" r="7" stroke="#f39c12" stroke-width="1.5" fill="none"/>
+                        <circle cx="62" cy="82" r="3" fill="#f39c12"/>
+                        <line x1="62" y1="70" x2="62" y2="76" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="62" y1="88" x2="62" y2="94" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="50" y1="82" x2="56" y2="82" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="68" y1="82" x2="74" y2="82" stroke="#f39c12" stroke-width="1.5"/>
+                        
+                        <circle cx="98" cy="82" r="12" stroke="#f39c12" stroke-width="3" fill="#2c3e50"/>
+                        <circle cx="98" cy="82" r="7" stroke="#f39c12" stroke-width="1.5" fill="none"/>
+                        <circle cx="98" cy="82" r="3" fill="#f39c12"/>
+                        <line x1="98" y1="70" x2="98" y2="76" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="98" y1="88" x2="98" y2="94" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="86" y1="82" x2="92" y2="82" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="104" y1="82" x2="110" y2="82" stroke="#f39c12" stroke-width="1.5"/>
                     </svg>
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.3rem; color: #f39c12; margin-top: 10px; letter-spacing: 3px;">КИБИТКА</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #f39c12; margin-top: 10px; letter-spacing: 2px;">КИБИТКА</div>
                     <span class="logo-label">На тёмном фоне</span>
                 </div>
 
