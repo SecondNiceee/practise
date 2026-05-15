@@ -26,7 +26,6 @@
             padding: 40px 20px;
         }
 
-        /* Header */
         .header {
             text-align: center;
             padding: 50px 20px;
@@ -56,7 +55,6 @@
             margin: 0 auto;
         }
 
-        /* Section Title */
         .section-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.4rem;
@@ -67,7 +65,6 @@
             border-bottom: 2px solid #e8e0d0;
         }
 
-        /* Logo Variations Grid */
         .logo-section {
             margin-bottom: 60px;
         }
@@ -86,7 +83,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 180px;
+            min-height: 220px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #e8e0d0;
         }
@@ -111,147 +108,11 @@
             border-color: #e74c3c;
         }
 
-        .logo-card.gradient {
-            background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
-            border-color: #f39c12;
-        }
-
         .logo-card.cream {
             background: #f5f0e8;
             border-color: #d4c4a8;
         }
 
-        /* Logo Styles */
-        .logo-full {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.6rem;
-            letter-spacing: 1px;
-        }
-
-        .logo-text.dark {
-            color: #2c3e50;
-        }
-
-        .logo-text.light {
-            color: white;
-        }
-
-        .logo-text.orange {
-            color: #f39c12;
-        }
-
-        .logo-slogan {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.8;
-        }
-
-        .logo-slogan.dark {
-            color: #5d6d7e;
-        }
-
-        .logo-slogan.light {
-            color: rgba(255,255,255,0.8);
-        }
-
-        /* Horizontal Logo */
-        .logo-horizontal {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-horizontal .logo-icon {
-            width: 40px;
-            height: 40px;
-        }
-
-        .logo-horizontal .logo-text {
-            font-size: 1.4rem;
-        }
-
-        /* Small Logo */
-        .logo-small {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo-small .logo-icon {
-            width: 30px;
-            height: 30px;
-        }
-
-        .logo-small .logo-text {
-            font-size: 1rem;
-        }
-
-        /* Icon Only */
-        .logo-icon-only {
-            width: 70px;
-            height: 70px;
-        }
-
-        .logo-icon-only svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Monogram */
-        .logo-monogram {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 2.5rem;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-        }
-
-        .logo-monogram.bordered {
-            border: 3px solid currentColor;
-        }
-
-        .logo-monogram.filled-orange {
-            background: #f39c12;
-            color: white;
-        }
-
-        .logo-monogram.filled-dark {
-            background: #2c3e50;
-            color: white;
-        }
-
-        .logo-monogram.filled-gradient {
-            background: linear-gradient(135deg, #f39c12, #e74c3c);
-            color: white;
-        }
-
-        /* Label */
         .logo-label {
             font-size: 0.75rem;
             color: #8b7355;
@@ -263,12 +124,14 @@
 
         .logo-card.dark .logo-label,
         .logo-card.orange .logo-label,
-        .logo-card.red .logo-label,
-        .logo-card.gradient .logo-label {
+        .logo-card.red .logo-label {
             color: rgba(255,255,255,0.6);
         }
 
-        /* Color Palette Section */
+        .logo-card.wide {
+            grid-column: span 2;
+        }
+
         .palette-section {
             margin-bottom: 60px;
             padding: 40px;
@@ -329,51 +192,6 @@
             color: #5d6d7e;
         }
 
-        /* Wide Cards */
-        .logo-card.wide {
-            grid-column: span 2;
-        }
-
-        .logo-card.tall {
-            grid-row: span 2;
-            min-height: 380px;
-        }
-
-        /* Additional Variations */
-        .variations-row {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .variation-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #e8e0d0;
-            transition: transform 0.2s ease;
-        }
-
-        .variation-card:hover {
-            transform: scale(1.05);
-        }
-
-        .variation-card.dark {
-            background: #2c3e50;
-            border-color: #2c3e50;
-        }
-
-        .variation-card.orange {
-            background: #f39c12;
-            border-color: #f39c12;
-        }
-
-        /* Navigation */
         .nav-link {
             position: fixed;
             top: 20px;
@@ -394,7 +212,6 @@
             transform: translateY(-2px);
         }
 
-        /* Download Button */
         .download-btn {
             position: fixed;
             top: 20px;
@@ -417,7 +234,6 @@
             box-shadow: 0 6px 20px rgba(243, 156, 18, 0.5);
         }
 
-        /* Footer */
         .footer {
             text-align: center;
             padding: 30px;
@@ -426,13 +242,9 @@
             border-top: 1px solid #e8e0d0;
         }
 
-        /* Responsive */
         @media (max-width: 1200px) {
             .logo-grid {
                 grid-template-columns: repeat(3, 1fr);
-            }
-            .variations-row {
-                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -445,9 +257,6 @@
             }
             .palette-description {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .variations-row {
-                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -467,16 +276,12 @@
             .palette-description {
                 grid-template-columns: 1fr;
             }
-            .variations-row {
-                grid-template-columns: repeat(2, 1fr);
-            }
             .nav-link, .download-btn {
                 padding: 10px 18px;
                 font-size: 0.85rem;
             }
         }
 
-        /* Print */
         @media print {
             body {
                 background: white;
@@ -484,7 +289,7 @@
             .nav-link, .download-btn {
                 display: none !important;
             }
-            .logo-card, .palette-section, .variation-card {
+            .logo-card, .palette-section {
                 break-inside: avoid;
             }
         }
@@ -495,221 +300,341 @@
     <button class="download-btn" onclick="window.print()">Скачать PDF</button>
 
     <div class="container">
-        <!-- Header -->
         <header class="header">
             <p class="header-subtitle">Такси-сервис «Кибитка»</p>
             <h1>Концепт и образ бренда</h1>
             <div class="header-line"></div>
         </header>
 
-        <!-- Logo Variations -->
+        <!-- Основные логотипы -->
         <section class="logo-section">
-            <h2 class="section-title">Варианты логотипа</h2>
+            <h2 class="section-title">Подбор логотипа и цветовой палитры</h2>
             
             <div class="logo-grid">
-                <!-- Full Logo - Light BG -->
-                <div class="logo-card tall">
-                    <div class="logo-full">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="30" cy="30" r="28" stroke="#f39c12" stroke-width="3"/>
-                                <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
-                                <circle cx="22" cy="38" r="5" fill="#f39c12"/>
-                                <circle cx="38" cy="38" r="5" fill="#f39c12"/>
-                                <rect x="18" y="28" width="24" height="8" rx="2" fill="#f39c12"/>
-                                <rect x="26" y="24" width="8" height="4" rx="1" fill="#e74c3c"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text dark">КИБИТКА</div>
-                        <div class="logo-slogan dark">Довезём в целости</div>
-                    </div>
+                <!-- 1. Основной - Кибитка в круге с солнцем -->
+                <div class="logo-card">
+                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Солнце/полукруг сверху -->
+                        <path d="M70 15 L75 5 L70 8 L65 5 Z" fill="#f39c12"/>
+                        <path d="M55 18 L50 10 L53 14 L48 13 Z" fill="#f39c12"/>
+                        <path d="M85 18 L90 10 L87 14 L92 13 Z" fill="#f39c12"/>
+                        <!-- Кибитка-повозка -->
+                        <path d="M30 55 Q30 35 70 30 Q110 35 110 55" stroke="#e74c3c" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <rect x="35" y="45" width="70" height="25" rx="4" fill="#f39c12"/>
+                        <rect x="55" y="38" width="30" height="10" rx="2" fill="#e74c3c"/>
+                        <!-- Колёса -->
+                        <circle cx="45" cy="75" r="12" stroke="#2c3e50" stroke-width="3" fill="none"/>
+                        <circle cx="45" cy="75" r="4" fill="#2c3e50"/>
+                        <circle cx="95" cy="75" r="12" stroke="#2c3e50" stroke-width="3" fill="none"/>
+                        <circle cx="95" cy="75" r="4" fill="#2c3e50"/>
+                        <!-- Спицы -->
+                        <line x1="45" y1="63" x2="45" y2="87" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="33" y1="75" x2="57" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="95" y1="63" x2="95" y2="87" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="83" y1="75" x2="107" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                    </svg>
+                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #2c3e50; margin-top: 10px; letter-spacing: 2px;">КИБИТКА</div>
                     <span class="logo-label">Основной логотип</span>
                 </div>
 
-                <!-- Horizontal - Light -->
-                <div class="logo-card wide">
-                    <div class="logo-horizontal">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="30" cy="30" r="28" stroke="#f39c12" stroke-width="3"/>
-                                <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
-                                <circle cx="22" cy="38" r="5" fill="#f39c12"/>
-                                <circle cx="38" cy="38" r="5" fill="#f39c12"/>
-                                <rect x="18" y="28" width="24" height="8" rx="2" fill="#f39c12"/>
-                                <rect x="26" y="24" width="8" height="4" rx="1" fill="#e74c3c"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text dark">КИБИТКА</div>
-                    </div>
-                    <span class="logo-label">Горизонтальный</span>
-                </div>
-
-                <!-- Icon Only -->
-                <div class="logo-card">
-                    <div class="logo-icon-only">
-                        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="30" cy="30" r="28" stroke="#f39c12" stroke-width="3"/>
-                            <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
-                            <circle cx="22" cy="38" r="5" fill="#f39c12"/>
-                            <circle cx="38" cy="38" r="5" fill="#f39c12"/>
-                            <rect x="18" y="28" width="24" height="8" rx="2" fill="#f39c12"/>
-                            <rect x="26" y="24" width="8" height="4" rx="1" fill="#e74c3c"/>
-                        </svg>
-                    </div>
-                    <span class="logo-label">Иконка</span>
-                </div>
-
-                <!-- Full Logo - Dark BG -->
-                <div class="logo-card dark tall">
-                    <div class="logo-full">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="30" cy="30" r="28" stroke="#f39c12" stroke-width="3"/>
-                                <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
-                                <circle cx="22" cy="38" r="5" fill="#f39c12"/>
-                                <circle cx="38" cy="38" r="5" fill="#f39c12"/>
-                                <rect x="18" y="28" width="24" height="8" rx="2" fill="#f39c12"/>
-                                <rect x="26" y="24" width="8" height="4" rx="1" fill="#e74c3c"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text light">КИБИТКА</div>
-                        <div class="logo-slogan light">Довезём в целости</div>
-                    </div>
+                <!-- 2. Минималистичный щит -->
+                <div class="logo-card dark">
+                    <svg width="80" height="90" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Щит -->
+                        <path d="M40 5 L75 15 L75 50 Q75 75 40 85 Q5 75 5 50 L5 15 Z" stroke="#f39c12" stroke-width="3" fill="none"/>
+                        <!-- Буква К стилизованная -->
+                        <path d="M28 30 L28 60" stroke="#f39c12" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M28 45 L45 30" stroke="#f39c12" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M28 45 L45 60" stroke="#f39c12" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Колесо маленькое -->
+                        <circle cx="55" cy="55" r="10" stroke="#e74c3c" stroke-width="2" fill="none"/>
+                        <circle cx="55" cy="55" r="3" fill="#e74c3c"/>
+                    </svg>
+                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.2rem; color: #f39c12; margin-top: 10px; letter-spacing: 3px;">КИБИТКА</div>
                     <span class="logo-label">На тёмном фоне</span>
                 </div>
 
-                <!-- Orange BG -->
-                <div class="logo-card orange">
-                    <div class="logo-full">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="30" cy="30" r="28" stroke="white" stroke-width="3"/>
-                                <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                                <circle cx="22" cy="38" r="5" fill="white"/>
-                                <circle cx="38" cy="38" r="5" fill="white"/>
-                                <rect x="18" y="28" width="24" height="8" rx="2" fill="white"/>
-                                <rect x="26" y="24" width="8" height="4" rx="1" fill="#2c3e50"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text light">КИБИТКА</div>
-                    </div>
-                    <span class="logo-label">На оранжевом</span>
-                </div>
-
-                <!-- Red BG -->
-                <div class="logo-card red">
-                    <div class="logo-full">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="30" cy="30" r="28" stroke="white" stroke-width="3"/>
-                                <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                                <circle cx="22" cy="38" r="5" fill="white"/>
-                                <circle cx="38" cy="38" r="5" fill="white"/>
-                                <rect x="18" y="28" width="24" height="8" rx="2" fill="white"/>
-                                <rect x="26" y="24" width="8" height="4" rx="1" fill="#2c3e50"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text light">КИБИТКА</div>
-                    </div>
-                    <span class="logo-label">На красном</span>
-                </div>
-
-                <!-- Monogram Bordered -->
-                <div class="logo-card">
-                    <div class="logo-monogram bordered" style="color: #f39c12;">К</div>
-                    <span class="logo-label">Монограмма</span>
-                </div>
-
-                <!-- Monogram Filled Orange -->
-                <div class="logo-card">
-                    <div class="logo-monogram filled-orange">К</div>
-                    <span class="logo-label">Монограмма залитая</span>
-                </div>
-
-                <!-- Monogram Dark -->
-                <div class="logo-card">
-                    <div class="logo-monogram filled-dark">К</div>
-                    <span class="logo-label">Монограмма тёмная</span>
-                </div>
-
-                <!-- Monogram Gradient -->
-                <div class="logo-card">
-                    <div class="logo-monogram filled-gradient">К</div>
-                    <span class="logo-label">Монограмма градиент</span>
-                </div>
-
-                <!-- Small Logo -->
+                <!-- 3. Горизонтальный с лошадью -->
                 <div class="logo-card wide">
-                    <div class="logo-small">
-                        <div class="logo-icon">
-                            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="30" cy="30" r="28" stroke="#f39c12" stroke-width="3"/>
-                                <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
-                                <circle cx="22" cy="38" r="5" fill="#f39c12"/>
-                                <circle cx="38" cy="38" r="5" fill="#f39c12"/>
-                                <rect x="18" y="28" width="24" height="8" rx="2" fill="#f39c12"/>
-                                <rect x="26" y="24" width="8" height="4" rx="1" fill="#e74c3c"/>
-                            </svg>
-                        </div>
-                        <div class="logo-text dark">КИБИТКА</div>
-                    </div>
-                    <span class="logo-label">Компактная версия</span>
+                    <svg width="220" height="70" viewBox="0 0 220 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Лошадь силуэт -->
+                        <path d="M20 45 Q15 35 20 25 Q25 20 30 22 L35 18 Q40 15 42 20 L45 25 Q50 22 55 28 L60 35 Q65 32 68 38 L65 45 Q60 50 55 48 L50 50 L45 55 L40 50 L35 55 L30 48 Q25 50 20 45" fill="#e74c3c"/>
+                        <!-- Кибитка -->
+                        <path d="M75 25 Q75 18 95 15 Q115 18 115 25" stroke="#f39c12" stroke-width="3" fill="none"/>
+                        <rect x="78" y="25" width="35" height="20" rx="3" fill="#f39c12"/>
+                        <circle cx="82" cy="50" r="8" stroke="#2c3e50" stroke-width="2" fill="none"/>
+                        <circle cx="82" cy="50" r="2" fill="#2c3e50"/>
+                        <circle cx="108" cy="50" r="8" stroke="#2c3e50" stroke-width="2" fill="none"/>
+                        <circle cx="108" cy="50" r="2" fill="#2c3e50"/>
+                        <!-- Текст -->
+                        <text x="130" y="42" font-family="Montserrat, sans-serif" font-weight="700" font-size="22" fill="#2c3e50" letter-spacing="2">КИБИТКА</text>
+                    </svg>
+                    <span class="logo-label">Горизонтальный с лошадью</span>
                 </div>
 
-                <!-- Text Only -->
-                <div class="logo-card">
-                    <div class="logo-text dark" style="font-size: 1.8rem;">КИБИТКА</div>
-                    <span class="logo-label">Только текст</span>
+                <!-- 4. Колесо-монограмма -->
+                <div class="logo-card orange">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Колесо как основа -->
+                        <circle cx="50" cy="50" r="42" stroke="white" stroke-width="4" fill="none"/>
+                        <circle cx="50" cy="50" r="30" stroke="white" stroke-width="2" fill="none"/>
+                        <!-- Спицы -->
+                        <line x1="50" y1="8" x2="50" y2="20" stroke="white" stroke-width="3"/>
+                        <line x1="50" y1="80" x2="50" y2="92" stroke="white" stroke-width="3"/>
+                        <line x1="8" y1="50" x2="20" y2="50" stroke="white" stroke-width="3"/>
+                        <line x1="80" y1="50" x2="92" y2="50" stroke="white" stroke-width="3"/>
+                        <line x1="20" y1="20" x2="28" y2="28" stroke="white" stroke-width="3"/>
+                        <line x1="72" y1="72" x2="80" y2="80" stroke="white" stroke-width="3"/>
+                        <line x1="80" y1="20" x2="72" y2="28" stroke="white" stroke-width="3"/>
+                        <line x1="20" y1="80" x2="28" y2="72" stroke="white" stroke-width="3"/>
+                        <!-- К в центре -->
+                        <text x="50" y="58" font-family="Montserrat, sans-serif" font-weight="800" font-size="32" fill="white" text-anchor="middle">К</text>
+                    </svg>
+                    <span class="logo-label">Колесо-монограмма</span>
                 </div>
 
-                <!-- Text + Year -->
+                <!-- 5. Ретро-стиль -->
                 <div class="logo-card cream">
-                    <div style="text-align: center;">
-                        <div style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: #8b7355; letter-spacing: 3px; margin-bottom: 5px;">EST. 2024</div>
-                        <div class="logo-text dark" style="font-size: 1.6rem;">КИБИТКА</div>
-                        <div style="font-size: 0.65rem; color: #8b7355; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px;">Такси-сервис</div>
-                    </div>
-                    <span class="logo-label">С датой основания</span>
+                    <svg width="130" height="90" viewBox="0 0 130 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Рамка ретро -->
+                        <rect x="5" y="5" width="120" height="80" rx="5" stroke="#8b7355" stroke-width="2" fill="none"/>
+                        <rect x="10" y="10" width="110" height="70" rx="3" stroke="#8b7355" stroke-width="1" fill="none"/>
+                        <!-- Est. -->
+                        <text x="25" y="25" font-family="'Open Sans', sans-serif" font-size="8" fill="#8b7355">EST.</text>
+                        <text x="95" y="25" font-family="'Open Sans', sans-serif" font-size="8" fill="#8b7355">2024</text>
+                        <!-- Кибитка стилизованная -->
+                        <path d="M35 45 Q35 35 65 32 Q95 35 95 45" stroke="#e74c3c" stroke-width="3" fill="none"/>
+                        <rect x="40" y="42" width="50" height="15" rx="2" fill="#f39c12"/>
+                        <circle cx="48" cy="62" r="7" stroke="#2c3e50" stroke-width="2" fill="none"/>
+                        <circle cx="82" cy="62" r="7" stroke="#2c3e50" stroke-width="2" fill="none"/>
+                        <!-- Текст -->
+                        <text x="65" y="78" font-family="Montserrat, sans-serif" font-weight="600" font-size="10" fill="#2c3e50" text-anchor="middle" letter-spacing="4">КИБИТКА</text>
+                    </svg>
+                    <span class="logo-label">Ретро-стиль</span>
+                </div>
+
+                <!-- 6. Геометрический -->
+                <div class="logo-card">
+                    <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Шестиугольник -->
+                        <polygon points="45,5 82,25 82,65 45,85 8,65 8,25" stroke="#f39c12" stroke-width="3" fill="none"/>
+                        <!-- Кибитка геометрическая -->
+                        <polygon points="25,50 35,35 55,35 65,50" fill="#f39c12"/>
+                        <rect x="28" y="50" width="34" height="12" fill="#e74c3c"/>
+                        <circle cx="35" cy="65" r="6" stroke="#2c3e50" stroke-width="2" fill="white"/>
+                        <circle cx="55" cy="65" r="6" stroke="#2c3e50" stroke-width="2" fill="white"/>
+                    </svg>
+                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; color: #2c3e50; margin-top: 8px; letter-spacing: 3px;">КИБИТКА</div>
+                    <span class="logo-label">Геометрический</span>
+                </div>
+
+                <!-- 7. Значок/Бейдж -->
+                <div class="logo-card red">
+                    <svg width="100" height="110" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Форма бейджа -->
+                        <path d="M50 5 L90 20 L90 70 L50 105 L10 70 L10 20 Z" stroke="white" stroke-width="3" fill="none"/>
+                        <!-- Лента сверху -->
+                        <path d="M20 18 L80 18" stroke="white" stroke-width="2"/>
+                        <text x="50" y="16" font-family="'Open Sans', sans-serif" font-size="6" fill="white" text-anchor="middle">ТАКСИ-СЕРВИС</text>
+                        <!-- Кибитка -->
+                        <path d="M30 50 Q30 40 50 38 Q70 40 70 50" stroke="white" stroke-width="2" fill="none"/>
+                        <rect x="33" y="48" width="34" height="14" rx="2" fill="white"/>
+                        <circle cx="40" cy="68" r="6" stroke="white" stroke-width="2" fill="none"/>
+                        <circle cx="60" cy="68" r="6" stroke="white" stroke-width="2" fill="none"/>
+                        <!-- Текст снизу -->
+                        <text x="50" y="90" font-family="Montserrat, sans-serif" font-weight="700" font-size="12" fill="white" text-anchor="middle">КИБИТКА</text>
+                    </svg>
+                    <span class="logo-label">Значок</span>
+                </div>
+
+                <!-- 8. Только иконка - детальная кибитка -->
+                <div class="logo-card">
+                    <svg width="110" height="80" viewBox="0 0 110 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Крыша с орнаментом -->
+                        <path d="M20 35 Q20 15 55 10 Q90 15 90 35" stroke="#e74c3c" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <!-- Узор на крыше -->
+                        <path d="M35 28 L40 22 L45 28" stroke="#f39c12" stroke-width="2" fill="none"/>
+                        <path d="M50 25 L55 18 L60 25" stroke="#f39c12" stroke-width="2" fill="none"/>
+                        <path d="M65 28 L70 22 L75 28" stroke="#f39c12" stroke-width="2" fill="none"/>
+                        <!-- Корпус -->
+                        <rect x="25" y="32" width="60" height="22" rx="3" fill="#f39c12"/>
+                        <!-- Окно -->
+                        <rect x="45" y="36" width="20" height="12" rx="2" fill="white" stroke="#e74c3c" stroke-width="1"/>
+                        <line x1="55" y1="36" x2="55" y2="48" stroke="#e74c3c" stroke-width="1"/>
+                        <!-- Колёса детальные -->
+                        <circle cx="35" cy="60" r="12" stroke="#2c3e50" stroke-width="3" fill="white"/>
+                        <circle cx="35" cy="60" r="5" fill="#2c3e50"/>
+                        <circle cx="35" cy="60" r="2" fill="#f39c12"/>
+                        <circle cx="75" cy="60" r="12" stroke="#2c3e50" stroke-width="3" fill="white"/>
+                        <circle cx="75" cy="60" r="5" fill="#2c3e50"/>
+                        <circle cx="75" cy="60" r="2" fill="#f39c12"/>
+                    </svg>
+                    <span class="logo-label">Детальная иконка</span>
+                </div>
+
+                <!-- 9. Круглая печать -->
+                <div class="logo-card dark">
+                    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Внешний круг -->
+                        <circle cx="55" cy="55" r="50" stroke="#f39c12" stroke-width="3" fill="none"/>
+                        <circle cx="55" cy="55" r="43" stroke="#f39c12" stroke-width="1" fill="none"/>
+                        <!-- Текст по кругу сверху -->
+                        <path id="topArc" d="M15 55 A40 40 0 0 1 95 55" fill="none"/>
+                        <text font-family="'Open Sans', sans-serif" font-size="8" fill="#f39c12" letter-spacing="2">
+                            <textPath href="#topArc" startOffset="50%" text-anchor="middle">ТАКСИ-СЕРВИС</textPath>
+                        </text>
+                        <!-- Кибитка в центре -->
+                        <path d="M35 55 Q35 45 55 42 Q75 45 75 55" stroke="#e74c3c" stroke-width="2" fill="none"/>
+                        <rect x="38" y="52" width="34" height="12" rx="2" fill="#f39c12"/>
+                        <circle cx="45" cy="68" r="5" stroke="#f39c12" stroke-width="2" fill="none"/>
+                        <circle cx="65" cy="68" r="5" stroke="#f39c12" stroke-width="2" fill="none"/>
+                        <!-- Текст по кругу снизу -->
+                        <path id="bottomArc" d="M20 65 A40 40 0 0 0 90 65" fill="none"/>
+                        <text font-family="Montserrat, sans-serif" font-weight="700" font-size="11" fill="#f39c12" letter-spacing="3">
+                            <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">КИБИТКА</textPath>
+                        </text>
+                    </svg>
+                    <span class="logo-label">Круглая печать</span>
+                </div>
+
+                <!-- 10. Буква К с кибиткой -->
+                <div class="logo-card">
+                    <svg width="80" height="100" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Большая К -->
+                        <path d="M15 15 L15 85" stroke="#2c3e50" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M15 50 L55 15" stroke="#2c3e50" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M15 50 L55 85" stroke="#f39c12" stroke-width="8" stroke-linecap="round"/>
+                        <!-- Маленькая кибитка -->
+                        <path d="M48 55 Q48 48 60 46 Q72 48 72 55" stroke="#e74c3c" stroke-width="2" fill="none"/>
+                        <rect x="50" y="54" width="20" height="10" rx="1" fill="#f39c12"/>
+                        <circle cx="54" cy="68" r="4" stroke="#2c3e50" stroke-width="1.5" fill="white"/>
+                        <circle cx="66" cy="68" r="4" stroke="#2c3e50" stroke-width="1.5" fill="white"/>
+                    </svg>
+                    <span class="logo-label">Буква К + кибитка</span>
+                </div>
+
+                <!-- 11. Линейный минимализм -->
+                <div class="logo-card cream">
+                    <svg width="140" height="60" viewBox="0 0 140 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Линейная кибитка -->
+                        <path d="M10 30 Q10 15 35 12 Q60 15 60 30" stroke="#2c3e50" stroke-width="2" fill="none"/>
+                        <line x1="12" y1="30" x2="58" y2="30" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="12" y1="30" x2="12" y2="40" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="58" y1="30" x2="58" y2="40" stroke="#2c3e50" stroke-width="2"/>
+                        <circle cx="22" cy="45" r="6" stroke="#f39c12" stroke-width="2" fill="none"/>
+                        <circle cx="48" cy="45" r="6" stroke="#f39c12" stroke-width="2" fill="none"/>
+                        <!-- Текст -->
+                        <text x="75" y="25" font-family="Montserrat, sans-serif" font-weight="600" font-size="14" fill="#2c3e50">Кибитка</text>
+                        <text x="75" y="42" font-family="'Open Sans', sans-serif" font-size="9" fill="#8b7355">такси-сервис</text>
+                    </svg>
+                    <span class="logo-label">Линейный</span>
+                </div>
+
+                <!-- 12. Ромб -->
+                <div class="logo-card orange">
+                    <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Ромб -->
+                        <polygon points="45,5 85,45 45,85 5,45" stroke="white" stroke-width="3" fill="none"/>
+                        <!-- Кибитка внутри -->
+                        <path d="M30 48 Q30 38 45 35 Q60 38 60 48" stroke="white" stroke-width="2" fill="none"/>
+                        <rect x="32" y="46" width="26" height="12" rx="2" fill="white"/>
+                        <circle cx="38" cy="62" r="5" stroke="white" stroke-width="2" fill="none"/>
+                        <circle cx="52" cy="62" r="5" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="logo-label">Ромб</span>
                 </div>
             </div>
+        </section>
 
-            <!-- Additional Small Variations -->
-            <div class="variations-row">
-                <div class="variation-card">
-                    <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="30" cy="30" r="28" stroke="#f39c12" stroke-width="3"/>
-                        <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
-                        <circle cx="22" cy="38" r="5" fill="#f39c12"/>
-                        <circle cx="38" cy="38" r="5" fill="#f39c12"/>
-                        <rect x="18" y="28" width="24" height="8" rx="2" fill="#f39c12"/>
+        <!-- Варианты монограмм -->
+        <section class="logo-section">
+            <h2 class="section-title">Варианты монограмм</h2>
+            
+            <div class="logo-grid">
+                <!-- Монограмма 1 -->
+                <div class="logo-card">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="70" height="70" rx="10" stroke="#f39c12" stroke-width="3" fill="none"/>
+                        <text x="40" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="#f39c12" text-anchor="middle">К</text>
                     </svg>
+                    <span class="logo-label">Квадрат контур</span>
                 </div>
-                <div class="variation-card dark">
-                    <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="30" cy="30" r="28" stroke="#f39c12" stroke-width="3"/>
-                        <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="#f39c12" stroke-width="3" stroke-linecap="round"/>
-                        <circle cx="22" cy="38" r="5" fill="#f39c12"/>
-                        <circle cx="38" cy="38" r="5" fill="#f39c12"/>
-                        <rect x="18" y="28" width="24" height="8" rx="2" fill="#f39c12"/>
+
+                <!-- Монограмма 2 -->
+                <div class="logo-card">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="70" height="70" rx="10" fill="#f39c12"/>
+                        <text x="40" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="white" text-anchor="middle">К</text>
                     </svg>
+                    <span class="logo-label">Квадрат залитый</span>
                 </div>
-                <div class="variation-card orange">
-                    <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="30" cy="30" r="28" stroke="white" stroke-width="3"/>
-                        <path d="M15 35C15 28 22 20 30 20C38 20 45 28 45 35" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        <circle cx="22" cy="38" r="5" fill="white"/>
-                        <circle cx="38" cy="38" r="5" fill="white"/>
-                        <rect x="18" y="28" width="24" height="8" rx="2" fill="white"/>
+
+                <!-- Монограмма 3 -->
+                <div class="logo-card dark">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="35" stroke="#f39c12" stroke-width="3" fill="none"/>
+                        <text x="40" y="52" font-family="Montserrat, sans-serif" font-weight="800" font-size="36" fill="#f39c12" text-anchor="middle">К</text>
                     </svg>
+                    <span class="logo-label">Круг контур</span>
                 </div>
-                <div class="variation-card">
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; color: #f39c12; border: 2px solid #f39c12; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">К</div>
+
+                <!-- Монограмма 4 -->
+                <div class="logo-card">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="40" cy="40" r="35" fill="#e74c3c"/>
+                        <text x="40" y="52" font-family="Montserrat, sans-serif" font-weight="800" font-size="36" fill="white" text-anchor="middle">К</text>
+                    </svg>
+                    <span class="logo-label">Круг красный</span>
                 </div>
-                <div class="variation-card dark">
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; color: #f39c12; background: #f39c12; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: white;">К</div>
+
+                <!-- Монограмма 5 - с колесом -->
+                <div class="logo-card">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Колесо -->
+                        <circle cx="40" cy="40" r="35" stroke="#2c3e50" stroke-width="3" fill="none"/>
+                        <circle cx="40" cy="40" r="28" stroke="#2c3e50" stroke-width="1" fill="none"/>
+                        <!-- Спицы -->
+                        <line x1="40" y1="5" x2="40" y2="12" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="40" y1="68" x2="40" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="5" y1="40" x2="12" y2="40" stroke="#2c3e50" stroke-width="2"/>
+                        <line x1="68" y1="40" x2="75" y2="40" stroke="#2c3e50" stroke-width="2"/>
+                        <!-- К -->
+                        <text x="40" y="50" font-family="Montserrat, sans-serif" font-weight="800" font-size="28" fill="#f39c12" text-anchor="middle">К</text>
+                    </svg>
+                    <span class="logo-label">Колесо</span>
                 </div>
-                <div class="variation-card">
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; color: #2c3e50;">КИБИТКА</div>
+
+                <!-- Монограмма 6 - шестиугольник -->
+                <div class="logo-card orange">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="40,5 72,20 72,60 40,75 8,60 8,20" stroke="white" stroke-width="3" fill="none"/>
+                        <text x="40" y="52" font-family="Montserrat, sans-serif" font-weight="800" font-size="32" fill="white" text-anchor="middle">К</text>
+                    </svg>
+                    <span class="logo-label">Шестиугольник</span>
+                </div>
+
+                <!-- Монограмма 7 - градиент -->
+                <div class="logo-card">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f39c12"/>
+                                <stop offset="100%" style="stop-color:#e74c3c"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="5" y="5" width="70" height="70" rx="15" fill="url(#grad1)"/>
+                        <text x="40" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="white" text-anchor="middle">К</text>
+                    </svg>
+                    <span class="logo-label">Градиент</span>
+                </div>
+
+                <!-- Монограмма 8 - тёмный -->
+                <div class="logo-card">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="70" height="70" rx="10" fill="#2c3e50"/>
+                        <text x="40" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="#f39c12" text-anchor="middle">К</text>
+                    </svg>
+                    <span class="logo-label">Тёмный</span>
                 </div>
             </div>
         </section>
@@ -721,12 +646,12 @@
             <div class="palette-grid">
                 <div class="palette-item">
                     <div class="palette-color" style="background: #f39c12;"></div>
-                    <div class="palette-name">Оранжевый</div>
+                    <div class="palette-name">Янтарный</div>
                     <div class="palette-hex">#F39C12</div>
                 </div>
                 <div class="palette-item">
                     <div class="palette-color" style="background: #e74c3c;"></div>
-                    <div class="palette-name">Красный</div>
+                    <div class="palette-name">Терракотовый</div>
                     <div class="palette-hex">#E74C3C</div>
                 </div>
                 <div class="palette-item">
@@ -735,21 +660,21 @@
                     <div class="palette-hex">#2C3E50</div>
                 </div>
                 <div class="palette-item">
-                    <div class="palette-color" style="background: #ecf0f1;"></div>
-                    <div class="palette-name">Светло-серый</div>
-                    <div class="palette-hex">#ECF0F1</div>
+                    <div class="palette-color" style="background: #f5f0e8;"></div>
+                    <div class="palette-name">Кремовый</div>
+                    <div class="palette-hex">#F5F0E8</div>
                 </div>
                 <div class="palette-item">
-                    <div class="palette-color" style="background: #27ae60;"></div>
-                    <div class="palette-name">Зелёный</div>
-                    <div class="palette-hex">#27AE60</div>
+                    <div class="palette-color" style="background: #8b7355;"></div>
+                    <div class="palette-name">Охра</div>
+                    <div class="palette-hex">#8B7355</div>
                 </div>
             </div>
 
             <div class="palette-description">
                 <div class="palette-desc-item">
                     <h4>Фон</h4>
-                    <p>Сайт, визитки, упаковка, стены</p>
+                    <p>Сайт, визитки, упаковка, стены офиса</p>
                 </div>
                 <div class="palette-desc-item">
                     <h4>Основной</h4>
@@ -761,14 +686,13 @@
                 </div>
                 <div class="palette-desc-item">
                     <h4>Дополнительный</h4>
-                    <p>Статусы, уведомления, фоновые блоки</p>
+                    <p>Декор, иллюстрации, фоновые блоки</p>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="footer">
-            <p>Брендбук такси-сервиса «Кибитка» | Выполнил: Титов Николай Константинович</p>
+            <p>© 2024 Такси-сервис «Кибитка» — Брендбук</p>
         </footer>
     </div>
 </body>
