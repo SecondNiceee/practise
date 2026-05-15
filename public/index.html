@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ компании «Кибитка» — Такси</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e8e8e8;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(243, 156, 18, 0.3);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .slogan {
+            font-size: 1.4rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        .header .author {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            font-size: 1.1rem;
+        }
+
+        /* Section Styles */
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .section h2 {
+            display: inline-block;
+            font-size: 1.8rem;
+            color: #f39c12;
+            margin-bottom: 25px;
+            vertical-align: middle;
+        }
+
+        .section h3 {
+            color: #3498db;
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+            padding-left: 15px;
+            border-left: 3px solid #3498db;
+        }
+
+        .section p, .section li {
+            color: #c8c8c8;
+            font-size: 1.05rem;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            position: relative;
+            padding: 8px 0 8px 25px;
+        }
+
+        .section ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        tr:hover td {
+            background: rgba(243, 156, 18, 0.1);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .info-card h4 {
+            color: #f39c12;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-card p {
+            color: #b8b8b8;
+            font-size: 1rem;
+        }
+
+        /* Value Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Color Palette */
+        .color-palette {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Icons List */
+        .icons-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .icon-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .icon-item:hover {
+            background: rgba(243, 156, 18, 0.1);
+        }
+
+        .icon-item .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #888;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+
+            .section h2 {
+                font-size: 1.4rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+    <!-- Print Styles -->
+    <style media="print">
+        @page {
+            margin: 15mm;
+            size: A4;
+        }
+        
+        body {
+            background: white !important;
+            color: #1a1a1a !important;
+            font-size: 11pt;
+            line-height: 1.5;
+        }
+
+        .container {
+            padding: 0;
+            max-width: 100%;
+        }
+
+        .header {
+            background: #f39c12 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            page-break-after: avoid;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+        }
+
+        .section {
+            background: #f9f9f9 !important;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+            box-shadow: none;
+            transform: none !important;
+        }
+
+        .section:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .section h2 {
+            color: #e67e22 !important;
+            font-size: 14pt;
+        }
+
+        .section h3 {
+            color: #2980b9 !important;
+            font-size: 12pt;
+        }
+
+        .section p, .section li {
+            color: #333 !important;
+        }
+
+        .section-number {
+            background: #f39c12 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        table {
+            font-size: 9pt;
+        }
+
+        th {
+            background: #f39c12 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        td {
+            background: white !important;
+            border-color: #ccc !important;
+        }
+
+        .info-card {
+            background: #f5f5f5 !important;
+            border-left-color: #f39c12 !important;
+        }
+
+        .info-card h4 {
+            color: #e67e22 !important;
+        }
+
+        .info-card p {
+            color: #444 !important;
+        }
+
+        .tag {
+            background: #f39c12 !important;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .color-swatch {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .icon-item {
+            background: #f5f5f5 !important;
+        }
+
+        .footer {
+            color: #666 !important;
+        }
+
+        .download-btn {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Download Button -->
+    <button class="download-btn" onclick="window.print()" title="Скачать PDF">
+        📄 Скачать PDF
+    </button>
+
+    <style>
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+            z-index: 1000;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.5);
+        }
+    </style>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🚕 Кибитка</h1>
+            <p class="slogan">«Довезём в целости и сохранности»</p>
+            <p class="author">
+                <strong>Отчёт по практической работе №1</strong><br>
+                Выполнил: Титов Н��колай Константинович
+            </p>
+        </header>
+
+        <!-- 1. Основная информация -->
+        <section class="section">
+            <span class="section-number">1</span>
+            <h2>Основная информация о компании</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Название компании</h4>
+                    <p>Кибитка</p>
+                </div>
+                <div class="info-card">
+                    <h4>Сфера деятельности</h4>
+                    <p>Такси / Пассажирские перевозки</p>
+                </div>
+                <div class="info-card">
+                    <h4>Слоган</h4>
+                    <p>«Довезём в целости и сохранности»</p>
+                </div>
+                <div class="info-card">
+                    <h4>Тип бизнеса</h4>
+                    <p>B2C (Бизнес для потребителя)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Анализ целевой аудитории -->
+        <section class="section">
+            <span class="section-number">2</span>
+            <h2>Анализ целевой аудитории (ЦА)</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Критерий</th>
+                            <th>Студенты</th>
+                            <th>Деловые люди</th>
+                            <th>Семьи с детьми</th>
+                            <th>Туристы</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Возраст</strong></td>
+                            <td>18–25 лет</td>
+                            <td>28–50 лет</td>
+                            <td>25–45 лет</td>
+                            <td>20–60 лет</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Пол</strong></td>
+                            <td>М/Ж</td>
+                            <td>М/Ж</td>
+                            <td>М/Ж</td>
+                            <td>М/Ж</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Финансовые возможности</strong></td>
+                            <td>Низкие/Средние<br>Эконом-тарифы</td>
+                            <td>Высокие<br>Комфорт/Бизнес-класс</td>
+                            <td>Средние<br>Комфорт, детские кресла</td>
+                            <td>Средние/Высокие<br>Экскурсии, трансферы</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Боли и потребности</strong></td>
+                            <td>Низкая цена, скорость подачи, безопасность ночью</td>
+                            <td>Пунктуальность, чистота салона, возможность работать в дороге</td>
+                            <td>Детские кресла, аккуратное вождение, вместительность</td>
+                            <td>Знание города, честная цена, помощь с багажом</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Критерии выбора</strong></td>
+                            <td>Цена, рейтинг водителя, скидки</td>
+                            <td>Время подачи, класс авто, бесшумность</td>
+                            <td>Безопасность, отзывы, наличие допуслуг</td>
+                            <td>Рекомендации, фиксированная цена</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Тон коммуникации</strong></td>
+                            <td>Дружелюбный, неформальный, с юмором</td>
+                            <td>Уверенный, лаконичный, профессиональный</td>
+                            <td>Заботливый, тёплый, надёжный</td>
+                            <td>Гостеприимный, информативный</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Каналы коммуникации</strong></td>
+                            <td>Соцсети (VK, Telegram), приложение</td>
+                            <td>Приложение, корпоративные договоры</td>
+                            <td>Сарафанное радио, родительские форумы</td>
+                            <td>Отели, аэропорты, карты города</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. Анализ рынка -->
+        <section class="section">
+            <span class="section-number">3</span>
+            <h2>Анализ рынка и конкурентов</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Критерий</th>
+                            <th>Яндекс Go</th>
+                            <th>Uber</th>
+                            <th>Местные такси</th>
+                            <th>Кибитка (наша)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Специализация</strong></td>
+                            <td>Мультисервис: такси, доставка, каршеринг</td>
+                            <td>Международный сервис такси</td>
+                            <td>Локальные перевозки</td>
+                            <td>Городское такси с акцентом на безопасность</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ценовой сегмент</strong></td>
+                            <td>Средний</td>
+                            <td>Средний+</td>
+                            <td>Низкий/Средний</td>
+                            <td>Средний</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Сильные стороны</strong></td>
+                            <td>Огромная база водителей, интеграция с картами, бонусная программа</td>
+                            <td>Международное присутствие, известный бренд</td>
+                            <td>Низкие цены, знание местности</td>
+                            <td>Персональный подход, безопасность, дружелюбие, чистота в авто</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Слабые стороны</strong></td>
+                            <td>Обезличенность, частая смена водителей</td>
+                            <td>Высокие комиссии, меньше водителей в регионах</td>
+                            <td>Устаревшие авто, отсутствие приложения</td>
+                            <td>Меньший охват, новый бренд на рынке</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. Бренд и ценности -->
+        <section class="section">
+            <span class="section-number">4</span>
+            <h2>Бренд и его ценности</h2>
+            
+            <h3>Миссия компании</h3>
+            <p>Обеспечивать быстрые, безопасные и комфортные поездки по городу с вниманием к каждому пассажиру.</p>
+            
+            <h3>Ключевые ценности</h3>
+            <div class="tags">
+                <span class="tag">🛡️ Надёжность</span>
+                <span class="tag">🔒 Безопасность</span>
+                <span class="tag">⚡ Скорость</span>
+                <span class="tag">😊 Дружелюбие</span>
+                <span class="tag">✨ Чистота</span>
+                <span class="tag">💯 Предсказуемость</span>
+            </div>
+
+            <h3>Уникальное торговое предложение (УТП)</h3>
+            <p>Такси «Кибитка» — это не просто поездка, а забота о вас в пути. Мы гарантируем чистый салон, вежливого водителя и прибытие точно в срок.</p>
+        </section>
+
+        <!-- 5. Визуальный стиль -->
+        <section class="section">
+            <span class="section-number">5</span>
+            <h2>Визуальный стиль</h2>
+            
+            <h3>Цветовая палитра</h3>
+            <p>Контрастные и акцентные цвета, передающие энергию, скорость и надёжность:</p>
+            <div class="color-palette">
+                <div class="color-swatch" style="background: #f39c12;">#F39C12</div>
+                <div class="color-swatch" style="background: #e74c3c;">#E74C3C</div>
+                <div class="color-swatch" style="background: #2c3e50;">#2C3E50</div>
+                <div class="color-swatch" style="background: #ecf0f1; color: #333;">#ECF0F1</div>
+                <div class="color-swatch" style="background: #27ae60;">#27AE60</div>
+            </div>
+
+            <h3>Типографика</h3>
+            <ul>
+                <li><strong>Заголовки:</strong> Технологичный, динамичный шрифт (например, Montserrat Bold)</li>
+                <li><strong>Основной текст:</strong> Читаемый, современный шрифт (например, Open Sans)</li>
+                <li><strong>Акценты:</strong> Округлённые формы для дружелюбного восприятия</li>
+            </ul>
+
+            <h3>Ключевые визуальные элементы</h3>
+            <div class="icons-list">
+                <div class="icon-item">
+                    <div class="emoji">🛞</div>
+                    <p>Стилизованная кибитка/повозка</p>
+                </div>
+                <div class="icon-item">
+                    <div class="emoji">🗺️</div>
+                    <p>Карта города</p>
+                </div>
+                <div class="icon-item">
+                    <div class="emoji">👨‍✈️</div>
+                    <p>Улыбающиеся водители</p>
+                </div>
+                <div class="icon-item">
+                    <div class="emoji">😃</div>
+                    <p>Довольные пассажиры</p>
+                </div>
+                <div class="icon-item">
+                    <div class="emoji">📍</div>
+                    <p>Чёткие иконки навигации</p>
+                </div>
+                <div class="icon-item">
+                    <div class="emoji">🚗</div>
+                    <p>Современный автомобиль</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Коммуникационный стиль -->
+        <section class="section">
+            <span class="section-number">6</span>
+            <h2>Коммуникационный стиль</h2>
+            
+            <h3>Тон общения</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Дружелюбный</h4>
+                    <p>Общаемся как с хорошими знакомыми, создаём атмосферу доверия</p>
+                </div>
+                <div class="info-card">
+                    <h4>Уверенный</h4>
+                    <p>Знаем своё дело и гарантируем качество услуг</p>
+                </div>
+                <div class="info-card">
+                    <h4>Прямой</h4>
+                    <p>Говорим по делу, без лишней воды и сложных формулировок</p>
+                </div>
+                <div class="info-card">
+                    <h4>С лёгким юмором</h4>
+                    <p>Добавляем позитив, но остаёмся профессионалами</p>
+                </div>
+            </div>
+
+            <h3>Примеры сообщений</h3>
+            <ul>
+                <li>«Ваша Кибитка уже мчится! 🚕 Будем через 3 минуты»</li>
+                <li>«Доехали? Отлично! Ждём вас снова — и да, мы помним, что вы любите тишину в салоне 😊»</li>
+                <li>«Пробки? Не переживайте, наш водитель знает все объезды!»</li>
+            </ul>
+        </section>
+
+        <!-- 7. Услуги компании -->
+        <section class="section">
+            <span class="section-number">7</span>
+            <h2>Услуги компании</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🚕 Городское такси</h4>
+                    <p>Быстрые поездки по городу с комфортом. Эконом, Комфорт, Бизнес-класс</p>
+                </div>
+                <div class="info-card">
+                    <h4>✈️ Трансфер</h4>
+                    <p>Встреча в аэропорту/вокзале с табличкой. Помощь с багажом</p>
+                </div>
+                <div class="info-card">
+                    <h4>👶 Детское такси</h4>
+                    <p>Автомобили с детскими креслами. Аккуратные и внимательные водители</p>
+                </div>
+                <div class="info-card">
+                    <h4>🏢 Корпоративное обслуживание</h4>
+                    <p>Договоры с компаниями. Ежемесячная отчётность, безналичная оплата</p>
+                </div>
+                <div class="info-card">
+                    <h4>🌙 Ночное такси</h4>
+                    <p>Безопасные поездки в любое время суток. Проверенные водители</p>
+                </div>
+                <div class="info-card">
+                    <h4>📦 Доставка</h4>
+                    <p>Курьерская доставка документов и небольших посылок по городу</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Каналы размещения -->
+        <section class="section">
+            <span class="section-number">8</span>
+            <h2>Каналы коммуникации и размещения</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Канал</th>
+                            <th>Описание</th>
+                            <th>Цель</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Мобильное приложение</strong></td>
+                            <td>iOS и Android приложение для заказа такси</td>
+                            <td>Основной канал заказа, накопление бонусов</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Веб-сайт</strong></td>
+                            <td>Информационный сайт с возможностью заказа</td>
+                            <td>SEO-продвижение, информирование о услугах</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Социальные сети</strong></td>
+                            <td>VK, Telegram, Instagram</td>
+                            <td>Вовлечение аудитории, акции, обратная связь</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Телефонная линия</strong></td>
+                            <td>Круглосуточный call-центр</td>
+                            <td>Заказы для тех, кто не пользуется приложением</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Партнёрства</strong></td>
+                            <td>Отели, рестораны, бизнес-центры</td>
+                            <td>Привлечение корпоративных клиентов и туристов</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Наружная реклама</strong></td>
+                            <td>Брендирование автомобилей, баннеры</td>
+                            <td>Узнаваемость бренда в городе</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Отчёт по практической работе №1</p>
+            <p><strong>Титов Николай Константинович</strong></p>
+            <p>© 2024 — Анализ компании «Кибитка»</p>
+        </footer>
+    </div>
+</body>
+</html>
+</content>
+<parameter name="taskNameActive">Creating index.html
