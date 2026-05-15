@@ -311,63 +311,164 @@
             <h2 class="section-title">Подбор логотипа и цветовой палитры</h2>
             
             <div class="logo-grid">
-                <!-- 1. Основной - Кибитка в круге с солнцем -->
+                <!-- 1. Основной - Буква К с тележкой -->
                 <div class="logo-card">
-                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Солнце/полукруг сверху -->
-                        <path d="M70 15 L75 5 L70 8 L65 5 Z" fill="#f39c12"/>
-                        <path d="M55 18 L50 10 L53 14 L48 13 Z" fill="#f39c12"/>
-                        <path d="M85 18 L90 10 L87 14 L92 13 Z" fill="#f39c12"/>
-                        <!-- Кибитка-повозка -->
-                        <path d="M30 55 Q30 35 70 30 Q110 35 110 55" stroke="#e74c3c" stroke-width="4" fill="none" stroke-linecap="round"/>
-                        <rect x="35" y="45" width="70" height="25" rx="4" fill="#f39c12"/>
-                        <rect x="55" y="38" width="30" height="10" rx="2" fill="#e74c3c"/>
-                        <!-- Колёса -->
-                        <circle cx="45" cy="75" r="12" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="45" cy="75" r="4" fill="#2c3e50"/>
-                        <circle cx="95" cy="75" r="12" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="95" cy="75" r="4" fill="#2c3e50"/>
-                        <!-- Спицы -->
-                        <line x1="45" y1="63" x2="45" y2="87" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="33" y1="75" x2="57" y2="75" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="95" y1="63" x2="95" y2="87" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="83" y1="75" x2="107" y2="75" stroke="#2c3e50" stroke-width="2"/>
+                    <svg width="140" height="110" viewBox="0 0 140 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Буква К стилизованная - вертикаль это часть тележки -->
+                        <path d="M35 15 L35 70" stroke="#e74c3c" stroke-width="8" stroke-linecap="round"/>
+                        <!-- Диагонали К -->
+                        <path d="M35 42 L70 15" stroke="#e74c3c" stroke-width="7" stroke-linecap="round"/>
+                        <path d="M35 42 L75 70" stroke="#e74c3c" stroke-width="7" stroke-linecap="round"/>
+                        <!-- Тележка/кибитка интегрированная -->
+                        <path d="M50 55 Q50 42 80 38 Q110 42 110 55" stroke="#f39c12" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <!-- Корпус тележки -->
+                        <rect x="52" y="52" width="56" height="22" rx="4" fill="#f39c12"/>
+                        <!-- Окна -->
+                        <rect x="58" y="56" width="12" height="12" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="74" y="56" width="12" height="12" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="90" y="56" width="12" height="12" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <!-- Колёса детальные -->
+                        <circle cx="62" cy="82" r="12" stroke="#2c3e50" stroke-width="3" fill="white"/>
+                        <circle cx="62" cy="82" r="7" stroke="#2c3e50" stroke-width="1.5" fill="none"/>
+                        <circle cx="62" cy="82" r="3" fill="#2c3e50"/>
+                        <line x1="62" y1="70" x2="62" y2="76" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="62" y1="88" x2="62" y2="94" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="50" y1="82" x2="56" y2="82" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="68" y1="82" x2="74" y2="82" stroke="#2c3e50" stroke-width="1.5"/>
+                        
+                        <circle cx="98" cy="82" r="12" stroke="#2c3e50" stroke-width="3" fill="white"/>
+                        <circle cx="98" cy="82" r="7" stroke="#2c3e50" stroke-width="1.5" fill="none"/>
+                        <circle cx="98" cy="82" r="3" fill="#2c3e50"/>
+                        <line x1="98" y1="70" x2="98" y2="76" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="98" y1="88" x2="98" y2="94" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="86" y1="82" x2="92" y2="82" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="104" y1="82" x2="110" y2="82" stroke="#2c3e50" stroke-width="1.5"/>
                     </svg>
                     <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #2c3e50; margin-top: 10px; letter-spacing: 2px;">КИБИТКА</div>
                     <span class="logo-label">Основной логотип</span>
                 </div>
 
-                <!-- 2. Минималистичный щит -->
+                <!-- 2. На тёмном фоне - такой же как основной -->
                 <div class="logo-card dark">
-                    <svg width="80" height="90" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Щит -->
-                        <path d="M40 5 L75 15 L75 50 Q75 75 40 85 Q5 75 5 50 L5 15 Z" stroke="#f39c12" stroke-width="3" fill="none"/>
+                    <svg width="140" height="110" viewBox="0 0 140 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Буква К стилизованная -->
-                        <path d="M28 30 L28 60" stroke="#f39c12" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M28 45 L45 30" stroke="#f39c12" stroke-width="4" stroke-linecap="round"/>
-                        <path d="M28 45 L45 60" stroke="#f39c12" stroke-width="4" stroke-linecap="round"/>
-                        <!-- Колесо маленькое -->
-                        <circle cx="55" cy="55" r="10" stroke="#e74c3c" stroke-width="2" fill="none"/>
-                        <circle cx="55" cy="55" r="3" fill="#e74c3c"/>
+                        <path d="M35 15 L35 70" stroke="#e74c3c" stroke-width="8" stroke-linecap="round"/>
+                        <!-- Диагонали К -->
+                        <path d="M35 42 L70 15" stroke="#e74c3c" stroke-width="7" stroke-linecap="round"/>
+                        <path d="M35 42 L75 70" stroke="#e74c3c" stroke-width="7" stroke-linecap="round"/>
+                        <!-- Тележка/кибитка интегрированная -->
+                        <path d="M50 55 Q50 42 80 38 Q110 42 110 55" stroke="#f39c12" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <!-- Корпус тележки -->
+                        <rect x="52" y="52" width="56" height="22" rx="4" fill="#f39c12"/>
+                        <!-- Окна -->
+                        <rect x="58" y="56" width="12" height="12" rx="2" fill="#2c3e50" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="74" y="56" width="12" height="12" rx="2" fill="#2c3e50" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="90" y="56" width="12" height="12" rx="2" fill="#2c3e50" stroke="#e67e22" stroke-width="1"/>
+                        <!-- Колёса детальные -->
+                        <circle cx="62" cy="82" r="12" stroke="#f39c12" stroke-width="3" fill="#2c3e50"/>
+                        <circle cx="62" cy="82" r="7" stroke="#f39c12" stroke-width="1.5" fill="none"/>
+                        <circle cx="62" cy="82" r="3" fill="#f39c12"/>
+                        <line x1="62" y1="70" x2="62" y2="76" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="62" y1="88" x2="62" y2="94" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="50" y1="82" x2="56" y2="82" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="68" y1="82" x2="74" y2="82" stroke="#f39c12" stroke-width="1.5"/>
+                        
+                        <circle cx="98" cy="82" r="12" stroke="#f39c12" stroke-width="3" fill="#2c3e50"/>
+                        <circle cx="98" cy="82" r="7" stroke="#f39c12" stroke-width="1.5" fill="none"/>
+                        <circle cx="98" cy="82" r="3" fill="#f39c12"/>
+                        <line x1="98" y1="70" x2="98" y2="76" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="98" y1="88" x2="98" y2="94" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="86" y1="82" x2="92" y2="82" stroke="#f39c12" stroke-width="1.5"/>
+                        <line x1="104" y1="82" x2="110" y2="82" stroke="#f39c12" stroke-width="1.5"/>
                     </svg>
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.2rem; color: #f39c12; margin-top: 10px; letter-spacing: 3px;">КИБИТКА</div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #f39c12; margin-top: 10px; letter-spacing: 2px;">КИБИТКА</div>
                     <span class="logo-label">На тёмном фоне</span>
                 </div>
 
-                <!-- 3. Горизонтальный с лошадью -->
+                <!-- 3. Горизонтальный с лошадью - детальный -->
                 <div class="logo-card wide">
-                    <svg width="220" height="70" viewBox="0 0 220 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Лошадь силуэт -->
-                        <path d="M20 45 Q15 35 20 25 Q25 20 30 22 L35 18 Q40 15 42 20 L45 25 Q50 22 55 28 L60 35 Q65 32 68 38 L65 45 Q60 50 55 48 L50 50 L45 55 L40 50 L35 55 L30 48 Q25 50 20 45" fill="#e74c3c"/>
+                    <svg width="320" height="85" viewBox="0 0 320 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="horseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#c0392b"/>
+                                <stop offset="100%" style="stop-color:#e74c3c"/>
+                            </linearGradient>
+                            <linearGradient id="wagonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f39c12"/>
+                                <stop offset="100%" style="stop-color:#e67e22"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Лошадь детальная -->
+                        <!-- Тело -->
+                        <ellipse cx="42" cy="45" rx="22" ry="14" fill="url(#horseGrad)"/>
+                        <!-- Шея и голова -->
+                        <path d="M58 38 Q65 30 68 25 Q72 20 78 22 Q82 25 80 30 L76 35 Q74 38 72 40 L65 42" fill="url(#horseGrad)"/>
+                        <!-- Ухо -->
+                        <path d="M74 22 Q76 16 79 18 Q80 22 77 24" fill="url(#horseGrad)"/>
+                        <!-- Глаз -->
+                        <circle cx="76" cy="28" r="2" fill="#2c3e50"/>
+                        <circle cx="76.5" cy="27.5" r="0.8" fill="white"/>
+                        <!-- Ноздря -->
+                        <ellipse cx="79" cy="32" rx="1" ry="1.5" fill="#8b0000"/>
+                        <!-- Грива -->
+                        <path d="M60 32 Q58 28 62 25 Q60 22 65 20 Q63 18 68 18" stroke="#8b0000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <!-- Ноги передние -->
+                        <path d="M55 55 L56 68 L54 70 L52 68 L53 55" fill="url(#horseGrad)"/>
+                        <path d="M48 55 L49 65 L47 67 L45 65 L46 55" fill="url(#horseGrad)"/>
+                        <!-- Ноги задние -->
+                        <path d="M30 55 L28 68 L26 70 L24 68 L26 55" fill="url(#horseGrad)"/>
+                        <path d="M36 55 L35 65 L33 67 L31 65 L33 55" fill="url(#horseGrad)"/>
+                        <!-- Копыта -->
+                        <ellipse cx="53" cy="70" rx="2.5" ry="1.5" fill="#2c3e50"/>
+                        <ellipse cx="46" cy="67" rx="2" ry="1.2" fill="#2c3e50"/>
+                        <ellipse cx="25" cy="70" rx="2.5" ry="1.5" fill="#2c3e50"/>
+                        <ellipse cx="32" cy="67" rx="2" ry="1.2" fill="#2c3e50"/>
+                        <!-- Хвост -->
+                        <path d="M20 40 Q12 45 10 55 Q8 60 12 62 Q16 58 18 50 Q20 48 22 45" fill="url(#horseGrad)"/>
+                        <path d="M12 55 Q8 58 6 62" stroke="#8b0000" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <!-- Упряжь -->
+                        <path d="M62 45 L90 45" stroke="#8b7355" stroke-width="2"/>
+                        <circle cx="70" cy="45" r="2" fill="#f39c12"/>
+                        
                         <!-- Кибитка -->
-                        <path d="M75 25 Q75 18 95 15 Q115 18 115 25" stroke="#f39c12" stroke-width="3" fill="none"/>
-                        <rect x="78" y="25" width="35" height="20" rx="3" fill="#f39c12"/>
-                        <circle cx="82" cy="50" r="8" stroke="#2c3e50" stroke-width="2" fill="none"/>
-                        <circle cx="82" cy="50" r="2" fill="#2c3e50"/>
-                        <circle cx="108" cy="50" r="8" stroke="#2c3e50" stroke-width="2" fill="none"/>
-                        <circle cx="108" cy="50" r="2" fill="#2c3e50"/>
+                        <!-- Крыша -->
+                        <path d="M95 30 Q95 15 130 10 Q165 15 165 30" stroke="#e74c3c" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                        <!-- Декор на крыше -->
+                        <path d="M110 22 Q115 16 120 22" stroke="#f39c12" stroke-width="1.5" fill="none"/>
+                        <path d="M135 22 Q140 16 145 22" stroke="#f39c12" stroke-width="1.5" fill="none"/>
+                        <circle cx="130" cy="18" r="2" fill="#f39c12"/>
+                        <!-- Корпус -->
+                        <rect x="98" y="28" width="64" height="28" rx="4" fill="url(#wagonGrad)"/>
+                        <!-- Окна -->
+                        <rect x="105" y="33" width="15" height="16" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <line x1="112.5" y1="33" x2="112.5" y2="49" stroke="#e67e22" stroke-width="0.8"/>
+                        <rect x="125" y="33" width="10" height="16" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <rect x="140" y="33" width="15" height="16" rx="2" fill="white" stroke="#e67e22" stroke-width="1"/>
+                        <line x1="147.5" y1="33" x2="147.5" y2="49" stroke="#e67e22" stroke-width="0.8"/>
+                        <!-- Декоративная полоса -->
+                        <line x1="98" y1="52" x2="162" y2="52" stroke="#c0392b" stroke-width="2"/>
+                        
+                        <!-- Колёса -->
+                        <circle cx="108" cy="65" r="11" stroke="#2c3e50" stroke-width="3" fill="white"/>
+                        <circle cx="108" cy="65" r="7" stroke="#2c3e50" stroke-width="1" fill="none"/>
+                        <circle cx="108" cy="65" r="3" fill="#2c3e50"/>
+                        <line x1="108" y1="54" x2="108" y2="60" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="108" y1="70" x2="108" y2="76" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="97" y1="65" x2="103" y2="65" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="113" y1="65" x2="119" y2="65" stroke="#2c3e50" stroke-width="1.5"/>
+                        
+                        <circle cx="152" cy="65" r="11" stroke="#2c3e50" stroke-width="3" fill="white"/>
+                        <circle cx="152" cy="65" r="7" stroke="#2c3e50" stroke-width="1" fill="none"/>
+                        <circle cx="152" cy="65" r="3" fill="#2c3e50"/>
+                        <line x1="152" y1="54" x2="152" y2="60" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="152" y1="70" x2="152" y2="76" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="141" y1="65" x2="147" y2="65" stroke="#2c3e50" stroke-width="1.5"/>
+                        <line x1="157" y1="65" x2="163" y2="65" stroke="#2c3e50" stroke-width="1.5"/>
+                        
                         <!-- Текст -->
-                        <text x="130" y="42" font-family="Montserrat, sans-serif" font-weight="700" font-size="22" fill="#2c3e50" letter-spacing="2">КИБИТКА</text>
+                        <text x="185" y="38" font-family="Montserrat, sans-serif" font-weight="800" font-size="26" fill="#2c3e50" letter-spacing="3">КИБИТКА</text>
+                        <text x="185" y="55" font-family="'Open Sans', sans-serif" font-weight="400" font-size="10" fill="#8b7355" letter-spacing="2">ТАКСИ-СЕРВИС</text>
+                        <line x1="185" y1="62" x2="310" y2="62" stroke="#f39c12" stroke-width="2"/>
                     </svg>
                     <span class="logo-label">Горизонтальный с лошадью</span>
                 </div>
@@ -428,23 +529,62 @@
                     <span class="logo-label">Геометрический</span>
                 </div>
 
-                <!-- 7. Значок/Бейдж -->
+                <!-- 7. Значок/Бейдж - детальный премиум -->
                 <div class="logo-card red">
-                    <svg width="100" height="110" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Форма бейджа -->
-                        <path d="M50 5 L90 20 L90 70 L50 105 L10 70 L10 20 Z" stroke="white" stroke-width="3" fill="none"/>
+                    <svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="badgeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffd700"/>
+                                <stop offset="50%" style="stop-color:#f39c12"/>
+                                <stop offset="100%" style="stop-color:#daa520"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Форма бейджа - щит -->
+                        <path d="M60 8 L108 25 L108 80 Q108 110 60 132 Q12 110 12 80 L12 25 Z" stroke="url(#badgeGold)" stroke-width="3" fill="none"/>
+                        <path d="M60 15 L100 30 L100 78 Q100 103 60 122 Q20 103 20 78 L20 30 Z" stroke="url(#badgeGold)" stroke-width="1.5" fill="none"/>
                         <!-- Лента сверху -->
-                        <path d="M20 18 L80 18" stroke="white" stroke-width="2"/>
-                        <text x="50" y="16" font-family="'Open Sans', sans-serif" font-size="6" fill="white" text-anchor="middle">ТАКСИ-СЕРВИС</text>
-                        <!-- Кибитка -->
-                        <path d="M30 50 Q30 40 50 38 Q70 40 70 50" stroke="white" stroke-width="2" fill="none"/>
-                        <rect x="33" y="48" width="34" height="14" rx="2" fill="white"/>
-                        <circle cx="40" cy="68" r="6" stroke="white" stroke-width="2" fill="none"/>
-                        <circle cx="60" cy="68" r="6" stroke="white" stroke-width="2" fill="none"/>
+                        <path d="M25 28 Q60 22 95 28" stroke="url(#badgeGold)" stroke-width="1.5" fill="none"/>
+                        <text x="60" y="27" font-family="'Open Sans', sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" letter-spacing="1">ПРЕМИУМ ТАКСИ</text>
+                        <!-- Звезда сверху -->
+                        <polygon points="60,35 62,41 68,41 63,45 65,51 60,47 55,51 57,45 52,41 58,41" fill="#ffd700"/>
+                        <!-- Кибитка детальная -->
+                        <path d="M32 70 Q32 55 60 50 Q88 55 88 70" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <!-- Орнамент на крыше -->
+                        <path d="M45 62 Q50 56 55 62" stroke="#ffd700" stroke-width="1.5" fill="none"/>
+                        <path d="M62 62 Q67 56 72 62" stroke="#ffd700" stroke-width="1.5" fill="none"/>
+                        <circle cx="60" cy="58" r="2" fill="#ffd700"/>
+                        <!-- Корпус -->
+                        <rect x="35" y="68" width="50" height="18" rx="3" fill="white"/>
+                        <!-- Окна -->
+                        <rect x="40" y="71" width="10" height="10" rx="1.5" fill="#c0392b" stroke="#ffd700" stroke-width="0.5"/>
+                        <line x1="45" y1="71" x2="45" y2="81" stroke="#ffd700" stroke-width="0.3"/>
+                        <rect x="54" y="71" width="12" height="10" rx="1.5" fill="#c0392b" stroke="#ffd700" stroke-width="0.5"/>
+                        <line x1="60" y1="71" x2="60" y2="81" stroke="#ffd700" stroke-width="0.3"/>
+                        <rect x="70" y="71" width="10" height="10" rx="1.5" fill="#c0392b" stroke="#ffd700" stroke-width="0.5"/>
+                        <line x1="75" y1="71" x2="75" y2="81" stroke="#ffd700" stroke-width="0.3"/>
+                        <!-- Колёса -->
+                        <circle cx="44" cy="92" r="8" stroke="white" stroke-width="2" fill="#c0392b"/>
+                        <circle cx="44" cy="92" r="5" stroke="white" stroke-width="1" fill="none"/>
+                        <circle cx="44" cy="92" r="2" fill="#ffd700"/>
+                        <line x1="44" y1="84" x2="44" y2="88" stroke="white" stroke-width="1"/>
+                        <line x1="44" y1="96" x2="44" y2="100" stroke="white" stroke-width="1"/>
+                        <line x1="36" y1="92" x2="40" y2="92" stroke="white" stroke-width="1"/>
+                        <line x1="48" y1="92" x2="52" y2="92" stroke="white" stroke-width="1"/>
+                        
+                        <circle cx="76" cy="92" r="8" stroke="white" stroke-width="2" fill="#c0392b"/>
+                        <circle cx="76" cy="92" r="5" stroke="white" stroke-width="1" fill="none"/>
+                        <circle cx="76" cy="92" r="2" fill="#ffd700"/>
+                        <line x1="76" y1="84" x2="76" y2="88" stroke="white" stroke-width="1"/>
+                        <line x1="76" y1="96" x2="76" y2="100" stroke="white" stroke-width="1"/>
+                        <line x1="68" y1="92" x2="72" y2="92" stroke="white" stroke-width="1"/>
+                        <line x1="80" y1="92" x2="84" y2="92" stroke="white" stroke-width="1"/>
                         <!-- Текст снизу -->
-                        <text x="50" y="90" font-family="Montserrat, sans-serif" font-weight="700" font-size="12" fill="white" text-anchor="middle">КИБИТКА</text>
+                        <text x="60" y="112" font-family="Montserrat, sans-serif" font-weight="800" font-size="14" fill="white" text-anchor="middle" letter-spacing="2">КИБИТКА</text>
+                        <!-- Лента снизу -->
+                        <path d="M30 118 L90 118" stroke="url(#badgeGold)" stroke-width="1"/>
+                        <text x="60" y="126" font-family="'Open Sans', sans-serif" font-size="6" fill="#ffd700" text-anchor="middle" letter-spacing="1">С 2024 ГОДА</text>
                     </svg>
-                    <span class="logo-label">Значок</span>
+                    <span class="logo-label">Значок премиум</span>
                 </div>
 
                 <!-- 8. Только иконка - детальная кибитка -->
