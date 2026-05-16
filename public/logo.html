@@ -489,64 +489,45 @@
                     <span class="logo-label">Геометрический</span>
                 </div>
 
-                <!-- 7. Значок/Бейдж - улучшенный премиум -->
+                <!-- 7. Значок премиум - простой и четкий -->
                 <div class="logo-card red">
-                    <svg width="130" height="150" viewBox="0 0 130 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="badgeGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ffd700"/>
-                                <stop offset="50%" style="stop-color:#f39c12"/>
-                                <stop offset="100%" style="stop-color:#daa520"/>
-                            </linearGradient>
-                            <linearGradient id="badgeBody" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f39c12"/>
-                                <stop offset="100%" style="stop-color:#d68910"/>
-                            </linearGradient>
-                            <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="120%">
-                                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
-                            </filter>
-                        </defs>
-                        <!-- Форма бейджа - щит -->
-                        <path d="M65 10 L118 28 L118 85 Q118 118 65 140 Q12 118 12 85 L12 28 Z" stroke="url(#badgeGold)" stroke-width="4" fill="none" filter="url(#badgeShadow)"/>
-                        <path d="M65 18 L108 33 L108 82 Q108 110 65 128 Q22 110 22 82 L22 33 Z" stroke="url(#badgeGold)" stroke-width="1.5" fill="none"/>
+                    <svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Щит - внешний контур -->
+                        <path d="M60 8 L110 25 L110 75 Q110 105 60 125 Q10 105 10 75 L10 25 Z" stroke="#ffd700" stroke-width="3" fill="none"/>
+                        <!-- Щит - внутренний контур -->
+                        <path d="M60 18 L100 32 L100 72 Q100 98 60 115 Q20 98 20 72 L20 32 Z" stroke="#ffd700" stroke-width="1.5" fill="none"/>
                         
-                        <!-- Лента сверху -->
-                        <path d="M28 32 Q65 24 102 32" stroke="url(#badgeGold)" stroke-width="1.5" fill="none"/>
-                        <text x="65" y="30" font-family="'Open Sans', sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" letter-spacing="1.5">ПРЕМИУМ ТАКСИ</text>
+                        <!-- Текст сверху -->
+                        <text x="60" y="30" font-family="'Open Sans', sans-serif" font-size="8" fill="#ffd700" text-anchor="middle" letter-spacing="1">ПРЕМИУМ</text>
                         
-                        <!-- Звёзды -->
-                        <g fill="#ffd700">
-                            <polygon points="65,38 67,44 73,44 68,48 70,54 65,50 60,54 62,48 57,44 63,44"/>
-                            <polygon points="40,42 41,45 44,45 42,47 43,50 40,48 37,50 38,47 36,45 39,45" transform="scale(0.7)" transform-origin="40 46"/>
-                            <polygon points="90,42 91,45 94,45 92,47 93,50 90,48 87,50 88,47 86,45 89,45" transform="scale(0.7)" transform-origin="90 46"/>
-                        </g>
+                        <!-- Звезда -->
+                        <polygon points="60,38 63,47 72,47 65,53 67,62 60,56 53,62 55,53 48,47 57,47" fill="#ffd700"/>
                         
-                        <!-- Современный автомобиль -->
-                        <g transform="translate(25, 55)">
-                            <path d="M5 22 Q5 10 40 5 Q75 10 75 22 L75 35 Q75 38 72 38 L8 38 Q5 38 5 35 Z" fill="white"/>
+                        <!-- Автомобиль - простой -->
+                        <g transform="translate(25, 62)">
+                            <!-- Корпус -->
+                            <rect x="5" y="15" width="60" height="18" rx="3" fill="white"/>
                             <!-- Крыша -->
-                            <path d="M15 10 Q30 2 50 2 Q65 2 68 10" stroke="#ffd700" stroke-width="2" fill="none"/>
+                            <path d="M15 15 L15 8 Q15 5 18 5 L52 5 Q55 5 55 8 L55 15" fill="white"/>
                             <!-- Окна -->
-                            <rect x="15" y="15" width="14" height="12" rx="2" fill="#c0392b"/>
-                            <rect x="33" y="15" width="14" height="12" rx="2" fill="#c0392b"/>
-                            <rect x="51" y="16" width="12" height="11" rx="2" fill="#c0392b"/>
+                            <rect x="18" y="7" width="14" height="10" rx="1" fill="#c0392b"/>
+                            <rect x="35" y="7" width="17" height="10" rx="1" fill="#c0392b"/>
+                            <!-- Разделитель -->
+                            <line x1="34" y1="7" x2="34" y2="17" stroke="white" stroke-width="2"/>
                             <!-- Колёса -->
-                            <circle cx="20" cy="42" r="8" fill="#1a1a1a"/>
-                            <circle cx="20" cy="42" r="5" fill="#333"/>
-                            <circle cx="20" cy="42" r="2" fill="#ffd700"/>
-                            <circle cx="60" cy="42" r="8" fill="#1a1a1a"/>
-                            <circle cx="60" cy="42" r="5" fill="#333"/>
-                            <circle cx="60" cy="42" r="2" fill="#ffd700"/>
+                            <circle cx="18" cy="36" r="7" fill="#1a1a1a"/>
+                            <circle cx="18" cy="36" r="3" fill="#ffd700"/>
+                            <circle cx="52" cy="36" r="7" fill="#1a1a1a"/>
+                            <circle cx="52" cy="36" r="3" fill="#ffd700"/>
                         </g>
                         
                         <!-- Название -->
-                        <text x="65" y="115" font-family="Montserrat, sans-serif" font-weight="800" font-size="15" fill="white" text-anchor="middle" letter-spacing="2">КИБИТКА</text>
+                        <text x="60" y="112" font-family="Montserrat, sans-serif" font-weight="700" font-size="14" fill="white" text-anchor="middle" letter-spacing="2">КИБИТКА</text>
                         
-                        <!-- Лента снизу -->
-                        <line x1="32" y1="122" x2="98" y2="122" stroke="url(#badgeGold)" stroke-width="1.5"/>
-                        <text x="65" y="132" font-family="'Open Sans', sans-serif" font-size="7" fill="#ffd700" text-anchor="middle" letter-spacing="1">С 2024 ГОДА</text>
+                        <!-- Год -->
+                        <text x="60" y="124" font-family="'Open Sans', sans-serif" font-size="8" fill="#ffd700" text-anchor="middle">2024</text>
                     </svg>
-<span class="logo-label">Значок премиум</span>
+                    <span class="logo-label">Значок премиум</span>
                 </div>
             </div>
         </section>
