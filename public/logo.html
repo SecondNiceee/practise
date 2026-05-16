@@ -132,6 +132,10 @@
             grid-column: span 2;
         }
 
+        .logo-card[style*="overflow: hidden"] {
+            position: relative;
+        }
+
         .palette-section {
             margin-bottom: 60px;
             padding: 40px;
@@ -532,7 +536,7 @@
             </div>
         </section>
 
-        <!-- Варианты монограмм -->
+        <!-- Варианты монограм�� -->
         <section class="logo-section">
             <h2 class="section-title">Варианты монограмм</h2>
             
@@ -677,8 +681,133 @@
             </div>
         </section>
 
+        <!-- Patterns Section -->
+        <section class="logo-section">
+            <h2 class="section-title">Паттерн компании</h2>
+            
+            <div class="logo-grid">
+                <!-- Паттерн 1: Колёса на оранжевом фоне -->
+                <div class="logo-card orange" style="padding: 0; overflow: hidden;">
+                    <svg width="100%" height="220" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="wheelPattern1" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                                <!-- Колесо -->
+                                <circle cx="30" cy="30" r="22" stroke="rgba(255,255,255,0.3)" stroke-width="3" fill="none"/>
+                                <circle cx="30" cy="30" r="15" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+                                <circle cx="30" cy="30" r="6" fill="rgba(255,255,255,0.4)"/>
+                                <!-- Спицы -->
+                                <line x1="30" y1="8" x2="30" y2="15" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                                <line x1="30" y1="45" x2="30" y2="52" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                                <line x1="8" y1="30" x2="15" y2="30" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                                <line x1="45" y1="30" x2="52" y2="30" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                                <line x1="14" y1="14" x2="19" y2="19" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                                <line x1="41" y1="41" x2="46" y2="46" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                                <line x1="46" y1="14" x2="41" y2="19" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                                <line x1="14" y1="46" x2="19" y2="41" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#wheelPattern1)"/>
+                    </svg>
+                </div>
+
+                <!-- Паттерн 2: Рули на тёмном фоне -->
+                <div class="logo-card dark" style="padding: 0; overflow: hidden;">
+                    <img src="images/pattern-steering-dark.jpg" alt="Паттерн с рулями на тёмном фоне" style="width: 100%; height: 220px; object-fit: cover;">
+                </div>
+
+                <!-- Паттерн 3: Рули и колёса на кремовом -->
+                <div class="logo-card cream" style="padding: 0; overflow: hidden;">
+                    <img src="images/pattern-wheels-v2.jpg" alt="Паттерн с рулями и колёсами" style="width: 100%; height: 220px; object-fit: cover;">
+                </div>
+
+                <!-- Паттерн 4: Геометрические колёса -->
+                <div class="logo-card" style="padding: 0; overflow: hidden;">
+                    <img src="images/pattern-geometric-v2.jpg" alt="Геометрический паттерн с колёсами" style="width: 100%; height: 220px; object-fit: cover;">
+                </div>
+
+                <!-- Паттерн 5: Машинки такси (широкий) -->
+                <div class="logo-card wide" style="padding: 0; overflow: hidden;">
+                    <img src="images/pattern-taxi-v4.jpg" alt="Паттерн с машинками такси" style="width: 100%; height: 220px; object-fit: cover;">
+                </div>
+
+                <!-- Паттерн 6: Контурные элементы на красном -->
+                <div class="logo-card red" style="padding: 0; overflow: hidden;">
+                    <svg width="100%" height="220" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="outlinePattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                                <!-- Контурная машинка -->
+                                <rect x="15" y="30" width="50" height="20" rx="3" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+                                <path d="M22 30 L22 20 Q22 16 26 16 L58 16 Q62 16 62 20 L62 30" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+                                <!-- Контурные колёса -->
+                                <circle cx="27" cy="52" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/>
+                                <circle cx="27" cy="52" r="3" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+                                <circle cx="53" cy="52" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/>
+                                <circle cx="53" cy="52" r="3" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+                                <!-- Маленький руль -->
+                                <circle cx="65" cy="70" r="6" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
+                                <line x1="65" y1="64" x2="65" y2="67" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                                <line x1="59" y1="73" x2="62" y2="71" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                                <line x1="71" y1="73" x2="68" y2="71" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#outlinePattern)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Описание использования паттернов -->
+            <div class="palette-section" style="margin-top: 30px; background: white;">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: #2c3e50; margin-bottom: 20px;">Применение паттернов</h3>
+                <div class="palette-description">
+                    <div class="palette-desc-item">
+                        <h4>Упаковка</h4>
+                        <p>Фирменные пакеты, коробки для подарков, обёртки</p>
+                    </div>
+                    <div class="palette-desc-item">
+                        <h4>Полиграфия</h4>
+                        <p>Визитки, буклеты, фоны для презентаций</p>
+                    </div>
+                    <div class="palette-desc-item">
+                        <h4>Digital</h4>
+                        <p>Фоны сайта, баннеры, соцсети, email-рассылки</p>
+                    </div>
+                    <div class="palette-desc-item">
+                        <h4>Брендинг авто</h4>
+                        <p>Оклейка машин, наклейки, фирменные элементы</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mascot Section -->
+        <section class="logo-section">
+            <h2 class="section-title">Маскот</h2>
+            
+            <div class="logo-grid">
+                <!-- Основной маскот -->
+                <div class="logo-card" style="padding: 0; overflow: hidden;">
+                    <img src="images/mascot-main.jpg" alt="Основной маскот Кибитка" style="width: 100%; height: 220px; object-fit: cover;">
+                </div>
+
+                <!-- Эмоции маскота -->
+                <div class="logo-card" style="padding: 0; overflow: hidden;">
+                    <img src="images/mascot-emotions.jpg" alt="Эмоции маскота" style="width: 100%; height: 220px; object-fit: cover;">
+                </div>
+
+                <!-- Активности маскота -->
+                <div class="logo-card" style="padding: 0; overflow: hidden;">
+                    <img src="images/mascot-activities.jpg" alt="Маскот в разных ситуациях" style="width: 100%; height: 220px; object-fit: cover;">
+                </div>
+
+                <!-- Линейный рисунок -->
+                <div class="logo-card" style="padding: 0; overflow: hidden;">
+                    <img src="images/mascot-lineart.jpg" alt="Линейный рисунок маскота" style="width: 100%; height: 220px; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+
         <footer class="footer">
-            <p>© 2024 Такси-сервис «Кибитка» — Брендбук</p>
+            <p>© 2024 Так��и-сервис «Кибитка» — Брендбук</p>
         </footer>
     </div>
 </body>
