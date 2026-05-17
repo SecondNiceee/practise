@@ -735,29 +735,7 @@
                         <path d="M300 240 L300 260 L280 260" fill="none" stroke="#666" stroke-width="2"/>
                         <path d="M40 260 L20 260 L20 240" fill="none" stroke="#666" stroke-width="2"/>
                         
-                        <!-- Внутренняя рамка - касается контента со всех сторон -->
-                        <!-- Сверху: верх крыши (60+22=82), Снизу: низ текста (~205), Слева/Справа: края текста (~62 и ~258) -->
-                        <rect x="62" y="82" width="196" height="123" fill="none" stroke="#333" stroke-width="1"/>
-                        
-                        <!-- Измерительные линии X сверху слева -->
-                        <line x1="10" y1="82" x2="10" y2="20" stroke="#666" stroke-width="1"/>
-                        <line x1="5" y1="20" x2="15" y2="20" stroke="#666" stroke-width="1"/>
-                        <line x1="5" y1="82" x2="15" y2="82" stroke="#666" stroke-width="1"/>
-                        <text x="10" y="55" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
-                        
-                        <!-- Измерительные линии X снизу слева -->
-                        <line x1="62" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
-                        <line x1="20" y1="265" x2="20" y2="275" stroke="#666" stroke-width="1"/>
-                        <line x1="62" y1="265" x2="62" y2="275" stroke="#666" stroke-width="1"/>
-                        <text x="41" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
-                        
-                        <!-- Измерительные линии X снизу справа -->
-                        <line x1="258" y1="270" x2="300" y2="270" stroke="#666" stroke-width="1"/>
-                        <line x1="258" y1="265" x2="258" y2="275" stroke="#666" stroke-width="1"/>
-                        <line x1="300" y1="265" x2="300" y2="275" stroke="#666" stroke-width="1"/>
-                        <text x="279" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
-                        
-                        <!-- Машинка ретро -->
+                        <!-- Машинка ретро (центрирована) -->
                         <g transform="translate(90, 60) scale(1.0)">
                             <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
                             <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
@@ -776,6 +754,30 @@
                         
                         <!-- Текст КИБИТКА -->
                         <text x="160" y="200" font-family="Montserrat, sans-serif" font-weight="700" font-size="24" fill="#2c3e50" text-anchor="middle" letter-spacing="3">КИБИТКА</text>
+                        
+                        <!-- Внутренняя рамка охранного поля - точно прилегает к контенту -->
+                        <!-- Сверху: верх крыши машинки (60+22=82) -->
+                        <!-- Снизу: низ текста (baseline 200 + descender ~5 = 205) -->
+                        <!-- Слева/Справа: края текста КИБИТКА (шире машинки) -->
+                        <rect x="89" y="82" width="141" height="120" fill="none" stroke="#333" stroke-width="1"/>
+                        
+                        <!-- Измерительные линии X сверху (от внешней рамки до верха машинки) -->
+                        <line x1="10" y1="82" x2="10" y2="20" stroke="#666" stroke-width="1"/>
+                        <line x1="5" y1="20" x2="15" y2="20" stroke="#666" stroke-width="1"/>
+                        <line x1="5" y1="82" x2="15" y2="82" stroke="#666" stroke-width="1"/>
+                        <text x="10" y="55" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X снизу слева (от внешней рамки до левого края) -->
+                        <line x1="89" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="20" y1="265" x2="20" y2="275" stroke="#666" stroke-width="1"/>
+                        <line x1="89" y1="265" x2="89" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="54" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X снизу справа (от правого края до внешней рамки) -->
+                        <line x1="230" y1="270" x2="300" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="230" y1="265" x2="230" y2="275" stroke="#666" stroke-width="1"/>
+                        <line x1="300" y1="265" x2="300" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="265" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                     </svg>
                     <span class="logo-label">Полный логотип</span>
                 </div>
@@ -846,6 +848,265 @@
             </p>
         </section>
 
+        <!-- Mascot Section -->
+        <section class="palette-section">
+            <h2 class="section-title">Маскот: Эмоции</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">Машинка-маскот с разными эмоциями для использования в коммуникациях</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 900px; margin: 0 auto;">
+                <!-- Счастливая машинка -->
+                <div class="logo-card" style="padding: 30px;">
+                    <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(30, 30) scale(1.2)">
+                            <!-- Кузов -->
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <!-- Крыша -->
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <!-- Окна -->
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <!-- Бампер -->
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            
+                            <!-- Глаза (счастливые - прищуренные дуги) -->
+                            <ellipse cx="50" cy="58" rx="8" ry="6" fill="#ecf0f1"/>
+                            <ellipse cx="90" cy="58" rx="8" ry="6" fill="#ecf0f1"/>
+                            <ellipse cx="50" cy="59" rx="4" ry="3" fill="#2c3e50"/>
+                            <ellipse cx="90" cy="59" rx="4" ry="3" fill="#2c3e50"/>
+                            <!-- Бровки счастливые -->
+                            <path d="M42 52 Q50 49 58 52" fill="none" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M82 52 Q90 49 98 52" fill="none" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+                            
+                            <!-- Улыбка -->
+                            <path d="M55 66 Q70 74 85 66" fill="none" stroke="#e74c3c" stroke-width="3" stroke-linecap="round"/>
+                            
+                            <!-- Румянец -->
+                            <ellipse cx="35" cy="62" rx="6" ry="4" fill="#e8a0a0" opacity="0.6"/>
+                            <ellipse cx="105" cy="62" rx="6" ry="4" fill="#e8a0a0" opacity="0.6"/>
+                            
+                            <!-- Колёса -->
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                    </svg>
+                    <span class="logo-label" style="color: #27ae60; font-weight: 600;">Счастливая</span>
+                </div>
+
+                <!-- Грустная машинка -->
+                <div class="logo-card" style="padding: 30px;">
+                    <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(30, 30) scale(1.2)">
+                            <!-- Кузов -->
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <!-- Крыша -->
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <!-- Окна -->
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <!-- Бампер -->
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            
+                            <!-- Глаза (грустные) -->
+                            <ellipse cx="50" cy="58" rx="8" ry="6" fill="#ecf0f1"/>
+                            <ellipse cx="90" cy="58" rx="8" ry="6" fill="#ecf0f1"/>
+                            <ellipse cx="50" cy="60" rx="4" ry="3" fill="#2c3e50"/>
+                            <ellipse cx="90" cy="60" rx="4" ry="3" fill="#2c3e50"/>
+                            <!-- Бровки грустные -->
+                            <path d="M42 52 Q50 55 58 52" fill="none" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M82 52 Q90 55 98 52" fill="none" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+                            
+                            <!-- Грустный рот -->
+                            <path d="M55 70 Q70 64 85 70" fill="none" stroke="#e74c3c" stroke-width="3" stroke-linecap="round"/>
+                            
+                            <!-- Слезинка -->
+                            <ellipse cx="58" cy="64" rx="2" ry="3" fill="#3498db" opacity="0.8"/>
+                            
+                            <!-- Колёса -->
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                    </svg>
+                    <span class="logo-label" style="color: #3498db; font-weight: 600;">Грустная</span>
+                </div>
+
+                <!-- Удивлённая машинка -->
+                <div class="logo-card" style="padding: 30px;">
+                    <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(30, 30) scale(1.2)">
+                            <!-- Кузов -->
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <!-- Крыша -->
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <!-- Окна -->
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <!-- Бампер -->
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            
+                            <!-- Глаза (удивлённые - большие круглые) -->
+                            <ellipse cx="50" cy="58" rx="10" ry="8" fill="#ecf0f1"/>
+                            <ellipse cx="90" cy="58" rx="10" ry="8" fill="#ecf0f1"/>
+                            <circle cx="50" cy="58" r="5" fill="#2c3e50"/>
+                            <circle cx="90" cy="58" r="5" fill="#2c3e50"/>
+                            <!-- Блики в глазах -->
+                            <circle cx="52" cy="56" r="2" fill="#fff"/>
+                            <circle cx="92" cy="56" r="2" fill="#fff"/>
+                            <!-- Бровки удивлённые (высоко подняты) -->
+                            <path d="M40 48 Q50 44 60 48" fill="none" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M80 48 Q90 44 100 48" fill="none" stroke="#2c3e50" stroke-width="2" stroke-linecap="round"/>
+                            
+                            <!-- Удивлённый рот (О) -->
+                            <ellipse cx="70" cy="68" rx="6" ry="5" fill="#e74c3c"/>
+                            
+                            <!-- Колёса -->
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                    </svg>
+                    <span class="logo-label" style="color: #e67e22; font-weight: 600;">Удивлённая</span>
+                </div>
+
+                <!-- Злая машинка -->
+                <div class="logo-card" style="padding: 30px;">
+                    <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(30, 30) scale(1.2)">
+                            <!-- Кузов -->
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <!-- Крыша -->
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <!-- Окна -->
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <!-- Бампер -->
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            
+                            <!-- Глаза (злые - сужены) -->
+                            <ellipse cx="50" cy="58" rx="8" ry="5" fill="#ecf0f1"/>
+                            <ellipse cx="90" cy="58" rx="8" ry="5" fill="#ecf0f1"/>
+                            <ellipse cx="50" cy="58" rx="4" ry="3" fill="#2c3e50"/>
+                            <ellipse cx="90" cy="58" rx="4" ry="3" fill="#2c3e50"/>
+                            <!-- Бровки злые (нахмуренные к центру) -->
+                            <path d="M42 50 L58 54" fill="none" stroke="#2c3e50" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M98 50 L82 54" fill="none" stroke="#2c3e50" stroke-width="2.5" stroke-linecap="round"/>
+                            
+                            <!-- Злой рот (оскал) -->
+                            <path d="M55 68 L60 66 L65 68 L70 66 L75 68 L80 66 L85 68" fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            
+                            <!-- Колёса -->
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                    </svg>
+                    <span class="logo-label" style="color: #e74c3c; font-weight: 600;">Злая</span>
+                </div>
+
+                <!-- Сонная машинка -->
+                <div class="logo-card" style="padding: 30px;">
+                    <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(30, 30) scale(1.2)">
+                            <!-- Кузов -->
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <!-- Крыша -->
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <!-- Окна -->
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <!-- Бампер -->
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            
+                            <!-- Глаза (сонные - полузакрытые) -->
+                            <ellipse cx="50" cy="58" rx="8" ry="6" fill="#ecf0f1"/>
+                            <ellipse cx="90" cy="58" rx="8" ry="6" fill="#ecf0f1"/>
+                            <!-- Веки полузакрытые -->
+                            <path d="M42 55 Q50 53 58 55 L58 58 Q50 56 42 58 Z" fill="#f39c12"/>
+                            <path d="M82 55 Q90 53 98 55 L98 58 Q90 56 82 58 Z" fill="#f39c12"/>
+                            <ellipse cx="50" cy="60" rx="3" ry="2" fill="#2c3e50"/>
+                            <ellipse cx="90" cy="60" rx="3" ry="2" fill="#2c3e50"/>
+                            
+                            <!-- Сонный рот (зевает) -->
+                            <ellipse cx="70" cy="68" rx="8" ry="6" fill="#e74c3c"/>
+                            <ellipse cx="70" cy="67" rx="5" ry="3" fill="#c0392b"/>
+                            
+                            <!-- Zzz -->
+                            <text x="115" y="45" font-family="Arial" font-size="10" fill="#3498db" font-weight="bold">Z</text>
+                            <text x="122" y="38" font-family="Arial" font-size="8" fill="#3498db" font-weight="bold">z</text>
+                            <text x="127" y="32" font-family="Arial" font-size="6" fill="#3498db" font-weight="bold">z</text>
+                            
+                            <!-- Колёса -->
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                    </svg>
+                    <span class="logo-label" style="color: #9b59b6; font-weight: 600;">Сонная</span>
+                </div>
+
+                <!-- Влюблённая машинка -->
+                <div class="logo-card" style="padding: 30px;">
+                    <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(30, 30) scale(1.2)">
+                            <!-- Кузов -->
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <!-- Крыша -->
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <!-- Окна -->
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <!-- Бампер -->
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            
+                            <!-- Глаза-сердечки -->
+                            <path d="M44 56 C44 53 47 51 50 54 C53 51 56 53 56 56 C56 60 50 64 50 64 C50 64 44 60 44 56" fill="#e74c3c"/>
+                            <path d="M84 56 C84 53 87 51 90 54 C93 51 96 53 96 56 C96 60 90 64 90 64 C90 64 84 60 84 56" fill="#e74c3c"/>
+                            
+                            <!-- Счастливая улыбка -->
+                            <path d="M55 66 Q70 74 85 66" fill="none" stroke="#e74c3c" stroke-width="3" stroke-linecap="round"/>
+                            
+                            <!-- Румянец -->
+                            <ellipse cx="35" cy="62" rx="6" ry="4" fill="#e8a0a0" opacity="0.7"/>
+                            <ellipse cx="105" cy="62" rx="6" ry="4" fill="#e8a0a0" opacity="0.7"/>
+                            
+                            <!-- Сердечки вокруг -->
+                            <path d="M20 40 C20 38 22 36 24 38 C26 36 28 38 28 40 C28 43 24 46 24 46 C24 46 20 43 20 40" fill="#e74c3c" opacity="0.6"/>
+                            <path d="M112 35 C112 33 114 31 116 33 C118 31 120 33 120 35 C120 38 116 41 116 41 C116 41 112 38 112 35" fill="#e74c3c" opacity="0.6"/>
+                            
+                            <!-- Колёса -->
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                    </svg>
+                    <span class="logo-label" style="color: #e91e63; font-weight: 600;">Влюблённая</span>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #888; margin-top: 20px; font-size: 0.9rem;">
+                Маскот используется для эмоциональной коммуникации с аудиторией в социальных сетях, рекламе и интерфейсах.
+            </p>
+        </section>
+
         <!-- Color Palette -->
         <section class="palette-section">
             <h2 class="section-title">Цветовая палитра</h2>
@@ -858,7 +1119,7 @@
                 </div>
                 <div class="palette-item">
                     <div class="palette-color" style="background: #e74c3c;"></div>
-                    <div class="palette-name">Терракотовый</div>
+                    <div class="palette-name">Террако��овый</div>
                     <div class="palette-hex">#E74C3C</div>
                 </div>
                 <div class="palette-item">
