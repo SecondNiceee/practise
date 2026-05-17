@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическое занятие №4 — Разработка логотипа «Люминова»</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Orbitron:wght@700;800&family=Exo+2:wght@700&family=Rajdhani:wght@600;700&family=Audiowide&family=Electrolize&family=Michroma&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #0a0f1a 0%, #1a1f2e 100%);
+            color: #e0e6ed;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 50px;
+        }
+
+        .header-subtitle {
+            font-size: 1rem;
+            color: #7c8db0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .header-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #9b59b6, #f1c40f);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .logo-section {
+            margin-bottom: 60px;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .logo-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+            border-color: rgba(52, 152, 219, 0.4);
+        }
+
+        .logo-card.dark {
+            background: #0d1117;
+            border-color: #30363d;
+        }
+
+        .logo-card.blue {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border-color: #3498db;
+        }
+
+        .logo-card.purple {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            border-color: #9b59b6;
+        }
+
+        .logo-card.warm {
+            background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+            border-color: #f1c40f;
+        }
+
+        .logo-card.light {
+            background: #f8f9fa;
+            border-color: #dee2e6;
+        }
+
+        .logo-card.selected {
+            border: 3px solid #2ecc71;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+        }
+
+        .logo-label {
+            font-size: 0.75rem;
+            color: #7c8db0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .logo-card.blue .logo-label,
+        .logo-card.purple .logo-label,
+        .logo-card.warm .logo-label {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .logo-card.light .logo-label {
+            color: #495057;
+        }
+
+        .logo-card.wide {
+            grid-column: span 2;
+        }
+
+        .selected-badge {
+            background: #2ecc71;
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .font-preview {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .logo-card.light .font-preview {
+            color: #1a1f2e;
+        }
+
+        .font-name {
+            font-size: 0.75rem;
+            color: #7c8db0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .final-section {
+            background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .final-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .final-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .final-logo-horizontal {
+            background: #0d1117;
+            border-radius: 16px;
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border: 1px solid #30363d;
+        }
+
+        .final-logo-vertical {
+            background: linear-gradient(135deg, #3498db 0%, #9b59b6 100%);
+            border-radius: 16px;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .final-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            color: #fff;
+            letter-spacing: 6px;
+        }
+
+        .final-text-dark {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #1a1f2e;
+            letter-spacing: 6px;
+        }
+
+        .final-subtext {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #7c8db0;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+
+        .final-description {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            max-width: 600px;
+        }
+
+        .nav-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(52, 152, 219, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            z-index: 1000;
+            transition: background 0.2s, transform 0.2s;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .nav-link:hover {
+            background: rgba(52, 152, 219, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            z-index: 1000;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #7c8db0;
+            border-top: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        @media (max-width: 1200px) {
+            .logo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .final-logo-horizontal {
+                flex-direction: column;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo-card.wide {
+                grid-column: span 1;
+            }
+            .nav-link, .download-btn {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+            .final-text {
+                font-size: 2rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: #1a1f2e;
+            }
+            .nav-link, .download-btn {
+                display: none !important;
+            }
+            .logo-card, .final-section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../aidentic.html" class="nav-link">&larr; К айдентике</a>
+    <button class="download-btn" onclick="window.print()">Скачать PDF</button>
+
+    <div class="container">
+        <header class="header">
+            <p class="header-subtitle">Практическое занятие №4</p>
+            <h1>Разработка логотипа</h1>
+            <p style="color: #7c8db0; margin-top: 15px;">Компания городского освещения «Люминова»</p>
+            <div class="header-line"></div>
+        </header>
+
+        <!-- 1. Варианты логотипа (графика без текста) -->
+        <section class="logo-section">
+            <h2 class="section-title">1. Варианты логотипа (графический знак)</h2>
+            
+            <div class="logo-grid">
+                <!-- Лампочка 1 - Классическая -->
+                <div class="logo-card">
+                    <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Лампочка классическая -->
+                        <path d="M50 10 C25 10 10 30 10 50 C10 65 20 78 35 85 L35 95 L65 95 L65 85 C80 78 90 65 90 50 C90 30 75 10 50 10 Z" fill="#f1c40f" stroke="#f39c12" stroke-width="2"/>
+                        <rect x="35" y="95" width="30" height="8" rx="2" fill="#7c8db0"/>
+                        <rect x="35" y="105" width="30" height="8" rx="2" fill="#5d6d7e"/>
+                        <!-- Свечение -->
+                        <circle cx="50" cy="45" r="20" fill="#fff8dc" opacity="0.6"/>
+                        <!-- Лучи -->
+                        <line x1="50" y1="0" x2="50" y2="5" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="85" y1="25" x2="90" y2="20" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="15" y1="25" x2="10" y2="20" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">Классическая лампа</span>
+                </div>
+
+                <!-- Лампочка 2 - Минималистичная (выбранная) -->
+                <div class="logo-card selected">
+                    <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="bulbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3498db"/>
+                                <stop offset="100%" style="stop-color:#9b59b6"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Минималистичная лампа -->
+                        <circle cx="50" cy="45" r="35" fill="url(#bulbGrad)"/>
+                        <circle cx="50" cy="45" r="25" fill="#fff" opacity="0.2"/>
+                        <circle cx="42" cy="38" r="8" fill="#fff" opacity="0.4"/>
+                        <!-- Цоколь -->
+                        <rect x="38" y="80" width="24" height="6" rx="2" fill="#e0e6ed"/>
+                        <rect x="38" y="88" width="24" height="6" rx="2" fill="#bdc3c7"/>
+                        <rect x="38" y="96" width="24" height="8" rx="2" fill="#95a5a6"/>
+                        <!-- Лучи света -->
+                        <line x1="50" y1="5" x2="50" y2="0" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="15" y1="20" x2="10" y2="15" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="85" y1="20" x2="90" y2="15" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="5" y1="50" x2="0" y2="50" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="95" y1="50" x2="100" y2="50" stroke="#f1c40f" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">Минималистичная</span>
+                    <span class="selected-badge">ВЫБРАНО</span>
+                </div>
+
+                <!-- Фонарь 3 - Уличный столб -->
+                <div class="logo-card dark">
+                    <svg width="80" height="120" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Столб -->
+                        <rect x="35" y="50" width="10" height="65" fill="#5d6d7e"/>
+                        <rect x="30" y="110" width="20" height="8" rx="2" fill="#7c8db0"/>
+                        <!-- Фонарь -->
+                        <path d="M20 25 L60 25 L55 50 L25 50 Z" fill="#3498db"/>
+                        <rect x="25" y="30" width="30" height="15" rx="2" fill="#f1c40f" opacity="0.9"/>
+                        <rect x="15" y="20" width="50" height="8" rx="2" fill="#2c3e50"/>
+                        <!-- Свечение -->
+                        <ellipse cx="40" cy="55" rx="20" ry="8" fill="#f1c40f" opacity="0.3"/>
+                    </svg>
+                    <span class="logo-label">Уличный фонарь</span>
+                </div>
+
+                <!-- LED 4 - Светодиод -->
+                <div class="logo-card blue">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- LED диод -->
+                        <rect x="30" y="60" width="40" height="25" rx="4" fill="#fff"/>
+                        <rect x="35" y="85" width="8" height="12" fill="#bdc3c7"/>
+                        <rect x="57" y="85" width="8" height="12" fill="#bdc3c7"/>
+                        <!-- Линза -->
+                        <ellipse cx="50" cy="40" rx="25" ry="30" fill="#fff" opacity="0.9"/>
+                        <ellipse cx="50" cy="35" rx="15" ry="18" fill="#3498db" opacity="0.6"/>
+                        <!-- Лучи -->
+                        <path d="M50 5 L50 15" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M25 15 L32 22" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M75 15 L68 22" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">LED технологии</span>
+                </div>
+
+                <!-- Город 5 - Силуэт с огнями -->
+                <div class="logo-card">
+                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Здания -->
+                        <rect x="10" y="50" width="25" height="45" fill="#2c3e50"/>
+                        <rect x="40" y="30" width="20" height="65" fill="#34495e"/>
+                        <rect x="65" y="40" width="30" height="55" fill="#2c3e50"/>
+                        <rect x="100" y="55" width="30" height="40" fill="#34495e"/>
+                        <!-- Окна светящиеся -->
+                        <rect x="15" y="55" width="5" height="5" fill="#f1c40f"/>
+                        <rect x="15" y="65" width="5" height="5" fill="#f1c40f"/>
+                        <rect x="25" y="60" width="5" height="5" fill="#f1c40f"/>
+                        <rect x="45" y="35" width="5" height="5" fill="#f1c40f"/>
+                        <rect x="50" y="45" width="5" height="5" fill="#f1c40f"/>
+                        <rect x="45" y="55" width="5" height="5" fill="#f1c40f"/>
+                        <rect x="70" y="45" width="6" height="6" fill="#f1c40f"/>
+                        <rect x="80" y="55" width="6" height="6" fill="#f1c40f"/>
+                        <rect x="70" y="65" width="6" height="6" fill="#f1c40f"/>
+                        <rect x="105" y="60" width="5" height="5" fill="#f1c40f"/>
+                        <rect x="115" y="70" width="5" height="5" fill="#f1c40f"/>
+                        <!-- Звезды -->
+                        <circle cx="130" cy="20" r="2" fill="#f1c40f"/>
+                        <circle cx="15" cy="25" r="1.5" fill="#f1c40f"/>
+                        <circle cx="80" cy="15" r="1.5" fill="#f1c40f"/>
+                    </svg>
+                    <span class="logo-label">Ночной город</span>
+                </div>
+
+                <!-- Солнце/Луна 6 -->
+                <div class="logo-card purple">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Полумесяц -->
+                        <circle cx="50" cy="50" r="35" fill="#f1c40f"/>
+                        <circle cx="65" cy="40" r="30" fill="#9b59b6"/>
+                        <!-- Звезды -->
+                        <polygon points="25,30 27,35 32,35 28,38 30,43 25,40 20,43 22,38 18,35 23,35" fill="#fff"/>
+                        <polygon points="35,55 36,58 39,58 37,60 38,63 35,61 32,63 33,60 31,58 34,58" fill="#fff" transform="scale(0.7) translate(15, 20)"/>
+                    </svg>
+                    <span class="logo-label">День и ночь</span>
+                </div>
+
+                <!-- Щит 7 - Безопасность -->
+                <div class="logo-card">
+                    <svg width="90" height="110" viewBox="0 0 90 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3498db"/>
+                                <stop offset="100%" style="stop-color:#2980b9"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Щит -->
+                        <path d="M45 5 L80 15 L80 50 Q80 85 45 105 Q10 85 10 50 L10 15 Z" fill="url(#shieldGrad)" stroke="#2980b9" stroke-width="2"/>
+                        <!-- Лампа внутри -->
+                        <circle cx="45" cy="45" r="18" fill="#f1c40f"/>
+                        <circle cx="45" cy="45" r="12" fill="#fff" opacity="0.4"/>
+                        <rect x="40" y="63" width="10" height="4" rx="1" fill="#7c8db0"/>
+                        <rect x="40" y="68" width="10" height="4" rx="1" fill="#5d6d7e"/>
+                        <!-- Лучи -->
+                        <line x1="45" y1="22" x2="45" y2="18" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="62" y1="32" x2="66" y2="28" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="28" y1="32" x2="24" y2="28" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">Безопасность</span>
+                </div>
+
+                <!-- Буква L 8 - Стилизованная -->
+                <div class="logo-card warm">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Буква L как источник света -->
+                        <path d="M30 15 L30 70 L75 70 L75 85 L15 85 L15 15 Z" fill="#1a1f2e"/>
+                        <!-- Свечение от буквы -->
+                        <circle cx="50" cy="50" r="45" fill="#f1c40f" opacity="0.2"/>
+                        <circle cx="50" cy="50" r="35" fill="#f1c40f" opacity="0.2"/>
+                        <!-- Точка света -->
+                        <circle cx="22" cy="25" r="8" fill="#fff"/>
+                        <circle cx="22" cy="25" r="5" fill="#f1c40f"/>
+                    </svg>
+                    <span class="logo-label">Буква L</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Варианты текста (шрифты) -->
+        <section class="logo-section">
+            <h2 class="section-title">2. Варианты шрифтового написания</h2>
+            
+            <div class="logo-grid">
+                <!-- Шрифт 1 - Space Grotesk -->
+                <div class="logo-card selected">
+                    <div class="font-preview" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: 4px;">ЛЮМИНОВА</div>
+                    <span class="font-name">Space Grotesk Bold</span>
+                    <span class="selected-badge">ВЫБРАНО</span>
+                </div>
+
+                <!-- Шрифт 2 - Orbitron -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Orbitron', sans-serif; font-weight: 700; letter-spacing: 2px;">ЛЮМИНОВА</div>
+                    <span class="font-name">Orbitron Bold</span>
+                </div>
+
+                <!-- Шрифт 3 - Exo 2 -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Exo 2', sans-serif; font-weight: 700; letter-spacing: 2px;">ЛЮМИНОВА</div>
+                    <span class="font-name">Exo 2 Bold</span>
+                </div>
+
+                <!-- Шрифт 4 - Rajdhani -->
+                <div class="logo-card light">
+                    <div class="font-preview" style="font-family: 'Rajdhani', sans-serif; font-weight: 700; letter-spacing: 3px;">ЛЮМИНОВА</div>
+                    <span class="font-name">Rajdhani Bold</span>
+                </div>
+
+                <!-- Шрифт 5 - Audiowide -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Audiowide', cursive; font-size: 1.8rem;">ЛЮМИНОВА</div>
+                    <span class="font-name">Audiowide</span>
+                </div>
+
+                <!-- Шрифт 6 - Electrolize -->
+                <div class="logo-card blue">
+                    <div class="font-preview" style="font-family: 'Electrolize', sans-serif; letter-spacing: 3px;">ЛЮМИНОВА</div>
+                    <span class="font-name">Electrolize</span>
+                </div>
+
+                <!-- Шрифт 7 - Michroma -->
+                <div class="logo-card purple">
+                    <div class="font-preview" style="font-family: 'Michroma', sans-serif; font-size: 1.6rem; letter-spacing: 2px;">ЛЮМИНОВА</div>
+                    <span class="font-name">Michroma</span>
+                </div>
+
+                <!-- Шрифт 8 - Inter -->
+                <div class="logo-card dark">
+                    <div class="font-preview" style="font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 4px; color: #f1c40f;">ЛЮМИНОВА</div>
+                    <span class="font-name">Inter SemiBold</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Цветовые варианты -->
+        <section class="logo-section">
+            <h2 class="section-title">3. Цветовые варианты логотипа</h2>
+            
+            <div class="logo-grid">
+                <!-- Основной -->
+                <div class="logo-card selected">
+                    <svg width="80" height="100" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3498db"/>
+                                <stop offset="100%" style="stop-color:#9b59b6"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="45" r="30" fill="url(#mainGrad)"/>
+                        <circle cx="42" cy="38" r="6" fill="#fff" opacity="0.4"/>
+                        <rect x="40" y="75" width="20" height="5" rx="2" fill="#e0e6ed"/>
+                        <rect x="40" y="82" width="20" height="5" rx="2" fill="#bdc3c7"/>
+                        <line x1="50" y1="10" x2="50" y2="5" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="25" x2="15" y2="20" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="80" y1="25" x2="85" y2="20" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">Основной</span>
+                    <span class="selected-badge">ВЫБРАНО</span>
+                </div>
+
+                <!-- Монохром светлый -->
+                <div class="logo-card light">
+                    <svg width="80" height="100" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="45" r="30" fill="#1a1f2e"/>
+                        <circle cx="42" cy="38" r="6" fill="#fff" opacity="0.3"/>
+                        <rect x="40" y="75" width="20" height="5" rx="2" fill="#5d6d7e"/>
+                        <rect x="40" y="82" width="20" height="5" rx="2" fill="#7c8db0"/>
+                        <line x1="50" y1="10" x2="50" y2="5" stroke="#1a1f2e" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="25" x2="15" y2="20" stroke="#1a1f2e" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="80" y1="25" x2="85" y2="20" stroke="#1a1f2e" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">На светлом фоне</span>
+                </div>
+
+                <!-- Монохром темный -->
+                <div class="logo-card dark">
+                    <svg width="80" height="100" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="45" r="30" fill="#fff"/>
+                        <circle cx="42" cy="38" r="6" fill="#0d1117" opacity="0.2"/>
+                        <rect x="40" y="75" width="20" height="5" rx="2" fill="#bdc3c7"/>
+                        <rect x="40" y="82" width="20" height="5" rx="2" fill="#95a5a6"/>
+                        <line x1="50" y1="10" x2="50" y2="5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="25" x2="15" y2="20" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="80" y1="25" x2="85" y2="20" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">На темном фоне</span>
+                </div>
+
+                <!-- Теплый вариант -->
+                <div class="logo-card">
+                    <svg width="80" height="100" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="warmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f1c40f"/>
+                                <stop offset="100%" style="stop-color:#e67e22"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="45" r="30" fill="url(#warmGrad)"/>
+                        <circle cx="42" cy="38" r="6" fill="#fff" opacity="0.5"/>
+                        <rect x="40" y="75" width="20" height="5" rx="2" fill="#e0e6ed"/>
+                        <rect x="40" y="82" width="20" height="5" rx="2" fill="#bdc3c7"/>
+                        <line x1="50" y1="10" x2="50" y2="5" stroke="#f39c12" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="25" x2="15" y2="20" stroke="#f39c12" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="80" y1="25" x2="85" y2="20" stroke="#f39c12" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-label">Теплый свет</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Итоговый логотип -->
+        <section class="final-section">
+            <h2>4. Итоговый логотип (графический знак + шрифт)</h2>
+            
+            <div class="final-logo-container">
+                <!-- Горизонтальная версия -->
+                <div class="final-logo-horizontal">
+                    <svg width="80" height="100" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="finalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3498db"/>
+                                <stop offset="100%" style="stop-color:#9b59b6"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="45" r="30" fill="url(#finalGrad)"/>
+                        <circle cx="42" cy="38" r="6" fill="#fff" opacity="0.4"/>
+                        <rect x="40" y="75" width="20" height="5" rx="2" fill="#e0e6ed"/>
+                        <rect x="40" y="82" width="20" height="5" rx="2" fill="#bdc3c7"/>
+                        <line x1="50" y1="10" x2="50" y2="5" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="25" x2="15" y2="20" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="80" y1="25" x2="85" y2="20" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="10" y1="50" x2="5" y2="50" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="90" y1="50" x2="95" y2="50" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div>
+                        <div class="final-text">ЛЮМИНОВА</div>
+                        <div class="final-subtext">ГОРОДСКОЕ ОСВЕЩЕНИЕ</div>
+                    </div>
+                </div>
+
+                <!-- Вертикальная версия на градиентном фоне -->
+                <div class="final-logo-vertical">
+                    <svg width="70" height="90" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="45" r="30" fill="#fff"/>
+                        <circle cx="42" cy="38" r="6" fill="#9b59b6" opacity="0.3"/>
+                        <rect x="40" y="75" width="20" height="5" rx="2" fill="#e0e6ed"/>
+                        <rect x="40" y="82" width="20" height="5" rx="2" fill="#bdc3c7"/>
+                        <line x1="50" y1="10" x2="50" y2="5" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="20" y1="25" x2="15" y2="20" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="80" y1="25" x2="85" y2="20" stroke="#f1c40f" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div class="final-text" style="font-size: 2rem;">ЛЮМИНОВА</div>
+                </div>
+
+                <p class="final-description">
+                    Финальный логотип сочетает минималистичную иконку лампочки с градиентом от синего к фиолетовому, 
+                    символизирующим переход от технологий к инновациям. Шрифт Space Grotesk подчеркивает современность бренда.
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Практическая работа №4 — Разработка логотипа</p>
+            <p style="margin-top: 10px;">Компания городского освещения «Люминова»</p>
+        </footer>
+    </div>
+</body>
+</html>
