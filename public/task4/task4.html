@@ -394,7 +394,7 @@
                 </div>
 
                 <!-- Машинка 2 - Минималистичная -->
-                <div class="logo-card selected">
+                <div class="logo-card">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Корпус - идеально центрированный -->
                         <rect x="15" y="45" width="110" height="28" rx="6" fill="#f39c12"/>
@@ -410,11 +410,10 @@
                         <circle cx="98" cy="78" r="6" fill="white"/>
                     </svg>
                     <span class="logo-label">Минималистичная</span>
-                    <span class="selected-badge">ВЫБРАНО</span>
                 </div>
 
                 <!-- Машинка 3 - Ретро -->
-                <div class="logo-card cream">
+                <div class="logo-card cream selected">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- Корпус - округлый ретро-стиль -->
                         <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
@@ -437,6 +436,7 @@
                         <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
                     </svg>
                     <span class="logo-label">Ретро-стиль</span>
+                    <span class="selected-badge">ВЫБРАНО</span>
                 </div>
 
                 <!-- Машинка 4 - Геометричная -->
@@ -557,31 +557,35 @@
             <h2>3. Итоговый логотип</h2>
             
             <div class="final-logo-container">
-                <!-- Горизонтальный вариант -->
-                <div class="final-logo-horizontal">
-                    <svg width="120" height="85" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Корпус - ровный прямоугольник -->
-                        <rect x="18" y="40" width="104" height="32" rx="8" fill="#f39c12"/>
-                        <!-- Крыша - ровный прямоугольник -->
-                        <rect x="38" y="12" width="54" height="32" rx="6" fill="#f39c12"/>
-                        <!-- Окна - ровные квадратные -->
-                        <rect x="44" y="18" width="20" height="20" rx="4" fill="white"/>
-                        <rect x="70" y="18" width="20" height="20" rx="4" fill="white"/>
-                        <!-- Колеса -->
-                        <circle cx="44" cy="76" r="14" fill="#2c3e50"/>
-                        <circle cx="44" cy="76" r="7" fill="white"/>
-                        <circle cx="96" cy="76" r="14" fill="#2c3e50"/>
-                        <circle cx="96" cy="76" r="7" fill="white"/>
+                <!-- Вертикальный вариант - машинка сверху, текст снизу -->
+                <div class="final-logo-horizontal" style="flex-direction: column; gap: 15px;">
+                    <svg width="160" height="110" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Корпус - округлый ретро-стиль -->
+                        <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                        <!-- Крыша - плавная ретро-форма -->
+                        <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                        <!-- Окна - закругленные в стиле 50-х -->
+                        <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                        <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                        <!-- Хромированный бампер -->
+                        <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                        <!-- Фары - круглые ретро -->
+                        <circle cx="26" cy="58" r="5" fill="#ecf0f1"/>
+                        <circle cx="114" cy="58" r="5" fill="#ecf0f1"/>
+                        <!-- Колеса с белыми дисками -->
+                        <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                        <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                        <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                        <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                        <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                        <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
                     </svg>
-                    <div>
-                        <div class="final-text">КИБИТКА</div>
-                        <div class="final-subtext">ТАКСИ-��ЕРВИС</div>
-                    </div>
+                    <div class="final-text">КИБИТКА</div>
                 </div>
 
                 <p class="final-description">
-                    Итоговый логотип объединяет минималистичную иконку автомоб��ля и шрифт Montserrat Bold. 
-                    Сочетание создает современный, узнаваемый и легко читаемый фирменный знак.
+                    Итоговый логотип объединяет ретро-иконку автомобиля в стиле 50-х годов и шрифт Montserrat Bold. 
+                    Сочетание создает узнаваемый и стильный фирменный знак с характером.
                 </p>
             </div>
         </section>
