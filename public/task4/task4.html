@@ -94,8 +94,8 @@
         }
 
         .logo-card.dark {
-            background: #2c3e50;
-            border-color: #2c3e50;
+            background: #000000;
+            border-color: #000000;
         }
 
         .logo-card.orange {
@@ -394,95 +394,102 @@
                 </div>
 
                 <!-- Машинка 2 - Минималистичная -->
-                <div class="logo-card selected">
+                <div class="logo-card">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Корпус - ровный прямоугольник -->
-                        <rect x="18" y="40" width="104" height="32" rx="8" fill="#f39c12"/>
-                        <!-- Крыша - ровный прямоугольник -->
-                        <rect x="38" y="12" width="54" height="32" rx="6" fill="#f39c12"/>
-                        <!-- Окна - ровные квадратные -->
-                        <rect x="44" y="18" width="20" height="20" rx="4" fill="white"/>
-                        <rect x="70" y="18" width="20" height="20" rx="4" fill="white"/>
-                        <!-- Колеса -->
-                        <circle cx="44" cy="76" r="14" fill="#2c3e50"/>
-                        <circle cx="44" cy="76" r="7" fill="white"/>
-                        <circle cx="96" cy="76" r="14" fill="#2c3e50"/>
-                        <circle cx="96" cy="76" r="7" fill="white"/>
+                        <!-- Корпус - идеально центрированный -->
+                        <rect x="15" y="45" width="110" height="28" rx="6" fill="#f39c12"/>
+                        <!-- Крыша - точно по центру корпуса -->
+                        <rect x="35" y="20" width="70" height="28" rx="5" fill="#f39c12"/>
+                        <!-- Окна - симметрично расположенные -->
+                        <rect x="42" y="26" width="24" height="16" rx="3" fill="white"/>
+                        <rect x="74" y="26" width="24" height="16" rx="3" fill="white"/>
+                        <!-- Колеса - симметричные относительно центра -->
+                        <circle cx="42" cy="78" r="13" fill="#2c3e50"/>
+                        <circle cx="42" cy="78" r="6" fill="white"/>
+                        <circle cx="98" cy="78" r="13" fill="#2c3e50"/>
+                        <circle cx="98" cy="78" r="6" fill="white"/>
                     </svg>
                     <span class="logo-label">Минималистичная</span>
-                    <span class="selected-badge">ВЫБРАНО</span>
                 </div>
 
                 <!-- Машинка 3 - Ретро -->
-                <div class="logo-card cream">
+                <div class="logo-card cream selected">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="retroGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f39c12"/>
-                                <stop offset="100%" style="stop-color:#d68910"/>
-                            </linearGradient>
-                        </defs>
-                        <path d="M30 55 Q30 40 70 35 Q110 40 110 55" stroke="#8b7355" stroke-width="4" fill="none" stroke-linecap="round"/>
-                        <rect x="35" y="50" width="70" height="22" rx="4" fill="url(#retroGrad)"/>
-                        <rect x="45" y="53" width="18" height="12" rx="2" fill="#f5f0e8"/>
-                        <rect x="68" y="53" width="18" height="12" rx="2" fill="#f5f0e8"/>
-                        <rect x="90" y="55" width="10" height="10" rx="2" fill="#f5f0e8"/>
-                        <circle cx="48" cy="78" r="10" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="48" cy="78" r="4" fill="#2c3e50"/>
-                        <circle cx="92" cy="78" r="10" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="92" cy="78" r="4" fill="#2c3e50"/>
+                        <!-- Корпус - округлый ретро-стиль -->
+                        <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                        <!-- Крыша - плавная ретро-форма -->
+                        <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                        <!-- Окна - закругленные в стиле 50-х -->
+                        <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#f5f0e8"/>
+                        <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#f5f0e8"/>
+                        <!-- Хромированный бампер -->
+                        <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                        <!-- Фары - круглые ретро -->
+                        <circle cx="26" cy="58" r="5" fill="#ecf0f1"/>
+                        <circle cx="114" cy="58" r="5" fill="#ecf0f1"/>
+                        <!-- Колеса с белыми дисками -->
+                        <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                        <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                        <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                        <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                        <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                        <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
                     </svg>
                     <span class="logo-label">Ретро-стиль</span>
+                    <span class="selected-badge">ВЫБРАНО</span>
                 </div>
 
                 <!-- Машинка 4 - Геометричная -->
                 <div class="logo-card">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="25,55 35,40 105,40 115,55 115,70 25,70" fill="#f39c12"/>
-                        <polygon points="42,42 55,42 50,55 37,55" fill="white"/>
-                        <polygon points="60,42 80,42 80,55 60,55" fill="white"/>
-                        <polygon points="85,42 98,42 103,55 85,55" fill="white"/>
-                        <rect x="110" y="55" width="8" height="8" rx="2" fill="white"/>
-                        <rect x="22" y="55" width="6" height="8" rx="1" fill="#e74c3c"/>
-                        <circle cx="45" cy="75" r="11" fill="#2c3e50"/>
-                        <circle cx="45" cy="75" r="5" fill="#f39c12"/>
-                        <circle cx="95" cy="75" r="11" fill="#2c3e50"/>
-                        <circle cx="95" cy="75" r="5" fill="#f39c12"/>
+                        <!-- Корпус - чистый прямоугольник -->
+                        <rect x="20" y="45" width="100" height="25" fill="#f39c12"/>
+                        <!-- Крыша - трапеция из полигона -->
+                        <polygon points="40,45 50,22 90,22 100,45" fill="#f39c12"/>
+                        <!-- Окна - четкие геометрические формы -->
+                        <polygon points="52,43 56,26 68,26 68,43" fill="white"/>
+                        <polygon points="72,43 72,26 84,26 88,43" fill="white"/>
+                        <!-- Фара и стоп-сигнал - квадраты -->
+                        <rect x="110" y="52" width="8" height="8" fill="white"/>
+                        <rect x="22" y="52" width="6" height="8" fill="#e74c3c"/>
+                        <!-- Колеса - идеальные круги -->
+                        <circle cx="45" cy="75" r="12" fill="#2c3e50"/>
+                        <circle cx="45" cy="75" r="6" fill="#f39c12"/>
+                        <circle cx="95" cy="75" r="12" fill="#2c3e50"/>
+                        <circle cx="95" cy="75" r="6" fill="#f39c12"/>
                     </svg>
                     <span class="logo-label">Геометричная</span>
                 </div>
 
-                <!-- Машинка 5 - Силуэт -->
-                <div class="logo-card dark">
-                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 60 L30 60 L35 45 Q40 35 70 35 Q100 35 105 45 L110 60 L120 60 L120 70 L20 70 Z" fill="#f39c12"/>
-                        <rect x="42" y="40" width="20" height="18" rx="2" fill="#2c3e50"/>
-                        <rect x="68" y="40" width="25" height="18" rx="2" fill="#2c3e50"/>
-                        <circle cx="45" cy="75" r="12" fill="#f39c12"/>
-                        <circle cx="45" cy="75" r="6" fill="#2c3e50"/>
-                        <circle cx="95" cy="75" r="12" fill="#f39c12"/>
-                        <circle cx="95" cy="75" r="6" fill="#2c3e50"/>
-                    </svg>
-                    <span class="logo-label">Силуэт</span>
-                </div>
-
-                <!-- Машинка 6 - Иконка-колесо -->
+                <!-- Машинка 5 - Иконка-колесо -->
                 <div class="logo-card orange">
                     <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="42" stroke="white" stroke-width="4" fill="none"/>
-                        <circle cx="50" cy="50" r="32" stroke="white" stroke-width="2" fill="none"/>
-                        <g stroke="white" stroke-width="2.5" stroke-linecap="round">
-                            <line x1="50" y1="8" x2="50" y2="18"/>
-                            <line x1="50" y1="82" x2="50" y2="92"/>
-                            <line x1="8" y1="50" x2="18" y2="50"/>
-                            <line x1="82" y1="50" x2="92" y2="50"/>
-                            <line x1="20" y1="20" x2="27" y2="27"/>
-                            <line x1="73" y1="73" x2="80" y2="80"/>
-                            <line x1="80" y1="20" x2="73" y2="27"/>
-                            <line x1="20" y1="80" x2="27" y2="73"/>
+                        <!-- Внешний круг колеса -->
+                        <circle cx="50" cy="50" r="44" stroke="white" stroke-width="5" fill="none"/>
+                        <!-- Внутренний круг - обод -->
+                        <circle cx="50" cy="50" r="34" stroke="white" stroke-width="2" fill="none"/>
+                        <!-- Спицы колеса - 6 штук равномерно -->
+                        <g stroke="white" stroke-width="3" stroke-linecap="round">
+                            <line x1="50" y1="6" x2="50" y2="16"/>
+                            <line x1="50" y1="84" x2="50" y2="94"/>
+                            <line x1="6" y1="50" x2="16" y2="50"/>
+                            <line x1="84" y1="50" x2="94" y2="50"/>
+                            <line x1="18.9" y1="18.9" x2="25.9" y2="25.9"/>
+                            <line x1="74.1" y1="74.1" x2="81.1" y2="81.1"/>
+                            <line x1="81.1" y1="18.9" x2="74.1" y2="25.9"/>
+                            <line x1="18.9" y1="81.1" x2="25.9" y2="74.1"/>
                         </g>
-                        <rect x="30" y="42" width="40" height="16" rx="3" fill="white"/>
-                        <path d="M35 42 L38 34 Q40 30 45 30 L55 30 Q60 30 62 34 L65 42" fill="white"/>
+                        <!-- Центральная ступица -->
+                        <circle cx="50" cy="50" r="20" fill="white"/>
+                        <!-- Машинка внутри ступицы -->
+                        <rect x="35" y="46" width="30" height="10" rx="2" fill="#f39c12"/>
+                        <path d="M40 46 L43 40 Q44 38 47 38 L53 38 Q56 38 57 40 L60 46" fill="#f39c12"/>
+                        <!-- Окошки машинки -->
+                        <rect x="44" y="40" width="5" height="4" rx="1" fill="white"/>
+                        <rect x="51" y="40" width="5" height="4" rx="1" fill="white"/>
+                        <!-- Колесики машинки -->
+                        <circle cx="40" cy="58" r="3" fill="#2c3e50"/>
+                        <circle cx="60" cy="58" r="3" fill="#2c3e50"/>
                     </svg>
                     <span class="logo-label">Колесо с машиной</span>
                 </div>
@@ -550,33 +557,293 @@
             <h2>3. Итоговый логотип</h2>
             
             <div class="final-logo-container">
-                <!-- Горизонтальный вариант -->
-                <div class="final-logo-horizontal">
-                    <svg width="120" height="85" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Корпус - ровный прямоугольник -->
-                        <rect x="18" y="40" width="104" height="32" rx="8" fill="#f39c12"/>
-                        <!-- Крыша - ровный прямоугольник -->
-                        <rect x="38" y="12" width="54" height="32" rx="6" fill="#f39c12"/>
-                        <!-- Окна - ровные квадратные -->
-                        <rect x="44" y="18" width="20" height="20" rx="4" fill="white"/>
-                        <rect x="70" y="18" width="20" height="20" rx="4" fill="white"/>
-                        <!-- Колеса -->
-                        <circle cx="44" cy="76" r="14" fill="#2c3e50"/>
-                        <circle cx="44" cy="76" r="7" fill="white"/>
-                        <circle cx="96" cy="76" r="14" fill="#2c3e50"/>
-                        <circle cx="96" cy="76" r="7" fill="white"/>
+                <!-- Вертикальный вариант - машинка сверху, текст снизу -->
+                <div class="final-logo-horizontal" style="flex-direction: column; gap: 8px;">
+                    <svg width="280" height="180" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Корпус - округлый ретро-стиль -->
+                        <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                        <!-- Крыша - плавная ретро-форма -->
+                        <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                        <!-- Окна - закругленные в стиле 50-х -->
+                        <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                        <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                        <!-- Хромированный бампер -->
+                        <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                        <!-- Фары - круглые ретро -->
+                        <circle cx="26" cy="58" r="5" fill="#ecf0f1"/>
+                        <circle cx="114" cy="58" r="5" fill="#ecf0f1"/>
+                        <!-- Колеса с белыми дисками -->
+                        <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                        <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                        <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                        <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                        <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                        <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
                     </svg>
-                    <div>
-                        <div class="final-text">КИБИТКА</div>
-                        <div class="final-subtext">ТАКСИ-СЕРВИС</div>
-                    </div>
+                    <div class="final-text">КИБИТКА</div>
                 </div>
 
                 <p class="final-description">
-                    Итоговый логотип объединяет минималистичную иконку автомоб��ля и шрифт Montserrat Bold. 
-                    Сочетание создает современный, узнаваемый и легко читаемый фирменный знак.
+                    Итоговый логотип объединяет ретро-иконку автомобиля в стиле 50-х годов и шрифт Montserrat Bold. 
+                    Сочетание создает узнаваемый и стильный фирменный знак с характером.
                 </p>
             </div>
+        </section>
+
+        <!-- 4. Цветовые вариации -->
+        <section class="final-section">
+            <h2>4. Цветовые вариации</h2>
+            
+            <div class="logo-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <!-- На белом фоне -->
+                <div class="logo-card">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                        <svg width="180" height="120" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            <circle cx="26" cy="58" r="5" fill="#ecf0f1"/>
+                            <circle cx="114" cy="58" r="5" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </svg>
+                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #2c3e50; letter-spacing: 3px;">КИБИТКА</span>
+                    </div>
+                    <span class="logo-label">На белом фоне</span>
+                </div>
+
+                <!-- На черном фоне -->
+                <div class="logo-card dark">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                        <svg width="180" height="120" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="white"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="white"/>
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            <circle cx="26" cy="58" r="5" fill="#ecf0f1"/>
+                            <circle cx="114" cy="58" r="5" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="12" fill="white"/>
+                            <circle cx="40" cy="76" r="8" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="4" fill="white"/>
+                            <circle cx="100" cy="76" r="12" fill="white"/>
+                            <circle cx="100" cy="76" r="8" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="4" fill="white"/>
+                        </svg>
+                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: white; letter-spacing: 3px;">КИБИТКА</span>
+                    </div>
+                    <span class="logo-label">На черном фоне</span>
+                </div>
+
+                <!-- На оранжевом фоне -->
+                <div class="logo-card orange">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                        <svg width="180" height="120" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="white"/>
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="white"/>
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="rgba(255,255,255,0.5)"/>
+                            <circle cx="26" cy="58" r="5" fill="rgba(255,255,255,0.8)"/>
+                            <circle cx="114" cy="58" r="5" fill="rgba(255,255,255,0.8)"/>
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="white"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="white"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </svg>
+                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: white; letter-spacing: 3px;">КИБИТКА</span>
+                    </div>
+                    <span class="logo-label">На оранжевом фоне</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Монохромные вариации -->
+        <section class="final-section">
+            <h2>5. Монохромные вариации</h2>
+            
+            <div class="logo-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <!-- Черный на белом -->
+                <div class="logo-card">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                        <svg width="180" height="120" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#000000"/>
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#000000"/>
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="white"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="white"/>
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#333333"/>
+                            <circle cx="26" cy="58" r="5" fill="#333333"/>
+                            <circle cx="114" cy="58" r="5" fill="#333333"/>
+                            <circle cx="40" cy="76" r="12" fill="#000000"/>
+                            <circle cx="40" cy="76" r="8" fill="white"/>
+                            <circle cx="40" cy="76" r="4" fill="#000000"/>
+                            <circle cx="100" cy="76" r="12" fill="#000000"/>
+                            <circle cx="100" cy="76" r="8" fill="white"/>
+                            <circle cx="100" cy="76" r="4" fill="#000000"/>
+                        </svg>
+                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #000000; letter-spacing: 3px;">КИБИТКА</span>
+                    </div>
+                    <span class="logo-label">Черный на белом</span>
+                </div>
+
+                <!-- Белый на черном -->
+                <div class="logo-card dark">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                        <svg width="180" height="120" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="white"/>
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="white"/>
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#000000"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#000000"/>
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="rgba(255,255,255,0.5)"/>
+                            <circle cx="26" cy="58" r="5" fill="rgba(255,255,255,0.7)"/>
+                            <circle cx="114" cy="58" r="5" fill="rgba(255,255,255,0.7)"/>
+                            <circle cx="40" cy="76" r="12" fill="white"/>
+                            <circle cx="40" cy="76" r="8" fill="#000000"/>
+                            <circle cx="40" cy="76" r="4" fill="white"/>
+                            <circle cx="100" cy="76" r="12" fill="white"/>
+                            <circle cx="100" cy="76" r="8" fill="#000000"/>
+                            <circle cx="100" cy="76" r="4" fill="white"/>
+                        </svg>
+                        <span style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: white; letter-spacing: 3px;">КИБИТКА</span>
+                    </div>
+                    <span class="logo-label">Белый на черном</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Охранное поле -->
+        <section class="final-section">
+            <h2>6. Охранное поле</h2>
+            <div class="logo-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <!-- С текстом -->
+                <div class="logo-card" style="padding: 50px;">
+                    <svg width="320" height="280" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Внешняя рамка охранного поля -->
+                        <rect x="20" y="20" width="280" height="240" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                        
+                        <!-- Угловые маркеры -->
+                        <path d="M20 40 L20 20 L40 20" fill="none" stroke="#666" stroke-width="2"/>
+                        <path d="M280 20 L300 20 L300 40" fill="none" stroke="#666" stroke-width="2"/>
+                        <path d="M300 240 L300 260 L280 260" fill="none" stroke="#666" stroke-width="2"/>
+                        <path d="M40 260 L20 260 L20 240" fill="none" stroke="#666" stroke-width="2"/>
+                        
+                        <!-- Внутренняя рамка - касается контента со всех сторон -->
+                        <!-- Сверху: верх крыши (60+22=82), Снизу: низ текста (~205), Слева/Справа: края текста (~62 и ~258) -->
+                        <rect x="62" y="82" width="196" height="123" fill="none" stroke="#333" stroke-width="1"/>
+                        
+                        <!-- Измерительные линии X сверху слева -->
+                        <line x1="10" y1="82" x2="10" y2="20" stroke="#666" stroke-width="1"/>
+                        <line x1="5" y1="20" x2="15" y2="20" stroke="#666" stroke-width="1"/>
+                        <line x1="5" y1="82" x2="15" y2="82" stroke="#666" stroke-width="1"/>
+                        <text x="10" y="55" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X снизу слева -->
+                        <line x1="62" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="20" y1="265" x2="20" y2="275" stroke="#666" stroke-width="1"/>
+                        <line x1="62" y1="265" x2="62" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="41" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X снизу справа -->
+                        <line x1="258" y1="270" x2="300" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="258" y1="265" x2="258" y2="275" stroke="#666" stroke-width="1"/>
+                        <line x1="300" y1="265" x2="300" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="279" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Машинка ретро -->
+                        <g transform="translate(90, 60) scale(1.0)">
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            <circle cx="26" cy="58" r="5" fill="#ecf0f1"/>
+                            <circle cx="114" cy="58" r="5" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                        
+                        <!-- Текст КИБИТКА -->
+                        <text x="160" y="200" font-family="Montserrat, sans-serif" font-weight="700" font-size="24" fill="#2c3e50" text-anchor="middle" letter-spacing="3">КИБИТКА</text>
+                    </svg>
+                    <span class="logo-label">Полный логотип</span>
+                </div>
+
+                <!-- Только иконка -->
+                <div class="logo-card" style="padding: 50px;">
+                    <svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Внешняя рамка охранного поля -->
+                        <rect x="20" y="20" width="240" height="240" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+                        
+                        <!-- Угловые маркеры -->
+                        <path d="M20 40 L20 20 L40 20" fill="none" stroke="#666" stroke-width="2"/>
+                        <path d="M240 20 L260 20 L260 40" fill="none" stroke="#666" stroke-width="2"/>
+                        <path d="M260 240 L260 260 L240 260" fill="none" stroke="#666" stroke-width="2"/>
+                        <path d="M40 260 L20 260 L20 240" fill="none" stroke="#666" stroke-width="2"/>
+                        
+                        <!-- Внутренняя рамка - касается машинки со всех сторон -->
+                        <!-- Машинка: верх крыши y=112, низ колес y=178, лево x=88, право x=192 -->
+                        <rect x="88" y="112" width="104" height="66" fill="none" stroke="#333" stroke-width="1"/>
+                        
+                        <!-- Измерительные линии X сверху -->
+                        <line x1="10" y1="112" x2="10" y2="20" stroke="#666" stroke-width="1"/>
+                        <line x1="5" y1="20" x2="15" y2="20" stroke="#666" stroke-width="1"/>
+                        <line x1="5" y1="112" x2="15" y2="112" stroke="#666" stroke-width="1"/>
+                        <text x="10" y="70" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X снизу слева -->
+                        <line x1="88" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="20" y1="265" x2="20" y2="275" stroke="#666" stroke-width="1"/>
+                        <line x1="88" y1="265" x2="88" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="54" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X снизу справа -->
+                        <line x1="192" y1="270" x2="260" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="192" y1="265" x2="192" y2="275" stroke="#666" stroke-width="1"/>
+                        <line x1="260" y1="265" x2="260" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="226" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X справа вертикальные -->
+                        <line x1="270" y1="178" x2="270" y2="260" stroke="#666" stroke-width="1"/>
+                        <line x1="265" y1="178" x2="275" y2="178" stroke="#666" stroke-width="1"/>
+                        <line x1="265" y1="260" x2="275" y2="260" stroke="#666" stroke-width="1"/>
+                        <text x="270" y="223" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Машинка ретро (центрированная) -->
+                        <g transform="translate(70, 90) scale(1.0)">
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            <circle cx="26" cy="58" r="5" fill="#ecf0f1"/>
+                            <circle cx="114" cy="58" r="5" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                    </svg>
+                    <span class="logo-label">Только иконка</span>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #888; margin-top: 20px; font-size: 0.9rem;">
+                X = высота колеса автомобиля. Это минимальное расстояние от логотипа до края любого носителя.
+            </p>
         </section>
 
         <!-- Color Palette -->
