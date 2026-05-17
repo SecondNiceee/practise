@@ -853,7 +853,7 @@
             <h2 class="section-title">Маскот: Эмоции</h2>
             <p style="text-align: center; color: #666; margin-bottom: 30px;">Машинка-маскот с разными эмоциями для использования в коммуникациях</p>
             
-            <div class="logo-showcase" style="gap: 40px;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 900px; margin: 0 auto;">
                 <!-- Счастливая машинка -->
                 <div class="logo-card" style="padding: 30px;">
                     <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -976,6 +976,44 @@
                         </g>
                     </svg>
                     <span class="logo-label" style="color: #e67e22; font-weight: 600;">Удивлённая</span>
+                </div>
+
+                <!-- Злая машинка -->
+                <div class="logo-card" style="padding: 30px;">
+                    <svg width="200" height="180" viewBox="0 0 200 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(30, 30) scale(1.2)">
+                            <!-- Кузов -->
+                            <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                            <!-- Крыша -->
+                            <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                            <!-- Окна -->
+                            <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50"/>
+                            <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50"/>
+                            <!-- Бампер -->
+                            <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                            
+                            <!-- Глаза (злые - сужены) -->
+                            <ellipse cx="50" cy="58" rx="8" ry="5" fill="#ecf0f1"/>
+                            <ellipse cx="90" cy="58" rx="8" ry="5" fill="#ecf0f1"/>
+                            <ellipse cx="50" cy="58" rx="4" ry="3" fill="#2c3e50"/>
+                            <ellipse cx="90" cy="58" rx="4" ry="3" fill="#2c3e50"/>
+                            <!-- Бровки злые (нахмуренные к центру) -->
+                            <path d="M42 50 L58 54" fill="none" stroke="#2c3e50" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M98 50 L82 54" fill="none" stroke="#2c3e50" stroke-width="2.5" stroke-linecap="round"/>
+                            
+                            <!-- Злой рот (оскал) -->
+                            <path d="M55 68 L60 66 L65 68 L70 66 L75 68 L80 66 L85 68" fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            
+                            <!-- Колёса -->
+                            <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                            <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                            <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
+                        </g>
+                    </svg>
+                    <span class="logo-label" style="color: #e74c3c; font-weight: 600;">Злая</span>
                 </div>
             </div>
             
