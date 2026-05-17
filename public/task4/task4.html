@@ -735,20 +735,27 @@
                         <path d="M300 240 L300 260 L280 260" fill="none" stroke="#666" stroke-width="2"/>
                         <path d="M40 260 L20 260 L20 240" fill="none" stroke="#666" stroke-width="2"/>
                         
-                        <!-- Внутренняя рамка (зона логотипа) -->
-                        <rect x="50" y="50" width="220" height="180" fill="none" stroke="#333" stroke-width="1"/>
+                        <!-- Внутренняя рамка - касается контента со всех сторон -->
+                        <!-- Сверху: верх крыши (60+22=82), Снизу: низ текста (~205), Слева/Справа: края текста (~62 и ~258) -->
+                        <rect x="62" y="82" width="196" height="123" fill="none" stroke="#333" stroke-width="1"/>
                         
-                        <!-- Измерительные линии X слева -->
-                        <line x1="10" y1="50" x2="10" y2="20" stroke="#666" stroke-width="1"/>
+                        <!-- Измерительные линии X сверху слева -->
+                        <line x1="10" y1="82" x2="10" y2="20" stroke="#666" stroke-width="1"/>
                         <line x1="5" y1="20" x2="15" y2="20" stroke="#666" stroke-width="1"/>
-                        <line x1="5" y1="50" x2="15" y2="50" stroke="#666" stroke-width="1"/>
-                        <text x="10" y="38" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        <line x1="5" y1="82" x2="15" y2="82" stroke="#666" stroke-width="1"/>
+                        <text x="10" y="55" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                         
-                        <!-- Измерительные линии X снизу -->
-                        <line x1="50" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
+                        <!-- Измерительные линии X снизу слева -->
+                        <line x1="62" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
                         <line x1="20" y1="265" x2="20" y2="275" stroke="#666" stroke-width="1"/>
-                        <line x1="50" y1="265" x2="50" y2="275" stroke="#666" stroke-width="1"/>
-                        <text x="35" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        <line x1="62" y1="265" x2="62" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="41" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X снизу справа -->
+                        <line x1="258" y1="270" x2="300" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="258" y1="265" x2="258" y2="275" stroke="#666" stroke-width="1"/>
+                        <line x1="300" y1="265" x2="300" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="279" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                         
                         <!-- Машинка ретро -->
                         <g transform="translate(90, 60) scale(1.0)">
@@ -785,26 +792,33 @@
                         <path d="M260 240 L260 260 L240 260" fill="none" stroke="#666" stroke-width="2"/>
                         <path d="M40 260 L20 260 L20 240" fill="none" stroke="#666" stroke-width="2"/>
                         
-                        <!-- Внутренняя рамка (зона логотипа) -->
-                        <rect x="50" y="50" width="180" height="180" fill="none" stroke="#333" stroke-width="1"/>
+                        <!-- Внутренняя рамка - касается машинки со всех сторон -->
+                        <!-- Машинка: верх крыши y=112, низ колес y=178, лево x=88, право x=192 -->
+                        <rect x="88" y="112" width="104" height="66" fill="none" stroke="#333" stroke-width="1"/>
                         
-                        <!-- Измерительные линии X слева -->
-                        <line x1="10" y1="50" x2="10" y2="20" stroke="#666" stroke-width="1"/>
+                        <!-- Измерительные линии X сверху -->
+                        <line x1="10" y1="112" x2="10" y2="20" stroke="#666" stroke-width="1"/>
                         <line x1="5" y1="20" x2="15" y2="20" stroke="#666" stroke-width="1"/>
-                        <line x1="5" y1="50" x2="15" y2="50" stroke="#666" stroke-width="1"/>
-                        <text x="10" y="38" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        <line x1="5" y1="112" x2="15" y2="112" stroke="#666" stroke-width="1"/>
+                        <text x="10" y="70" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                         
-                        <!-- Измерительные линии X снизу -->
-                        <line x1="50" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
+                        <!-- Измерительные линии X снизу слева -->
+                        <line x1="88" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
                         <line x1="20" y1="265" x2="20" y2="275" stroke="#666" stroke-width="1"/>
-                        <line x1="50" y1="265" x2="50" y2="275" stroke="#666" stroke-width="1"/>
-                        <text x="35" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        <line x1="88" y1="265" x2="88" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="54" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                         
-                        <!-- Измерительные линии X справа -->
-                        <line x1="270" y1="230" x2="270" y2="260" stroke="#666" stroke-width="1"/>
-                        <line x1="265" y1="230" x2="275" y2="230" stroke="#666" stroke-width="1"/>
+                        <!-- Измерительные линии X снизу справа -->
+                        <line x1="192" y1="270" x2="260" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="192" y1="265" x2="192" y2="275" stroke="#666" stroke-width="1"/>
+                        <line x1="260" y1="265" x2="260" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="226" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        
+                        <!-- Измерительные линии X справа вертикальные -->
+                        <line x1="270" y1="178" x2="270" y2="260" stroke="#666" stroke-width="1"/>
+                        <line x1="265" y1="178" x2="275" y2="178" stroke="#666" stroke-width="1"/>
                         <line x1="265" y1="260" x2="275" y2="260" stroke="#666" stroke-width="1"/>
-                        <text x="270" y="248" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        <text x="270" y="223" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                         
                         <!-- Машинка ретро (центрированная) -->
                         <g transform="translate(70, 90) scale(1.0)">
