@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Практическое занятие №4 — Разработка логотипа «Кибитка»</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&family=Rubik:wght@700&family=Comfortaa:wght@700&family=Nunito:wght@800&family=Russo+One&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -113,6 +113,11 @@
             border-color: #d4c4a8;
         }
 
+        .logo-card.selected {
+            border: 3px solid #27ae60;
+            box-shadow: 0 0 20px rgba(39, 174, 96, 0.3);
+        }
+
         .logo-label {
             font-size: 0.75rem;
             color: #8b7355;
@@ -130,6 +135,84 @@
 
         .logo-card.wide {
             grid-column: span 2;
+        }
+
+        .selected-badge {
+            background: #27ae60;
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .font-preview {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .font-name {
+            font-size: 0.75rem;
+            color: #8b7355;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .final-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .final-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .final-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .final-logo-horizontal {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .final-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            color: #2c3e50;
+            letter-spacing: 6px;
+        }
+
+        .final-subtext {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            color: #8b7355;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+
+        .final-description {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            max-width: 600px;
         }
 
         .palette-section {
@@ -169,27 +252,6 @@
             font-size: 0.75rem;
             color: #8b7355;
             font-family: monospace;
-        }
-
-        .palette-description {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #e8e0d0;
-        }
-
-        .palette-desc-item h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #f39c12;
-            margin-bottom: 5px;
-        }
-
-        .palette-desc-item p {
-            font-size: 0.85rem;
-            color: #5d6d7e;
         }
 
         .nav-link {
@@ -255,8 +317,9 @@
             .palette-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-            .palette-description {
-                grid-template-columns: repeat(2, 1fr);
+            .final-logo-horizontal {
+                flex-direction: column;
+                padding: 30px;
             }
         }
 
@@ -273,12 +336,12 @@
             .palette-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .palette-description {
-                grid-template-columns: 1fr;
-            }
             .nav-link, .download-btn {
                 padding: 10px 18px;
                 font-size: 0.85rem;
+            }
+            .final-text {
+                font-size: 2rem;
             }
         }
 
@@ -289,7 +352,7 @@
             .nav-link, .download-btn {
                 display: none !important;
             }
-            .logo-card, .palette-section {
+            .logo-card, .palette-section, .final-section {
                 break-inside: avoid;
             }
         }
@@ -302,98 +365,51 @@
     <div class="container">
         <header class="header">
             <p class="header-subtitle">Практическое занятие №4</p>
-            <h1>Разработка логотипа в различных видах</h1>
+            <h1>Разработка логотипа</h1>
             <p style="color: #5d6d7e; margin-top: 15px;">Такси-сервис «Кибитка»</p>
             <div class="header-line"></div>
         </header>
 
-        <!-- 1. Шрифтовые логотипы -->
+        <!-- 1. Варианты логотипа (графика без текста) -->
         <section class="logo-section">
-            <h2 class="section-title">1. Шрифтовые логотипы</h2>
+            <h2 class="section-title">1. Варианты логотипа (графический знак)</h2>
             
             <div class="logo-grid">
-                <!-- 1. Основной логотип -->
+                <!-- Машинка 1 - Классическая -->
                 <div class="logo-card">
-                    <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="20" y="35" width="100" height="30" rx="4" fill="#f39c12"/>
-                        <path d="M35 35 L35 20 Q35 15 40 15 L100 15 Q105 15 105 20 L105 35" fill="#f39c12"/>
-                        <rect x="40" y="20" width="25" height="18" rx="2" fill="white"/>
-                        <rect x="70" y="20" width="30" height="18" rx="2" fill="white"/>
-                        <line x1="68" y1="20" x2="68" y2="38" stroke="#f39c12" stroke-width="3"/>
-                        <rect x="115" y="43" width="8" height="6" rx="2" fill="white"/>
-                        <rect x="17" y="43" width="6" height="6" rx="1" fill="#e74c3c"/>
-                        <circle cx="45" cy="70" r="12" fill="#2c3e50"/>
-                        <circle cx="45" cy="70" r="6" fill="#f39c12"/>
-                        <circle cx="95" cy="70" r="12" fill="#2c3e50"/>
-                        <circle cx="95" cy="70" r="6" fill="#f39c12"/>
+                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="40" width="100" height="30" rx="4" fill="#f39c12"/>
+                        <path d="M35 40 L35 25 Q35 20 40 20 L100 20 Q105 20 105 25 L105 40" fill="#f39c12"/>
+                        <rect x="40" y="25" width="25" height="18" rx="2" fill="white"/>
+                        <rect x="70" y="25" width="30" height="18" rx="2" fill="white"/>
+                        <line x1="68" y1="25" x2="68" y2="43" stroke="#f39c12" stroke-width="3"/>
+                        <rect x="115" y="48" width="8" height="6" rx="2" fill="white"/>
+                        <rect x="17" y="48" width="6" height="6" rx="1" fill="#e74c3c"/>
+                        <circle cx="45" cy="75" r="12" fill="#2c3e50"/>
+                        <circle cx="45" cy="75" r="6" fill="#f39c12"/>
+                        <circle cx="95" cy="75" r="12" fill="#2c3e50"/>
+                        <circle cx="95" cy="75" r="6" fill="#f39c12"/>
                     </svg>
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.6rem; color: #2c3e50; margin-top: 5px; letter-spacing: 4px;">КИБИТКА</div>
-                    <span class="logo-label">Основной логотип</span>
+                    <span class="logo-label">Классическое такси</span>
                 </div>
 
-                <!-- 2. На тёмном фоне -->
-                <div class="logo-card dark">
-                    <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="20" y="35" width="100" height="30" rx="4" fill="#f39c12"/>
-                        <path d="M35 35 L35 20 Q35 15 40 15 L100 15 Q105 15 105 20 L105 35" fill="#f39c12"/>
-                        <rect x="40" y="20" width="25" height="18" rx="2" fill="#2c3e50"/>
-                        <rect x="70" y="20" width="30" height="18" rx="2" fill="#2c3e50"/>
-                        <line x1="68" y1="20" x2="68" y2="38" stroke="#f39c12" stroke-width="3"/>
-                        <rect x="115" y="43" width="8" height="6" rx="2" fill="white"/>
-                        <rect x="17" y="43" width="6" height="6" rx="1" fill="#e74c3c"/>
-                        <circle cx="45" cy="70" r="12" fill="#1a252f"/>
-                        <circle cx="45" cy="70" r="6" fill="#f39c12"/>
-                        <circle cx="95" cy="70" r="12" fill="#1a252f"/>
-                        <circle cx="95" cy="70" r="6" fill="#f39c12"/>
+                <!-- Машинка 2 - Минималистичная -->
+                <div class="logo-card selected">
+                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="45" width="90" height="25" rx="5" fill="#f39c12"/>
+                        <path d="M40 45 L45 30 Q47 25 52 25 L88 25 Q93 25 95 30 L100 45" fill="#f39c12"/>
+                        <rect x="48" y="30" width="18" height="15" rx="3" fill="white"/>
+                        <rect x="72" y="30" width="22" height="15" rx="3" fill="white"/>
+                        <circle cx="50" cy="75" r="10" fill="#2c3e50"/>
+                        <circle cx="50" cy="75" r="5" fill="white"/>
+                        <circle cx="90" cy="75" r="10" fill="#2c3e50"/>
+                        <circle cx="90" cy="75" r="5" fill="white"/>
                     </svg>
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.6rem; color: white; margin-top: 5px; letter-spacing: 4px;">КИБИТКА</div>
-                    <span class="logo-label">На тёмном фоне</span>
+                    <span class="logo-label">Минималистичная</span>
+                    <span class="selected-badge">ВЫБРАНО</span>
                 </div>
 
-                <!-- 3. Горизонтальный -->
-                <div class="logo-card wide">
-                    <svg width="320" height="70" viewBox="0 0 320 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="15" y="25" width="90" height="25" rx="3" fill="#f39c12"/>
-                        <path d="M30 25 L30 12 Q30 8 34 8 L91 8 Q95 8 95 12 L95 25" fill="#f39c12"/>
-                        <rect x="35" y="12" width="22" height="15" rx="2" fill="white"/>
-                        <rect x="62" y="12" width="28" height="15" rx="2" fill="white"/>
-                        <line x1="60" y1="12" x2="60" y2="27" stroke="#f39c12" stroke-width="3"/>
-                        <rect x="100" y="32" width="6" height="5" rx="1" fill="white"/>
-                        <rect x="13" y="32" width="4" height="5" rx="1" fill="#e74c3c"/>
-                        <circle cx="40" cy="54" r="10" fill="#2c3e50"/>
-                        <circle cx="40" cy="54" r="5" fill="#f39c12"/>
-                        <circle cx="80" cy="54" r="10" fill="#2c3e50"/>
-                        <circle cx="80" cy="54" r="5" fill="#f39c12"/>
-                        <text x="130" y="32" font-family="Montserrat, sans-serif" font-weight="700" font-size="26" fill="#2c3e50" letter-spacing="3">КИБИТКА</text>
-                        <text x="130" y="50" font-family="'Open Sans', sans-serif" font-weight="400" font-size="11" fill="#8b7355" letter-spacing="2">ТАКСИ-СЕРВИС</text>
-                        <line x1="130" y1="58" x2="270" y2="58" stroke="#f39c12" stroke-width="3"/>
-                    </svg>
-                    <span class="logo-label">Горизонтальный</span>
-                </div>
-
-                <!-- 4. Колесо-монограмма -->
-                <div class="logo-card orange">
-                    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="55" cy="55" r="48" stroke="white" stroke-width="4" fill="none"/>
-                        <circle cx="55" cy="55" r="38" stroke="white" stroke-width="2" fill="none"/>
-                        <g stroke="white" stroke-width="2.5" stroke-linecap="round">
-                            <line x1="55" y1="7" x2="55" y2="17"/>
-                            <line x1="55" y1="93" x2="55" y2="103"/>
-                            <line x1="7" y1="55" x2="17" y2="55"/>
-                            <line x1="93" y1="55" x2="103" y2="55"/>
-                            <line x1="21" y1="21" x2="28" y2="28"/>
-                            <line x1="82" y1="82" x2="89" y2="89"/>
-                            <line x1="89" y1="21" x2="82" y2="28"/>
-                            <line x1="21" y1="89" x2="28" y2="82"/>
-                        </g>
-                        <circle cx="55" cy="55" r="22" fill="#f39c12"/>
-                        <circle cx="55" cy="55" r="22" stroke="white" stroke-width="2" fill="none"/>
-                        <text x="55" y="62" font-family="Montserrat, sans-serif" font-weight="700" font-size="22" fill="white" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Колесо-монограмма</span>
-                </div>
-
-                <!-- 5. Ретро-стиль -->
+                <!-- Машинка 3 - Ретро -->
                 <div class="logo-card cream">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
@@ -402,262 +418,156 @@
                                 <stop offset="100%" style="stop-color:#d68910"/>
                             </linearGradient>
                         </defs>
-                        <rect x="5" y="5" width="130" height="90" rx="6" stroke="#8b7355" stroke-width="2.5" fill="none"/>
-                        <rect x="10" y="10" width="120" height="80" rx="4" stroke="#8b7355" stroke-width="1" fill="none" stroke-dasharray="2,4"/>
-                        <path d="M15 15 L25 15 M15 15 L15 25" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M125 15 L115 15 M125 15 L125 25" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M15 85 L25 85 M15 85 L15 75" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M125 85 L115 85 M125 85 L125 75" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
-                        <text x="28" y="26" font-family="'Open Sans', sans-serif" font-size="9" fill="#8b7355" font-weight="600">EST.</text>
-                        <text x="102" y="26" font-family="'Open Sans', sans-serif" font-size="9" fill="#8b7355" font-weight="600">2024</text>
-                        <path d="M40 48 Q40 35 70 30 Q100 35 100 48" stroke="#e74c3c" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-                        <rect x="45" y="45" width="50" height="18" rx="3" fill="url(#retroGrad)"/>
-                        <rect x="52" y="48" width="12" height="10" rx="2" fill="#f5f0e8"/>
-                        <rect x="68" y="48" width="12" height="10" rx="2" fill="#f5f0e8"/>
-                        <rect x="84" y="49" width="8" height="9" rx="2" fill="#f5f0e8"/>
-                        <circle cx="55" cy="68" r="9" stroke="#2c3e50" stroke-width="2.5" fill="none"/>
-                        <circle cx="55" cy="68" r="4" fill="#2c3e50"/>
-                        <circle cx="85" cy="68" r="9" stroke="#2c3e50" stroke-width="2.5" fill="none"/>
-                        <circle cx="85" cy="68" r="4" fill="#2c3e50"/>
-                        <text x="70" y="90" font-family="Montserrat, sans-serif" font-weight="700" font-size="11" fill="#2c3e50" text-anchor="middle" letter-spacing="5">КИБИТКА</text>
+                        <path d="M30 55 Q30 40 70 35 Q110 40 110 55" stroke="#8b7355" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <rect x="35" y="50" width="70" height="22" rx="4" fill="url(#retroGrad)"/>
+                        <rect x="45" y="53" width="18" height="12" rx="2" fill="#f5f0e8"/>
+                        <rect x="68" y="53" width="18" height="12" rx="2" fill="#f5f0e8"/>
+                        <rect x="90" y="55" width="10" height="10" rx="2" fill="#f5f0e8"/>
+                        <circle cx="48" cy="78" r="10" stroke="#2c3e50" stroke-width="3" fill="none"/>
+                        <circle cx="48" cy="78" r="4" fill="#2c3e50"/>
+                        <circle cx="92" cy="78" r="10" stroke="#2c3e50" stroke-width="3" fill="none"/>
+                        <circle cx="92" cy="78" r="4" fill="#2c3e50"/>
                     </svg>
                     <span class="logo-label">Ретро-стиль</span>
                 </div>
 
-                <!-- 6. Геометрический -->
+                <!-- Машинка 4 - Геометричная -->
                 <div class="logo-card">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="geoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f39c12"/>
-                                <stop offset="100%" style="stop-color:#e67e22"/>
-                            </linearGradient>
-                        </defs>
-                        <polygon points="50,5 90,27 90,73 50,95 10,73 10,27" stroke="url(#geoGrad)" stroke-width="3.5" fill="none"/>
-                        <polygon points="50,15 80,32 80,68 50,85 20,68 20,32" stroke="#f39c12" stroke-width="1" fill="none" opacity="0.4"/>
-                        <path d="M28 52 Q28 40 50 35 Q72 40 72 52" fill="url(#geoGrad)"/>
-                        <rect x="30" y="50" width="40" height="16" rx="2" fill="#e74c3c"/>
-                        <rect x="36" y="53" width="10" height="8" rx="1" fill="white" opacity="0.9"/>
-                        <rect x="50" y="53" width="10" height="8" rx="1" fill="white" opacity="0.9"/>
-                        <circle cx="38" cy="70" r="7" fill="#2c3e50"/>
-                        <circle cx="38" cy="70" r="3" fill="#f39c12"/>
-                        <circle cx="62" cy="70" r="7" fill="#2c3e50"/>
-                        <circle cx="62" cy="70" r="3" fill="#f39c12"/>
-                    </svg>
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; color: #2c3e50; margin-top: 8px; letter-spacing: 3px;">КИБИТКА</div>
-                    <span class="logo-label">Геометрический</span>
-                </div>
-
-                <!-- 7. Значок ��ремиум -->
-                <div class="logo-card red">
-                    <svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M60 8 L110 25 L110 75 Q110 105 60 125 Q10 105 10 75 L10 25 Z" stroke="#ffd700" stroke-width="3" fill="none"/>
-                        <path d="M60 18 L100 32 L100 72 Q100 98 60 115 Q20 98 20 72 L20 32 Z" stroke="#ffd700" stroke-width="1.5" fill="none"/>
-                        <text x="60" y="30" font-family="'Open Sans', sans-serif" font-size="8" fill="#ffd700" text-anchor="middle" letter-spacing="1">ПРЕМИУМ</text>
-                        <polygon points="60,38 63,47 72,47 65,53 67,62 60,56 53,62 55,53 48,47 57,47" fill="#ffd700"/>
-                        <g transform="translate(25, 62)">
-                            <rect x="5" y="15" width="60" height="18" rx="3" fill="white"/>
-                            <path d="M15 15 L15 8 Q15 5 18 5 L52 5 Q55 5 55 8 L55 15" fill="white"/>
-                            <rect x="18" y="7" width="14" height="10" rx="1" fill="#c0392b"/>
-                            <rect x="35" y="7" width="17" height="10" rx="1" fill="#c0392b"/>
-                            <line x1="34" y1="7" x2="34" y2="17" stroke="white" stroke-width="2"/>
-                            <circle cx="18" cy="36" r="7" fill="#1a1a1a"/>
-                            <circle cx="18" cy="36" r="3" fill="#ffd700"/>
-                            <circle cx="52" cy="36" r="7" fill="#1a1a1a"/>
-                            <circle cx="52" cy="36" r="3" fill="#ffd700"/>
-                        </g>
-                        <text x="60" y="112" font-family="Montserrat, sans-serif" font-weight="700" font-size="14" fill="white" text-anchor="middle" letter-spacing="2">КИБИТКА</text>
-                        <text x="60" y="124" font-family="'Open Sans', sans-serif" font-size="8" fill="#ffd700" text-anchor="middle">2024</text>
-                    </svg>
-                    <span class="logo-label">Значок премиум</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. Графические логотипы (эмблемы) -->
-        <section class="logo-section">
-            <h2 class="section-title">2. Графические логотипы (эмблемы)</h2>
-            
-            <div class="logo-grid">
-                <!-- Монограмма 1 -->
-                <div class="logo-card">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="5" y="5" width="70" height="70" rx="10" stroke="#f39c12" stroke-width="3" fill="none"/>
-                        <text x="40" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="#f39c12" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Квадрат контур</span>
-                </div>
-
-                <!-- Монограмма 2 -->
-                <div class="logo-card">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="5" y="5" width="70" height="70" rx="10" fill="#f39c12"/>
-                        <text x="40" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="white" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Квадрат залитый</span>
-                </div>
-
-                <!-- Монограмма 3 -->
-                <div class="logo-card dark">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="35" stroke="#f39c12" stroke-width="3" fill="none"/>
-                        <text x="40" y="52" font-family="Montserrat, sans-serif" font-weight="800" font-size="36" fill="#f39c12" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Круг контур</span>
-                </div>
-
-                <!-- Монограмма 4 -->
-                <div class="logo-card">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="35" fill="#e74c3c"/>
-                        <text x="40" y="52" font-family="Montserrat, sans-serif" font-weight="800" font-size="36" fill="white" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Круг красный</span>
-                </div>
-
-                <!-- Монограмма 5 -->
-                <div class="logo-card">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="35" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="40" cy="40" r="28" stroke="#2c3e50" stroke-width="1" fill="none"/>
-                        <line x1="40" y1="5" x2="40" y2="12" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="40" y1="68" x2="40" y2="75" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="5" y1="40" x2="12" y2="40" stroke="#2c3e50" stroke-width="2"/>
-                        <line x1="68" y1="40" x2="75" y2="40" stroke="#2c3e50" stroke-width="2"/>
-                        <text x="40" y="50" font-family="Montserrat, sans-serif" font-weight="800" font-size="28" fill="#f39c12" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Колесо</span>
-                </div>
-
-                <!-- Монограмма 6 -->
-                <div class="logo-card orange">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="40,5 72,20 72,60 40,75 8,60 8,20" stroke="white" stroke-width="3" fill="none"/>
-                        <text x="40" y="52" font-family="Montserrat, sans-serif" font-weight="800" font-size="32" fill="white" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Шестиугольник</span>
-                </div>
-
-                <!-- Монограмма 7 -->
-                <div class="logo-card">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f39c12"/>
-                                <stop offset="100%" style="stop-color:#e74c3c"/>
-                            </linearGradient>
-                        </defs>
-                        <rect x="5" y="5" width="70" height="70" rx="15" fill="url(#grad1)"/>
-                        <text x="40" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="white" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Градиент</span>
-                </div>
-
-                <!-- Монограмма 8 -->
-                <div class="logo-card">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="5" y="5" width="70" height="70" rx="10" fill="#2c3e50"/>
-                        <text x="40" y="55" font-family="Montserrat, sans-serif" font-weight="800" font-size="40" fill="#f39c12" text-anchor="middle">К</text>
-                    </svg>
-                    <span class="logo-label">Тёмный</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Комбинированные логотипы -->
-        <section class="logo-section">
-            <h2 class="section-title">3. Комбинированные логотипы</h2>
-            
-            <div class="logo-grid">
-                <!-- Комбинированный 1 - Основной -->
-                <div class="logo-card">
-                    <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="20" y="35" width="100" height="30" rx="4" fill="#f39c12"/>
-                        <path d="M35 35 L35 20 Q35 15 40 15 L100 15 Q105 15 105 20 L105 35" fill="#f39c12"/>
-                        <rect x="40" y="20" width="25" height="18" rx="2" fill="white"/>
-                        <rect x="70" y="20" width="30" height="18" rx="2" fill="white"/>
-                        <line x1="68" y1="20" x2="68" y2="38" stroke="#f39c12" stroke-width="3"/>
-                        <rect x="115" y="43" width="8" height="6" rx="2" fill="white"/>
-                        <rect x="17" y="43" width="6" height="6" rx="1" fill="#e74c3c"/>
-                        <circle cx="45" cy="70" r="12" fill="#2c3e50"/>
-                        <circle cx="45" cy="70" r="6" fill="#f39c12"/>
-                        <circle cx="95" cy="70" r="12" fill="#2c3e50"/>
-                        <circle cx="95" cy="70" r="6" fill="#f39c12"/>
-                    </svg>
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.6rem; color: #2c3e50; margin-top: 5px; letter-spacing: 4px;">КИБИТКА</div>
-                    <span class="logo-label">Основной комбинированный</span>
-                </div>
-
-                <!-- Комбинированный 2 - На тёмном фоне -->
-                <div class="logo-card dark">
-                    <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="20" y="35" width="100" height="30" rx="4" fill="#f39c12"/>
-                        <path d="M35 35 L35 20 Q35 15 40 15 L100 15 Q105 15 105 20 L105 35" fill="#f39c12"/>
-                        <rect x="40" y="20" width="25" height="18" rx="2" fill="#2c3e50"/>
-                        <rect x="70" y="20" width="30" height="18" rx="2" fill="#2c3e50"/>
-                        <line x1="68" y1="20" x2="68" y2="38" stroke="#f39c12" stroke-width="3"/>
-                        <rect x="115" y="43" width="8" height="6" rx="2" fill="white"/>
-                        <rect x="17" y="43" width="6" height="6" rx="1" fill="#e74c3c"/>
-                        <circle cx="45" cy="70" r="12" fill="#1a252f"/>
-                        <circle cx="45" cy="70" r="6" fill="#f39c12"/>
-                        <circle cx="95" cy="70" r="12" fill="#1a252f"/>
-                        <circle cx="95" cy="70" r="6" fill="#f39c12"/>
-                    </svg>
-                    <div style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.6rem; color: white; margin-top: 5px; letter-spacing: 4px;">КИБИТКА</div>
-                    <span class="logo-label">На тёмном фоне</span>
-                </div>
-
-                <!-- Комбинированный 3 - Горизонтальный -->
-                <div class="logo-card wide">
-                    <svg width="320" height="70" viewBox="0 0 320 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="15" y="25" width="90" height="25" rx="3" fill="#f39c12"/>
-                        <path d="M30 25 L30 12 Q30 8 34 8 L91 8 Q95 8 95 12 L95 25" fill="#f39c12"/>
-                        <rect x="35" y="12" width="22" height="15" rx="2" fill="white"/>
-                        <rect x="62" y="12" width="28" height="15" rx="2" fill="white"/>
-                        <line x1="60" y1="12" x2="60" y2="27" stroke="#f39c12" stroke-width="3"/>
-                        <rect x="100" y="32" width="6" height="5" rx="1" fill="white"/>
-                        <rect x="13" y="32" width="4" height="5" rx="1" fill="#e74c3c"/>
-                        <circle cx="40" cy="54" r="10" fill="#2c3e50"/>
-                        <circle cx="40" cy="54" r="5" fill="#f39c12"/>
-                        <circle cx="80" cy="54" r="10" fill="#2c3e50"/>
-                        <circle cx="80" cy="54" r="5" fill="#f39c12"/>
-                        <text x="130" y="32" font-family="Montserrat, sans-serif" font-weight="700" font-size="26" fill="#2c3e50" letter-spacing="3">КИБИТКА</text>
-                        <text x="130" y="50" font-family="'Open Sans', sans-serif" font-weight="400" font-size="11" fill="#8b7355" letter-spacing="2">ТАКСИ-СЕРВИС</text>
-                        <line x1="130" y1="58" x2="270" y2="58" stroke="#f39c12" stroke-width="3"/>
-                    </svg>
-                    <span class="logo-label">Горизонтальный</span>
-                </div>
-
-                <!-- Комбинированный 4 - Ретро -->
-                <div class="logo-card cream">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="retroGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f39c12"/>
-                                <stop offset="100%" style="stop-color:#d68910"/>
-                            </linearGradient>
-                        </defs>
-                        <rect x="5" y="5" width="130" height="90" rx="6" stroke="#8b7355" stroke-width="2.5" fill="none"/>
-                        <rect x="10" y="10" width="120" height="80" rx="4" stroke="#8b7355" stroke-width="1" fill="none" stroke-dasharray="2,4"/>
-                        <path d="M15 15 L25 15 M15 15 L15 25" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M125 15 L115 15 M125 15 L125 25" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M15 85 L25 85 M15 85 L15 75" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M125 85 L115 85 M125 85 L125 75" stroke="#8b7355" stroke-width="2" stroke-linecap="round"/>
-                        <text x="28" y="26" font-family="'Open Sans', sans-serif" font-size="9" fill="#8b7355" font-weight="600">EST.</text>
-                        <text x="102" y="26" font-family="'Open Sans', sans-serif" font-size="9" fill="#8b7355" font-weight="600">2024</text>
-                        <path d="M40 48 Q40 35 70 30 Q100 35 100 48" stroke="#e74c3c" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-                        <rect x="45" y="45" width="50" height="18" rx="3" fill="url(#retroGrad2)"/>
-                        <rect x="52" y="48" width="12" height="10" rx="2" fill="#f5f0e8"/>
-                        <rect x="68" y="48" width="12" height="10" rx="2" fill="#f5f0e8"/>
-                        <rect x="84" y="49" width="8" height="9" rx="2" fill="#f5f0e8"/>
-                        <circle cx="55" cy="68" r="9" stroke="#2c3e50" stroke-width="2.5" fill="none"/>
-                        <circle cx="55" cy="68" r="4" fill="#2c3e50"/>
-                        <circle cx="85" cy="68" r="9" stroke="#2c3e50" stroke-width="2.5" fill="none"/>
-                        <circle cx="85" cy="68" r="4" fill="#2c3e50"/>
-                        <text x="70" y="90" font-family="Montserrat, sans-serif" font-weight="700" font-size="11" fill="#2c3e50" text-anchor="middle" letter-spacing="5">КИБИТКА</text>
+                        <polygon points="25,55 35,40 105,40 115,55 115,70 25,70" fill="#f39c12"/>
+                        <polygon points="42,42 55,42 50,55 37,55" fill="white"/>
+                        <polygon points="60,42 80,42 80,55 60,55" fill="white"/>
+                        <polygon points="85,42 98,42 103,55 85,55" fill="white"/>
+                        <rect x="110" y="55" width="8" height="8" rx="2" fill="white"/>
+                        <rect x="22" y="55" width="6" height="8" rx="1" fill="#e74c3c"/>
+                        <circle cx="45" cy="75" r="11" fill="#2c3e50"/>
+                        <circle cx="45" cy="75" r="5" fill="#f39c12"/>
+                        <circle cx="95" cy="75" r="11" fill="#2c3e50"/>
+                        <circle cx="95" cy="75" r="5" fill="#f39c12"/>
                     </svg>
-                    <span class="logo-label">Ретро-стиль</span>
+                    <span class="logo-label">Геометричная</span>
                 </div>
+
+                <!-- Машинка 5 - Силуэт -->
+                <div class="logo-card dark">
+                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 60 L30 60 L35 45 Q40 35 70 35 Q100 35 105 45 L110 60 L120 60 L120 70 L20 70 Z" fill="#f39c12"/>
+                        <rect x="42" y="40" width="20" height="18" rx="2" fill="#2c3e50"/>
+                        <rect x="68" y="40" width="25" height="18" rx="2" fill="#2c3e50"/>
+                        <circle cx="45" cy="75" r="12" fill="#f39c12"/>
+                        <circle cx="45" cy="75" r="6" fill="#2c3e50"/>
+                        <circle cx="95" cy="75" r="12" fill="#f39c12"/>
+                        <circle cx="95" cy="75" r="6" fill="#2c3e50"/>
+                    </svg>
+                    <span class="logo-label">Силуэт</span>
+                </div>
+
+                <!-- Машинка 6 - Иконка-колесо -->
+                <div class="logo-card orange">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="42" stroke="white" stroke-width="4" fill="none"/>
+                        <circle cx="50" cy="50" r="32" stroke="white" stroke-width="2" fill="none"/>
+                        <g stroke="white" stroke-width="2.5" stroke-linecap="round">
+                            <line x1="50" y1="8" x2="50" y2="18"/>
+                            <line x1="50" y1="82" x2="50" y2="92"/>
+                            <line x1="8" y1="50" x2="18" y2="50"/>
+                            <line x1="82" y1="50" x2="92" y2="50"/>
+                            <line x1="20" y1="20" x2="27" y2="27"/>
+                            <line x1="73" y1="73" x2="80" y2="80"/>
+                            <line x1="80" y1="20" x2="73" y2="27"/>
+                            <line x1="20" y1="80" x2="27" y2="73"/>
+                        </g>
+                        <rect x="30" y="42" width="40" height="16" rx="3" fill="white"/>
+                        <path d="M35 42 L38 34 Q40 30 45 30 L55 30 Q60 30 62 34 L65 42" fill="white"/>
+                    </svg>
+                    <span class="logo-label">Колесо с машиной</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Варианты текста (шрифты) -->
+        <section class="logo-section">
+            <h2 class="section-title">2. Варианты шрифтового написания</h2>
+            
+            <div class="logo-grid">
+                <!-- Шрифт 1 - Montserrat -->
+                <div class="logo-card selected">
+                    <div class="font-preview" style="font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 4px;">КИБИТКА</div>
+                    <span class="font-name">Montserrat Bold</span>
+                    <span class="selected-badge">ВЫБРАНО</span>
+                </div>
+
+                <!-- Шрифт 2 - Playfair -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Playfair Display', serif; font-weight: 700;">Кибитка</div>
+                    <span class="font-name">Playfair Display</span>
+                </div>
+
+                <!-- Шрифт 3 - Rubik -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Rubik', sans-serif; font-weight: 700; letter-spacing: 2px;">КИБИТКА</div>
+                    <span class="font-name">Rubik Bold</span>
+                </div>
+
+                <!-- Шрифт 4 - Comfortaa -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Comfortaa', cursive; font-weight: 700;">Кибитка</div>
+                    <span class="font-name">Comfortaa</span>
+                </div>
+
+                <!-- Шрифт 5 - Nunito -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Nunito', sans-serif; font-weight: 800; letter-spacing: 3px;">КИБИТКА</div>
+                    <span class="font-name">Nunito Extra Bold</span>
+                </div>
+
+                <!-- Шрифт 6 - Russo One -->
+                <div class="logo-card cream">
+                    <div class="font-preview" style="font-family: 'Russo One', sans-serif;">КИБИТКА</div>
+                    <span class="font-name">Russo One</span>
+                </div>
+
+                <!-- Шрифт 7 - Open Sans -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Open Sans', sans-serif; font-weight: 600; letter-spacing: 5px;">КИБИТКА</div>
+                    <span class="font-name">Open Sans Semi Bold</span>
+                </div>
+
+                <!-- Шрифт 8 - Montserrat Italic -->
+                <div class="logo-card">
+                    <div class="font-preview" style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-style: italic;">Кибитка</div>
+                    <span class="font-name">Montserrat Italic</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Итоговый логотип -->
+        <section class="final-section">
+            <h2>3. Итоговый логотип</h2>
+            
+            <div class="final-logo-container">
+                <!-- Горизонтальный вариант -->
+                <div class="final-logo-horizontal">
+                    <svg width="120" height="85" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="45" width="90" height="25" rx="5" fill="#f39c12"/>
+                        <path d="M40 45 L45 30 Q47 25 52 25 L88 25 Q93 25 95 30 L100 45" fill="#f39c12"/>
+                        <rect x="48" y="30" width="18" height="15" rx="3" fill="white"/>
+                        <rect x="72" y="30" width="22" height="15" rx="3" fill="white"/>
+                        <circle cx="50" cy="75" r="10" fill="#2c3e50"/>
+                        <circle cx="50" cy="75" r="5" fill="white"/>
+                        <circle cx="90" cy="75" r="10" fill="#2c3e50"/>
+                        <circle cx="90" cy="75" r="5" fill="white"/>
+                    </svg>
+                    <div>
+                        <div class="final-text">КИБИТКА</div>
+                        <div class="final-subtext">ТАКСИ-СЕРВИС</div>
+                    </div>
+                </div>
+
+                <p class="final-description">
+                    Итоговый логотип объединяет минималистичную иконку автомобиля и шрифт Montserrat Bold. 
+                    Сочетание создает современный, узнаваемый и легко читаемый фирменный знак.
+                </p>
             </div>
         </section>
 
@@ -690,25 +600,6 @@
                     <div class="palette-color" style="background: #8b7355;"></div>
                     <div class="palette-name">Охра</div>
                     <div class="palette-hex">#8B7355</div>
-                </div>
-            </div>
-
-            <div class="palette-description">
-                <div class="palette-desc-item">
-                    <h4>Фон</h4>
-                    <p>Сайт, визитки, упаковка, стены офиса</p>
-                </div>
-                <div class="palette-desc-item">
-                    <h4>Основной</h4>
-                    <p>Логотип, заголовки, навигация, вывески</p>
-                </div>
-                <div class="palette-desc-item">
-                    <h4>Акцент</h4>
-                    <p>Кнопки, акции, иконки, выделение</p>
-                </div>
-                <div class="palette-desc-item">
-                    <h4>Дополнительный</h4>
-                    <p>Декор, иллюстрации, фоновые блоки</p>
                 </div>
             </div>
         </section>
