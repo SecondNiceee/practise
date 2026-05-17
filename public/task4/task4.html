@@ -758,9 +758,10 @@
                         <!-- Внутренняя рамка охранного поля - точно прилегает к контенту -->
                         <!-- Сверху: верх крыши машинки (60+22=82) -->
                         <!-- Снизу: низ текста (baseline 200 + descender ~5 = 205) -->
-                        <!-- Слева: левый край текста (~68) -->
-                        <!-- Справа: правый край текста (~252) -->
-                        <rect x="68" y="82" width="184" height="123" fill="none" stroke="#333" stroke-width="1"/>
+                        <!-- Слева: левый край машинки (90+18=108) или текста -->
+                        <!-- Справа: правый край машинки (90+122=212) или текста -->
+                        <!-- Машинка шире, поэтому рамка по ней: x=108 до x=212, ширина=104 -->
+                        <rect x="108" y="82" width="104" height="123" fill="none" stroke="#333" stroke-width="1"/>
                         
                         <!-- Измерительные линии X сверху (от внешней рамки до верха машинки) -->
                         <line x1="10" y1="82" x2="10" y2="20" stroke="#666" stroke-width="1"/>
@@ -768,17 +769,17 @@
                         <line x1="5" y1="82" x2="15" y2="82" stroke="#666" stroke-width="1"/>
                         <text x="10" y="55" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                         
-                        <!-- Измерительные линии X снизу слева (от внешней рамки до левого края текста) -->
-                        <line x1="68" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
+                        <!-- Измерительные линии X снизу слева (от внешней рамки до левого края) -->
+                        <line x1="108" y1="270" x2="20" y2="270" stroke="#666" stroke-width="1"/>
                         <line x1="20" y1="265" x2="20" y2="275" stroke="#666" stroke-width="1"/>
-                        <line x1="68" y1="265" x2="68" y2="275" stroke="#666" stroke-width="1"/>
-                        <text x="44" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        <line x1="108" y1="265" x2="108" y2="275" stroke="#666" stroke-width="1"/>
+                        <text x="64" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                         
-                        <!-- Измерительные линии X снизу справа (от правого края текста до внешней рамки) -->
-                        <line x1="252" y1="270" x2="300" y2="270" stroke="#666" stroke-width="1"/>
-                        <line x1="252" y1="265" x2="252" y2="275" stroke="#666" stroke-width="1"/>
+                        <!-- Измерительные линии X снизу справа (от правого края до внешней рамки) -->
+                        <line x1="212" y1="270" x2="300" y2="270" stroke="#666" stroke-width="1"/>
+                        <line x1="212" y1="265" x2="212" y2="275" stroke="#666" stroke-width="1"/>
                         <line x1="300" y1="265" x2="300" y2="275" stroke="#666" stroke-width="1"/>
-                        <text x="276" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
+                        <text x="256" y="278" font-family="Montserrat, sans-serif" font-size="10" fill="#666" text-anchor="middle">X</text>
                     </svg>
                     <span class="logo-label">Полный логотип</span>
                 </div>
