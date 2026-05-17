@@ -416,21 +416,25 @@
                 <!-- Машинка 3 - Ретро -->
                 <div class="logo-card cream">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="retroGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f39c12"/>
-                                <stop offset="100%" style="stop-color:#d68910"/>
-                            </linearGradient>
-                        </defs>
-                        <path d="M30 55 Q30 40 70 35 Q110 40 110 55" stroke="#8b7355" stroke-width="4" fill="none" stroke-linecap="round"/>
-                        <rect x="35" y="50" width="70" height="22" rx="4" fill="url(#retroGrad)"/>
-                        <rect x="45" y="53" width="18" height="12" rx="2" fill="#f5f0e8"/>
-                        <rect x="68" y="53" width="18" height="12" rx="2" fill="#f5f0e8"/>
-                        <rect x="90" y="55" width="10" height="10" rx="2" fill="#f5f0e8"/>
-                        <circle cx="48" cy="78" r="10" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="48" cy="78" r="4" fill="#2c3e50"/>
-                        <circle cx="92" cy="78" r="10" stroke="#2c3e50" stroke-width="3" fill="none"/>
-                        <circle cx="92" cy="78" r="4" fill="#2c3e50"/>
+                        <!-- Корпус - округлый ретро-стиль -->
+                        <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12"/>
+                        <!-- Крыша - плавная ретро-форма -->
+                        <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12"/>
+                        <!-- Окна - закругленные в стиле 50-х -->
+                        <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#f5f0e8"/>
+                        <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#f5f0e8"/>
+                        <!-- Хромированный бампер -->
+                        <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7"/>
+                        <!-- Фары - круглые ретро -->
+                        <circle cx="26" cy="58" r="5" fill="#ecf0f1"/>
+                        <circle cx="114" cy="58" r="5" fill="#ecf0f1"/>
+                        <!-- Колеса с белыми дисками -->
+                        <circle cx="40" cy="76" r="12" fill="#2c3e50"/>
+                        <circle cx="40" cy="76" r="8" fill="#ecf0f1"/>
+                        <circle cx="40" cy="76" r="4" fill="#2c3e50"/>
+                        <circle cx="100" cy="76" r="12" fill="#2c3e50"/>
+                        <circle cx="100" cy="76" r="8" fill="#ecf0f1"/>
+                        <circle cx="100" cy="76" r="4" fill="#2c3e50"/>
                     </svg>
                     <span class="logo-label">Ретро-стиль</span>
                 </div>
@@ -438,35 +442,26 @@
                 <!-- Машинка 4 - Геометричная -->
                 <div class="logo-card">
                     <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="25,55 35,40 105,40 115,55 115,70 25,70" fill="#f39c12"/>
-                        <polygon points="42,42 55,42 50,55 37,55" fill="white"/>
-                        <polygon points="60,42 80,42 80,55 60,55" fill="white"/>
-                        <polygon points="85,42 98,42 103,55 85,55" fill="white"/>
-                        <rect x="110" y="55" width="8" height="8" rx="2" fill="white"/>
-                        <rect x="22" y="55" width="6" height="8" rx="1" fill="#e74c3c"/>
-                        <circle cx="45" cy="75" r="11" fill="#2c3e50"/>
-                        <circle cx="45" cy="75" r="5" fill="#f39c12"/>
-                        <circle cx="95" cy="75" r="11" fill="#2c3e50"/>
-                        <circle cx="95" cy="75" r="5" fill="#f39c12"/>
+                        <!-- Корпус - чистый прямоугольник -->
+                        <rect x="20" y="45" width="100" height="25" fill="#f39c12"/>
+                        <!-- Крыша - трапеция из полигона -->
+                        <polygon points="40,45 50,22 90,22 100,45" fill="#f39c12"/>
+                        <!-- Окна - четкие геометрические формы -->
+                        <polygon points="52,43 56,26 68,26 68,43" fill="white"/>
+                        <polygon points="72,43 72,26 84,26 88,43" fill="white"/>
+                        <!-- Фара и стоп-сигнал - квадраты -->
+                        <rect x="110" y="52" width="8" height="8" fill="white"/>
+                        <rect x="22" y="52" width="6" height="8" fill="#e74c3c"/>
+                        <!-- Колеса - идеальные круги -->
+                        <circle cx="45" cy="75" r="12" fill="#2c3e50"/>
+                        <circle cx="45" cy="75" r="6" fill="#f39c12"/>
+                        <circle cx="95" cy="75" r="12" fill="#2c3e50"/>
+                        <circle cx="95" cy="75" r="6" fill="#f39c12"/>
                     </svg>
                     <span class="logo-label">Геометричная</span>
                 </div>
 
-                <!-- Машинка 5 - Силуэт -->
-                <div class="logo-card dark">
-                    <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 60 L30 60 L35 45 Q40 35 70 35 Q100 35 105 45 L110 60 L120 60 L120 70 L20 70 Z" fill="#f39c12"/>
-                        <rect x="42" y="40" width="20" height="18" rx="2" fill="#2c3e50"/>
-                        <rect x="68" y="40" width="25" height="18" rx="2" fill="#2c3e50"/>
-                        <circle cx="45" cy="75" r="12" fill="#f39c12"/>
-                        <circle cx="45" cy="75" r="6" fill="#2c3e50"/>
-                        <circle cx="95" cy="75" r="12" fill="#f39c12"/>
-                        <circle cx="95" cy="75" r="6" fill="#2c3e50"/>
-                    </svg>
-                    <span class="logo-label">Силуэт</span>
-                </div>
-
-                <!-- Машинка 6 - Иконка-колесо -->
+                <!-- Машинка 5 - Иконка-колесо -->
                 <div class="logo-card orange">
                     <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="50" r="42" stroke="white" stroke-width="4" fill="none"/>
@@ -568,7 +563,7 @@
                     </svg>
                     <div>
                         <div class="final-text">КИБИТКА</div>
-                        <div class="final-subtext">ТАКСИ-СЕРВИС</div>
+                        <div class="final-subtext">ТАКСИ-��ЕРВИС</div>
                     </div>
                 </div>
 
