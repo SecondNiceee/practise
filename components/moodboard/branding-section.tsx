@@ -4,17 +4,17 @@ import { Check, X } from "lucide-react"
 
 const applications = [
   {
-    src: "/logo/branding-cards-kibitka.jpg",
+    src: "/logo/branding-cards-kibitka.png",
     title: "Визитки",
     desc: "Контактные материалы для водителей и менеджеров",
   },
   {
-    src: "/logo/branding-materials-kibitka.jpg",
+    src: "/logo/branding-materials-kibitka.png",
     title: "Носители",
     desc: "Канцелярия, наклейки и фирменная продукция",
   },
   {
-    src: "/logo/branding-uniform-kibitka.jpg",
+    src: "/logo/branding-uniform-kibitka.png",
     title: "Униформа",
     desc: "Одежда и аксессуары команды сервиса",
   },

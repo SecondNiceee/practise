@@ -1,16 +1,29 @@
 import { KibitkaMark } from "./kibitka-mark"
 
-/** Величина охранного поля = высоте колеса логотипа (в пикселях). */
-const X = 48
+/** Диаметр одного колеса логотипа (в пикселях). */
+const WHEEL = 16
+/** Величина охранного поля = три колеса логотипа. */
+const X = WHEEL * 3
 
-/** Колесо логотипа в натуральную величину X — эталон охранного поля. */
-function Wheel() {
+/** Одно колесо логотипа. */
+function Wheel({ size = WHEEL }: { size?: number }) {
   return (
-    <svg width={X} height={X} viewBox="0 0 24 24" role="img" aria-label="Колесо логотипа">
+    <svg width={size} height={size} viewBox="0 0 24 24" role="img" aria-label="Колесо логотипа">
       <circle cx="12" cy="12" r="12" fill="#2c3e50" />
       <circle cx="12" cy="12" r="8" fill="#ecf0f1" />
       <circle cx="12" cy="12" r="4" fill="#2c3e50" />
     </svg>
+  )
+}
+
+/** Эталон охранного поля — три колеса в ряд. */
+function ThreeWheels() {
+  return (
+    <div className="flex items-center gap-1" role="img" aria-label="Три колеса логотипа">
+      <Wheel />
+      <Wheel />
+      <Wheel />
+    </div>
   )
 }
 
@@ -57,13 +70,13 @@ export function ProtectiveField() {
           </h4>
           <p className="max-w-md text-sm leading-relaxed text-brand-navy/65">
             Минимальный отступ от логотипа до края носителя и других объектов
-            равен величине&nbsp;X — это реальная высота колеса автомобиля в знаке.
+            равен величине&nbsp;X — это размер трёх колёс автомобиля в знаке.
             Так логотип сохраняет читаемость в любом окружении.
           </p>
           <div className="flex w-fit items-center gap-3 rounded-xl border border-brand-navy/10 bg-brand-cream/60 p-3">
-            <Wheel />
+            <ThreeWheels />
             <span className="font-display text-sm font-semibold text-brand-navy">
-              X = высота колеса
+              X = три колеса
             </span>
           </div>
         </div>
