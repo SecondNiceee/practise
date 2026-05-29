@@ -66,14 +66,15 @@ const speedIcon = (fg) =>
     fg,
   )
 
-// Те же паттерны, что и на /moodboard (patterns-strip.tsx)
+// Оставляем 4 паттерна. size увеличен, чтобы паттерн был крупнее
+// (меньше повторов иконки помещается в квадрат).
+// base — исходный размер плитки, под который нарисована иконка;
+// масштаб иконки = size / base, поэтому она тоже увеличивается.
 const patterns = [
-  { id: "cars", size: 68, bg: NAVY, fg: LIGHT, draw: carIcon },
-  { id: "wheels", size: 50, bg: LIGHT, fg: NAVY, draw: wheelIcon },
-  { id: "steering", size: 56, bg: ORANGE, fg: NAVY, draw: steeringIcon },
-  { id: "road", size: 36, bg: NAVY, fg: ORANGE, draw: chevronIcon },
-  { id: "pins", size: 48, bg: LIGHT, fg: ORANGE, draw: pinIcon },
-  { id: "speed", size: 44, bg: ORANGE, fg: LIGHT, draw: speedIcon },
+  { id: "cars", size: 150, base: 68, bg: NAVY, fg: LIGHT, draw: carIcon },
+  { id: "steering", size: 130, base: 56, bg: ORANGE, fg: NAVY, draw: steeringIcon },
+  { id: "pins", size: 120, base: 48, bg: LIGHT, fg: ORANGE, draw: pinIcon },
+  { id: "speed", size: 120, base: 44, bg: ORANGE, fg: LIGHT, draw: speedIcon },
 ]
 
 const CANVAS = 600 // итоговый размер квадратной плитки (px)
@@ -85,7 +86,7 @@ for (const p of patterns) {
     <defs>
       <pattern id="p" width="${p.size}" height="${p.size}" patternUnits="userSpaceOnUse">
         <rect width="${p.size}" height="${p.size}" fill="${p.bg}" />
-        ${p.draw(p.fg)}
+        <g transform="scale(${(p.size / p.base).toFixed(4)})">${p.draw(p.fg)}</g>
       </pattern>
     </defs>
     <rect width="100%" height="100%" fill="url(#p)" />

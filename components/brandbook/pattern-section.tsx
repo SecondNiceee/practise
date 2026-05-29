@@ -5,27 +5,20 @@ type Pattern = {
   id: string
   title: string
   desc: string
-  span?: boolean
   src: string
 }
 
 // Те же паттерны, что и на /moodboard, но вставленные как изображения
 const patterns: Pattern[] = [
-  { id: "cars", title: "Машинки", desc: "Основной паттерн для упаковки и фонов", span: true, src: "/patterns/cars.png" },
-  { id: "wheels", title: "Колёса", desc: "Геометрия движения", src: "/patterns/wheels.png" },
-  { id: "steering", title: "Руль", desc: "Акцент для интерфейсов", src: "/patterns/steering.png" },
-  { id: "road", title: "Дорога", desc: "Направление и динамика", src: "/patterns/road.png" },
+  { id: "cars", title: "Машинки", desc: "Основной паттерн для упаковки и фонов", src: "/patterns/cars.png" },
   { id: "pins", title: "Геометки", desc: "Карты и геолокация", src: "/patterns/pins.png" },
-  { id: "speed", title: "Скорость", desc: "Яркий акцент для соцсетей", span: true, src: "/patterns/speed.png" },
+  { id: "steering", title: "Руль", desc: "Акцент для интерфейсов", src: "/patterns/steering.png" },
+  { id: "speed", title: "Скорость", desc: "Яркий акцент для соцсетей", src: "/patterns/speed.png" },
 ]
 
 function PatternSwatch({ p }: { p: Pattern }) {
   return (
-    <figure
-      className={`group relative overflow-hidden rounded-2xl border border-brand-navy/10 ${
-        p.span ? "col-span-2" : ""
-      }`}
-    >
+    <figure className="group relative aspect-square overflow-hidden rounded-2xl border border-brand-navy/10">
       <Image
         src={p.src || "/placeholder.svg"}
         alt={`Паттерн «${p.title}»`}
@@ -49,10 +42,10 @@ export function PatternSection() {
           index="6"
           kicker="Фирменный стиль · Паттерны"
           title="Паттерны и текстуры"
-          description="Единая система линейной графики на основе машинки, колеса, руля, дороги и геометки. Все паттерны построены одной обводкой и работают на упаковке, в приложении, на униформе и в рекламе."
+          description="Единая система линейной графики на основе машинки, геометки, руля и скорости. Все паттерны построены одной обводкой и работают на упаковке, в приложении, на униформе и в рекламе."
         />
 
-        <div className="grid auto-rows-[180px] grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {patterns.map((p) => (
             <PatternSwatch key={p.id} p={p} />
           ))}
