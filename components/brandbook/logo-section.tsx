@@ -47,34 +47,35 @@ export function LogoSection() {
         <div className="mt-4 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-8">
             <svg
-              viewBox="0 0 320 240"
+              viewBox="0 0 360 300"
               className="h-auto w-full max-w-md"
               role="img"
-              aria-label="Схема охранного поля логотипа"
+              aria-label="Схема охранного поля логотипа: отступ равен диаметру колеса"
             >
-              {/* protective field dashed box */}
+              {/* clear space dashed box (margin = X on every side) */}
               <rect
-                x="20"
-                y="20"
-                width="280"
-                height="200"
+                x="28"
+                y="36"
+                width="304"
+                height="228"
                 fill="none"
                 stroke="#bdc3c7"
                 strokeWidth="1.5"
                 strokeDasharray="6,6"
               />
-              {/* logo box */}
+              {/* logo bounding box */}
               <rect
-                x="80"
-                y="62"
-                width="160"
-                height="116"
+                x="76"
+                y="84"
+                width="208"
+                height="132"
                 fill="none"
                 stroke="#2c3e50"
                 strokeWidth="1"
+                opacity="0.4"
               />
-              {/* the mark */}
-              <g transform="translate(90, 70) scale(1.0)">
+              {/* the mark, scaled x2, content top-left aligned to (76,84) */}
+              <g transform="translate(40, 40) scale(2)">
                 <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
                 <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
                 <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
@@ -85,22 +86,38 @@ export function LogoSection() {
                 <circle cx="100" cy="76" r="12" fill="#2c3e50" />
                 <circle cx="100" cy="76" r="8" fill="#ecf0f1" />
               </g>
-              {/* X measure left */}
-              <line x1="50" y1="62" x2="50" y2="178" stroke="#8b7355" strokeWidth="1" />
-              <text x="38" y="124" fontFamily="var(--font-display)" fontSize="14" fill="#8b7355" textAnchor="middle">X</text>
-              {/* X measure bottom */}
-              <line x1="20" y1="200" x2="80" y2="200" stroke="#8b7355" strokeWidth="1" />
-              <text x="50" y="214" fontFamily="var(--font-display)" fontSize="14" fill="#8b7355" textAnchor="middle">X</text>
+
+              {/* X = wheel diameter, measured on the right wheel (cx240, cy192, r24 → 168..216) */}
+              <line x1="264" y1="168" x2="304" y2="168" stroke="#8b7355" strokeWidth="1" strokeDasharray="3,3" />
+              <line x1="264" y1="216" x2="304" y2="216" stroke="#8b7355" strokeWidth="1" strokeDasharray="3,3" />
+              <line x1="300" y1="168" x2="300" y2="216" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="296" y1="168" x2="304" y2="168" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="296" y1="216" x2="304" y2="216" stroke="#8b7355" strokeWidth="1.5" />
+              <text x="314" y="196" fontFamily="var(--font-display)" fontSize="15" fontWeight="700" fill="#8b7355">X</text>
+
+              {/* top clear space = X (vertical, between outer 36 and inner 84) */}
+              <line x1="180" y1="36" x2="180" y2="84" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="176" y1="36" x2="184" y2="36" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="176" y1="84" x2="184" y2="84" stroke="#8b7355" strokeWidth="1.5" />
+              <text x="190" y="64" fontFamily="var(--font-display)" fontSize="15" fontWeight="700" fill="#8b7355">X</text>
+
+              {/* left clear space = X (horizontal, between outer 28 and inner 76) */}
+              <line x1="28" y1="150" x2="76" y2="150" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="28" y1="146" x2="28" y2="154" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="76" y1="146" x2="76" y2="154" stroke="#8b7355" strokeWidth="1.5" />
+              <text x="52" y="142" fontFamily="var(--font-display)" fontSize="15" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
             </svg>
           </div>
 
           <div className="flex flex-col justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
             <h3 className="font-display text-lg font-semibold text-brand-navy">Охранное поле</h3>
             <p className="leading-relaxed text-brand-navy/70">
-              За единицу построения принята высота колеса автомобиля —{" "}
-              <span className="font-semibold text-brand-orange-dark">X</span>. Это
-              минимальное расстояние от логотипа до края любого носителя и до
-              других элементов макета.
+              За единицу построения принят диаметр колеса автомобиля —{" "}
+              <span className="font-semibold text-brand-orange-dark">X</span>.
+              Именно эта величина отложена со всех сторон знака: отступ сверху,
+              снизу и по бокам равен <span className="font-semibold text-brand-orange-dark">X</span>{" "}
+              и является минимальным расстоянием до края носителя и других
+              элементов макета.
             </p>
             <p className="leading-relaxed text-brand-navy/70">
               Соблюдение охранного поля гарантирует читаемость знака и сохраняет

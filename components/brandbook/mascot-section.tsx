@@ -1,12 +1,5 @@
-import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
-
-const mascots = [
-  { src: "/logo/mascot-main.jpg", alt: "Маскот Кибитка — приветствие" },
-  { src: "/logo/mascot-emotions.jpg", alt: "Маскот Кибитка — эмоции" },
-  { src: "/logo/mascot-activities.jpg", alt: "Маскот Кибитка — действия" },
-  { src: "/logo/mascot-lineart.jpg", alt: "Маскот Кибитка — контурная версия" },
-]
+import { MascotEmotions } from "@/components/moodboard/mascot-emotions"
 
 const uses = [
   { title: "Приложение", desc: "Онбординг, пустые состояния, статусы заказа" },
@@ -22,25 +15,10 @@ export function MascotSection() {
           index="7"
           kicker="Практическая работа №5 · Маскот"
           title="Маскот бренда"
-          description="Дружелюбный кот-таксист в фирменной кепке делает бренд тёплым и запоминающимся. Он усиливает эмоциональную связь с пассажиром."
+          description="Сама машинка «Кибитка» становится маскотом: набор эмоций позволяет ей живо общаться с аудиторией. Один и тот же узнаваемый силуэт меняет лишь выражение лица."
         />
 
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {mascots.map((m) => (
-            <div
-              key={m.src}
-              className="relative aspect-square overflow-hidden rounded-2xl border border-brand-navy/10 bg-white"
-            >
-              <Image
-                src={m.src || "/placeholder.svg"}
-                alt={m.alt}
-                fill
-                sizes="(max-width: 1024px) 50vw, 25vw"
-                className="object-contain p-4 transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-          ))}
-        </div>
+        <MascotEmotions />
 
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {uses.map((u) => (

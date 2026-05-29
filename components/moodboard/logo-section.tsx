@@ -1,13 +1,6 @@
-import Image from "next/image"
 import { SectionHeading } from "./section-heading"
 import { KibitkaMark } from "./kibitka-mark"
-
-const mascots = [
-  { src: "/logo/mascot-main.jpg", alt: "Маскот Кибитка — приветствие" },
-  { src: "/logo/mascot-emotions.jpg", alt: "Маскот Кибитка — эмоции" },
-  { src: "/logo/mascot-activities.jpg", alt: "Маскот Кибитка — действия" },
-  { src: "/logo/mascot-lineart.jpg", alt: "Маскот Кибитка — контурная версия" },
-]
+import { MascotEmotions } from "./mascot-emotions"
 
 export function LogoSection() {
   return (
@@ -78,25 +71,10 @@ export function LogoSection() {
       <h3 className="mb-5 mt-12 font-display text-lg font-semibold text-brand-navy">
         Маскот бренда
       </h3>
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {mascots.map((m) => (
-          <div
-            key={m.src}
-            className="relative aspect-square overflow-hidden rounded-2xl border border-brand-navy/10 bg-white"
-          >
-            <Image
-              src={m.src || "/placeholder.svg"}
-              alt={m.alt}
-              fill
-              sizes="(max-width: 1024px) 50vw, 25vw"
-              className="object-contain p-4 transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-        ))}
-      </div>
+      <MascotEmotions />
       <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-brand-navy/65">
-        Дружелюбный кот-таксист в фирменной кепке делает бренд тёплым и
-        запоминающимся — используется в приложении, соцсетях и рекламе.
+        Маскотом служит сама машинка «Кибитка» с набором эмоций — она делает
+        бренд тёплым и запоминающимся в приложении, соцсетях и рекламе.
       </p>
     </section>
   )
