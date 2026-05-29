@@ -79,7 +79,7 @@ export function MoodboardGallery() {
         <SectionHeading
           light
           index="2"
-          kicker="Практическая работа №2 · Мудборд"
+          kicker="Мудборд"
           title="Визуальное настроение"
           description="Динамика, городская энергия, тепло и безопасность — атмосфера, которой живёт бренд «Кибитка»."
         />

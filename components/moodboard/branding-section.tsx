@@ -40,7 +40,7 @@ export function BrandingSection() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="6"
-          kicker="Практическая работа №5 · Брендбук"
+          kicker="Брендбук"
           title="Носители и правила"
           description="Как фирменный стиль «Кибитка» живёт на реальных носителях и каких правил стоит придерживаться."
         />

@@ -1,7 +1,9 @@
 import type { ReactNode } from "react"
 
+// Три фирменных цвета из логотипа «Кибитка»
+const ORANGE = "#f39c12"
 const NAVY = "#2c3e50"
-const CREAM = "#faf6f0"
+const LIGHT = "#ecf0f1"
 
 /**
  * Единая система линейной графики «Кибитка».
@@ -90,28 +92,31 @@ type Pattern = {
   id: string
   title: string
   size: number
+  bg: string
+  fg: string
   draw: (fg: string) => ReactNode
 }
 
+// Каждый паттерн собран только из трёх фирменных цветов логотипа
 const patterns: Pattern[] = [
-  { id: "cars", title: "Машинки", size: 68, draw: carIcon },
-  { id: "wheels", title: "Колёса", size: 50, draw: wheelIcon },
-  { id: "steering", title: "Руль", size: 56, draw: steeringIcon },
-  { id: "road", title: "Дорога", size: 36, draw: chevronIcon },
-  { id: "pins", title: "Геометки", size: 48, draw: pinIcon },
-  { id: "speed", title: "Скорость", size: 44, draw: speedIcon },
+  { id: "cars", title: "Машинки", size: 68, bg: NAVY, fg: LIGHT, draw: carIcon },
+  { id: "wheels", title: "Колёса", size: 50, bg: LIGHT, fg: NAVY, draw: wheelIcon },
+  { id: "steering", title: "Руль", size: 56, bg: ORANGE, fg: NAVY, draw: steeringIcon },
+  { id: "road", title: "Дорога", size: 36, bg: NAVY, fg: ORANGE, draw: chevronIcon },
+  { id: "pins", title: "Геометки", size: 48, bg: LIGHT, fg: ORANGE, draw: pinIcon },
+  { id: "speed", title: "Скорость", size: 44, bg: ORANGE, fg: LIGHT, draw: speedIcon },
 ]
 
 export function PatternsStrip() {
   return (
     <>
       <h3 className="mb-3 mt-12 font-display text-lg font-semibold text-white">
-        Паттерны и фактуры
+        Паттерн
       </h3>
       <p className="mb-5 max-w-2xl text-pretty text-sm leading-relaxed text-white/60">
-        Единая система линейной графики — один стиль обводки на основе машинки,
-        колеса, руля, дороги и геометки. Паттерны работают на упаковке, в
-        приложении, на униформе и в рекламе.
+        Единая система линейной графики в трёх фирменных цветах логотипа —
+        оранжевый, тёмно-синий и светлый. Один стиль обводки на основе машинки,
+        колеса, руля, дороги и геометки.
       </p>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
         {patterns.map((p) => (
@@ -127,8 +132,8 @@ export function PatternsStrip() {
                   height={p.size}
                   patternUnits="userSpaceOnUse"
                 >
-                  <rect width={p.size} height={p.size} fill={CREAM} />
-                  {p.draw(NAVY)}
+                  <rect width={p.size} height={p.size} fill={p.bg} />
+                  {p.draw(p.fg)}
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill={`url(#mb-pat-${p.id})`} />
