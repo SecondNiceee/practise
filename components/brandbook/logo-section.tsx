@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
+import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
 
 const concepts = [
   "Классическое такси",
@@ -24,19 +25,13 @@ export function LogoSection() {
         {/* Main lockups */}
         <div className="grid gap-4 md:grid-cols-2">
           {/* Full lockup */}
-          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-card p-12">
-            <KibitkaMark className="h-28 w-44" />
-            <span className="font-display text-2xl font-bold tracking-[0.3em] text-brand-navy">
-              КИБИТКА
-            </span>
-            <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
-              Полный логотип
-            </span>
+          <div className="flex flex-col items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-12">
+            <KibitkaLogo size="lg" caption="Полный логотип" />
           </div>
 
           {/* Mark only */}
           <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-card p-12">
-            <KibitkaMark className="h-28 w-44" />
+            <KibitkaMark className="h-24 w-40" />
             <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
               Только знак
             </span>

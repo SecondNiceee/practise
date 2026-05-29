@@ -1,5 +1,5 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
-import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
+import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
 
 export function LogoVariations() {
   return (
@@ -14,71 +14,65 @@ export function LogoVariations() {
 
         {/* Color versions */}
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-white p-10">
-            <KibitkaMark className="h-24 w-36" />
-            <span className="font-display text-lg font-bold tracking-[0.3em] text-brand-navy">КИБИТКА</span>
-            <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
-              На белом фоне
-            </span>
+          <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-white p-10">
+            <KibitkaLogo size="md" caption="На белом фоне" />
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl bg-brand-navy p-10">
-            <KibitkaMark className="h-24 w-36" windowColor="#1a2533" wheelInner="#ecf0f1" />
-            <span className="font-display text-lg font-bold tracking-[0.3em] text-white">КИБИТКА</span>
-            <span className="font-display text-xs font-semibold uppercase tracking-wider text-white/50">
-              На тёмном фоне
-            </span>
+          <div className="flex items-center justify-center rounded-2xl bg-brand-navy p-10">
+            <KibitkaLogo
+              size="md"
+              windowColor="#1a2533"
+              wheelInner="#ecf0f1"
+              wordmarkClassName="text-white"
+              caption="На тёмном фоне"
+              captionClassName="text-white/50"
+            />
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-orange-dark p-10">
-            <KibitkaMark
-              className="h-24 w-36"
+          <div className="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand-orange to-brand-orange-dark p-10">
+            <KibitkaLogo
+              size="md"
               bodyColor="#ffffff"
               windowColor="#2c3e50"
               bumperColor="#ffffff"
               lightColor="#2c3e50"
               wheelColor="#2c3e50"
               wheelInner="#ffffff"
+              wordmarkClassName="text-white"
+              caption="На акцентном фоне"
+              captionClassName="text-white/70"
             />
-            <span className="font-display text-lg font-bold tracking-[0.3em] text-white">КИБИТКА</span>
-            <span className="font-display text-xs font-semibold uppercase tracking-wider text-white/70">
-              На акцентном фоне
-            </span>
           </div>
         </div>
 
         {/* Monochrome versions */}
         <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-white p-10">
-            <KibitkaMark
-              className="h-24 w-36"
+          <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-white p-10">
+            <KibitkaLogo
+              size="md"
               bodyColor="#2c3e50"
               windowColor="#ffffff"
               bumperColor="#2c3e50"
               lightColor="#ffffff"
               wheelColor="#2c3e50"
               wheelInner="#ffffff"
+              caption="Монохром · тёмный"
             />
-            <span className="font-display text-lg font-bold tracking-[0.3em] text-brand-navy">КИБИТКА</span>
-            <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
-              Монохром · тёмный
-            </span>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl bg-brand-navy p-10">
-            <KibitkaMark
-              className="h-24 w-36"
+          <div className="flex items-center justify-center rounded-2xl bg-brand-navy p-10">
+            <KibitkaLogo
+              size="md"
               bodyColor="#ffffff"
               windowColor="#2c3e50"
               bumperColor="#ffffff"
               lightColor="#2c3e50"
               wheelColor="#ffffff"
               wheelInner="#2c3e50"
+              wordmarkClassName="text-white"
+              caption="Монохром · светлый (выворотка)"
+              captionClassName="text-white/50"
             />
-            <span className="font-display text-lg font-bold tracking-[0.3em] text-white">КИБИТКА</span>
-            <span className="font-display text-xs font-semibold uppercase tracking-wider text-white/50">
-              Монохром · светлый (выворотка)
-            </span>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
+import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
 
 export function BrandbookCover() {
   return (
@@ -38,13 +38,7 @@ export function BrandbookCover() {
         <div className="flex justify-center md:justify-end">
           <div className="flex w-full max-w-sm flex-col items-center gap-6 rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur">
             <div className="flex flex-col items-center rounded-2xl bg-white p-10 shadow-2xl shadow-black/30">
-              <KibitkaMark className="h-32 w-44" />
-              <p className="mt-4 font-display text-3xl font-bold tracking-[0.35em] text-brand-navy">
-                КИБИТКА
-              </p>
-              <p className="mt-1 font-display text-[0.65rem] uppercase tracking-[0.3em] text-brand-sand">
-                Такси-сервис
-              </p>
+              <KibitkaLogo size="xl" caption="Такси-сервис" />
             </div>
             <p className="text-center text-sm text-white/55">
               Основной знак — ретро-такси
