@@ -75,7 +75,7 @@ export function HeroSection() {
           <div className="flex w-full max-w-sm flex-col items-center gap-6 rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur">
             <div className="rounded-2xl bg-white p-8 shadow-2xl shadow-black/30">
               <KibitkaMark className="h-32 w-44" />
-              <p className="mt-3 text-center font-display text-2xl font-bold tracking-[0.35em] text-brand-navy">
+              <p className="mt-1 text-center font-display text-2xl font-bold tracking-[0.35em] text-brand-navy">
                 КИБИТКА
               </p>
             </div>
