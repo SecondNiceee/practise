@@ -7,7 +7,7 @@ export function LogoVariations() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="3"
-          kicker="Практическая работа №5 · Вариации"
+          kicker="Вариации"
           title="Цветовые и монохромные версии"
           description="Логотип сохраняет узнаваемость на светлых, тёмных и акцентных фонах, а также в одноцветном исполнении для факса, гравировки и тиснения."
         />

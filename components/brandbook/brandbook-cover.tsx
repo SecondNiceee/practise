@@ -1,12 +1,4 @@
 import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
-import { ShieldCheck, Zap, Sparkles, Smile } from "lucide-react"
-
-const values = [
-  { icon: ShieldCheck, label: "Безопасность" },
-  { icon: Zap, label: "Скорость" },
-  { icon: Sparkles, label: "Чистота" },
-  { icon: Smile, label: "Дружелюбие" },
-]
 
 export function BrandbookCover() {
   return (
@@ -22,10 +14,6 @@ export function BrandbookCover() {
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-28">
         <div className="flex flex-col gap-7">
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
-            Brand Guidelines · 2026
-          </span>
-
           <div className="flex flex-col gap-3">
             <span className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-brand-orange">
               Брендбук
@@ -40,18 +28,6 @@ export function BrandbookCover() {
             стилю городского такси-сервиса: логотип, цвета, типографика, паттерны,
             маскот и правила использования.
           </p>
-
-          <div className="flex flex-wrap gap-3">
-            {values.map(({ icon: Icon, label }) => (
-              <span
-                key={label}
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/85"
-              >
-                <Icon className="h-4 w-4 text-brand-orange" aria-hidden="true" />
-                {label}
-              </span>
-            ))}
-          </div>
 
           <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
             Подготовил Титов Николай

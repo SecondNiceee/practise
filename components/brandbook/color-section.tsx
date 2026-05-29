@@ -50,7 +50,7 @@ export function ColorSection() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="4"
-          kicker="Практические работы №2, №4 · Цвет"
+          kicker="Цвет"
           title="Цветовая палитра"
           description="Контрастные и тёплые цвета передают энергию, скорость, надёжность и безопасность бренда. Оранжевый — главный носитель характера «Кибитки»."
         />
