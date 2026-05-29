@@ -1,18 +1,4 @@
 import { KibitkaMark } from "./kibitka-mark"
-import { ShieldCheck, Zap, Sparkles, MapPin } from "lucide-react"
-
-const stats = [
-  { value: "5", label: "практических работ" },
-  { value: "1", label: "единый фирменный стиль" },
-  { value: "B2C", label: "городские перевозки" },
-]
-
-const pills = [
-  { icon: ShieldCheck, label: "Безопасность" },
-  { icon: Zap, label: "Скорость" },
-  { icon: Sparkles, label: "Чистота" },
-  { icon: MapPin, label: "Точность" },
-]
 
 export function HeroSection() {
   return (
@@ -39,35 +25,8 @@ export function HeroSection() {
 
           <p className="max-w-md text-pretty text-lg leading-relaxed text-white/75">
             «Довезём в целости и сохранности». Единый визуальный гид
-            такси-сервиса, собравший воедино пять практических работ — от анализа
-            бренда до брендбука.
+            такси-сервиса — от анализа бренда до брендбука.
           </p>
-
-          <div className="flex flex-wrap gap-3">
-            {pills.map(({ icon: Icon, label }) => (
-              <span
-                key={label}
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/85"
-              >
-                <Icon className="h-4 w-4 text-brand-orange" aria-hidden="true" />
-                {label}
-              </span>
-            ))}
-          </div>
-
-          <dl className="mt-2 flex flex-wrap gap-8 border-t border-white/10 pt-7">
-            {stats.map((s) => (
-              <div key={s.label} className="flex flex-col gap-1">
-                <dt className="sr-only">{s.label}</dt>
-                <dd className="font-display text-3xl font-bold text-brand-orange">
-                  {s.value}
-                </dd>
-                <span className="max-w-[8rem] text-sm leading-snug text-white/55">
-                  {s.label}
-                </span>
-              </div>
-            ))}
-          </dl>
         </div>
 
         {/* Logo lockup */}

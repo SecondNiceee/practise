@@ -6,7 +6,7 @@ export function TypographySection() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="4"
-          kicker="Практическая работа №2 · Типографика"
+          kicker="Типографика"
           title="Шрифтовая пара"
           description="Технологичный заголовочный шрифт в связке с чистым и читаемым основным текстом."
         />

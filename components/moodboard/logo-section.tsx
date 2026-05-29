@@ -8,7 +8,7 @@ export function LogoSection() {
     <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
       <SectionHeading
         index="5"
-        kicker="Практические работы №3–5 · Логотип"
+        kicker="Логотип"
         title="Логотип и его вариации"
         description="Финальный знак — стилизованное ретро-такси с фирменной надписью. Работает на светлых, тёмных и акцентных фонах."
       />

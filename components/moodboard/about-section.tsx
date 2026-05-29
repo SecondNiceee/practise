@@ -40,7 +40,7 @@ export function AboutSection() {
     <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
       <SectionHeading
         index="1"
-        kicker="Практическая работа №1"
+        kicker="О бренде"
         title="О компании и аудитории"
         description="Кибитка — городской такси-сервис, который делает ставку на безопасность, заботу и предсказуемость поездки для каждого пассажира."
       />
