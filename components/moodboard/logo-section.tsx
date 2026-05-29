@@ -1,6 +1,7 @@
 import { SectionHeading } from "./section-heading"
 import { KibitkaMark } from "./kibitka-mark"
 import { MascotEmotions } from "./mascot-emotions"
+import { ProtectiveField } from "./protective-field"
 
 export function LogoSection() {
   return (
@@ -15,57 +16,55 @@ export function LogoSection() {
       {/* Lockups */}
       <div className="grid gap-4 md:grid-cols-3">
         {/* White */}
-        <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-white p-10">
-          <KibitkaMark className="h-24 w-36" />
-          <span className="font-display text-xl font-bold tracking-[0.3em] text-brand-navy">
-            КИБИТКА
-          </span>
+        <div className="flex flex-col items-center justify-center gap-5 rounded-2xl border border-brand-navy/10 bg-white p-10">
+          <div className="flex flex-col items-center gap-1">
+            <KibitkaMark className="h-24 w-36" />
+            <span className="font-display text-xl font-bold tracking-[0.3em] text-brand-navy">
+              КИБИТКА
+            </span>
+          </div>
           <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
             На светлом фоне
           </span>
         </div>
 
         {/* Navy */}
-        <div className="flex flex-col items-center justify-center gap-4 rounded-2xl bg-brand-navy p-10">
-          <KibitkaMark className="h-24 w-36" windowColor="#1a2533" wheelInner="#ecf0f1" />
-          <span className="font-display text-xl font-bold tracking-[0.3em] text-white">
-            КИБИТКА
-          </span>
+        <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-brand-navy p-10">
+          <div className="flex flex-col items-center gap-1">
+            <KibitkaMark className="h-24 w-36" windowColor="#1a2533" wheelInner="#ecf0f1" />
+            <span className="font-display text-xl font-bold tracking-[0.3em] text-white">
+              КИБИТКА
+            </span>
+          </div>
           <span className="font-display text-xs font-semibold uppercase tracking-wider text-white/50">
             На тёмном фоне
           </span>
         </div>
 
         {/* Orange */}
-        <div className="flex flex-col items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-orange-dark p-10">
-          <KibitkaMark
-            className="h-24 w-36"
-            bodyColor="#ffffff"
-            windowColor="#2c3e50"
-            bumperColor="#ffffff"
-            lightColor="#2c3e50"
-            wheelColor="#2c3e50"
-            wheelInner="#ffffff"
-          />
-          <span className="font-display text-xl font-bold tracking-[0.3em] text-white">
-            КИБИТКА
-          </span>
+        <div className="flex flex-col items-center justify-center gap-5 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-orange-dark p-10">
+          <div className="flex flex-col items-center gap-1">
+            <KibitkaMark
+              className="h-24 w-36"
+              bodyColor="#ffffff"
+              windowColor="#2c3e50"
+              bumperColor="#ffffff"
+              lightColor="#2c3e50"
+              wheelColor="#2c3e50"
+              wheelInner="#ffffff"
+            />
+            <span className="font-display text-xl font-bold tracking-[0.3em] text-white">
+              КИБИТКА
+            </span>
+          </div>
           <span className="font-display text-xs font-semibold uppercase tracking-wider text-white/70">
             На акцентном фоне
           </span>
         </div>
       </div>
 
-      {/* Protective field note */}
-      <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-dashed border-brand-navy/25 bg-card p-6 text-center sm:flex-row sm:items-center sm:justify-center sm:gap-2 sm:text-left">
-        <span className="font-display text-sm font-semibold text-brand-navy">
-          Охранное поле:
-        </span>
-        <span className="text-sm text-brand-navy/65">
-          минимальный отступ от логотипа до края носителя равен высоте колеса
-          автомобиля (X).
-        </span>
-      </div>
+      {/* Protective field diagram */}
+      <ProtectiveField />
 
       {/* Mascot */}
       <h3 className="mb-5 mt-12 font-display text-lg font-semibold text-brand-navy">

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { SectionHeading } from "./section-heading"
+import { PatternsStrip } from "./patterns-strip"
 
 type Tile = {
   src: string
@@ -104,33 +105,8 @@ export function MoodboardGallery() {
           ))}
         </div>
 
-        {/* Textures / styleboard strip */}
-        <h3 className="mb-5 mt-12 font-display text-lg font-semibold text-white">
-          Текстуры и фактуры
-        </h3>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {[
-            { src: "/aidentic/texture-asphalt.jpg", alt: "Текстура асфальта" },
-            { src: "/aidentic/leather-texture.jpg", alt: "Текстура кожи" },
-            { src: "/aidentic/metal-texture.jpg", alt: "Металлическая текстура" },
-            { src: "/aidentic/sunset-gradient.jpg", alt: "Градиент заката" },
-            { src: "/aidentic/bokeh-lights.jpg", alt: "Боке огни" },
-            { src: "/aidentic/geometric-pattern.jpg", alt: "Геометрический паттерн" },
-          ].map((t) => (
-            <div
-              key={t.src}
-              className="relative aspect-square overflow-hidden rounded-xl bg-white/5"
-            >
-              <Image
-                src={t.src || "/placeholder.svg"}
-                alt={t.alt}
-                fill
-                sizes="(max-width: 640px) 50vw, 16vw"
-                className="object-cover transition-transform duration-500 hover:scale-110"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Unified brand patterns */}
+        <PatternsStrip />
       </div>
     </section>
   )

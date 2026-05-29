@@ -142,13 +142,15 @@ export function MascotEmotions() {
           className="flex flex-col items-center gap-3 rounded-2xl border border-brand-navy/10 bg-white p-6"
         >
           <svg
-            viewBox="14 14 132 80"
-            className="h-auto w-full max-w-[180px]"
+            viewBox="0 0 200 180"
+            className="h-auto w-full max-w-[200px]"
             role="img"
             aria-label={`Маскот Кибитка — ${labels[emotion].name.toLowerCase()}`}
           >
-            <CarBase />
-            <Face emotion={emotion} />
+            <g transform="translate(30, 30) scale(1.2)">
+              <CarBase />
+              <Face emotion={emotion} />
+            </g>
           </svg>
           <span className="font-display text-sm font-semibold" style={{ color: labels[emotion].color }}>
             {labels[emotion].name}
