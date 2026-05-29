@@ -27,6 +27,10 @@ export function HeroSection() {
             «Довезём в целости и сохранности». Единый визуальный гид
             такси-сервиса — от анализа бренда до брендбука.
           </p>
+
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-white/55">
+            Подготовил Титов Николай ТКБО-02-23
+          </p>
         </div>
 
         {/* Logo lockup */}
