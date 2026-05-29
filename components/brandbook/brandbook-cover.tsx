@@ -52,6 +52,10 @@ export function BrandbookCover() {
               </span>
             ))}
           </div>
+
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
+            Подготовил Титов Николай
+          </p>
         </div>
 
         {/* Logo lockup */}
