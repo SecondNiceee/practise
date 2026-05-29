@@ -21,7 +21,7 @@ export function RulesSection() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="9"
-          kicker="Практическая работа №5 · Правила"
+          kicker="Правила"
           title="Правила использования"
           description="Соблюдение этих правил сохраняет узнаваемость и целостность бренда «Кибитка» на любых носителях."
         />

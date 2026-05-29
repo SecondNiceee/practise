@@ -25,7 +25,7 @@ export function ApplicationsSection() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="8"
-          kicker="Практическая работа №5 · Носители"
+          kicker="Носители"
           title="Применение на носителях"
           description="Как фирменный стиль «Кибитка» живёт на реальных носителях — от визиток до униформы и автопарка."
         />

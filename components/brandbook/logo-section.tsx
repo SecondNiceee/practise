@@ -16,7 +16,7 @@ export function LogoSection() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="2"
-          kicker="Практические работы №3–5 · Логотип"
+          kicker="Логотип"
           title="Логотип и его построение"
           description="Финальный знак — стилизованное ретро-такси с хромированным бампером и круглыми фарами. Тёплая форма поддерживает дружелюбный характер бренда."
         />

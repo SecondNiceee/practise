@@ -14,7 +14,7 @@ export function TypographySection() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="5"
-          kicker="Практическая работа №2 · Типографика"
+          kicker="Типографика"
           title="Шрифты и иерархия"
           description="Технологичный заголовочный Montserrat в связке с чистым и читаемым Open Sans для основного текста."
         />

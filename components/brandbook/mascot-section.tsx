@@ -13,7 +13,7 @@ export function MascotSection() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
           index="7"
-          kicker="Практическая работа №5 · Маскот"
+          kicker="Маскот"
           title="Маскот бренда"
           description="Сама машинка «Кибитка» становится маскотом: набор эмоций позволяет ей живо общаться с аудиторией. Один и тот же узнаваемый силуэт меняет лишь выражение лица."
         />
