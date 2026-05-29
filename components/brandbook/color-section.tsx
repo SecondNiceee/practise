@@ -70,33 +70,6 @@ export function ColorSection() {
             <Swatch key={c.hex} {...c} />
           ))}
         </div>
-
-        {/* Proportions */}
-        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
-          Пропорции использования
-        </h3>
-        <div className="overflow-hidden rounded-2xl border border-brand-navy/10">
-          <div className="flex h-16 text-xs font-semibold">
-            <div className="flex w-[55%] items-center justify-center bg-brand-cream text-brand-navy">
-              55% · фон
-            </div>
-            <div className="flex w-[25%] items-center justify-center bg-brand-navy text-white">
-              25%
-            </div>
-            <div
-              className="flex w-[15%] items-center justify-center text-white"
-              style={{ backgroundColor: "#F39C12" }}
-            >
-              15%
-            </div>
-            <div
-              className="flex w-[5%] items-center justify-center text-white"
-              style={{ backgroundColor: "#E74C3C" }}
-            >
-              5%
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
