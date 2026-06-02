@@ -1,13 +1,13 @@
 const links = [
-  { href: "#intro", label: "О бренде" },
+  { href: "#contents", label: "Оглавление" },
+  { href: "#about", label: "О бренде" },
   { href: "#logo", label: "Логотип" },
-  { href: "#variations", label: "Вариации" },
+  { href: "#logo-rules", label: "Правила лого" },
   { href: "#colors", label: "Цвета" },
-  { href: "#typography", label: "Типографика" },
+  { href: "#typography", label: "Шрифты" },
   { href: "#patterns", label: "Паттерны" },
-  { href: "#mascot", label: "Маскот" },
+  { href: "#photostyle", label: "Фотостиль" },
   { href: "#applications", label: "Носители" },
-  { href: "#rules", label: "Правила" },
 ]
 
 export function BrandbookNav() {

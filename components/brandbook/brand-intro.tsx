@@ -19,11 +19,11 @@ const audience = [
 
 export function BrandIntro() {
   return (
-    <section id="intro" className="scroll-mt-20">
+    <section id="about" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
-          index="1"
-          kicker="Платформа бренда"
+          index="01"
+          kicker="О компании"
           title="О бренде «Кибитка»"
           description="Городское такси с акцентом на безопасность, заботу и предсказуемость. Бренд работает в сегменте B2C и обращается к пассажиру тепло и по-человечески."
         />
