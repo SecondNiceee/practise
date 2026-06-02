@@ -16,7 +16,7 @@ const outPath = path.join(root, "public/carriers/carrier-taxi-car.png")
   // Blend the logo into the glossy paint with a touch of transparency so the
   // van's reflections/highlights read through it, like a printed vinyl decal
   // rather than a sticker pasted flat on top of the photo.
-  const logoW = 300
+  const logoW = 380
   const { data, info } = await sharp(logoPath)
     .resize({ width: logoW })
     .ensureAlpha()
@@ -35,7 +35,7 @@ const outPath = path.join(root, "public/carriers/carrier-taxi-car.png")
 
   // Center the logo on the large flat cargo side panel of the orange van.
   const logoLeft = Math.round(285 - info.width / 2)
-  const logoTop = Math.round(470 - info.height / 2)
+  const logoTop = Math.round(420 - info.height / 2)
 
   await base
     .composite([{ input: logo, left: logoLeft, top: logoTop, blend: "over" }])
