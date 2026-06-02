@@ -8,6 +8,7 @@ const links = [
   { href: "#patterns", label: "Паттерны" },
   { href: "#photostyle", label: "Фотостиль" },
   { href: "#applications", label: "Носители" },
+  { href: "#campaign", label: "Реклама" },
 ]
 
 export function BrandbookNav() {

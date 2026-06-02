@@ -9,6 +9,7 @@ const sections = [
   { num: "06", title: "Паттерн. Доп. графические элементы", href: "#patterns" },
   { num: "07", title: "Фотостиль. Правила / Промт", href: "#photostyle" },
   { num: "08", title: "Носители (по видам)", href: "#applications" },
+  { num: "09", title: "Рекламная кампания. Выбор носителей", href: "#campaign" },
 ]
 
 export function TableOfContents() {

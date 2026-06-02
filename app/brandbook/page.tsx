@@ -10,6 +10,7 @@ import { TypographySection } from "@/components/brandbook/typography-section"
 import { PatternSection } from "@/components/brandbook/pattern-section"
 import { PhotoStyleSection } from "@/components/brandbook/photostyle-section"
 import { ApplicationsSection } from "@/components/brandbook/applications-section"
+import { CampaignSection } from "@/components/brandbook/campaign-section"
 import { FinalCover } from "@/components/brandbook/final-cover"
 
 export const metadata: Metadata = {
@@ -54,7 +55,10 @@ export default function BrandbookPage() {
       {/* 10. Носители (по видам) */}
       <ApplicationsSection />
       
-      {/* 11. Титул 2 */}
+      {/* 11. Рекламная кампания */}
+      <CampaignSection />
+      
+      {/* 12. Титул 2 */}
       <FinalCover />
     </main>
   )
