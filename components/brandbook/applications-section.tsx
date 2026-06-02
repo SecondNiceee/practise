@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { FileText, Shirt, Car, Smartphone, Gift, Coffee } from "lucide-react"
+import { MobileAppMockup } from "@/components/brandbook/mobile-app-mockup"
 
 const categories = [
   {
@@ -57,6 +58,7 @@ const categories = [
         src: "/carriers/carrier-app.png",
         title: "Мобильное приложение",
         desc: "UI мобильного приложения для iOS и Android: карта, заказ поездки, оранжевые акценты.",
+        custom: "app" as const,
       },
     ],
   },
@@ -117,15 +119,19 @@ export function ApplicationsSection() {
                   key={item.title}
                   className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm"
                 >
-                  <div className="relative aspect-[16/9]">
-                    <Image
-                      src={item.src}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                  </div>
+                  {"custom" in item && item.custom === "app" ? (
+                    <MobileAppMockup />
+                  ) : (
+                    <div className="relative aspect-[16/9]">
+                      <Image
+                        src={item.src}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
                   <div className="flex flex-col gap-1 p-5">
                     <h4 className="font-display font-semibold text-brand-navy">{item.title}</h4>
                     <p className="text-sm leading-relaxed text-brand-navy/65">{item.desc}</p>
