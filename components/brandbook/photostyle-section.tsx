@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
-import { Check, X, Sparkles } from "lucide-react"
+import { Check, X } from "lucide-react"
 
 const photoExamples = [
   { src: "/aidentic/taxi-car.jpg", title: "Автомобиль", desc: "Чистый, ухоженный автомобиль в городской среде" },
@@ -22,16 +22,6 @@ const photoDonts = [
   "Показывать грязные или старые автомобили",
   "Использовать перенасыщенные цвета",
 ]
-
-const aiPromptRu = `Фотография такси-сервиса «Кибитка». Тёплые оранжево-жёлтые тона, 
-естественное освещение, городская среда. Чистый автомобиль, дружелюбная атмосфера, 
-ощущение надёжности и заботы. Мягкий боке на заднем плане, лёгкое размытие движения. 
-Стиль: современная рекламная фотография, lifestyle.`
-
-const aiPromptEn = `Photo for "Kibitka" taxi service. Warm orange-yellow tones, 
-natural lighting, urban environment. Clean vehicle, friendly atmosphere, 
-feeling of reliability and care. Soft bokeh background, slight motion blur. 
-Style: modern advertising photography, lifestyle.`
 
 export function PhotoStyleSection() {
   return (
@@ -132,25 +122,7 @@ export function PhotoStyleSection() {
           </div>
         </div>
 
-        {/* AI Prompt */}
-        <h3 className="mb-5 mt-10 flex items-center gap-2 font-display text-lg font-semibold text-brand-navy">
-          <Sparkles className="h-5 w-5 text-brand-orange" />
-          Промт для генерации изображений (AI)
-        </h3>
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-brand-navy/10 bg-card p-6">
-            <h4 className="mb-3 font-display text-sm font-semibold text-brand-navy">Русский</h4>
-            <p className="whitespace-pre-line font-mono text-xs leading-relaxed text-brand-navy/70">
-              {aiPromptRu}
-            </p>
-          </div>
-          <div className="rounded-2xl border border-brand-navy/10 bg-card p-6">
-            <h4 className="mb-3 font-display text-sm font-semibold text-brand-navy">English</h4>
-            <p className="whitespace-pre-line font-mono text-xs leading-relaxed text-brand-navy/70">
-              {aiPromptEn}
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   )
