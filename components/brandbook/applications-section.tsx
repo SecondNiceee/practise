@@ -2,7 +2,6 @@ import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { FileText, Shirt, Car, Smartphone, Gift, Coffee } from "lucide-react"
 import { MobileAppMockup } from "@/components/brandbook/mobile-app-mockup"
-import { PromoProductMockup } from "@/components/brandbook/promo-product-mockup"
 
 const categories = [
   {
@@ -83,10 +82,9 @@ const categories = [
     desc: "Брендированные расходники и стаканы — каждый день напоминают о бренде.",
     items: [
       {
-        src: "/carriers/carrier-cup.png",
-        title: "Брендированные стаканы",
-        desc: "Бумажные стаканы с фирменным рукавом для кофе — используются в корпоративных партнёрствах.",
-        custom: "promo" as const,
+        src: "/carriers/carrier-promo.png",
+        title: "Промо-набор «Кибитка»",
+        desc: "Брендированные стаканы, мерч и упаковка в фирменной палитре — для корпоративных партнёрств и подарков.",
       },
     ],
   },
@@ -123,8 +121,6 @@ export function ApplicationsSection() {
                 >
                   {"custom" in item && item.custom === "app" ? (
                     <MobileAppMockup />
-                  ) : "custom" in item && item.custom === "promo" ? (
-                    <PromoProductMockup />
                   ) : (
                     <div className="relative aspect-[16/9]">
                       <Image
