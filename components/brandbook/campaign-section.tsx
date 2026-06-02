@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
-import { Car, Smartphone, Users, BadgePercent, MapPin, Clock } from "lucide-react"
+import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
+import { Smartphone, Users, BadgePercent, MapPin, Clock } from "lucide-react"
 
 const steps = [
   { num: "01", title: "Цель и аудитория", desc: "Определяем задачу кампании и портрет пассажира." },
@@ -8,20 +9,39 @@ const steps = [
   { num: "04", title: "Размещение и аналитика", desc: "Запускаем кампанию и оцениваем эффективность." },
 ]
 
-/* Маленький вордмарк бренда для использования внутри макетов */
-function Wordmark({ className = "", tone = "light" }: { className?: string; tone?: "light" | "dark" }) {
-  return (
-    <span
-      className={`inline-flex items-center gap-2 font-display font-bold tracking-tight ${
-        tone === "light" ? "text-white" : "text-brand-navy"
-      } ${className}`}
-    >
-      <span className="flex h-[1.4em] w-[1.4em] items-center justify-center rounded-full bg-brand-orange text-brand-navy">
-        <Car className="h-[0.85em] w-[0.85em]" aria-hidden="true" />
-      </span>
-      КИБИТКА
-    </span>
-  )
+/* Фирменный логотип «Кибитка» внутри макетов — тот же знак, что и в остальных
+   блоках брендбука. Цвета знака подстраиваются под фон носителя. */
+function PosterLogo({ tone }: { tone: "onDark" | "onOrange" | "onLight" }) {
+  if (tone === "onDark") {
+    // на тёмно-синем фоне: оранжевый кузов, светлые колёса
+    return (
+      <KibitkaLogo
+        size="sm"
+        className="items-start"
+        wordmarkClassName="text-white"
+        wheelColor="#ecf0f1"
+        wheelInner="#2c3e50"
+      />
+    )
+  }
+  if (tone === "onOrange") {
+    // на оранжевом фоне: тёмно-синий кузов, чтобы знак не сливался
+    return (
+      <KibitkaLogo
+        size="sm"
+        className="items-start"
+        wordmarkClassName="text-brand-navy"
+        bodyColor="#2c3e50"
+        windowColor="#f5f0e8"
+        wheelColor="#2c3e50"
+        wheelInner="#f5f0e8"
+        bumperColor="#2c3e50"
+        lightColor="#f5f0e8"
+      />
+    )
+  }
+  // на светлом (cream) фоне: фирменные цвета по умолчанию
+  return <KibitkaLogo size="sm" className="items-start" wordmarkClassName="text-brand-navy" />
 }
 
 export function CampaignSection() {
@@ -64,8 +84,8 @@ export function CampaignSection() {
               />
               {/* контент */}
               <div className="relative flex h-full flex-col justify-between p-6 md:p-8">
-                <div className="flex items-center justify-between">
-                  <Wordmark className="text-xl md:text-2xl" />
+                <div className="flex items-start justify-between">
+                  <PosterLogo tone="onDark" />
                   <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur">
                     городское такси
                   </span>
@@ -102,7 +122,7 @@ export function CampaignSection() {
           <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
             <div className="relative aspect-[3/4] overflow-hidden bg-brand-orange">
               <div className="relative flex h-full flex-col justify-between p-6">
-                <Wordmark className="text-lg" tone="dark" />
+                <PosterLogo tone="onOrange" />
 
                 <div>
                   <p className="font-display text-3xl font-bold leading-[0.95] text-brand-navy text-balance">
@@ -139,7 +159,7 @@ export function CampaignSection() {
                 aria-hidden="true"
               />
               <div className="relative flex h-full flex-col justify-between p-6">
-                <Wordmark className="text-lg" tone="dark" />
+                <PosterLogo tone="onLight" />
 
                 <div>
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-orange/15 px-3 py-1 text-xs font-semibold text-brand-orange-dark">
@@ -186,7 +206,7 @@ export function CampaignSection() {
                 aria-hidden="true"
               />
               <div className="relative flex h-full flex-col justify-between p-6">
-                <Wordmark className="text-lg" />
+                <PosterLogo tone="onDark" />
 
                 <div>
                   <p className="font-display text-5xl font-bold leading-none text-brand-orange">−25%</p>
@@ -222,7 +242,7 @@ export function CampaignSection() {
               />
               <div className="relative flex h-full items-center justify-between gap-4 p-6 md:p-8">
                 <div className="max-w-[48%]">
-                  <Wordmark className="text-lg" tone="dark" />
+                  <PosterLogo tone="onLight" />
                   <p className="mt-3 font-display text-2xl font-bold leading-tight text-brand-navy text-balance md:text-4xl">
                     Такси, которое
                     <br />
