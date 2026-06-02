@@ -37,7 +37,7 @@ const outPath = path.join(root, "public/carriers/carrier-taxi-car.png")
 
   // Position on the flat rear cargo side panel of the orange van.
   const logoLeft = 640
-  const logoTop = 415
+  const logoTop = 300
 
   await base
     .composite([{ input: logo, left: logoLeft, top: logoTop, blend: "over" }])
