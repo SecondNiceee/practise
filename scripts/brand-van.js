@@ -13,18 +13,29 @@ const outPath = path.join(root, "public/carriers/carrier-taxi-car.png")
   console.log("[v0] base", meta.width, meta.height)
 
   // --- Logo -----------------------------------------------------------------
-  // The van is a flat illustration, so a flat logo sits naturally on the body
-  // (no panel, full opacity) instead of looking pasted on a 3D surface.
+  // Blend the logo into the glossy paint with a touch of transparency so the
+  // van's reflections/highlights read through it, like a printed vinyl decal
+  // rather than a sticker pasted flat on top of the photo.
   const logoW = 300
-  const logo = await sharp(logoPath)
+  const { data, info } = await sharp(logoPath)
     .resize({ width: logoW })
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true })
+
+  const opacity = 0.9
+  for (let i = 3; i < data.length; i += 4) {
+    data[i] = Math.round(data[i] * opacity)
+  }
+  const logo = await sharp(data, {
+    raw: { width: info.width, height: info.height, channels: 4 },
+  })
     .png()
     .toBuffer()
-  const info = await sharp(logo).metadata()
 
   // Center the logo on the large flat cargo side panel of the orange van.
-  const logoLeft = Math.round(660 - info.width / 2)
-  const logoTop = Math.round(475 - info.height / 2)
+  const logoLeft = Math.round(285 - info.width / 2)
+  const logoTop = Math.round(470 - info.height / 2)
 
   await base
     .composite([{ input: logo, left: logoLeft, top: logoTop, blend: "over" }])
