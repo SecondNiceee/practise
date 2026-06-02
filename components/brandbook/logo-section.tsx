@@ -16,9 +16,9 @@ export function LogoSection() {
     <section id="logo" className="scroll-mt-20 bg-brand-cream">
       <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <SectionHeading
-          index="2"
+          index="02"
           kicker="Логотип"
-          title="Логотип и его построение"
+          title="Логотип, варианты и охранное поле"
           description="Финальный знак — стилизованное ретро-такси с хромированным бампером и круглыми фарами. Тёплая форма поддерживает дружелюбный характер бренда."
         />
 
@@ -38,8 +38,81 @@ export function LogoSection() {
           </div>
         </div>
 
+        {/* Color versions */}
+        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
+          Цветовые версии логотипа
+        </h3>
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-white p-10">
+            <KibitkaLogo size="md" caption="На белом фоне" />
+          </div>
+
+          <div className="flex items-center justify-center rounded-2xl bg-brand-navy p-10">
+            <KibitkaLogo
+              size="md"
+              windowColor="#1a2533"
+              wheelInner="#ecf0f1"
+              wordmarkClassName="text-white"
+              caption="На тёмном фоне"
+              captionClassName="text-white/50"
+            />
+          </div>
+
+          <div className="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand-orange to-brand-orange-dark p-10">
+            <KibitkaLogo
+              size="md"
+              bodyColor="#ffffff"
+              windowColor="#2c3e50"
+              bumperColor="#ffffff"
+              lightColor="#2c3e50"
+              wheelColor="#2c3e50"
+              wheelInner="#ffffff"
+              wordmarkClassName="text-white"
+              caption="На акцентном фоне"
+              captionClassName="text-white/70"
+            />
+          </div>
+        </div>
+
+        {/* Monochrome versions */}
+        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
+          Монохромные версии
+        </h3>
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-white p-10">
+            <KibitkaLogo
+              size="md"
+              bodyColor="#2c3e50"
+              windowColor="#ffffff"
+              bumperColor="#2c3e50"
+              lightColor="#ffffff"
+              wheelColor="#2c3e50"
+              wheelInner="#ffffff"
+              caption="Монохром тёмный"
+            />
+          </div>
+
+          <div className="flex items-center justify-center rounded-2xl bg-brand-navy p-10">
+            <KibitkaLogo
+              size="md"
+              bodyColor="#ffffff"
+              windowColor="#2c3e50"
+              bumperColor="#ffffff"
+              lightColor="#2c3e50"
+              wheelColor="#ffffff"
+              wheelInner="#2c3e50"
+              wordmarkClassName="text-white"
+              caption="Монохром светлый (выворотка)"
+              captionClassName="text-white/50"
+            />
+          </div>
+        </div>
+
         {/* Protective field */}
-        <div className="mt-4 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
+          Охранное поле
+        </h3>
+        <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-8">
             <svg
               viewBox="0 0 360 300"
@@ -105,7 +178,6 @@ export function LogoSection() {
           </div>
 
           <div className="flex flex-col justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
-            <h3 className="font-display text-lg font-semibold text-brand-navy">Охранное поле</h3>
             <p className="leading-relaxed text-brand-navy/70">
               За единицу построения принят диаметр колеса автомобиля —{" "}
               <span className="font-semibold text-brand-orange-dark">X</span>.
@@ -122,7 +194,7 @@ export function LogoSection() {
         </div>
 
         {/* Explored concepts */}
-        <h3 className="mb-5 mt-12 font-display text-lg font-semibold text-brand-navy">
+        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
           Проработанные концепции знака
         </h3>
         <div className="flex flex-wrap gap-3">
@@ -135,7 +207,7 @@ export function LogoSection() {
             </span>
           ))}
           <span className="rounded-full bg-brand-green px-4 py-2 text-sm font-semibold text-white">
-            Ретро-такси · выбрано
+            Ретро-такси (выбрано)
           </span>
         </div>
       </div>

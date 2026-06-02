@@ -1,38 +1,61 @@
 import type { Metadata } from "next"
 import { BrandbookCover } from "@/components/brandbook/brandbook-cover"
 import { BrandbookNav } from "@/components/brandbook/brandbook-nav"
+import { TableOfContents } from "@/components/brandbook/table-of-contents"
 import { BrandIntro } from "@/components/brandbook/brand-intro"
 import { LogoSection } from "@/components/brandbook/logo-section"
-import { LogoVariations } from "@/components/brandbook/logo-variations"
+import { LogoRulesSection } from "@/components/brandbook/logo-rules-section"
 import { ColorSection } from "@/components/brandbook/color-section"
 import { TypographySection } from "@/components/brandbook/typography-section"
 import { PatternSection } from "@/components/brandbook/pattern-section"
-import { MascotSection } from "@/components/brandbook/mascot-section"
+import { PhotoStyleSection } from "@/components/brandbook/photostyle-section"
 import { ApplicationsSection } from "@/components/brandbook/applications-section"
-import { RulesSection } from "@/components/brandbook/rules-section"
-import { BrandbookFooter } from "@/components/brandbook/brandbook-footer"
+import { FinalCover } from "@/components/brandbook/final-cover"
 
 export const metadata: Metadata = {
   title: "Брендбук «Кибитка» — фирменный стиль такси-сервиса",
   description:
-    "Полный брендбук такси-сервиса «Кибитка»: платформа бренда, логотип и охранное поле, цветовая палитра, типографика, паттерны, маскот, носители и правила использования.",
+    "Полный брендбук такси-сервиса «Кибитка»: о бренде, логотип, правила использования, цвета, шрифты, паттерны, фотостиль и носители.",
 }
 
 export default function BrandbookPage() {
   return (
     <main className="bg-background">
+      {/* 1. Титул */}
       <BrandbookCover />
+      
+      {/* Навигация (sticky) */}
       <BrandbookNav />
+      
+      {/* 2. Оглавление */}
+      <TableOfContents />
+      
+      {/* 3. О бренде / О компании */}
       <BrandIntro />
+      
+      {/* 4. Логотип. Варианты. Охранное поле */}
       <LogoSection />
-      <LogoVariations />
+      
+      {/* 5. Правила использования логотипа */}
+      <LogoRulesSection />
+      
+      {/* 6. Фирменные цвета. Правила использования */}
       <ColorSection />
+      
+      {/* 7. Фирменные шрифты. Правила использования */}
       <TypographySection />
+      
+      {/* 8. Паттерн. Правила. Доп. графические элементы */}
       <PatternSection />
-      <MascotSection />
+      
+      {/* 9. Фотостиль. Правила / Промт */}
+      <PhotoStyleSection />
+      
+      {/* 10. Носители (по видам) */}
       <ApplicationsSection />
-      <RulesSection />
-      <BrandbookFooter />
+      
+      {/* 11. Титул 2 */}
+      <FinalCover />
     </main>
   )
 }
