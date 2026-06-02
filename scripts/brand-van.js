@@ -4,7 +4,7 @@ const path = require("path")
 const root = path.join(__dirname, "..")
 // Orange-painted van so the vehicle matches the brand colours.
 const basePath = path.join(root, "public/carriers/van-base-orange.png")
-const logoPath = path.join(root, "public/carriers/kibitka-logo-source.png")
+const logoPath = path.join(root, "public/carriers/logo-poko.png")
 const outPath = path.join(root, "public/carriers/carrier-taxi-car.png")
 
 ;(async () => {
