@@ -1,44 +1,91 @@
 import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
-import { FileText, Shirt, Car, Smartphone, Gift } from "lucide-react"
+import { FileText, Shirt, Car, Smartphone, Gift, Coffee } from "lucide-react"
 
 const categories = [
   {
-    id: "print",
-    icon: FileText,
-    title: "Полиграфия",
+    id: "transport",
+    icon: Car,
+    title: "Транспорт",
+    desc: "Фирменный стиль на автопарке — самый заметный носитель бренда «Кибитка».",
     items: [
-      { src: "/logo/branding-cards-kibitka.png", title: "Визитки", desc: "Контактные материалы для водителей и менеджеров" },
+      {
+        src: "/carriers/carrier-taxi-car.png",
+        title: "Брендирование автомобиля",
+        desc: "Оклейка кузова фирменными цветами: оранжевая полоса, логотип на дверях, топпер на крыше.",
+      },
     ],
   },
   {
-    id: "merch",
-    icon: Gift,
-    title: "Сувенирная продукция",
+    id: "print",
+    icon: FileText,
+    title: "Полиграфическая продукция",
+    desc: "Печатные материалы для коммуникации с клиентами и партнёрами.",
     items: [
-      { src: "/logo/branding-materials-kibitka.png", title: "Носители", desc: "Канцелярия, наклейки и фирменная продукция" },
+      {
+        src: "/carriers/carrier-business-card.png",
+        title: "Визитные карточки",
+        desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами.",
+      },
+      {
+        src: "/carriers/carrier-flyer.png",
+        title: "Листовки и флаеры",
+        desc: "Промо-материалы для распространения на точках с QR-кодом и специальными предложениями.",
+      },
     ],
   },
   {
     id: "uniform",
     icon: Shirt,
-    title: "Униформа",
+    title: "Деловая документация и форма",
+    desc: "Единый стиль команды — узнаваемость и профессиональный образ.",
     items: [
-      { src: "/logo/branding-uniform-kibitka.png", title: "Одежда", desc: "Форма и аксессуары команды сервиса" },
+      {
+        src: "/carriers/carrier-uniform.png",
+        title: "Форменная одежда водителей",
+        desc: "Поло и кепка в фирменных цветах с вышитым логотипом «Кибитка».",
+      },
     ],
   },
-]
-
-const digitalApps = [
-  { title: "Мобильное приложение", desc: "Интерфейс заказа такси для iOS и Android" },
-  { title: "Веб-сайт", desc: "Информационный сайт и личный кабинет" },
-  { title: "Соцсети", desc: "Оформление профилей и контент" },
-]
-
-const transportApps = [
-  { title: "Брендирование авто", desc: "Оклейка кузова фирменной графикой" },
-  { title: "Топперы", desc: "Световые короба на крыше автомобиля" },
-  { title: "Салон", desc: "Бейджи, подголовники, QR-коды" },
+  {
+    id: "digital",
+    icon: Smartphone,
+    title: "Цифровые носители",
+    desc: "Мобильное приложение — основная точка контакта с пассажиром.",
+    items: [
+      {
+        src: "/carriers/carrier-app.png",
+        title: "Мобильное приложение",
+        desc: "UI мобильного приложения для iOS и Android: карта, заказ поездки, оранжевые акценты.",
+      },
+    ],
+  },
+  {
+    id: "merch",
+    icon: Gift,
+    title: "Сувенирная продукция и мерч",
+    desc: "Фирменные сувениры усиливают лояльность и работают как живая реклама.",
+    items: [
+      {
+        src: "/carriers/carrier-bag.png",
+        title: "Фирменная шоппер-сумка",
+        desc: "Натуральная холщовая сумка с принтом «Кибитка» — экологичный мерч для пассажиров.",
+      },
+    ],
+  },
+  {
+    id: "promo",
+    icon: Coffee,
+    title: "Промо-продукция",
+    desc: "Брендированные расходники и стаканы — каждый день напоминают о бренде.",
+    items: [
+      {
+        src: "/carriers/carrier-cup.png",
+        title: "Брендированные стаканы",
+        desc: "Бумажные стаканы с фирменным рукавом для кофе — используются в корпоративных партнёрствах.",
+      },
+    ],
+  },
 ]
 
 export function ApplicationsSection() {
@@ -49,28 +96,33 @@ export function ApplicationsSection() {
           index="08"
           kicker="Носители"
           title="Носители (по видам)"
-          description="Как фирменный стиль «Кибитка» живёт на реальных носителях — от визиток до автопарка и цифровых продуктов."
+          description="Как фирменный стиль «Кибитка» живёт на реальных носителях — подобраны с учётом специфики городского такси."
         />
 
-        {/* Physical carriers */}
         {categories.map((cat) => (
-          <div key={cat.id} className="mb-8">
-            <h3 className="mb-5 flex items-center gap-2 font-display text-lg font-semibold text-brand-navy">
-              <cat.icon className="h-5 w-5 text-brand-orange" aria-hidden="true" />
-              {cat.title}
-            </h3>
-            <div className="grid gap-4 md:grid-cols-3">
+          <div key={cat.id} className="mb-12">
+            <div className="mb-5 flex items-start gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange-dark">
+                <cat.icon className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <div>
+                <h3 className="font-display text-lg font-semibold text-brand-navy">{cat.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-brand-navy/60">{cat.desc}</p>
+              </div>
+            </div>
+
+            <div className={`grid gap-5 ${cat.items.length === 1 ? "md:grid-cols-1 max-w-2xl" : "md:grid-cols-2"}`}>
               {cat.items.map((item) => (
                 <article
-                  key={item.src}
+                  key={item.title}
                   className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm"
                 >
-                  <div className="relative aspect-[4/3]">
+                  <div className="relative aspect-[16/9]">
                     <Image
-                      src={item.src || "/placeholder.svg"}
+                      src={item.src}
                       alt={item.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                     />
                   </div>
@@ -83,40 +135,6 @@ export function ApplicationsSection() {
             </div>
           </div>
         ))}
-
-        {/* Digital carriers */}
-        <h3 className="mb-5 flex items-center gap-2 font-display text-lg font-semibold text-brand-navy">
-          <Smartphone className="h-5 w-5 text-brand-orange" aria-hidden="true" />
-          Цифровые носители
-        </h3>
-        <div className="mb-8 grid gap-4 md:grid-cols-3">
-          {digitalApps.map((app) => (
-            <div
-              key={app.title}
-              className="flex flex-col gap-2 rounded-2xl border border-brand-navy/10 bg-card p-6"
-            >
-              <span className="font-display font-semibold text-brand-navy">{app.title}</span>
-              <span className="text-sm leading-relaxed text-brand-navy/65">{app.desc}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Transport carriers */}
-        <h3 className="mb-5 flex items-center gap-2 font-display text-lg font-semibold text-brand-navy">
-          <Car className="h-5 w-5 text-brand-orange" aria-hidden="true" />
-          Транспорт
-        </h3>
-        <div className="grid gap-4 md:grid-cols-3">
-          {transportApps.map((app) => (
-            <div
-              key={app.title}
-              className="flex flex-col gap-2 rounded-2xl border border-brand-navy/10 bg-card p-6"
-            >
-              <span className="font-display font-semibold text-brand-navy">{app.title}</span>
-              <span className="text-sm leading-relaxed text-brand-navy/65">{app.desc}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )
