@@ -83,12 +83,13 @@ export function PatternSection() {
               <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#F5F0E8]">
                 <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
                   <defs>
-                    <pattern id="do-cars" x="0" y="0" width="64" height="48" patternUnits="userSpaceOnUse">
-                      {/* simple car silhouette */}
-                      <rect x="8" y="18" width="48" height="18" rx="5" fill="#F39C12" opacity="0.18" />
-                      <rect x="16" y="10" width="28" height="14" rx="4" fill="#F39C12" opacity="0.18" />
-                      <circle cx="18" cy="36" r="5" fill="#2c3e50" opacity="0.18" />
-                      <circle cx="46" cy="36" r="5" fill="#2c3e50" opacity="0.18" />
+                    <pattern id="do-cars" x="0" y="0" width="68" height="68" patternUnits="userSpaceOnUse">
+                      <g stroke="#F39C12" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.2">
+                        <path d="M8 30 L8 26 Q8 23 12 23 L17 23 L21 14 Q23 12 26 12 L42 12 Q45 12 47 14 L51 23 L56 23 Q59 23 59 26 L59 30" />
+                        <line x1="7" y1="30" x2="60" y2="30" />
+                        <circle cx="19" cy="33" r="4" />
+                        <circle cx="48" cy="33" r="4" />
+                      </g>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#do-cars)" />
@@ -112,11 +113,13 @@ export function PatternSection() {
               <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#F5F0E8]">
                 <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
                   <defs>
-                    <pattern id="dont-dense" x="0" y="0" width="28" height="22" patternUnits="userSpaceOnUse">
-                      <rect x="2" y="5" width="24" height="12" rx="3" fill="#F39C12" opacity="0.85" />
-                      <rect x="6" y="1" width="14" height="8" rx="2" fill="#F39C12" opacity="0.85" />
-                      <circle cx="7" cy="17" r="3" fill="#2c3e50" opacity="0.85" />
-                      <circle cx="21" cy="17" r="3" fill="#2c3e50" opacity="0.85" />
+                    <pattern id="dont-dense" x="0" y="0" width="34" height="34" patternUnits="userSpaceOnUse">
+                      <g stroke="#F39C12" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9">
+                        <path d="M4 15 L4 13 Q4 11.5 6 11.5 L8.5 11.5 L10.5 7 Q11.5 6 13 6 L21 6 Q22.5 6 23.5 7 L25.5 11.5 L28 11.5 Q29.5 11.5 29.5 13 L29.5 15" />
+                        <line x1="3.5" y1="15" x2="30" y2="15" />
+                        <circle cx="9.5" cy="16.5" r="2" />
+                        <circle cx="24" cy="16.5" r="2" />
+                      </g>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#dont-dense)" />
@@ -148,13 +151,13 @@ export function PatternSection() {
                 <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
                   <defs>
                     <pattern id="do-one" x="0" y="0" width="56" height="56" patternUnits="userSpaceOnUse">
-                      {/* steering wheel */}
-                      <circle cx="28" cy="28" r="18" fill="none" stroke="#F39C12" strokeWidth="3" opacity="0.2" />
-                      <circle cx="28" cy="28" r="5" fill="none" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
-                      <line x1="28" y1="10" x2="28" y2="23" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
-                      <line x1="28" y1="33" x2="28" y2="46" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
-                      <line x1="10" y1="28" x2="23" y2="28" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
-                      <line x1="33" y1="28" x2="46" y2="28" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
+                      <g stroke="#F39C12" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.25">
+                        <circle cx="28" cy="28" r="16" />
+                        <circle cx="28" cy="28" r="5" />
+                        <line x1="28" y1="12" x2="28" y2="23" />
+                        <line x1="14" y1="36" x2="23" y2="31" />
+                        <line x1="42" y1="36" x2="33" y2="31" />
+                      </g>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#do-one)" />
@@ -177,11 +180,13 @@ export function PatternSection() {
                 {/* Left half — cars */}
                 <svg className="absolute inset-0 h-full w-1/2" aria-hidden="true">
                   <defs>
-                    <pattern id="mix-cars" x="0" y="0" width="44" height="34" patternUnits="userSpaceOnUse">
-                      <rect x="4" y="8" width="36" height="14" rx="4" fill="#F39C12" opacity="0.55" />
-                      <rect x="10" y="3" width="20" height="10" rx="3" fill="#F39C12" opacity="0.55" />
-                      <circle cx="12" cy="22" r="4" fill="#ecf0f1" opacity="0.55" />
-                      <circle cx="32" cy="22" r="4" fill="#ecf0f1" opacity="0.55" />
+                    <pattern id="mix-cars" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                      <g stroke="#F39C12" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.6">
+                        <path d="M6 22 L6 19 Q6 17 9 17 L12.5 17 L15.5 10.5 Q17 9 19 9 L31 9 Q33 9 34.5 10.5 L37.5 17 L41 17 Q43.5 17 43.5 19 L43.5 22" />
+                        <line x1="5" y1="22" x2="44" y2="22" />
+                        <circle cx="14" cy="24" r="3" />
+                        <circle cx="35" cy="24" r="3" />
+                      </g>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#mix-cars)" />
@@ -189,9 +194,11 @@ export function PatternSection() {
                 {/* Right half — pins */}
                 <svg className="absolute inset-0 left-1/2 h-full w-1/2" aria-hidden="true">
                   <defs>
-                    <pattern id="mix-pins" x="0" y="0" width="36" height="44" patternUnits="userSpaceOnUse">
-                      <circle cx="18" cy="14" r="8" fill="#e74c3c" opacity="0.55" />
-                      <path d="M18 22 L12 36 Q18 30 24 36 Z" fill="#e74c3c" opacity="0.55" />
+                    <pattern id="mix-pins" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+                      <g stroke="#e74c3c" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.6">
+                        <path d="M24 11 C17 11 12 16 12 23 C12 31 24 41 24 41 C24 41 36 31 36 23 C36 16 31 11 24 11 Z" />
+                        <circle cx="24" cy="23" r="4" />
+                      </g>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#mix-pins)" />
@@ -223,11 +230,13 @@ export function PatternSection() {
               <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#1ABC9C]">
                 <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
                   <defs>
-                    <pattern id="do-solid" x="0" y="0" width="60" height="46" patternUnits="userSpaceOnUse">
-                      <rect x="6" y="12" width="48" height="18" rx="5" fill="white" opacity="0.12" />
-                      <rect x="14" y="5" width="28" height="13" rx="4" fill="white" opacity="0.12" />
-                      <circle cx="16" cy="30" r="5" fill="white" opacity="0.12" />
-                      <circle cx="44" cy="30" r="5" fill="white" opacity="0.12" />
+                    <pattern id="do-solid" x="0" y="0" width="68" height="68" patternUnits="userSpaceOnUse">
+                      <g stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.15">
+                        <path d="M8 30 L8 26 Q8 23 12 23 L17 23 L21 14 Q23 12 26 12 L42 12 Q45 12 47 14 L51 23 L56 23 Q59 23 59 26 L59 30" />
+                        <line x1="7" y1="30" x2="60" y2="30" />
+                        <circle cx="19" cy="33" r="4" />
+                        <circle cx="48" cy="33" r="4" />
+                      </g>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#do-solid)" />
@@ -258,11 +267,13 @@ export function PatternSection() {
                 {/* Pattern on top of photo */}
                 <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
                   <defs>
-                    <pattern id="dont-photo" x="0" y="0" width="44" height="34" patternUnits="userSpaceOnUse">
-                      <rect x="4" y="8" width="36" height="14" rx="4" fill="#F39C12" opacity="0.7" />
-                      <rect x="10" y="3" width="20" height="10" rx="3" fill="#F39C12" opacity="0.7" />
-                      <circle cx="12" cy="22" r="4" fill="#2c3e50" opacity="0.7" />
-                      <circle cx="32" cy="22" r="4" fill="#2c3e50" opacity="0.7" />
+                    <pattern id="dont-photo" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                      <g stroke="#F39C12" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.7">
+                        <path d="M6 22 L6 19 Q6 17 9 17 L12.5 17 L15.5 10.5 Q17 9 19 9 L31 9 Q33 9 34.5 10.5 L37.5 17 L41 17 Q43.5 17 43.5 19 L43.5 22" />
+                        <line x1="5" y1="22" x2="44" y2="22" />
+                        <circle cx="14" cy="24" r="3" />
+                        <circle cx="35" cy="24" r="3" />
+                      </g>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#dont-photo)" />
