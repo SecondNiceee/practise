@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { Check, X } from "lucide-react"
-import { PageNumber } from "./page-number"
+import { SlideWrapper } from "./slide-wrapper"
 
 const scale = [
   { label: "H1 Заголовок", className: "font-display text-5xl font-extrabold", note: "Montserrat ExtraBold 48px" },
@@ -26,107 +26,100 @@ const typoDonts = [
 
 export function TypographySection() {
   return (
-    <section id="typography" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-        <SectionHeading
-          index="05"
-          kicker="Типографика"
-          title="Фирменные шрифты"
-          description="Технологичный заголовочный Montserrat в связке с чистым и читаемым Open Sans для основного текста."
-        />
+    <SlideWrapper slideNumber={9} totalSlides={24} variant="light">
+      <section id="typography" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            index="05"
+            kicker="Типографика"
+            title="Фирменные шрифты"
+            description="Технологичный заголовочный Montserrat в связке с чистым и читаемым Open Sans для основного текста."
+          />
 
-        {/* Font pair */}
-        <div className="grid gap-4 lg:grid-cols-2">
-          <div className="flex flex-col gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
-            <div className="flex items-center justify-between">
-              <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
-                Заголовки
-              </span>
-              <span className="rounded-full bg-brand-orange/12 px-3 py-1 text-xs font-semibold text-brand-orange-dark">
-                Montserrat
-              </span>
+          {/* Font pair */}
+          <div className="grid gap-4 lg:grid-cols-2">
+            <div className="flex flex-col gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
+                  Заголовки
+                </span>
+                <span className="rounded-full bg-brand-orange/12 px-3 py-1 text-xs font-semibold text-brand-orange-dark">
+                  Montserrat
+                </span>
+              </div>
+              <p className="font-display text-6xl font-extrabold leading-none text-brand-navy">Аа Бб</p>
+              <p className="font-display text-2xl font-bold tracking-[0.2em] text-brand-navy">КИБИТКА</p>
+              <p className="font-display text-sm text-brand-navy/50">ABCDEFG АБВГДЕ 1234567890</p>
             </div>
-            <p className="font-display text-6xl font-extrabold leading-none text-brand-navy">Аа Бб</p>
-            <p className="font-display text-2xl font-bold tracking-[0.2em] text-brand-navy">КИБИТКА</p>
-            <p className="font-display text-sm text-brand-navy/50">ABCDEFG АБВГДЕ 1234567890</p>
-            <div className="mt-2 rounded-lg bg-brand-cream/60 p-3 text-xs text-brand-navy/60">
-              <p><strong>Начертания:</strong> SemiBold (600), Bold (700), ExtraBold (800)</p>
-              <p className="mt-1"><strong>Лицензия:</strong> Open Font License</p>
+
+            <div className="flex flex-col gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
+              <div className="flex items-center justify-between">
+                <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
+                  Основной текст
+                </span>
+                <span className="rounded-full bg-brand-navy/8 px-3 py-1 text-xs font-semibold text-brand-navy">
+                  Open Sans
+                </span>
+              </div>
+              <p className="font-sans text-6xl font-bold leading-none text-brand-navy">Аа Бб</p>
+              <p className="font-sans text-base leading-relaxed text-brand-navy/75">
+                Довезём в целости и сохранности. Чистый салон, вежливый водитель и
+                прибытие точно в срок.
+              </p>
+              <p className="font-sans text-sm text-brand-navy/50">abcdefg абвгде 1234567890</p>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
-            <div className="flex items-center justify-between">
-              <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
-                Основной текст
-              </span>
-              <span className="rounded-full bg-brand-navy/8 px-3 py-1 text-xs font-semibold text-brand-navy">
-                Open Sans
-              </span>
-            </div>
-            <p className="font-sans text-6xl font-bold leading-none text-brand-navy">Аа Бб</p>
-            <p className="font-sans text-base leading-relaxed text-brand-navy/75">
-              Довезём в целости и сохранности. Чистый салон, вежливый водитель и
-              прибытие точно в срок — забота о пассажире в каждой детали поездки.
-            </p>
-            <p className="font-sans text-sm text-brand-navy/50">abcdefg абвгде 1234567890</p>
-            <div className="mt-2 rounded-lg bg-brand-cream/60 p-3 text-xs text-brand-navy/60">
-              <p><strong>Начертания:</strong> Regular (400), Medium (500), SemiBold (600), Bold (700)</p>
-              <p className="mt-1"><strong>Лицензия:</strong> Open Font License</p>
-            </div>
+          {/* Type scale */}
+          <h3 className="mb-5 mt-8 font-display text-lg font-semibold text-brand-navy">
+            Типографическая шкала
+          </h3>
+          <div className="flex flex-col divide-y divide-brand-navy/10 rounded-2xl border border-brand-navy/10 bg-card p-8">
+            {scale.map((s) => (
+              <div
+                key={s.label}
+                className="flex flex-col gap-2 py-4 first:pt-0 last:pb-0 sm:flex-row sm:items-baseline sm:justify-between"
+              >
+                <span className={`${s.className} text-brand-navy`}>{s.label}</span>
+                <span className="shrink-0 font-mono text-xs text-brand-sand">{s.note}</span>
+              </div>
+            ))}
           </div>
-        </div>
 
-        {/* Type scale */}
-        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
-          Типографическая шкала
-        </h3>
-        <div className="flex flex-col divide-y divide-brand-navy/10 rounded-2xl border border-brand-navy/10 bg-card p-8">
-          {scale.map((s) => (
-            <div
-              key={s.label}
-              className="flex flex-col gap-2 py-5 first:pt-0 last:pb-0 sm:flex-row sm:items-baseline sm:justify-between"
-            >
-              <span className={`${s.className} text-brand-navy`}>{s.label}</span>
-              <span className="shrink-0 font-mono text-xs text-brand-sand">{s.note}</span>
+          {/* Typography rules */}
+          <h3 className="mb-5 mt-8 font-display text-lg font-semibold text-brand-navy">
+            Правила использования шрифтов
+          </h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-brand-green/30 bg-card p-7">
+              <h4 className="mb-4 flex items-center gap-2 font-display font-semibold text-brand-green">
+                <Check className="h-5 w-5" aria-hidden="true" /> Правильно
+              </h4>
+              <ul className="flex flex-col gap-3">
+                {typoDos.map((d) => (
+                  <li key={d} className="flex items-start gap-3 text-sm text-brand-navy/80">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" aria-hidden="true" />
+                    {d}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
-
-        {/* Typography rules */}
-        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
-          Правила использования шрифтов
-        </h3>
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-brand-green/30 bg-card p-7">
-            <h4 className="mb-4 flex items-center gap-2 font-display font-semibold text-brand-green">
-              <Check className="h-5 w-5" aria-hidden="true" /> Правильно
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {typoDos.map((d) => (
-                <li key={d} className="flex items-start gap-3 text-sm text-brand-navy/80">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" aria-hidden="true" />
-                  {d}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-brand-red/30 bg-card p-7">
-            <h4 className="mb-4 flex items-center gap-2 font-display font-semibold text-brand-red">
-              <X className="h-5 w-5" aria-hidden="true" /> Недопустимо
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {typoDonts.map((d) => (
-                <li key={d} className="flex items-start gap-3 text-sm text-brand-navy/80">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" aria-hidden="true" />
-                  {d}
-                </li>
-              ))}
-            </ul>
+            <div className="rounded-2xl border border-brand-red/30 bg-card p-7">
+              <h4 className="mb-4 flex items-center gap-2 font-display font-semibold text-brand-red">
+                <X className="h-5 w-5" aria-hidden="true" /> Недопустимо
+              </h4>
+              <ul className="flex flex-col gap-3">
+                {typoDonts.map((d) => (
+                  <li key={d} className="flex items-start gap-3 text-sm text-brand-navy/80">
+                    <X className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" aria-hidden="true" />
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <PageNumber number={9} total={13} />
-    </section>
+      </section>
+    </SlideWrapper>
   )
 }
