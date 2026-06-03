@@ -227,11 +227,11 @@ export function PatternSection() {
           <div className="grid gap-4 md:grid-cols-2">
             {/* DO: pattern on solid colour */}
             <div className="overflow-hidden rounded-2xl border-2 border-[#27ae60]/50">
-              <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#1ABC9C]">
+              <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#F39C12]">
                 <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
                   <defs>
                     <pattern id="do-solid" x="0" y="0" width="68" height="68" patternUnits="userSpaceOnUse">
-                      <g stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.15">
+                      <g stroke="#2c3e50" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.12">
                         <path d="M8 30 L8 26 Q8 23 12 23 L17 23 L21 14 Q23 12 26 12 L42 12 Q45 12 47 14 L51 23 L56 23 Q59 23 59 26 L59 30" />
                         <line x1="7" y1="30" x2="60" y2="30" />
                         <circle cx="19" cy="33" r="4" />
@@ -241,7 +241,7 @@ export function PatternSection() {
                   </defs>
                   <rect width="100%" height="100%" fill="url(#do-solid)" />
                 </svg>
-                <div className="relative z-10 rounded-xl bg-white/90 px-8 py-4">
+                <div className="relative z-10 rounded-xl bg-white/95 px-8 py-4 shadow-md">
                   <span className="font-display text-sm font-bold text-brand-navy">Фирменный фон</span>
                 </div>
               </div>
