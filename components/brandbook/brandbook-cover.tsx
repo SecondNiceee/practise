@@ -3,7 +3,7 @@ import { SlideWrapper } from "./slide-wrapper"
 
 export function BrandbookCover() {
   return (
-    <SlideWrapper slideNumber={1} totalSlides={24} variant="dark" className="flex items-center">
+    <SlideWrapper slideNumber={1} totalSlides={21} variant="dark" className="flex items-center">
       <header className="relative w-full overflow-hidden text-white">
         <div
           aria-hidden="true"
