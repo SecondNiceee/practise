@@ -1,245 +1,196 @@
-import { SectionHeading } from "@/components/moodboard/section-heading"
-import { FileText, Shirt, Car, Smartphone, Gift } from "lucide-react"
-import { MobileAppMockup } from "@/components/brandbook/mobile-app-mockup"
-import { PageNumber } from "./page-number"
+import { SlideWrapper } from "./slide-wrapper"
+import { MobileAppMockup } from "./mobile-app-mockup"
 import Image from "next/image"
+import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
-const categories = [
+const TOTAL_SLIDES = 24
+
+// Все носители с нумерацией
+const allCarriers = [
+  // Полиграфия
   {
-    id: "print",
-    icon: FileText,
-    title: "Полиграфия",
-    desc: "Печатные материалы для коммуникации с клиентами, партнёрами и продвижения бренда.",
-    items: [
-      {
-        src: "/carriers/carrier-business-card.png",
-        title: "Визитные карточки",
-        desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами.",
-      },
-      {
-        src: "/carriers/carrier-flyer.png",
-        title: "Флаер / листовка",
-        desc: "Рекламный флаер с логотипом «Кибитка» и призывом к действию.",
-      },
-      {
-        src: "/carriers/carrier-poster.png",
-        title: "Плакат / постер",
-        desc: "Рекламный плакат для наружной рекламы и точек продаж с фирменными элементами.",
-      },
-    ],
+    id: "carrier-01",
+    number: "01",
+    category: "Полиграфия",
+    categoryIcon: FileText,
+    src: "/carriers/carrier-business-card.png",
+    title: "Визитные карточки",
+    desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами.",
   },
   {
-    id: "uniform",
-    icon: Shirt,
-    title: "Форма и документация",
-    desc: "Единый стиль команды — узнаваемость, профессиональный образ и деловая коммуникация.",
-    items: [
-      {
-        src: "/carriers/carrier-uniform.png",
-        title: "Форменная одежда водителей",
-        desc: "Поло и кепка с вышитым логотипом «Кибитка» и графическими элементами.",
-      },
-      {
-        src: "/carriers/carrier-badge.png",
-        title: "Бейдж водителя",
-        desc: "Идентификационный бейдж с фото, именем и логотипом компании.",
-      },
-      {
-        src: "/carriers/carrier-letterhead.png",
-        title: "Фирменный бланк",
-        desc: "Официальный бланк для деловой переписки с партнёрами и клиентами.",
-      },
-    ],
+    id: "carrier-02",
+    number: "02",
+    category: "Полиграфия",
+    categoryIcon: FileText,
+    src: "/carriers/carrier-flyer.png",
+    title: "Флаер / листовка",
+    desc: "Рекламный флаер с логотипом «Кибитка» и призывом к действию.",
+  },
+  // Форма и документация
+  {
+    id: "carrier-03",
+    number: "03",
+    category: "Форма и документация",
+    categoryIcon: Shirt,
+    src: "/carriers/carrier-uniform.png",
+    title: "Форменная одежда водителей",
+    desc: "Поло и кепка с вышитым логотипом «Кибитка» и графическими элементами.",
   },
   {
-    id: "digital",
-    icon: Smartphone,
-    title: "Цифровые носители",
-    desc: "Мобильное приложение и digital-присутствие — основные точки контакта с аудиторией.",
-    items: [
-      {
-        src: null,
-        custom: "app" as const,
-        title: "Мобильное приложение",
-        desc: "UI мобильного приложения для iOS и Android: карта, заказ поездки, оранжевые акценты.",
-      },
-      {
-        src: "/carriers/carrier-social.png",
-        title: "Соцсети и баннеры",
-        desc: "Шаблоны для социальных сетей, рекламные баннеры и digital-креативы.",
-      },
-      {
-        src: "/carriers/carrier-email.png",
-        title: "Email-рассылка",
-        desc: "Шаблон email-писем для коммуникации с клиентами и промо-акций.",
-      },
-    ],
+    id: "carrier-04",
+    number: "04",
+    category: "Форма и документация",
+    categoryIcon: Shirt,
+    src: "/carriers/carrier-badge.png",
+    title: "Бейдж водителя",
+    desc: "Идентификационный бейдж с фото, именем и логотипом компании.",
+  },
+  // Цифровые носители
+  {
+    id: "carrier-05",
+    number: "05",
+    category: "Цифровые носители",
+    categoryIcon: Smartphone,
+    custom: "app" as const,
+    title: "Мобильное приложение",
+    desc: "UI мобильного приложения для iOS и Android: карта, заказ поездки, оранжевые акценты.",
   },
   {
-    id: "merch",
-    icon: Gift,
-    title: "Сувенирная продукция",
-    desc: "Фирменные сувениры усиливают лояльность и работают как живая реклама бренда.",
-    items: [
-      {
-        src: "/carriers/carrier-promo.png",
-        title: "Промо-набор",
-        desc: "Брендированные стаканы, мерч и упаковка с логотипом — для корпоративных партнёрств.",
-      },
-      {
-        src: "/carriers/carrier-bag.png",
-        title: "Фирменный шоппер",
-        desc: "Экологичная сумка-шоппер с логотипом для пассажиров и партнёров.",
-      },
-      {
-        src: "/carriers/carrier-app.png",
-        title: "Мерч и аксессуары",
-        desc: "Брелоки, магниты, стикеры и другие сувениры с символикой «Кибитка».",
-      },
-    ],
+    id: "carrier-06",
+    number: "06",
+    category: "Цифровые носители",
+    categoryIcon: Smartphone,
+    src: "/carriers/carrier-social.png",
+    title: "Соцсети и баннеры",
+    desc: "Шаблоны для социальных сетей, рекламные баннеры и digital-креативы.",
+  },
+  // Сувенирная продукция
+  {
+    id: "carrier-07",
+    number: "07",
+    category: "Сувенирная продукция",
+    categoryIcon: Gift,
+    src: "/carriers/carrier-promo.png",
+    title: "Промо-набор",
+    desc: "Брендированные стаканы, мерч и упаковка с логотипом — для корпоративных партнёрств.",
   },
   {
-    id: "transport",
-    icon: Car,
-    title: "Транспорт",
-    desc: "Фирменный стиль на автопарке — самый заметный и запоминающийся носитель бренда.",
-    items: [
-      {
-        src: "/carriers/carrier-taxi-car.png",
-        title: "Брендирование автомобиля",
-        desc: "Оклейка кузова с логотипом на дверях, графические элементы и фотостиль бренда.",
-      },
-      {
-        src: "/carriers/carrier-car-interior.png",
-        title: "Интерьер автомобиля",
-        desc: "Брендированные элементы салона: подголовники, визитницы, ароматизаторы.",
-      },
-      {
-        src: "/carriers/carrier-car-toplight.png",
-        title: "Световой короб",
-        desc: "Фирменный световой короб на крыше автомобиля с логотипом «Кибитка».",
-      },
-    ],
+    id: "carrier-08",
+    number: "08",
+    category: "Сувенирная продукция",
+    categoryIcon: Gift,
+    src: "/carriers/carrier-bag.png",
+    title: "Фирменный шоппер",
+    desc: "Экологичная сумка-шоппер с логотипом для пассажиров и партнёров.",
+  },
+  // Транспорт
+  {
+    id: "carrier-09",
+    number: "09",
+    category: "Транспорт",
+    categoryIcon: Car,
+    src: "/carriers/carrier-taxi-car.png",
+    title: "Брендирование автомобиля",
+    desc: "Оклейка кузова с логотипом на дверях, графические элементы и фотостиль бренда.",
+  },
+  {
+    id: "carrier-10",
+    number: "10",
+    category: "Транспорт",
+    categoryIcon: Car,
+    src: "/carriers/carrier-car-interior.png",
+    title: "Интерьер автомобиля",
+    desc: "Брендированные элементы салона: подголовники, визитницы, ароматизаторы.",
   },
 ]
 
-// Заголовочный слайд для категории
-function CategoryHeader({ 
-  icon: Icon, 
-  title, 
-  desc, 
-  index 
-}: { 
-  icon: typeof FileText
-  title: string
-  desc: string
-  index: number 
+// Карточка носителя
+function CarrierCard({
+  carrier,
+}: {
+  carrier: (typeof allCarriers)[0]
 }) {
+  const Icon = carrier.categoryIcon
+  
   return (
-    <div className="relative flex min-h-[50vh] items-center justify-center overflow-hidden bg-brand-navy px-5 py-16 md:py-24">
-      {/* Декоративный паттерн */}
-      <div className="pointer-events-none absolute inset-0 opacity-5">
-        <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full border-[40px] border-brand-orange" />
-        <div className="absolute -bottom-10 -left-10 h-60 w-60 rounded-full border-[30px] border-brand-cream" />
-      </div>
-      
-      <div className="relative z-10 text-center">
-        <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-brand-orange text-white shadow-lg md:h-24 md:w-24">
-          <Icon className="h-10 w-10 md:h-12 md:w-12" aria-hidden="true" />
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
+      {"custom" in carrier && carrier.custom === "app" ? (
+        <MobileAppMockup />
+      ) : (
+        <div className="relative aspect-[4/3]">
+          <Image
+            src={carrier.src!}
+            alt={carrier.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
         </div>
-        <p className="mb-3 font-mono text-sm uppercase tracking-widest text-brand-orange">
-          Носители · {String(index + 1).padStart(2, "0")} / 05
-        </p>
-        <h2 className="font-display text-3xl font-bold text-white md:text-5xl">
-          {title}
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-          {desc}
+      )}
+      <div className="flex flex-col gap-2 p-5">
+        <div className="flex items-center gap-2">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-orange font-mono text-xs font-bold text-white">
+            {carrier.number}
+          </span>
+          <div className="flex items-center gap-1.5 text-xs text-brand-sand">
+            <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+            <span>{carrier.category}</span>
+          </div>
+        </div>
+        <h4 className="font-display text-lg font-semibold text-brand-navy">
+          {carrier.title}
+        </h4>
+        <p className="text-sm leading-relaxed text-brand-navy/65">
+          {carrier.desc}
         </p>
       </div>
-    </div>
+    </article>
   )
 }
 
-export function ApplicationsSection() {
+// Слайд с 2 носителями
+function CarriersSlide({
+  carriers,
+  slideNumber,
+}: {
+  carriers: (typeof allCarriers)[number][]
+  slideNumber: number
+}) {
   return (
-    <section id="applications" className="scroll-mt-20">
-      {/* Основной заголовок секции */}
-      <div className="bg-brand-cream px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            index="08"
-            kicker="Носители"
-            title="Носители (по видам)"
-            description="Как фирменный стиль «Кибитка» живёт на реальных носителях — подобраны с учётом специфики городского такси."
-          />
-
-          {/* Примечание о цветовом решении */}
-          <div className="rounded-2xl border border-brand-orange/20 bg-brand-orange/5 p-5 md:p-6">
-            <p className="text-sm leading-relaxed text-brand-navy">
-              <span className="font-semibold">Примечание:</span> В большинстве носителей цветовое решение не прописано отдельно. Основой являются{" "}
-              <span className="font-semibold">графические элементы</span> логотипа и{" "}
-              <span className="font-semibold">фотостиль</span>, которые обеспечивают узнаваемость бренда. Там, где цвет применяется — используются строго фирменные оттенки: оранжевый <span className="inline-block h-3 w-3 rounded-sm bg-brand-orange align-middle" />, тёмно-синий <span className="inline-block h-3 w-3 rounded-sm bg-brand-navy align-middle" />, кремовый <span className="inline-block h-3 w-3 rounded-sm bg-brand-cream border border-brand-navy/20 align-middle" />.
-            </p>
+    <SlideWrapper slideNumber={slideNumber} totalSlides={TOTAL_SLIDES} variant="light">
+      <div className="flex min-h-screen flex-col justify-center px-5 py-16 md:py-24">
+        <div className="mx-auto w-full max-w-5xl">
+          <div className="grid gap-6 md:grid-cols-2">
+            {carriers.map((carrier) => (
+              <CarrierCard key={carrier.id} carrier={carrier} />
+            ))}
           </div>
         </div>
       </div>
+    </SlideWrapper>
+  )
+}
 
-      {/* Категории с заголовочными слайдами */}
-      {categories.map((cat, catIndex) => (
-        <div key={cat.id}>
-          {/* Заголовочный слайд категории */}
-          <CategoryHeader 
-            icon={cat.icon} 
-            title={cat.title} 
-            desc={cat.desc} 
-            index={catIndex} 
-          />
-          
-          {/* Примеры носителей */}
-          <div className="bg-brand-cream px-5 py-12 md:py-16">
-            <div className="mx-auto max-w-6xl">
-              <div className="mb-6 flex items-center gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-orange/15 text-brand-orange-dark">
-                  <cat.icon className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <h3 className="font-display text-lg font-semibold text-brand-navy">
-                  Примеры: {cat.title}
-                </h3>
-              </div>
+// Главный компонент секции носителей
+export function ApplicationsSection() {
+  // Разбиваем носители на пары по 2
+  const carrierPairs: (typeof allCarriers)[number][][] = []
+  for (let i = 0; i < allCarriers.length; i += 2) {
+    carrierPairs.push(allCarriers.slice(i, i + 2))
+  }
 
-              <div className="grid gap-5 md:grid-cols-3">
-                {cat.items.map((item) => (
-                  <article
-                    key={item.title}
-                    className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm"
-                  >
-                    {"custom" in item && item.custom === "app" ? (
-                      <MobileAppMockup />
-                    ) : (
-                      <div className="relative aspect-[16/10]">
-                        <Image
-                          src={item.src!}
-                          alt={item.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-                    <div className="flex flex-col gap-1 p-5">
-                      <h4 className="font-display font-semibold text-brand-navy">{item.title}</h4>
-                      <p className="text-sm leading-relaxed text-brand-navy/65">{item.desc}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+  // Начинаем с 12 слайда (после основных секций)
+  const startSlide = 12
+
+  return (
+    <section id="applications" className="scroll-mt-20">
+      {carrierPairs.map((pair, pairIndex) => (
+        <CarriersSlide
+          key={`carriers-${pairIndex}`}
+          carriers={pair}
+          slideNumber={startSlide + pairIndex}
+        />
       ))}
-      
-      <PageNumber number={12} total={13} />
     </section>
   )
 }
