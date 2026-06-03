@@ -104,8 +104,8 @@ export function LogoClearspaceSection() {
           <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-8">
               <svg
-                viewBox="0 0 420 180"
-                className="h-auto w-full max-w-lg"
+                viewBox="0 0 380 180"
+                className="h-auto w-full max-w-2xl"
                 role="img"
                 aria-label="Схема охранного поля горизонтальной версии"
               >
@@ -113,7 +113,7 @@ export function LogoClearspaceSection() {
                 <rect
                   x="50"
                   y="50"
-                  width="320"
+                  width="280"
                   height="80"
                   fill="none"
                   stroke="#2c3e50"
@@ -124,7 +124,7 @@ export function LogoClearspaceSection() {
                 <rect
                   x="35"
                   y="35"
-                  width="350"
+                  width="310"
                   height="110"
                   fill="none"
                   stroke="#bdc3c7"
@@ -132,7 +132,7 @@ export function LogoClearspaceSection() {
                   strokeDasharray="6,6"
                 />
                 {/* the mark, scaled */}
-                <g transform="translate(60, 50) scale(0.9)">
+                <g transform="translate(60, 50) scale(1.1)">
                   <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
                   <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
                   <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
@@ -143,16 +143,16 @@ export function LogoClearspaceSection() {
                   <circle cx="100" cy="76" r="12" fill="#2c3e50" />
                   <circle cx="100" cy="76" r="8" fill="#ecf0f1" />
                 </g>
-                {/* Wordmark */}
-                <text x="280" y="95" fontFamily="var(--font-display)" fontSize="20" fontWeight="700" fill="#2c3e50" textAnchor="middle" letterSpacing="6">
+                {/* Wordmark - приближенный к логотипу */}
+                <text x="240" y="95" fontFamily="var(--font-display)" fontSize="20" fontWeight="700" fill="#2c3e50" letterSpacing="6">
                   КИБИТКА
                 </text>
 
                 {/* X measurements */}
-                <line x1="210" y1="20" x2="210" y2="50" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="206" y1="20" x2="214" y2="20" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="206" y1="50" x2="214" y2="50" stroke="#8b7355" strokeWidth="1.5" />
-                <text x="220" y="38" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
+                <line x1="190" y1="20" x2="190" y2="50" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="186" y1="20" x2="194" y2="20" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="186" y1="50" x2="194" y2="50" stroke="#8b7355" strokeWidth="1.5" />
+                <text x="200" y="38" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
 
                 <line x1="20" y1="90" x2="50" y2="90" stroke="#8b7355" strokeWidth="1.5" />
                 <line x1="20" y1="86" x2="20" y2="94" stroke="#8b7355" strokeWidth="1.5" />
