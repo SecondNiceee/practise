@@ -3,6 +3,39 @@ import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
 import { LogoHorizontal } from "./logo-horizontal"
 import { SlideWrapper } from "./slide-wrapper"
 
+// Размер «единицы X» = диаметр колеса знака (в пикселях для размера lg)
+const WHEEL_UNIT = 34
+
+/**
+ * Колесо-единица: повторяет колесо из знака (тёмный обод, светлый центр,
+ * тёмная втулка) и выделено оранжевым кольцом. Используется как наглядная
+ * мера X охранного поля.
+ */
+function WheelUnit() {
+  return (
+    <span
+      aria-hidden
+      className="relative flex items-center justify-center rounded-full"
+      style={{
+        width: `${WHEEL_UNIT}px`,
+        height: `${WHEEL_UNIT}px`,
+        backgroundColor: "#2c3e50",
+        boxShadow: "0 0 0 2px #f39c12",
+      }}
+    >
+      <span
+        className="flex items-center justify-center rounded-full"
+        style={{ width: "56%", height: "56%", backgroundColor: "#ecf0f1" }}
+      >
+        <span
+          className="rounded-full"
+          style={{ width: "40%", height: "40%", backgroundColor: "#2c3e50" }}
+        />
+      </span>
+    </span>
+  )
+}
+
 export function LogoClearspaceSection() {
   return (
     <SlideWrapper slideNumber={5} totalSlides={21} variant="light">
@@ -19,31 +52,31 @@ export function LogoClearspaceSection() {
             Полный логотип (знак + надпись)
           </h3>
           <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-16">
+            <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-20">
               <div className="relative inline-flex">
-                {/* пунктирная рамка охранного поля */}
+                {/* пунктирная рамка охранного поля — отступ = диаметр колеса */}
                 <div
-                  className="absolute inset-0 rounded-none"
+                  className="absolute inset-0"
                   style={{
                     outline: "1.5px dashed #bdc3c7",
-                    outlineOffset: "28px",
+                    outlineOffset: `${WHEEL_UNIT}px`,
                   }}
                 />
-                {/* метка X сверху */}
+                {/* колесо-единица в верхнем поле = X */}
                 <div
-                  className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center"
-                  style={{ bottom: "100%", marginBottom: "4px" }}
+                  className="absolute left-1/2 flex -translate-x-1/2 flex-col items-center"
+                  style={{ bottom: "100%" }}
                 >
-                  <span className="font-display text-xs font-bold text-brand-sand">X</span>
-                  <div className="w-px bg-brand-sand/60" style={{ height: "20px" }} />
+                  <span className="mb-1 font-display text-xs font-bold text-brand-orange-dark">X</span>
+                  <WheelUnit />
                 </div>
-                {/* метка X слева */}
+                {/* колесо-единица в левом поле = X */}
                 <div
-                  className="absolute top-1/2 -translate-y-1/2 flex items-center"
-                  style={{ right: "100%", marginRight: "4px" }}
+                  className="absolute top-1/2 flex -translate-y-1/2 items-center gap-1"
+                  style={{ right: "100%" }}
                 >
-                  <div className="h-px bg-brand-sand/60" style={{ width: "20px" }} />
-                  <span className="font-display text-xs font-bold text-brand-sand ml-1">X</span>
+                  <span className="font-display text-xs font-bold text-brand-orange-dark">X</span>
+                  <WheelUnit />
                 </div>
                 <KibitkaLogo size="lg" caption="Такси-сервис" />
               </div>
@@ -54,10 +87,14 @@ export function LogoClearspaceSection() {
                 Для <strong className="text-brand-navy">полного логотипа</strong> (знак + надпись) охранное поле равно{" "}
                 <span className="font-semibold text-brand-orange-dark">X</span> со всех сторон.
               </p>
-              <p className="leading-relaxed text-brand-navy/70">
-                <span className="font-semibold text-brand-orange-dark">X</span> — диаметр колеса 
-                автомобиля в знаке. Эта единица сохраняется при любом масштабировании.
-              </p>
+              <div className="flex items-center gap-3 rounded-xl border border-brand-navy/10 bg-brand-navy/[0.03] p-3">
+                <WheelUnit />
+                <p className="text-sm leading-relaxed text-brand-navy/70">
+                  <span className="font-semibold text-brand-orange-dark">X</span> — это{" "}
+                  <strong className="text-brand-navy">диаметр колеса</strong> в знаке. Минимальный отступ от логотипа
+                  до любого элемента равен ровно одному колесу.
+                </p>
+              </div>
             </div>
           </div>
 
