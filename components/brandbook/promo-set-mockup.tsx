@@ -31,13 +31,13 @@ function TokenLogo({
       }}
     >
       <KibitkaMark
-        className="h-auto w-full opacity-95 mix-blend-multiply drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]"
-        bodyColor="#2c3e50"
-        windowColor="#1b2735"
-        wheelColor="#1b2735"
-        wheelInner="#d9c9a3"
-        bumperColor="#1b2735"
-        lightColor="#d9c9a3"
+        className="h-auto w-full opacity-95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+        bodyColor="#f6f2e8"
+        windowColor="#f6f2e8"
+        wheelColor="#f6f2e8"
+        wheelInner="#f6f2e8"
+        bumperColor="#f6f2e8"
+        lightColor="#f6f2e8"
       />
     </div>
   )
@@ -54,11 +54,11 @@ export function PromoSetMockup() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Верхний латунный жетон */}
-        <TokenLogo x={36} y={34} size={23} tilt={-4} />
+        <TokenLogo x={36.5} y={30} size={20} tilt={-4} />
         {/* Нижний латунный жетон */}
-        <TokenLogo x={38} y={68} size={24} tilt={3} />
+        <TokenLogo x={36} y={70.5} size={21} tilt={3} />
         {/* Правый стальной жетон */}
-        <TokenLogo x={72} y={48} size={22} tilt={-2} />
+        <TokenLogo x={72.5} y={47.5} size={19} tilt={-2} />
       </div>
     </div>
   )
