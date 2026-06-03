@@ -4,15 +4,14 @@ import { SlideWrapper } from "./slide-wrapper"
 export function FinalCover() {
   return (
     <SlideWrapper slideNumber={21} totalSlides={21} variant="dark" className="flex items-center">
-      <footer className="relative w-full overflow-hidden text-white">
+      <footer className="relative w-full text-white">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/25 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-40 left-10 h-80 w-80 rounded-full bg-brand-red/20 blur-3xl"
-        />
+          className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden"
+        >
+          <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/25 blur-3xl" />
+          <div className="absolute -bottom-40 left-10 h-80 w-80 rounded-full bg-brand-red/20 blur-3xl" />
+        </div>
 
         <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-28">
           <div className="flex flex-col gap-7">
