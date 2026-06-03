@@ -159,7 +159,7 @@ function CarriersSlide({
   return (
     <SlideWrapper slideNumber={slideNumber} totalSlides={TOTAL_SLIDES} variant="light">
       <div className="flex min-h-screen flex-col justify-center px-5 py-16 md:py-24">
-        <div className="mx-auto w-full max-w-5xl">
+        <div className="mx-auto w-full max-w-6xl">
           <div className="grid gap-6 md:grid-cols-2">
             {carriers.map((carrier) => (
               <CarrierCard key={carrier.id} carrier={carrier} />
