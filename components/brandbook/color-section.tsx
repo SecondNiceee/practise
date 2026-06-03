@@ -1,29 +1,39 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { Check, X } from "lucide-react"
+import { PageNumber } from "./page-number"
 
 const primary = [
-  { name: "Оранжевый", hex: "#F39C12", rgb: "243, 156, 18", cmyk: "0, 36, 93, 5", note: "Основной акцент", light: false },
-  { name: "Красный", hex: "#E74C3C", rgb: "231, 76, 60", cmyk: "0, 67, 74, 9", note: "Энергия, стоп-сигнал", light: false },
-  { name: "Тёмно-синий", hex: "#2C3E50", rgb: "44, 62, 80", cmyk: "45, 23, 0, 69", note: "Надёжность, текст", light: false },
+  { name: "Оранжевый", hex: "#F39C12", rgb: "243, 156, 18", cmyk: "0, 36, 93, 5", note: "Основной акцент, такси-жёлтый", light: false },
+  { name: "Красный", hex: "#E74C3C", rgb: "231, 76, 60", cmyk: "0, 67, 74, 9", note: "Энергия, стоп-сигнал, CTA", light: false },
+  { name: "Тёмно-синий", hex: "#2C3E50", rgb: "44, 62, 80", cmyk: "45, 23, 0, 69", note: "Надёжность, текст, фоны", light: false },
 ]
 
 const secondary = [
-  { name: "Кремовый", hex: "#F5F0E8", rgb: "245, 240, 232", cmyk: "0, 2, 5, 4", note: "Фон, воздух", light: true },
-  { name: "Песочный", hex: "#8B7355", rgb: "139, 115, 85", cmyk: "0, 17, 39, 45", note: "Подписи, детали", light: false },
+  { name: "Бирюзовый", hex: "#1ABC9C", rgb: "26, 188, 156", cmyk: "86, 0, 17, 26", note: "Свежесть, бонусы", light: false },
+  { name: "Золотой", hex: "#D4AF37", rgb: "212, 175, 55", cmyk: "0, 17, 74, 17", note: "Премиум, VIP-класс", light: false },
   { name: "Зелёный", hex: "#27AE60", rgb: "39, 174, 96", cmyk: "78, 0, 45, 32", note: "Подтверждение, успех", light: false },
   { name: "Оранжевый тёмный", hex: "#E67E22", rgb: "230, 126, 34", cmyk: "0, 45, 85, 10", note: "Градиенты, hover", light: false },
 ]
 
+const neutral = [
+  { name: "Кремовый", hex: "#F5F0E8", rgb: "245, 240, 232", cmyk: "0, 2, 5, 4", note: "Фон, воздух", light: true },
+  { name: "Песочный", hex: "#8B7355", rgb: "139, 115, 85", cmyk: "0, 17, 39, 45", note: "Подписи, детали", light: false },
+  { name: "Светло-серый", hex: "#ECF0F1", rgb: "236, 240, 241", cmyk: "2, 0, 0, 5", note: "Границы, разделители", light: true },
+  { name: "Графит", hex: "#34495E", rgb: "52, 73, 94", cmyk: "45, 22, 0, 63", note: "Вторичный текст", light: false },
+]
+
 const colorDos = [
-  "Использовать основную палитру для ключевых элементов",
-  "Соблюдать контраст текста и фона",
-  "Применять дополнительные цвета для акцентов",
+  "Использовать оранжевый как главный акцентный цвет",
+  "Применять тёмно-синий для текстов и фонов",
+  "Соблюдать контраст: светлый текст на тёмном фоне",
+  "Использовать бирюзовый и зелёный для позитивных действий",
 ]
 
 const colorDonts = [
   "Заменять фирменные цвета на похожие оттенки",
-  "Использовать более 3 цветов одновременно",
-  "Смешивать тёплые и холодные цвета хаотично",
+  "Использовать более 3 цветов одновременно в одном блоке",
+  "Сочетать красный с зелёным (плохая читаемость)",
+  "Применять яркие цвета для больших плоскостей",
 ]
 
 function Swatch({
@@ -73,7 +83,7 @@ export function ColorSection() {
           index="04"
           kicker="Цвет"
           title="Фирменные цвета"
-          description="Контрастные и тёплые цвета передают энергию, скорость, надёжность и безопасность бренда. Оранжевый — главный носитель характера «Кибитки»."
+          description="Яркая и тёплая палитра передаёт энергию, скорость, надёжность и безопасность бренда. Оранжевый — главный носитель характера «Кибитки»."
         />
 
         <h3 className="mb-5 font-display text-lg font-semibold text-brand-navy">Основные цвета</h3>
@@ -84,10 +94,19 @@ export function ColorSection() {
         </div>
 
         <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
-          Дополнительные цвета
+          Акцентные цвета
         </h3>
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {secondary.map((c) => (
+            <Swatch key={c.hex} {...c} />
+          ))}
+        </div>
+
+        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
+          Нейтральные цвета
+        </h3>
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {neutral.map((c) => (
             <Swatch key={c.hex} {...c} />
           ))}
         </div>
@@ -125,25 +144,74 @@ export function ColorSection() {
           </div>
         </div>
 
+        {/* Color combinations */}
+        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
+          Рекомендуемые сочетания
+        </h3>
+        <div className="grid gap-4 md:grid-cols-3">
+          {/* Combination 1 */}
+          <div className="overflow-hidden rounded-2xl border border-brand-navy/10">
+            <div className="flex h-20">
+              <div className="w-1/2 bg-brand-orange" />
+              <div className="w-1/2 bg-brand-navy" />
+            </div>
+            <div className="bg-card p-4">
+              <span className="text-sm font-semibold text-brand-navy">Оранжевый + Тёмно-синий</span>
+              <p className="mt-1 text-xs text-brand-sand">Основное фирменное сочетание</p>
+            </div>
+          </div>
+          
+          {/* Combination 2 */}
+          <div className="overflow-hidden rounded-2xl border border-brand-navy/10">
+            <div className="flex h-20">
+              <div className="w-1/2 bg-brand-cream" />
+              <div className="w-1/2 bg-brand-orange" />
+            </div>
+            <div className="bg-card p-4">
+              <span className="text-sm font-semibold text-brand-navy">Кремовый + Оранжевый</span>
+              <p className="mt-1 text-xs text-brand-sand">Для светлых носителей</p>
+            </div>
+          </div>
+          
+          {/* Combination 3 */}
+          <div className="overflow-hidden rounded-2xl border border-brand-navy/10">
+            <div className="flex h-20">
+              <div className="w-1/3 bg-brand-navy" />
+              <div className="w-1/3" style={{ backgroundColor: "#1ABC9C" }} />
+              <div className="w-1/3 bg-brand-cream" />
+            </div>
+            <div className="bg-card p-4">
+              <span className="text-sm font-semibold text-brand-navy">Синий + Бирюзовый + Кремовый</span>
+              <p className="mt-1 text-xs text-brand-sand">Для промо и акций</p>
+            </div>
+          </div>
+        </div>
+
         {/* Color proportions */}
         <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
           Пропорции использования
         </h3>
         <div className="rounded-2xl border border-brand-navy/10 bg-card p-8">
-          <div className="mb-4 flex h-8 overflow-hidden rounded-lg">
-            <div className="w-[50%] bg-brand-orange" title="Оранжевый 50%" />
+          <div className="mb-4 flex h-10 overflow-hidden rounded-lg">
+            <div className="w-[45%] bg-brand-orange" title="Оранжевый 45%" />
             <div className="w-[30%] bg-brand-navy" title="Тёмно-синий 30%" />
             <div className="w-[15%] bg-brand-cream border-x border-brand-navy/10" title="Кремовый 15%" />
+            <div className="w-[5%]" style={{ backgroundColor: "#1ABC9C" }} title="Бирюзовый 5%" />
             <div className="w-[5%] bg-brand-red" title="Красный 5%" />
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-brand-navy/70">
-            <span><span className="inline-block h-3 w-3 rounded bg-brand-orange mr-1" />Оранжевый 50%</span>
+            <span><span className="inline-block h-3 w-3 rounded bg-brand-orange mr-1" />Оранжевый 45%</span>
             <span><span className="inline-block h-3 w-3 rounded bg-brand-navy mr-1" />Тёмно-синий 30%</span>
             <span><span className="inline-block h-3 w-3 rounded bg-brand-cream border border-brand-navy/20 mr-1" />Кремовый 15%</span>
+            <span><span className="inline-block h-3 w-3 rounded mr-1" style={{ backgroundColor: "#1ABC9C" }} />Бирюзовый 5%</span>
             <span><span className="inline-block h-3 w-3 rounded bg-brand-red mr-1" />Красный 5%</span>
           </div>
+          <p className="mt-4 text-sm text-brand-navy/60">
+            Оранжевый и тёмно-синий — доминирующие цвета бренда. Акцентные цвета используются точечно для привлечения внимания.
+          </p>
         </div>
       </div>
+      <PageNumber number={7} />
     </section>
   )
 }

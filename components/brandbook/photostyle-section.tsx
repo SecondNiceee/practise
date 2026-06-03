@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { Check, X } from "lucide-react"
+import { PageNumber } from "./page-number"
 
 const photoExamples = [
   { src: "/aidentic/taxi-car.jpg", title: "Автомобиль", desc: "Чистый, ухоженный автомобиль в городской среде" },
@@ -124,6 +125,7 @@ export function PhotoStyleSection() {
 
 
       </div>
+      <PageNumber number={10} />
     </section>
   )
 }

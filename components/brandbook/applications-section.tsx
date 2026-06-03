@@ -2,6 +2,7 @@ import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { FileText, Shirt, Car, Smartphone, Gift, Coffee } from "lucide-react"
 import { MobileAppMockup } from "@/components/brandbook/mobile-app-mockup"
+import { PageNumber } from "./page-number"
 
 const categories = [
   {
@@ -142,6 +143,7 @@ export function ApplicationsSection() {
           </div>
         ))}
       </div>
+      <PageNumber number={11} />
     </section>
   )
 }

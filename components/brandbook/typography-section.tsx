@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { Check, X } from "lucide-react"
+import { PageNumber } from "./page-number"
 
 const scale = [
   { label: "H1 Заголовок", className: "font-display text-5xl font-extrabold", note: "Montserrat ExtraBold 48px" },
@@ -125,6 +126,7 @@ export function TypographySection() {
           </div>
         </div>
       </div>
+      <PageNumber number={8} />
     </section>
   )
 }

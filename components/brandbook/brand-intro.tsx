@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { Target, Heart, Sparkles, Users } from "lucide-react"
+import { PageNumber } from "./page-number"
 
 const values = [
   "Надёжность",
@@ -92,6 +93,7 @@ export function BrandIntro() {
           </div>
         </div>
       </div>
+      <PageNumber number={2} />
     </section>
   )
 }
