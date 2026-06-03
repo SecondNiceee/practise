@@ -12,7 +12,12 @@ const sections = [
   { num: "06", title: "Паттерн. Доп. графические элементы", href: "#patterns", page: 10 },
   { num: "07", title: "Фотостиль. Правила / Промт", href: "#photostyle", page: 11 },
   { num: "08", title: "Носители (по видам)", href: "#applications", page: 12 },
-  { num: "09", title: "Рекламная кампания. Выбор носителей", href: "#campaign", page: 13 },
+  { num: "08.1", title: "Полиграфия", href: "#applications", page: 12 },
+  { num: "08.2", title: "Форма и документация", href: "#applications", page: 13 },
+  { num: "08.3", title: "Цифровые носители", href: "#applications", page: 14 },
+  { num: "08.4", title: "Сувенирная продукция", href: "#applications", page: 15 },
+  { num: "08.5", title: "Транспорт", href: "#applications", page: 16 },
+  { num: "09", title: "Рекламная кампания. Выбор носителей", href: "#campaign", page: 17 },
 ]
 
 export function TableOfContents() {
