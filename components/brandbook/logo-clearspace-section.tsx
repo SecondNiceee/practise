@@ -139,7 +139,7 @@ export function LogoClearspaceSection() {
               <rect x="14" y="14" width="252" height="192" fill="none" stroke="#bdc3c7" strokeWidth="1.5" strokeDasharray="6,6" />
 
               {/* Лого-зона (машинка) — сплошная граница */}
-              <rect x="52" y="52" width="176" height="116" fill="none" stroke="#2c3e50" strokeWidth="1" opacity="0.4" />
+              <rect x="55" y="52" width="167" height="116" fill="none" stroke="#2c3e50" strokeWidth="1" opacity="0.4" />
 
               {/* Машинка scale 1.6, центрирована */}
               {/* tx = 140 - (16+55)*1.6 = 140 - 113.6 = 26.4, ty = 110 - (18+36)*1.6 = 110 - 86.4 = 23.6 */}
