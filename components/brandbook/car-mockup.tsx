@@ -16,15 +16,18 @@ export function CarMockup() {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      {/* Логотип на двери — слегка наклонён по форме кузова */}
+      {/* Логотип продублирован на каждой двери — только знак, без надписи */}
       <div
-        className="absolute left-[52%] top-[64%] flex w-[28%] flex-col items-center gap-0.5"
+        className="absolute left-[37%] top-[64%] w-[14%]"
         style={{ transform: "translate(-50%, -50%) rotate(-1deg)" }}
       >
-        <KibitkaMark className="h-auto w-[72%] drop-shadow-sm" />
-        <span className="font-display text-[clamp(0.55rem,2.5vw,1.1rem)] font-extrabold tracking-[0.14em] text-brand-navy drop-shadow-sm">
-          КИБИТКА
-        </span>
+        <KibitkaMark className="h-auto w-full drop-shadow-sm" />
+      </div>
+      <div
+        className="absolute left-[58%] top-[64%] w-[14%]"
+        style={{ transform: "translate(-50%, -50%) rotate(-1deg)" }}
+      >
+        <KibitkaMark className="h-auto w-full drop-shadow-sm" />
       </div>
     </div>
   )
