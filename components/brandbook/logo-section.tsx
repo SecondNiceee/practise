@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
-import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
 import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
+import { LogoHorizontal } from "./logo-horizontal"
 import { PageNumber } from "./page-number"
 
 const concepts = [
@@ -38,12 +38,7 @@ export function LogoSection() {
 
           {/* Горизонтальная версия */}
           <div className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
-            <div className="flex items-center gap-3">
-              <KibitkaMark className="h-12 w-20" />
-              <span className="font-display text-lg font-bold tracking-[0.2em] text-brand-navy">
-                КИБИТКА
-              </span>
-            </div>
+            <LogoHorizontal size="md" />
             <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-sand">
               Горизонтальная версия
             </span>

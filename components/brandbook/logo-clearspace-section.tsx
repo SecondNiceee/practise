@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
-import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
 import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
+import { LogoHorizontal } from "./logo-horizontal"
 import { PageNumber } from "./page-number"
 
 export function LogoClearspaceSection() {
@@ -180,57 +180,44 @@ export function LogoClearspaceSection() {
         </h3>
         <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-8">
-            <svg
-              viewBox="0 0 400 160"
-              className="h-auto w-full max-w-md"
-              role="img"
-              aria-label="Схема охранного поля горизонтального логотипа"
-            >
-              {/* clear space dashed box */}
-              <rect
-                x="16"
-                y="16"
-                width="368"
-                height="128"
-                fill="none"
-                stroke="#bdc3c7"
-                strokeWidth="1.5"
-                strokeDasharray="6,6"
-              />
-              {/* content box */}
-              <rect
-                x="44"
-                y="44"
-                width="312"
-                height="72"
-                fill="none"
-                stroke="#2c3e50"
-                strokeWidth="1"
-                opacity="0.4"
-              />
-              {/* the mark smaller */}
-              <g transform="translate(20, 28) scale(0.8)">
-                <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
-                <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
-                <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
-                <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50" />
-                <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7" />
-                <circle cx="40" cy="76" r="12" fill="#2c3e50" />
-                <circle cx="40" cy="76" r="8" fill="#ecf0f1" />
-                <circle cx="100" cy="76" r="12" fill="#2c3e50" />
-                <circle cx="100" cy="76" r="8" fill="#ecf0f1" />
-              </g>
-              {/* Wordmark */}
-              <text x="270" y="88" fontFamily="var(--font-display)" fontSize="24" fontWeight="700" fill="#2c3e50" textAnchor="middle" letterSpacing="6">
-                КИБИТКА
-              </text>
+            <div className="relative w-full max-w-lg">
+              <div
+                className="relative rounded-lg border-2 border-dashed border-brand-navy/20"
+                style={{ paddingTop: "40%", aspectRatio: "2.5/1" }}
+              >
+                {/* Grid background for clearspace visualization */}
+                <div
+                  className="absolute inset-0 rounded-lg"
+                  style={{
+                    backgroundImage: `linear-gradient(90deg, rgba(52, 73, 94, 0.03) 1px, transparent 1px), linear-gradient(rgba(52, 73, 94, 0.03) 1px, transparent 1px)`,
+                    backgroundSize: "20px 20px",
+                  }}
+                />
 
-              {/* X measurement top */}
-              <line x1="200" y1="16" x2="200" y2="44" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="196" y1="16" x2="204" y2="16" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="196" y1="44" x2="204" y2="44" stroke="#8b7355" strokeWidth="1.5" />
-              <text x="210" y="34" fontFamily="var(--font-display)" fontSize="12" fontWeight="700" fill="#8b7355">X</text>
-            </svg>
+                {/* Clear space box */}
+                <div className="absolute inset-0 flex items-center justify-center rounded-lg border border-dashed border-brand-navy/30 p-4">
+                  {/* Inner content area with logo */}
+                  <div className="flex items-center gap-8 w-full justify-center">
+                    {/* X measurement indicator */}
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 flex flex-col items-center gap-1">
+                      <div className="h-3 w-px bg-brand-sand" />
+                      <span className="font-display text-xs font-bold text-brand-sand whitespace-nowrap">X</span>
+                      <div className="h-3 w-px bg-brand-sand" />
+                    </div>
+
+                    {/* Logo */}
+                    <LogoHorizontal size="sm" />
+
+                    {/* Right X measurement */}
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 flex flex-col items-center gap-1">
+                      <div className="h-3 w-px bg-brand-sand" />
+                      <span className="font-display text-xs font-bold text-brand-sand whitespace-nowrap">X</span>
+                      <div className="h-3 w-px bg-brand-sand" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-col justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
@@ -240,7 +227,7 @@ export function LogoClearspaceSection() {
             </p>
             <p className="leading-relaxed text-brand-navy/70">
               Охранное поле равно <span className="font-semibold text-brand-orange-dark">X</span> 
-              со всех сторон, где X — высота колеса в этом масштабе.
+              со всех сторон, где X — высота знака в этом масштабе.
             </p>
           </div>
         </div>
