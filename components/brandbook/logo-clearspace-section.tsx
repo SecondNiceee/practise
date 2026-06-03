@@ -111,32 +111,39 @@ export function LogoClearspaceSection() {
               role="img"
               aria-label="Схема охранного поля знака"
             >
-              {/* clear space dashed box */}
-              <rect
-                x="20"
-                y="20"
-                width="240"
-                height="180"
-                fill="none"
-                stroke="#bdc3c7"
-                strokeWidth="1.5"
-                strokeDasharray="6,6"
-              />
-              {/* logo bounding box */}
-              <rect
-                x="56"
-                y="56"
-                width="168"
-                height="108"
-                fill="none"
-                stroke="#2c3e50"
-                strokeWidth="1"
-                opacity="0.4"
-              />
-              {/* the mark — centered inside rect(56,56,168,108): center=(140,110) */}
-              {/* scale=1.6: original viewBox x=16..126 w=110, y=18..90 h=72 */}
-              {/* scaled w=176, h=115.2; tx=140-(16+55)*1.6=140-113.6=26.4; ty=110-(18+36)*1.6=110-86.4=23.6 */}
-              <g transform="translate(26, 24) scale(1.6)">
+              {/*
+                Знак (машинка):
+                  Оригинал viewBox: x=16..126 (w=110), y=18..90 (h=72)
+                  Колесо: r=12 → диаметр 24
+                  
+                  Scale 1.6: машинка 176×115.2
+                  Diametр колеса при scale 1.6: 24*1.6 = 38.4 ≈ 38 (это X)
+                  
+                  SVG viewBox = 280×220
+                  Центр машинки: x=140, y=110
+                  Границы машинки: 
+                    left:   140 - 176/2 = 140 - 88 = 52
+                    right:  140 + 88 = 228
+                    top:    110 - 115.2/2 = 110 - 57.6 = 52.4 ≈ 52
+                    bottom: 110 + 57.6 = 167.6 ≈ 168
+                  
+                  Охранное поле (пунктир) прилегает на X=38:
+                    left:   52 - 38 = 14
+                    right:  228 + 38 = 266
+                    top:    52 - 38 = 14
+                    bottom: 168 + 38 = 206
+                    width:  266 - 14 = 252
+                    height: 206 - 14 = 192
+              */}
+              {/* Охранное поле — пунктирная рамка */}
+              <rect x="14" y="14" width="252" height="192" fill="none" stroke="#bdc3c7" strokeWidth="1.5" strokeDasharray="6,6" />
+
+              {/* Лого-зона (машинка) — сплошная граница */}
+              <rect x="52" y="52" width="176" height="116" fill="none" stroke="#2c3e50" strokeWidth="1" opacity="0.4" />
+
+              {/* Машинка scale 1.6, центрирована */}
+              {/* tx = 140 - (16+55)*1.6 = 140 - 113.6 = 26.4, ty = 110 - (18+36)*1.6 = 110 - 86.4 = 23.6 */}
+              <g transform="translate(26.4, 23.6) scale(1.6)">
                 <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
                 <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
                 <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
@@ -152,17 +159,31 @@ export function LogoClearspaceSection() {
                 <circle cx="100" cy="76" r="4" fill="#2c3e50" />
               </g>
 
-              {/* X measurement — top */}
-              <line x1="140" y1="20" x2="140" y2="56" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="136" y1="20" x2="144" y2="20" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="136" y1="56" x2="144" y2="56" stroke="#8b7355" strokeWidth="1.5" />
-              <text x="150" y="42" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
+              {/* ── Разметка X со всех четырёх сторон ── */}
 
-              {/* X measurement — left */}
-              <line x1="20" y1="110" x2="56" y2="110" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="20" y1="106" x2="20" y2="114" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="56" y1="106" x2="56" y2="114" stroke="#8b7355" strokeWidth="1.5" />
-              <text x="38" y="100" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+              {/* СВЕРХУ: охранное поле → машинка (y: 14 → 52), x=140 */}
+              <line x1="140" y1="14" x2="140" y2="52" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="136" y1="14" x2="144" y2="14" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="136" y1="52" x2="144" y2="52" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="155" y="37" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
+
+              {/* СЛЕВА: охранное поле → машинка (x: 14 → 52), y=110 */}
+              <line x1="14" y1="110" x2="52" y2="110" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="14" y1="106" x2="14" y2="114" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="52" y1="106" x2="52" y2="114" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="33" y="100" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+
+              {/* СПРАВА: машинка → охранное поле (x: 228 → 266), y=110 */}
+              <line x1="228" y1="110" x2="266" y2="110" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="228" y1="106" x2="228" y2="114" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="266" y1="106" x2="266" y2="114" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="247" y="100" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+
+              {/* СНИЗУ: машинка → охранное поле (y: 168 → 206), x=140 */}
+              <line x1="140" y1="168" x2="140" y2="206" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="136" y1="168" x2="144" y2="168" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="136" y1="206" x2="144" y2="206" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="155" y="193" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
             </svg>
           </div>
 
