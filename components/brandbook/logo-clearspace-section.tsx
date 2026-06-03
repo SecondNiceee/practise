@@ -135,7 +135,7 @@ export function LogoClearspaceSection() {
                 opacity="0.4"
               />
               {/* the mark */}
-              <g transform="translate(20, 20) scale(1.6)">
+              <g transform="translate(10, 20) scale(1.6)">
                 <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
                 <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
                 <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
