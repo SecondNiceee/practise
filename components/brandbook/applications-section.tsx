@@ -156,8 +156,25 @@ function CarriersSlide({
   carriers: (typeof allCarriers)[number][]
   slideNumber: number
 }) {
+  // Категория слайда берётся из первого носителя пары
+  const CategoryIcon = carriers[0].categoryIcon
+  const category = carriers[0].category
+
   return (
     <SlideWrapper slideNumber={slideNumber} totalSlides={TOTAL_SLIDES} variant="light">
+      <div className="mb-8 flex flex-col gap-3 md:mb-10">
+        <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-brand-sand">
+          Носители бренда
+        </span>
+        <div className="flex items-center gap-3">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange-dark">
+            <CategoryIcon className="h-5 w-5" aria-hidden="true" />
+          </span>
+          <h3 className="text-balance font-display text-2xl font-bold leading-tight text-brand-navy md:text-3xl">
+            {category}
+          </h3>
+        </div>
+      </div>
       <div className="grid gap-6 md:grid-cols-2">
         {carriers.map((carrier) => (
           <CarrierCard key={carrier.id} carrier={carrier} />
