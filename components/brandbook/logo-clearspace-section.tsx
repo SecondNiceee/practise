@@ -24,17 +24,6 @@ export function LogoClearspaceSection() {
                 role="img"
                 aria-label="Схема охранного поля полного логотипа"
               >
-                {/* clear space dashed box */}
-                <rect
-                  x="28"
-                  y="36"
-                  width="304"
-                  height="268"
-                  fill="none"
-                  stroke="#bdc3c7"
-                  strokeWidth="1.5"
-                  strokeDasharray="6,6"
-                />
                 {/* logo bounding box */}
                 <rect
                   x="76"
@@ -45,6 +34,17 @@ export function LogoClearspaceSection() {
                   stroke="#2c3e50"
                   strokeWidth="1"
                   opacity="0.4"
+                />
+                {/* clear space dashed box - прилегает к логотипу */}
+                <rect
+                  x="56"
+                  y="64"
+                  width="248"
+                  height="212"
+                  fill="none"
+                  stroke="#bdc3c7"
+                  strokeWidth="1.5"
+                  strokeDasharray="6,6"
                 />
                 {/* the mark, scaled x2 */}
                 <g transform="translate(40, 40) scale(2)">
@@ -109,17 +109,6 @@ export function LogoClearspaceSection() {
                 role="img"
                 aria-label="Схема охранного поля горизонтальной версии"
               >
-                {/* clear space dashed box */}
-                <rect
-                  x="20"
-                  y="20"
-                  width="380"
-                  height="140"
-                  fill="none"
-                  stroke="#bdc3c7"
-                  strokeWidth="1.5"
-                  strokeDasharray="6,6"
-                />
                 {/* logo bounding box */}
                 <rect
                   x="50"
@@ -130,6 +119,17 @@ export function LogoClearspaceSection() {
                   stroke="#2c3e50"
                   strokeWidth="1"
                   opacity="0.4"
+                />
+                {/* clear space dashed box - прилегает к логотипу */}
+                <rect
+                  x="35"
+                  y="35"
+                  width="350"
+                  height="110"
+                  fill="none"
+                  stroke="#bdc3c7"
+                  strokeWidth="1.5"
+                  strokeDasharray="6,6"
                 />
                 {/* the mark, scaled */}
                 <g transform="translate(60, 50) scale(0.9)">
@@ -184,17 +184,6 @@ export function LogoClearspaceSection() {
                 role="img"
                 aria-label="Схема охранного поля знака"
               >
-                {/* clear space dashed box */}
-                <rect
-                  x="20"
-                  y="20"
-                  width="200"
-                  height="160"
-                  fill="none"
-                  stroke="#bdc3c7"
-                  strokeWidth="1.5"
-                  strokeDasharray="6,6"
-                />
                 {/* logo bounding box */}
                 <rect
                   x="50"
@@ -205,6 +194,17 @@ export function LogoClearspaceSection() {
                   stroke="#2c3e50"
                   strokeWidth="1"
                   opacity="0.4"
+                />
+                {/* clear space dashed box - прилегает к логотипу */}
+                <rect
+                  x="35"
+                  y="35"
+                  width="170"
+                  height="130"
+                  fill="none"
+                  stroke="#bdc3c7"
+                  strokeWidth="1.5"
+                  strokeDasharray="6,6"
                 />
                 {/* the mark, scaled */}
                 <g transform="translate(50, 40) scale(1.2)">
