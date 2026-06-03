@@ -1,6 +1,8 @@
 import Image from "next/image"
+import { Check, X } from "lucide-react"
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { MascotEmotions } from "@/components/moodboard/mascot-emotions"
+import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
 import { SlideWrapper } from "./slide-wrapper"
 
 type Pattern = {
@@ -53,6 +55,109 @@ export function PatternSection() {
             {patterns.map((p) => (
               <PatternSwatch key={p.id} p={p} />
             ))}
+          </div>
+
+          {/* Правила использования паттерна */}
+          <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
+            Правила использования паттерна
+          </h3>
+          <p className="mb-6 max-w-3xl text-brand-navy/70">
+            Паттерн используется как фоновый элемент. Логотип всегда размещается на однотонной подложке с достаточным контрастом.
+          </p>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Правильно */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500">
+                  <Check className="h-4 w-4 text-white" />
+                </div>
+                <span className="font-display font-semibold text-green-700">Правильно</span>
+              </div>
+              
+              {/* Пример 1: Логотип на белой подложке поверх паттерна */}
+              <div
+                className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-brand-navy/10"
+                style={{
+                  backgroundImage: "url(/patterns/cars.png)",
+                  backgroundSize: "150px",
+                  backgroundRepeat: "repeat",
+                }}
+              >
+                <div className="rounded-xl bg-white px-8 py-6 shadow-lg">
+                  <KibitkaLogo size="md" caption="Такси-сервис" />
+                </div>
+              </div>
+              <p className="text-sm text-brand-navy/60">
+                Логотип на белой подложке с тенью поверх паттерна
+              </p>
+
+              {/* Пример 2: Паттерн только в части макета */}
+              <div className="relative flex aspect-[4/3] overflow-hidden rounded-2xl border border-brand-navy/10">
+                <div className="flex w-1/2 items-center justify-center bg-white p-4">
+                  <KibitkaLogo size="sm" caption="Такси-сервис" />
+                </div>
+                <div
+                  className="w-1/2"
+                  style={{
+                    backgroundImage: "url(/patterns/pins.png)",
+                    backgroundSize: "100px",
+                    backgroundRepeat: "repeat",
+                  }}
+                />
+              </div>
+              <p className="text-sm text-brand-navy/60">
+                Паттерн занимает часть макета, логотип на чистом фоне
+              </p>
+            </div>
+
+            {/* Неправильно */}
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500">
+                  <X className="h-4 w-4 text-white" />
+                </div>
+                <span className="font-display font-semibold text-red-700">Неправильно</span>
+              </div>
+              
+              {/* Пример 1: Логотип напрямую на паттерне */}
+              <div
+                className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border-2 border-red-300"
+                style={{
+                  backgroundImage: "url(/patterns/cars.png)",
+                  backgroundSize: "150px",
+                  backgroundRepeat: "repeat",
+                }}
+              >
+                <div className="absolute right-2 top-2 rounded bg-red-500 px-2 py-0.5 text-xs font-bold text-white">
+                  Нет
+                </div>
+                <KibitkaLogo size="md" caption="Такси-сервис" />
+              </div>
+              <p className="text-sm text-brand-navy/60">
+                Логотип напрямую на паттерне — плохая читаемость
+              </p>
+
+              {/* Пример 2: Логотип на полупрозрачной подложке */}
+              <div
+                className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border-2 border-red-300"
+                style={{
+                  backgroundImage: "url(/patterns/speed.png)",
+                  backgroundSize: "120px",
+                  backgroundRepeat: "repeat",
+                }}
+              >
+                <div className="absolute right-2 top-2 rounded bg-red-500 px-2 py-0.5 text-xs font-bold text-white">
+                  Нет
+                </div>
+                <div className="rounded-xl bg-white/50 px-8 py-6 backdrop-blur-sm">
+                  <KibitkaLogo size="md" caption="Такси-сервис" />
+                </div>
+              </div>
+              <p className="text-sm text-brand-navy/60">
+                Полупрозрачная подложка — паттерн просвечивает
+              </p>
+            </div>
           </div>
 
           {/* Additional graphic elements - Mascot */}
