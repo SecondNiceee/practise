@@ -1,5 +1,5 @@
 import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
-import { Phone, Globe, Clock, Wallet, ShieldCheck, Sparkles } from "lucide-react"
+import { Phone, Globe, Clock, Wallet, ShieldCheck } from "lucide-react"
 
 /**
  * Реалистичный мокап рекламного флаера «Кибитка».
@@ -40,19 +40,6 @@ function Flyer() {
         <p className="relative mt-2 max-w-[150px] text-pretty font-sans text-[7px] leading-relaxed text-brand-cream/70">
           Домчим быстро, уютно и по-честному — как дома, только на колёсах.
         </p>
-      </div>
-
-      {/* Оранжевая карточка с промокодом */}
-      <div className="relative z-10 -mt-3 mx-4 flex items-center justify-between rounded-lg bg-brand-orange px-3 py-2 shadow-lg">
-        <div className="flex flex-col leading-none">
-          <span className="font-sans text-[5px] font-semibold uppercase tracking-[0.2em] text-brand-navy/70">
-            Промокод
-          </span>
-          <span className="mt-[2px] font-display text-base font-black tracking-wider text-brand-navy">ДОМОЙ50</span>
-        </div>
-        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-navy/10">
-          <Sparkles className="h-3.5 w-3.5 text-brand-navy" aria-hidden="true" />
-        </span>
       </div>
 
       {/* Преимущества */}
