@@ -21,8 +21,7 @@ const audience = [
 export function BrandIntro() {
   return (
     <SlideWrapper slideNumber={3} totalSlides={21} variant="light">
-      <section id="about" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="about" className="scroll-mt-20">
           <SectionHeading
             index="01"
             kicker="О компании"
@@ -93,8 +92,7 @@ export function BrandIntro() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }

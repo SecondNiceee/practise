@@ -38,8 +38,7 @@ function PatternSwatch({ p }: { p: Pattern }) {
 export function PatternSection() {
   return (
     <SlideWrapper slideNumber={10} totalSlides={21} variant="light">
-      <section id="patterns" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="patterns" className="scroll-mt-20">
           <SectionHeading
             index="06"
             kicker="Паттерны"
@@ -79,8 +78,7 @@ export function PatternSection() {
               <span className="text-sm leading-relaxed text-brand-navy/65">Наружные носители</span>
             </div>
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }

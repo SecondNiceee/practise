@@ -4,8 +4,7 @@ import { SlideWrapper } from "./slide-wrapper"
 export function LogoClearspaceSection() {
   return (
     <SlideWrapper slideNumber={5} totalSlides={21} variant="light">
-      <section id="logo-clearspace" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="logo-clearspace" className="scroll-mt-20">
           <SectionHeading
             index="02.1"
             kicker="Охранное поле"
@@ -110,8 +109,7 @@ export function LogoClearspaceSection() {
               визуальную целостность бренда на любых носителях.
             </p>
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }

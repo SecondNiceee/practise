@@ -6,33 +6,35 @@ interface SlideWrapperProps {
   totalSlides?: number
   className?: string
   variant?: "light" | "dark"
+  /** @deprecated Больше не нужен, оставлен для обратной совместимости */
   autoHeight?: boolean
 }
 
 export function SlideWrapper({
   children,
   slideNumber,
-  totalSlides,
+  totalSlides = TOTAL_SLIDES,
   className = "",
   variant = "light",
-  autoHeight = false,
 }: SlideWrapperProps) {
   const bgClass = variant === "dark" ? "bg-brand-navy" : "bg-brand-cream"
   const textClass = variant === "dark" ? "text-white/60" : "text-brand-sand"
-  const heightClass = autoHeight ? "" : "min-h-screen"
 
   return (
     <section
-      className={`relative ${heightClass} ${bgClass} ${className} pb-14`}
+      className={`${bgClass} ${className}`}
       data-slide={slideNumber}
     >
-      {children}
-      
-      {/* Номер слайда */}
-      <div className="absolute bottom-6 right-6 flex items-center gap-2">
-        <span className={`font-mono text-sm ${textClass}`}>
-          {String(slideNumber).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}
-        </span>
+      {/* Единый контейнер — одинаковая ширина для всех слайдов */}
+      <div className="mx-auto flex w-full max-w-6xl flex-col px-5 py-16 md:py-24">
+        {children}
+
+        {/* Нумерация слайда — внутри контентной зоны, выровнена вправо */}
+        <div className="mt-10 flex justify-end">
+          <span className={`font-mono text-sm ${textClass}`}>
+            {String(slideNumber).padStart(2, "0")} / {String(totalSlides).padStart(2, "0")}
+          </span>
+        </div>
       </div>
     </section>
   )

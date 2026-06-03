@@ -16,8 +16,7 @@ const concepts = [
 export function LogoSection() {
   return (
     <SlideWrapper slideNumber={4} totalSlides={21} variant="light">
-      <section id="logo" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="logo" className="scroll-mt-20">
           <SectionHeading
             index="02"
             kicker="Логотип"
@@ -87,8 +86,7 @@ export function LogoSection() {
               Ретро-такси (выбрано)
             </span>
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }
