@@ -31,13 +31,13 @@ function TokenLogo({
       }}
     >
       <KibitkaMark
-        className="h-auto w-full opacity-95 mix-blend-multiply drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]"
-        bodyColor="#2c3e50"
-        windowColor="#1b2735"
-        wheelColor="#1b2735"
-        wheelInner="#d9c9a3"
-        bumperColor="#1b2735"
-        lightColor="#d9c9a3"
+        className="h-auto w-full opacity-95 drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]"
+        bodyColor="#ffffff"
+        windowColor="rgba(0,0,0,0.18)"
+        wheelColor="#ffffff"
+        wheelInner="rgba(0,0,0,0.22)"
+        bumperColor="#ffffff"
+        lightColor="rgba(0,0,0,0.18)"
       />
     </div>
   )
