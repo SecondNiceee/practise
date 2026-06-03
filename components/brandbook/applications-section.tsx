@@ -1,6 +1,7 @@
 import { SlideWrapper } from "./slide-wrapper"
 import { MobileAppMockup } from "./mobile-app-mockup"
 import { BusinessCardMockup } from "./business-card-mockup"
+import { FlyerMockup } from "./flyer-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
@@ -23,9 +24,9 @@ const allCarriers = [
     number: "02",
     category: "Полиграфия",
     categoryIcon: FileText,
-    src: "/carriers/carrier-flyer.png",
+    custom: "flyer" as const,
     title: "Флаер / листовка",
-    desc: "Рекламный флаер с логотипом «Кибитка» и призывом к действию.",
+    desc: "Рекламный флаер «Кибитка» с акцией, промокодом и призывом к действию — фирменные цвета и логотип.",
   },
   // Форма и документация
   {
@@ -119,6 +120,8 @@ function CarrierCard({
         <MobileAppMockup />
       ) : "custom" in carrier && carrier.custom === "business-card" ? (
         <BusinessCardMockup />
+      ) : "custom" in carrier && carrier.custom === "flyer" ? (
+        <FlyerMockup />
       ) : (
         <div className="relative aspect-[4/3]">
           <Image
