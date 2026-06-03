@@ -3,6 +3,7 @@ import { MobileAppMockup } from "./mobile-app-mockup"
 import { BusinessCardMockup } from "./business-card-mockup"
 import { FlyerMockup } from "./flyer-mockup"
 import { UniformMockup } from "./uniform-mockup"
+import { BadgeMockup } from "./badge-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
@@ -44,9 +45,9 @@ const allCarriers = [
     number: "04",
     category: "Форма и документация",
     categoryIcon: Shirt,
-    src: "/carriers/carrier-badge.png",
+    custom: "badge" as const,
     title: "Бейдж водителя",
-    desc: "Идентификационный бейдж с фото, именем и логотипом компании.",
+    desc: "Идентификационный бейдж на шнурке с фото, именем, должностью и логотипом «Кибитка».",
   },
   // Цифровые носители
   {
@@ -125,6 +126,8 @@ function CarrierCard({
         <FlyerMockup />
       ) : "custom" in carrier && carrier.custom === "uniform" ? (
         <UniformMockup />
+      ) : "custom" in carrier && carrier.custom === "badge" ? (
+        <BadgeMockup />
       ) : (
         <div className="relative aspect-[4/3]">
           <Image
