@@ -7,7 +7,7 @@ export function FinalCover() {
       <footer className="relative w-full text-white">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden"
+          className="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2"
         >
           <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/25 blur-3xl" />
           <div className="absolute -bottom-40 left-10 h-80 w-80 rounded-full bg-brand-red/20 blur-3xl" />
