@@ -28,9 +28,43 @@ export function BadgeMockup() {
             aria-hidden="true"
           />
 
-          {/* Шнурок */}
-          <div className="absolute -top-10 left-1/2 -z-10 flex -translate-x-1/2 flex-col items-center" aria-hidden="true">
-            <div className="h-12 w-[18px] rounded-t-md bg-brand-orange shadow-md" />
+          {/* Шнурок (lanyard) — две тканевые ленты, металлический карабин и кольцо */}
+          <div
+            className="absolute -top-[150px] left-1/2 -z-10 -translate-x-1/2"
+            aria-hidden="true"
+          >
+            <svg width="200" height="170" viewBox="0 0 200 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                {/* Объём ленты: тёмные края, светлая середина */}
+                <linearGradient id="strapShade" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stopColor="#1f2d3a" />
+                  <stop offset="0.5" stopColor="#3a546b" />
+                  <stop offset="1" stopColor="#1f2d3a" />
+                </linearGradient>
+                <linearGradient id="metalShade" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stopColor="#e8e8ea" />
+                  <stop offset="0.5" stopColor="#a9adb2" />
+                  <stop offset="1" stopColor="#7c8086" />
+                </linearGradient>
+              </defs>
+
+              {/* Левая лента */}
+              <path d="M100 14 C 78 60, 58 110, 70 150 L 86 150 C 78 110, 92 62, 104 18 Z" fill="url(#strapShade)" />
+              {/* Правая лента */}
+              <path d="M100 14 C 122 60, 142 110, 130 150 L 114 150 C 122 110, 108 62, 96 18 Z" fill="url(#strapShade)" />
+
+              {/* Оранжевая строчка по лентам */}
+              <path d="M99 20 C 80 64, 64 110, 74 148" stroke="#e8732b" strokeWidth="1.5" strokeDasharray="3 3" fill="none" opacity="0.7" />
+              <path d="M101 20 C 120 64, 136 110, 126 148" stroke="#e8732b" strokeWidth="1.5" strokeDasharray="3 3" fill="none" opacity="0.7" />
+
+              {/* Шов на вершине (где лента сходится за шеей) */}
+              <path d="M92 16 L 108 16 L 104 26 L 96 26 Z" fill="#16212c" />
+
+              {/* Металлическое кольцо */}
+              <circle cx="100" cy="150" r="9" fill="none" stroke="url(#metalShade)" strokeWidth="4" />
+              {/* Карабин-зажим */}
+              <rect x="95" y="156" width="10" height="14" rx="2" fill="url(#metalShade)" />
+            </svg>
           </div>
 
           {/* Сам бейдж */}
