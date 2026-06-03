@@ -5,6 +5,7 @@ import { FlyerMockup } from "./flyer-mockup"
 import { UniformMockup } from "./uniform-mockup"
 import { BadgeMockup } from "./badge-mockup"
 import { SocialMockup } from "./social-mockup"
+import { MugMockup } from "./mug-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
@@ -75,9 +76,9 @@ const allCarriers = [
     number: "07",
     category: "Сувенирная продукция",
     categoryIcon: Gift,
-    src: "/carriers/carrier-promo.png",
-    title: "Промо-набор",
-    desc: "Брендированные стаканы, мерч и упаковка с логотипом — для корпоративных партнёрств.",
+    custom: "mug" as const,
+    title: "Брендированная кружка",
+    desc: "Керамическая кружка с логотипом «Кибитка», нанесённым по всей окружности — для команды и партнёров.",
   },
   {
     id: "carrier-08",
@@ -131,6 +132,8 @@ function CarrierCard({
         <BadgeMockup />
       ) : "custom" in carrier && carrier.custom === "social" ? (
         <SocialMockup />
+      ) : "custom" in carrier && carrier.custom === "mug" ? (
+        <MugMockup />
       ) : (
         <div className="relative aspect-[4/3]">
           <Image
