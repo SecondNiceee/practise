@@ -1,15 +1,8 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { FileText, Shirt, Car, Smartphone, Gift, Coffee } from "lucide-react"
 import { MobileAppMockup } from "@/components/brandbook/mobile-app-mockup"
-import {
-  PromoIllustration,
-  BusinessCardIllustration,
-  FlyerIllustration,
-  UniformIllustration,
-  BagIllustration,
-  TaxiCarIllustration,
-} from "@/components/brandbook/carrier-illustrations"
 import { PageNumber } from "./page-number"
+import Image from "next/image"
 
 const categories = [
   {
@@ -19,7 +12,7 @@ const categories = [
     desc: "Брендированные расходники и стаканы — каждый день напоминают о бренде.",
     items: [
       {
-        illustration: <PromoIllustration />,
+        src: "/carriers/carrier-promo.png",
         title: "Промо-набор «Кибитка»",
         desc: "Брендированные стаканы, мерч и упаковка с логотипом — для корпоративных партнёрств и подарков.",
       },
@@ -32,14 +25,14 @@ const categories = [
     desc: "Печатные материалы для коммуникации с клиентами и партнёрами.",
     items: [
       {
-        illustration: <BusinessCardIllustration />,
+        src: "/carriers/carrier-business-card.png",
         title: "Визитные карточки",
         desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами.",
       },
       {
-        illustration: <FlyerIllustration />,
+        src: "/carriers/carrier-flyer.png",
         title: "Флаер / листовка",
-        desc: "Рекламный флаер с логотипом «Кибитка» и призывом к действию в фирменных цветах.",
+        desc: "Рекламный флаер с логотипом «Кибитка» и призывом к действию.",
       },
     ],
   },
@@ -50,9 +43,9 @@ const categories = [
     desc: "Единый стиль команды — узнаваемость и профессиональный образ.",
     items: [
       {
-        illustration: <UniformIllustration />,
+        src: "/carriers/carrier-uniform.png",
         title: "Форменная одежда водителей",
-        desc: "Поло и кепка с вышитым логотипом «Кибитка» и фирменными акцентами из оранжевого и тёмно-синего.",
+        desc: "Поло и кепка с вышитым логотипом «Кибитка» и графическими элементами.",
       },
     ],
   },
@@ -63,7 +56,7 @@ const categories = [
     desc: "Мобильное приложение — основная точка контакта с пассажиром.",
     items: [
       {
-        illustration: null,
+        src: null,
         custom: "app" as const,
         title: "Мобильное приложение",
         desc: "UI мобильного приложения для iOS и Android: карта, заказ поездки, оранжевые акценты.",
@@ -77,9 +70,9 @@ const categories = [
     desc: "Фирменные сувениры усиливают лояльность и работают как живая реклама.",
     items: [
       {
-        illustration: <BagIllustration />,
-        title: "Фирменная шоппер-сумка",
-        desc: "Натуральная холщовая сумка с принтом «Кибитка» — экологичный мерч для пассажиров.",
+        src: "/carriers/carrier-app.png",
+        title: "Фирменная продукция",
+        desc: "Мерч и сувениры с логотипом «Кибитка» — экологичный подход для пассажиров.",
       },
     ],
   },
@@ -90,9 +83,9 @@ const categories = [
     desc: "Фирменный стиль на автопарке — самый заметный носитель бренда «Кибитка».",
     items: [
       {
-        illustration: <TaxiCarIllustration />,
+        src: "/carriers/carrier-taxi-car.png",
         title: "Брендирование автомобиля",
-        desc: "Оклейка кузова: оранжевая полоса, логотип на дверях, топпер «ТАКСИ» и фирменные акценты.",
+        desc: "Оклейка кузова с логотипом на дверях, графические элементы и фотостиль бренда.",
       },
     ],
   },
@@ -139,7 +132,15 @@ export function ApplicationsSection() {
                   {"custom" in item && item.custom === "app" ? (
                     <MobileAppMockup />
                   ) : (
-                    item.illustration
+                    <div className="relative aspect-[16/10]">
+                      <Image
+                        src={item.src!}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
                   )}
                   <div className="flex flex-col gap-1 p-5">
                     <h4 className="font-display font-semibold text-brand-navy">{item.title}</h4>
