@@ -87,10 +87,10 @@ export function PatternSection() {
                 Комфортный масштаб модуля с равномерным шагом — паттерн «дышит»
               </p>
 
-              {/* Пример 2: паттерн как сдержанный тон */}
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-brand-navy/10 bg-brand-navy">
+              {/* Пример 2: паттерн в фирменных цветах */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-brand-navy/10 bg-brand-orange">
                 <div
-                  className="absolute inset-0 opacity-15"
+                  className="absolute inset-0 opacity-90"
                   style={{
                     backgroundImage: "url(/patterns/pins.png)",
                     backgroundSize: "110px",
@@ -99,7 +99,7 @@ export function PatternSection() {
                 />
               </div>
               <p className="text-sm text-brand-navy/60">
-                Деликатная подача тон-в-тон поверх фирменного фона
+                Паттерн используется только в фирменной палитре бренда
               </p>
             </div>
 
@@ -129,21 +129,23 @@ export function PatternSection() {
                 Слишком мелкий и плотный модуль превращается в визуальный шум
               </p>
 
-              {/* Пример 2: искажение пропорций */}
-              <div
-                className="relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-red-300"
-                style={{
-                  backgroundImage: "url(/patterns/speed.png)",
-                  backgroundSize: "230px 80px",
-                  backgroundRepeat: "repeat",
-                }}
-              >
+              {/* Пример 2: посторонние цвета */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-red-300 bg-[#3b1d6e]">
+                <div
+                  className="absolute inset-0 opacity-90"
+                  style={{
+                    backgroundImage: "url(/patterns/pins.png)",
+                    backgroundSize: "110px",
+                    backgroundRepeat: "repeat",
+                    filter: "hue-rotate(150deg) saturate(1.4)",
+                  }}
+                />
                 <div className="absolute right-2 top-2 rounded bg-red-500 px-2 py-0.5 text-xs font-bold text-white">
                   Нет
                 </div>
               </div>
               <p className="text-sm text-brand-navy/60">
-                Растягивание модуля по одной оси искажает пропорции
+                Перекрашивание паттерна в посторонние цвета недопустимо
               </p>
             </div>
           </div>
