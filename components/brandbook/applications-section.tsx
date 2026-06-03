@@ -1,5 +1,6 @@
 import { SlideWrapper } from "./slide-wrapper"
 import { MobileAppMockup } from "./mobile-app-mockup"
+import { BusinessCardMockup } from "./business-card-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
@@ -13,9 +14,9 @@ const allCarriers = [
     number: "01",
     category: "Полиграфия",
     categoryIcon: FileText,
-    src: "/carriers/carrier-business-card.png",
+    custom: "business-card" as const,
     title: "Визитные карточки",
-    desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами.",
+    desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами — лицевая и оборотная стороны.",
   },
   {
     id: "carrier-02",
@@ -116,6 +117,8 @@ function CarrierCard({
     <article className="flex flex-col overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
       {"custom" in carrier && carrier.custom === "app" ? (
         <MobileAppMockup />
+      ) : "custom" in carrier && carrier.custom === "business-card" ? (
+        <BusinessCardMockup />
       ) : (
         <div className="relative aspect-[4/3]">
           <Image
