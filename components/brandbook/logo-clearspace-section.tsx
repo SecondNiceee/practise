@@ -204,56 +204,69 @@ export function LogoClearspaceSection() {
           <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-8">
               <svg
-                viewBox="0 0 240 200"
-                className="h-auto w-full max-w-xs"
+                viewBox="0 0 380 260"
+                className="h-auto w-full max-w-sm"
                 role="img"
-                aria-label="Схема охранного поля знака"
+                aria-label="Схема охранного поля знака: X равен диаметру колеса"
               >
-                {/* logo bounding box */}
+                {/* пунктирная рамка охранного поля (отступ X) */}
                 <rect
-                  x="50"
-                  y="50"
-                  width="140"
-                  height="100"
-                  fill="none"
-                  stroke="#2c3e50"
-                  strokeWidth="1"
-                  opacity="0.4"
-                />
-                {/* clear space dashed box - прилегает к логотипу */}
-                <rect
-                  x="35"
-                  y="35"
-                  width="170"
-                  height="130"
+                  x="79.6"
+                  y="51.6"
+                  width="254.8"
+                  height="194.8"
                   fill="none"
                   stroke="#bdc3c7"
                   strokeWidth="1.5"
                   strokeDasharray="6,6"
                 />
-                {/* the mark, scaled */}
-                <g transform="translate(50, 40) scale(1.2)">
+                {/* сплошная рамка вокруг знака */}
+                <rect
+                  x="118"
+                  y="90"
+                  width="178"
+                  height="118"
+                  fill="none"
+                  stroke="#2c3e50"
+                  strokeWidth="1"
+                  opacity="0.45"
+                />
+                {/* знак-машинка */}
+                <g transform="translate(95, 60) scale(1.6)">
                   <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
                   <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
                   <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
                   <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50" />
                   <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7" />
+                  <circle cx="26" cy="58" r="5" fill="#ecf0f1" />
+                  <circle cx="114" cy="58" r="5" fill="#ecf0f1" />
                   <circle cx="40" cy="76" r="12" fill="#2c3e50" />
                   <circle cx="40" cy="76" r="8" fill="#ecf0f1" />
+                  <circle cx="40" cy="76" r="4" fill="#2c3e50" />
                   <circle cx="100" cy="76" r="12" fill="#2c3e50" />
                   <circle cx="100" cy="76" r="8" fill="#ecf0f1" />
+                  <circle cx="100" cy="76" r="4" fill="#2c3e50" />
                 </g>
 
-                {/* X measurements */}
-                <line x1="120" y1="20" x2="120" y2="50" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="116" y1="20" x2="124" y2="20" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="116" y1="50" x2="124" y2="50" stroke="#8b7355" strokeWidth="1.5" />
-                <text x="130" y="38" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
+                {/* мерка X сверху */}
+                <line x1="200" y1="51.6" x2="200" y2="90" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="196" y1="51.6" x2="204" y2="51.6" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="196" y1="90" x2="204" y2="90" stroke="#8b7355" strokeWidth="1.5" />
+                <text x="210" y="75" fontFamily="var(--font-display)" fontSize="15" fontWeight="700" fill="#8b7355">X</text>
 
-                <line x1="20" y1="100" x2="50" y2="100" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="20" y1="96" x2="20" y2="104" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="50" y1="96" x2="50" y2="104" stroke="#8b7355" strokeWidth="1.5" />
-                <text x="35" y="92" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+                {/* мерка X слева */}
+                <line x1="79.6" y1="150" x2="118" y2="150" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="79.6" y1="146" x2="79.6" y2="154" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="118" y1="146" x2="118" y2="154" stroke="#8b7355" strokeWidth="1.5" />
+                <text x="98.8" y="142" fontFamily="var(--font-display)" fontSize="15" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+
+                {/* мерка диаметра ПРАВОГО колеса = X (центр 255, r 19.2 → 162.4…200.8) */}
+                <line x1="274.2" y1="162.4" x2="316" y2="162.4" stroke="#8b7355" strokeWidth="1" strokeDasharray="3,3" />
+                <line x1="274.2" y1="200.8" x2="316" y2="200.8" stroke="#8b7355" strokeWidth="1" strokeDasharray="3,3" />
+                <line x1="312" y1="162.4" x2="312" y2="200.8" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="308" y1="162.4" x2="316" y2="162.4" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="308" y1="200.8" x2="316" y2="200.8" stroke="#8b7355" strokeWidth="1.5" />
+                <text x="322" y="186" fontFamily="var(--font-display)" fontSize="15" fontWeight="700" fill="#8b7355">X</text>
               </svg>
             </div>
 
@@ -275,58 +288,69 @@ export function LogoClearspaceSection() {
           <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-8">
               <svg
-                viewBox="0 0 320 120"
-                className="h-auto w-full max-w-sm"
+                viewBox="0 0 420 200"
+                className="h-auto w-full max-w-md"
                 role="img"
-                aria-label="Схема охранного поля надписи"
+                aria-label="Схема охранного поля надписи: H равен высоте заглавной буквы"
               >
-                {/* clear space dashed box */}
+                {/* пунктирная рамка охранного поля (отступ H, высота буквы = 36) */}
                 <rect
-                  x="20"
-                  y="20"
-                  width="280"
-                  height="80"
+                  x="54"
+                  y="46"
+                  width="312"
+                  height="108"
                   fill="none"
                   stroke="#bdc3c7"
                   strokeWidth="1.5"
                   strokeDasharray="6,6"
                 />
-                {/* text bounding box */}
+                {/* сплошная рамка вокруг надписи (высота = H = 36) */}
                 <rect
-                  x="50"
-                  y="40"
-                  width="220"
-                  height="40"
+                  x="90"
+                  y="82"
+                  width="240"
+                  height="36"
                   fill="none"
                   stroke="#2c3e50"
                   strokeWidth="1"
-                  opacity="0.4"
+                  opacity="0.45"
                 />
-                {/* Wordmark */}
-                <text x="160" y="68" fontFamily="var(--font-display)" fontSize="24" fontWeight="700" fill="#2c3e50" textAnchor="middle" letterSpacing="8">
+                {/* надпись (cap-height ≈ 36) */}
+                <text x="210" y="114" fontFamily="var(--font-display)" fontSize="48" fontWeight="700" fill="#2c3e50" textAnchor="middle" letterSpacing="6">
                   КИБИТКА
                 </text>
 
-                {/* X measurements */}
-                <line x1="160" y1="20" x2="160" y2="40" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="156" y1="20" x2="164" y2="20" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="156" y1="40" x2="164" y2="40" stroke="#8b7355" strokeWidth="1.5" />
-                <text x="170" y="32" fontFamily="var(--font-display)" fontSize="12" fontWeight="700" fill="#8b7355">0.5X</text>
+                {/* мерка H сверху (= высота буквы) */}
+                <line x1="210" y1="46" x2="210" y2="82" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="206" y1="46" x2="214" y2="46" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="206" y1="82" x2="214" y2="82" stroke="#8b7355" strokeWidth="1.5" />
+                <text x="220" y="68" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355">H</text>
 
-                <line x1="20" y1="60" x2="50" y2="60" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="20" y1="56" x2="20" y2="64" stroke="#8b7355" strokeWidth="1.5" />
-                <line x1="50" y1="56" x2="50" y2="64" stroke="#8b7355" strokeWidth="1.5" />
-                <text x="35" y="52" fontFamily="var(--font-display)" fontSize="12" fontWeight="700" fill="#8b7355" textAnchor="middle">0.5X</text>
+                {/* мерка H слева */}
+                <line x1="54" y1="100" x2="90" y2="100" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="54" y1="96" x2="54" y2="104" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="90" y1="96" x2="90" y2="104" stroke="#8b7355" strokeWidth="1.5" />
+                <text x="72" y="92" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">H</text>
+
+                {/* мерка высоты буквы H справа = единица построения */}
+                <line x1="334" y1="82" x2="376" y2="82" stroke="#8b7355" strokeWidth="1" strokeDasharray="3,3" />
+                <line x1="334" y1="118" x2="376" y2="118" stroke="#8b7355" strokeWidth="1" strokeDasharray="3,3" />
+                <line x1="372" y1="82" x2="372" y2="118" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="368" y1="82" x2="376" y2="82" stroke="#8b7355" strokeWidth="1.5" />
+                <line x1="368" y1="118" x2="376" y2="118" stroke="#8b7355" strokeWidth="1.5" />
+                <text x="382" y="104" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355">H</text>
               </svg>
             </div>
 
             <div className="flex flex-col justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
               <p className="leading-relaxed text-brand-navy/70">
-                Для <strong className="text-brand-navy">текстовой версии</strong> (только надпись) охранное поле — 
-                <span className="font-semibold text-brand-orange-dark"> 0.5X</span> (половина диаметра колеса).
+                Для <strong className="text-brand-navy">текстовой версии</strong> (только надпись) единица построения — 
+                <span className="font-semibold text-brand-orange-dark"> H</span>, высота заглавной буквы. Охранное поле
+                равно <span className="font-semibold text-brand-orange-dark">H</span> со всех сторон.
               </p>
               <p className="leading-relaxed text-brand-navy/70">
-                Применяется в ограниченных пространствах, когда знак не помещается, но нужна текстовая идентификация.
+                Здесь нет знака с колесом, поэтому мерой служит высота букв — она всегда пропорциональна размеру набора.
+                Применяется, когда знак не помещается, но нужна текстовая идентификация.
               </p>
             </div>
           </div>
