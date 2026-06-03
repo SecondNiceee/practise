@@ -44,21 +44,21 @@ function PosterLogo({ tone }: { tone: "onDark" | "onOrange" | "onLight" }) {
 function CampaignOverviewSlide() {
   return (
     <SlideWrapper slideNumber={17} totalSlides={21} variant="light" autoHeight>
-      <div id="campaign" className="scroll-mt-20">
+      <div id="campaign" className="scroll-mt-20 flex flex-col gap-10">
           <SectionHeading
             index="09"
             kicker="Реклама"
             title="Рекламная кампания"
-            description="Серия рекламных макетов бренда «Кибитка» — единый фирстиль на разных носителях."
+            description="Серия рекламных макетов бренда «Кибитка» — единый фирстиль на разных носителях. Каждый формат адаптирован под конкретное место размещения и аудиторию."
           />
 
           {/* Этапы разработки кампании */}
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s) => (
-              <div key={s.num} className="rounded-2xl border border-brand-navy/10 bg-card p-5">
-                <span className="font-display text-2xl font-bold text-brand-orange-dark">{s.num}</span>
-                <h3 className="mt-2 font-display font-semibold text-brand-navy">{s.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-brand-navy/60">{s.desc}</p>
+              <div key={s.num} className="rounded-2xl border border-brand-navy/10 bg-card p-6">
+                <span className="font-display text-3xl font-bold text-brand-orange-dark">{s.num}</span>
+                <h3 className="mt-3 font-display text-lg font-semibold text-brand-navy">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-brand-navy/60">{s.desc}</p>
               </div>
             ))}
           </div>
