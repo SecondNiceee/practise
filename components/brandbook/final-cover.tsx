@@ -3,7 +3,7 @@ import { SlideWrapper } from "./slide-wrapper"
 
 export function FinalCover() {
   return (
-    <SlideWrapper slideNumber={21} totalSlides={21} variant="dark" className="flex items-center">
+    <SlideWrapper slideNumber={24} totalSlides={24} variant="dark" className="flex items-center">
       <footer className="relative w-full overflow-hidden text-white">
         <div
           aria-hidden="true"

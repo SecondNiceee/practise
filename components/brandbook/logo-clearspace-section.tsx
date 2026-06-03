@@ -3,7 +3,7 @@ import { SlideWrapper } from "./slide-wrapper"
 
 export function LogoClearspaceSection() {
   return (
-    <SlideWrapper slideNumber={5} totalSlides={21} variant="light">
+    <SlideWrapper slideNumber={5} totalSlides={24} variant="light">
       <section id="logo-clearspace" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
