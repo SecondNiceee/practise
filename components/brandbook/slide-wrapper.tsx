@@ -22,7 +22,7 @@ export function SlideWrapper({
 
   return (
     <section
-      className={`${bgClass} ${className}`}
+      className={`${bgClass} ${className} overflow-hidden`}
       data-slide={slideNumber}
     >
       {/* Единый контейнер — одинаковая ширина для всех слайдов */}
