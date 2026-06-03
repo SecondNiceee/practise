@@ -72,32 +72,67 @@ export function PatternSection() {
         <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
           Правила использования паттернов
         </h3>
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-brand-green/30 bg-card p-7">
-            <h4 className="mb-4 flex items-center gap-2 font-display font-semibold text-brand-green">
-              <Check className="h-5 w-5" aria-hidden="true" /> Правильно
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {patternDos.map((d) => (
-                <li key={d} className="flex items-start gap-3 text-sm text-brand-navy/80">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-green" aria-hidden="true" />
-                  {d}
-                </li>
-              ))}
-            </ul>
+
+        {/* Visual examples */}
+        <div className="mb-7 grid gap-6 md:grid-cols-2">
+          {/* Do example */}
+          <div className="overflow-hidden rounded-2xl border-2 border-brand-green/40">
+            <div
+              className="relative aspect-video flex items-center justify-center overflow-hidden"
+              style={{
+                backgroundImage: `url('data:image/svg+xml;utf8,<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="cars" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="20" fill="none" stroke="%23FF9500" stroke-width="2"/><path d="M20,30 L40,30" stroke="%23FF9500" stroke-width="1.5"/></pattern></defs><rect width="200" height="200" fill="%23F5F0E8"/><rect width="100" height="200" x="50" y="0" fill="url(%23cars)" opacity="0.15"/></svg>')`,
+                backgroundSize: "auto",
+              }}
+            >
+              <div className="rounded-lg bg-white/90 px-6 py-3">
+                <span className="font-display font-semibold text-brand-navy text-sm">
+                  10-20% площади макета
+                </span>
+              </div>
+            </div>
+            <div className="bg-brand-green/8 p-5 border-t border-brand-green/20">
+              <h4 className="mb-3 flex items-center gap-2 font-display font-semibold text-brand-green text-sm">
+                <Check className="h-4 w-4" aria-hidden="true" /> Правильно
+              </h4>
+              <ul className="flex flex-col gap-2">
+                {patternDos.map((d) => (
+                  <li key={d} className="flex items-start gap-2 text-xs text-brand-navy/80">
+                    <Check className="mt-0.5 h-3 w-3 shrink-0 text-brand-green" aria-hidden="true" />
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="rounded-2xl border border-brand-red/30 bg-card p-7">
-            <h4 className="mb-4 flex items-center gap-2 font-display font-semibold text-brand-red">
-              <X className="h-5 w-5" aria-hidden="true" /> Недопустимо
-            </h4>
-            <ul className="flex flex-col gap-3">
-              {patternDonts.map((d) => (
-                <li key={d} className="flex items-start gap-3 text-sm text-brand-navy/80">
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" aria-hidden="true" />
-                  {d}
-                </li>
-              ))}
-            </ul>
+
+          {/* Don't example */}
+          <div className="overflow-hidden rounded-2xl border-2 border-brand-red/40">
+            <div
+              className="relative aspect-video flex items-center justify-center overflow-hidden"
+              style={{
+                backgroundImage: `url('data:image/svg+xml;utf8,<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dense" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="8" fill="none" stroke="%23E74C3C" stroke-width="2"/></pattern></defs><rect width="200" height="200" fill="url(%23dense)" opacity="0.8"/><image x="0" y="0" width="200" height="200" href="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22><circle cx=%22100%22 cy=%22100%22 r=%2280%22 fill=%22%23999%22/></svg>" opacity="0.3" style="mix-blend-mode:multiply"/></svg>')`,
+                backgroundSize: "auto",
+              }}
+            >
+              <div className="rounded-lg bg-white/90 px-6 py-3">
+                <span className="font-display font-semibold text-brand-red text-sm">
+                  Избыточно и на фото
+                </span>
+              </div>
+            </div>
+            <div className="bg-brand-red/8 p-5 border-t border-brand-red/20">
+              <h4 className="mb-3 flex items-center gap-2 font-display font-semibold text-brand-red text-sm">
+                <X className="h-4 w-4" aria-hidden="true" /> Недопустимо
+              </h4>
+              <ul className="flex flex-col gap-2">
+                {patternDonts.map((d) => (
+                  <li key={d} className="flex items-start gap-2 text-xs text-brand-navy/80">
+                    <X className="mt-0.5 h-3 w-3 shrink-0 text-brand-red" aria-hidden="true" />
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
