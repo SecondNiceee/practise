@@ -72,10 +72,10 @@ function CampaignSlide1() {
   return (
     <SlideWrapper slideNumber={18} totalSlides={21} variant="light" autoHeight>
       <div>
-          <div className="grid items-start gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-2 auto-rows-max">
             {/* Билборд */}
             <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
-              <div className="relative aspect-[2/1] overflow-hidden bg-brand-navy">
+              <div className="relative aspect-[2/1] w-full overflow-hidden bg-brand-navy">
                 <div
                   className="absolute -bottom-16 -right-10 h-[70%] w-1/2 rounded-[100%] bg-brand-orange"
                   aria-hidden="true"
@@ -115,8 +115,8 @@ function CampaignSlide1() {
             </article>
 
             {/* Сити-лайт */}
-            <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
-              <div className="relative aspect-[3/4] overflow-hidden bg-brand-orange">
+            <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm w-fit justify-self-start">
+              <div className="relative aspect-[9/13] w-64 overflow-hidden bg-brand-orange">
                 <div className="relative flex h-full flex-col justify-between p-6">
                   <PosterLogo tone="onOrange" />
                   <div>
@@ -160,10 +160,10 @@ function CampaignSlide2() {
   return (
     <SlideWrapper slideNumber={19} totalSlides={21} variant="light" autoHeight>
       <div>
-          <div className="grid items-start gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-2 auto-rows-max">
             {/* Ролл-ап */}
-            <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
-              <div className="relative aspect-[3/4] overflow-hidden bg-brand-cream">
+            <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm w-fit justify-self-start">
+              <div className="relative aspect-[5/14] w-48 overflow-hidden bg-brand-cream">
                 <div
                   className="absolute inset-x-0 top-0 h-1.5 bg-brand-orange"
                   aria-hidden="true"
@@ -212,8 +212,8 @@ function CampaignSlide2() {
             </article>
 
             {/* Digital-баннер */}
-            <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
-              <div className="relative aspect-square overflow-hidden bg-brand-navy">
+            <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm lg:col-span-1 lg:row-span-2">
+              <div className="relative aspect-square w-72 overflow-hidden bg-brand-navy">
                 <div
                   className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-orange/90"
                   aria-hidden="true"
@@ -258,7 +258,7 @@ function CampaignSlide3() {
   return (
     <SlideWrapper slideNumber={20} totalSlides={21} variant="light" autoHeight>
       <div>
-          <div className="grid items-start gap-6 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-2 auto-rows-max">
             {/* Брендирование борта */}
             <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm lg:col-span-2">
               <div className="relative aspect-[2/1] overflow-hidden bg-brand-cream">
