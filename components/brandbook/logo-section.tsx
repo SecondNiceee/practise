@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
+import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
 import { LogoHorizontal } from "./logo-horizontal"
 import { PageNumber } from "./page-number"
 
