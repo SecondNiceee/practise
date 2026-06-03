@@ -14,13 +14,13 @@ const benefits = [
   { icon: ShieldCheck, title: "Проверенные водители" },
 ]
 
-const FLYER = "h-[300px] w-[212px] overflow-hidden rounded-lg"
+const FLYER = "h-[320px] w-[212px] overflow-hidden rounded-lg"
 
 function Flyer() {
   return (
     <div className={`${FLYER} relative flex flex-col bg-brand-cream`}>
       {/* Верхний блок с логотипом и оффером */}
-      <div className="relative overflow-hidden bg-brand-navy px-4 pb-7 pt-4">
+      <div className="relative overflow-hidden bg-brand-navy px-4 pb-5 pt-4">
         <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-brand-orange/25 blur-2xl" />
 
         <div className="relative flex items-center gap-1.5">
@@ -33,19 +33,17 @@ function Flyer() {
           </div>
         </div>
 
-        <p className="relative mt-5 font-sans text-[7px] font-semibold uppercase tracking-[0.28em] text-brand-orange">
+        <p className="relative mt-4 font-sans text-[7px] font-semibold uppercase tracking-[0.28em] text-brand-orange">
           Первая поездка
         </p>
-        <h2 className="relative mt-1 flex items-baseline gap-1 font-display font-black leading-[0.9] text-brand-cream">
-          <span className="text-[44px] text-brand-orange">−50%</span>
-        </h2>
+        <p className="relative mt-1 font-display text-[40px] font-black leading-none text-brand-orange">−50%</p>
         <p className="relative mt-2 max-w-[150px] text-pretty font-sans text-[7px] leading-relaxed text-brand-cream/70">
           Домчим быстро, уютно и по-честному — как дома, только на колёсах.
         </p>
       </div>
 
       {/* Оранжевая карточка с промокодом */}
-      <div className="relative -mt-4 mx-4 flex items-center justify-between rounded-lg bg-brand-orange px-3 py-2 shadow-lg">
+      <div className="relative z-10 -mt-3 mx-4 flex items-center justify-between rounded-lg bg-brand-orange px-3 py-2 shadow-lg">
         <div className="flex flex-col leading-none">
           <span className="font-sans text-[5px] font-semibold uppercase tracking-[0.2em] text-brand-navy/70">
             Промокод
@@ -58,7 +56,7 @@ function Flyer() {
       </div>
 
       {/* Преимущества */}
-      <div className="flex flex-1 flex-col justify-center gap-2 px-4 py-3">
+      <div className="flex flex-1 flex-col justify-center gap-2.5 px-4 py-3">
         {benefits.map((b) => {
           const Icon = b.icon
           return (
