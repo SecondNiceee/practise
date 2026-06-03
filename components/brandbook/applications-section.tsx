@@ -1,7 +1,14 @@
-import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { FileText, Shirt, Car, Smartphone, Gift, Coffee } from "lucide-react"
 import { MobileAppMockup } from "@/components/brandbook/mobile-app-mockup"
+import {
+  PromoIllustration,
+  BusinessCardIllustration,
+  FlyerIllustration,
+  UniformIllustration,
+  BagIllustration,
+  TaxiCarIllustration,
+} from "@/components/brandbook/carrier-illustrations"
 import { PageNumber } from "./page-number"
 
 const categories = [
@@ -12,9 +19,9 @@ const categories = [
     desc: "Брендированные расходники и стаканы — каждый день напоминают о бренде.",
     items: [
       {
-        src: "/carriers/carrier-promo.png",
+        illustration: <PromoIllustration />,
         title: "Промо-набор «Кибитка»",
-        desc: "Брендированные стаканы, мерч и упаковка в фирменной палитре — для корпоративных партнёрств и подарков.",
+        desc: "Брендированные стаканы, мерч и упаковка с логотипом — для корпоративных партнёрств и подарков.",
       },
     ],
   },
@@ -25,14 +32,14 @@ const categories = [
     desc: "Печатные материалы для коммуникации с клиентами и партнёрами.",
     items: [
       {
-        src: "/carriers/carrier-business-card.png",
+        illustration: <BusinessCardIllustration />,
         title: "Визитные карточки",
         desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами.",
       },
       {
-        src: "/carriers/carrier-flyer.png",
-        title: "Визитка с логотипом",
-        desc: "Простая визитная карточка с логотипом «Кибитка» и контактными данными в фирменных цветах.",
+        illustration: <FlyerIllustration />,
+        title: "Флаер / листовка",
+        desc: "Рекламный флаер с логотипом «Кибитка» и призывом к действию в фирменных цветах.",
       },
     ],
   },
@@ -43,9 +50,9 @@ const categories = [
     desc: "Единый стиль команды — узнаваемость и профессиональный образ.",
     items: [
       {
-        src: "/carriers/carrier-uniform.png",
+        illustration: <UniformIllustration />,
         title: "Форменная одежда водителей",
-        desc: "Поло и кепка в фирменных цветах с вышитым логотипом «Кибитка».",
+        desc: "Поло и кепка с вышитым логотипом «Кибитка» и фирменными акцентами из оранжевого и тёмно-синего.",
       },
     ],
   },
@@ -56,10 +63,10 @@ const categories = [
     desc: "Мобильное приложение — основная точка контакта с пассажиром.",
     items: [
       {
-        src: "/carriers/carrier-app.png",
+        illustration: null,
+        custom: "app" as const,
         title: "Мобильное приложение",
         desc: "UI мобильного приложения для iOS и Android: карта, заказ поездки, оранжевые акценты.",
-        custom: "app" as const,
       },
     ],
   },
@@ -70,7 +77,7 @@ const categories = [
     desc: "Фирменные сувениры усиливают лояльность и работают как живая реклама.",
     items: [
       {
-        src: "/carriers/carrier-bag.png",
+        illustration: <BagIllustration />,
         title: "Фирменная шоппер-сумка",
         desc: "Натуральная холщовая сумка с принтом «Кибитка» — экологичный мерч для пассажиров.",
       },
@@ -83,9 +90,9 @@ const categories = [
     desc: "Фирменный стиль на автопарке — самый заметный носитель бренда «Кибитка».",
     items: [
       {
-        src: "/carriers/carrier-taxi-car.png",
+        illustration: <TaxiCarIllustration />,
         title: "Брендирование автомобиля",
-        desc: "Оклейка кузова фирменными цветами: оранжевая полоса, логотип на дверях, топпер на крыше.",
+        desc: "Оклейка кузова: оранжевая полоса, логотип на дверях, топпер «ТАКСИ» и фирменные акценты.",
       },
     ],
   },
@@ -101,6 +108,15 @@ export function ApplicationsSection() {
           title="Носители (по видам)"
           description="Как фирменный стиль «Кибитка» живёт на реальных носителях — подобраны с учётом специфики городского такси."
         />
+
+        {/* Примечание о цветовом решении */}
+        <div className="mb-12 rounded-2xl border border-brand-orange/20 bg-brand-orange/5 p-5 md:p-6">
+          <p className="text-sm leading-relaxed text-brand-navy">
+            <span className="font-semibold">Примечание:</span> В большинстве носителей цветовое решение не прописано отдельно. Основой являются{" "}
+            <span className="font-semibold">графические элементы</span> логотипа и{" "}
+            <span className="font-semibold">фотостиль</span>, которые обеспечивают узнаваемость бренда. Там, где цвет применяется — используются строго фирменные оттенки: оранжевый <span className="inline-block h-3 w-3 rounded-sm bg-brand-orange align-middle" />, тёмно-синий <span className="inline-block h-3 w-3 rounded-sm bg-brand-navy align-middle" />, кремовый <span className="inline-block h-3 w-3 rounded-sm bg-brand-cream border border-brand-navy/20 align-middle" />.
+          </p>
+        </div>
 
         {categories.map((cat) => (
           <div key={cat.id} className="mb-12">
@@ -123,15 +139,7 @@ export function ApplicationsSection() {
                   {"custom" in item && item.custom === "app" ? (
                     <MobileAppMockup />
                   ) : (
-                    <div className="relative aspect-[16/9]">
-                      <Image
-                        src={item.src}
-                        alt={item.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
+                    item.illustration
                   )}
                   <div className="flex flex-col gap-1 p-5">
                     <h4 className="font-display font-semibold text-brand-navy">{item.title}</h4>
