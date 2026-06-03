@@ -5,8 +5,8 @@ import { FlyerMockup } from "./flyer-mockup"
 import { UniformMockup } from "./uniform-mockup"
 import { BadgeMockup } from "./badge-mockup"
 import { SocialMockup } from "./social-mockup"
-import { MugMockup } from "./mug-mockup"
 import { PromoSetMockup } from "./promo-set-mockup"
+import { CarMockup } from "./car-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
@@ -77,18 +77,18 @@ const allCarriers = [
     number: "07",
     category: "Сувенирная продукция",
     categoryIcon: Gift,
-    custom: "mug" as const,
-    title: "Брендированная кружка",
-    desc: "Керамическая кружка с логотипом «Кибитка», нанесённым по всей окружности — для команды и партнёров.",
+    custom: "promo" as const,
+    title: "Промо-набор",
+    desc: "Фирменный набор сувениров с логотипом «Кибитка»: карта лояльности, значок-стикер, брелок и блокнот — для команды и партнёров.",
   },
   {
     id: "carrier-08",
     number: "08",
     category: "Сувенирная продукция",
     categoryIcon: Gift,
-    custom: "promo" as const,
-    title: "Промо-набор",
-    desc: "Фирменный набор сувениров с логотипом «Кибитка»: карта лояльности, значок-стикер, брелок и блокнот — для команды и партнёров.",
+    src: "/carriers/carrier-bag.png",
+    title: "Фирменный шоппер",
+    desc: "Экологичная сумка-шоппер из плотного хлопка с крупным логотипом «Кибитка» — для пассажиров и партнёров.",
   },
   // Транспорт
   {
@@ -96,7 +96,7 @@ const allCarriers = [
     number: "09",
     category: "Транспорт",
     categoryIcon: Car,
-    src: "/carriers/carrier-taxi-car.png",
+    custom: "car" as const,
     title: "Брендирование автомобиля",
     desc: "Оклейка кузова с логотипом на дверях, графические элементы и фотостиль бренда.",
   },
@@ -133,10 +133,10 @@ function CarrierCard({
         <BadgeMockup />
       ) : "custom" in carrier && carrier.custom === "social" ? (
         <SocialMockup />
-      ) : "custom" in carrier && carrier.custom === "mug" ? (
-        <MugMockup />
       ) : "custom" in carrier && carrier.custom === "promo" ? (
         <PromoSetMockup />
+      ) : "custom" in carrier && carrier.custom === "car" ? (
+        <CarMockup />
       ) : (
         <div className="relative aspect-[4/3]">
           <Image
