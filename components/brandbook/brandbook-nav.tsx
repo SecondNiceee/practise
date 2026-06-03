@@ -2,6 +2,8 @@ const links = [
   { href: "#contents", label: "Оглавление" },
   { href: "#about", label: "О бренде" },
   { href: "#logo", label: "Логотип" },
+  { href: "#logo-clearspace", label: "Охранное поле" },
+  { href: "#logo-colors", label: "Цвета лого" },
   { href: "#logo-rules", label: "Правила лого" },
   { href: "#colors", label: "Цвета" },
   { href: "#typography", label: "Шрифты" },

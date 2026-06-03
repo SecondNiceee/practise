@@ -4,6 +4,8 @@ import { BrandbookNav } from "@/components/brandbook/brandbook-nav"
 import { TableOfContents } from "@/components/brandbook/table-of-contents"
 import { BrandIntro } from "@/components/brandbook/brand-intro"
 import { LogoSection } from "@/components/brandbook/logo-section"
+import { LogoClearspaceSection } from "@/components/brandbook/logo-clearspace-section"
+import { LogoColorsSection } from "@/components/brandbook/logo-colors-section"
 import { LogoRulesSection } from "@/components/brandbook/logo-rules-section"
 import { ColorSection } from "@/components/brandbook/color-section"
 import { TypographySection } from "@/components/brandbook/typography-section"
@@ -34,10 +36,16 @@ export default function BrandbookPage() {
       {/* 3. О бренде / О компании */}
       <BrandIntro />
       
-      {/* 4. Логотип. Варианты. Охранное поле */}
+      {/* 4. Логотип. Варианты */}
       <LogoSection />
       
-      {/* 5. Правила использования логотипа */}
+      {/* 4.1. Охранное поле для всех видов логотипа */}
+      <LogoClearspaceSection />
+      
+      {/* 4.2. Цветовые версии логотипа */}
+      <LogoColorsSection />
+      
+      {/* 5. Правила использования логотипа + недопустимое использование */}
       <LogoRulesSection />
       
       {/* 6. Фирменные цвета. Правила использования */}

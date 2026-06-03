@@ -1,6 +1,7 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
 import { Smartphone, Users, BadgePercent, MapPin, Clock } from "lucide-react"
+import { PageNumber } from "./page-number"
 
 const steps = [
   { num: "01", title: "Цель и аудитория", desc: "Определяем задачу кампании и портрет пассажира." },
@@ -268,6 +269,7 @@ export function CampaignSection() {
           </article>
         </div>
       </div>
+      <PageNumber number={12} />
     </section>
   )
 }

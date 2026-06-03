@@ -2,6 +2,7 @@ import Image from "next/image"
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { MascotEmotions } from "@/components/moodboard/mascot-emotions"
 import { Check, X } from "lucide-react"
+import { PageNumber } from "./page-number"
 
 type Pattern = {
   id: string
@@ -125,6 +126,7 @@ export function PatternSection() {
           </div>
         </div>
       </div>
+      <PageNumber number={9} />
     </section>
   )
 }
