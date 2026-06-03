@@ -205,10 +205,8 @@ export function LogoClearspaceSection() {
               {/* logo bounding box */}
               <rect x="56" y="52" width="348" height="96" fill="none" stroke="#2c3e50" strokeWidth="1" opacity="0.4" />
 
-              {/* машинка — scale=1.1, center of logo-rect: (230,100) */}
-              {/* mark width=110*1.1=121, height=72*1.1=79.2 */}
-              {/* left column: mark centered at x≈105 → tx=105-(16+55)*1.1=105-78.1=26.9; ty=100-(18+36)*1.1=100-59.4=40.6 */}
-              <g transform="translate(27, 41) scale(1.1)">
+              {/* машинка — scale=1.1, сдвинута правее: x≈145, y≈100 */}
+              <g transform="translate(100, 41) scale(1.1)">
                 <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
                 <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
                 <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
@@ -226,7 +224,7 @@ export function LogoClearspaceSection() {
 
               {/* текст КИБИТКА — справа от машинки */}
               <text
-                x="175"
+                x="250"
                 y="107"
                 fontFamily="var(--font-display)"
                 fontSize="26"
@@ -237,17 +235,17 @@ export function LogoClearspaceSection() {
                 КИБИТКА
               </text>
 
-              {/* X — сверху */}
-              <line x1="230" y1="20" x2="230" y2="52" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="226" y1="20" x2="234" y2="20" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="226" y1="52" x2="234" y2="52" stroke="#8b7355" strokeWidth="1.5" />
-              <text x="238" y="40" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355">X</text>
+              {/* X — сверху (охранное расстояние между верхом лого-бокса и пунктирной рамкой) */}
+              <line x1="40" y1="20" x2="40" y2="52" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="36" y1="20" x2="44" y2="20" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="36" y1="52" x2="44" y2="52" stroke="#8b7355" strokeWidth="1.5" />
+              <text x="25" y="40" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
 
-              {/* X — слева */}
-              <line x1="20" y1="100" x2="56" y2="100" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="20" y1="96" x2="20" y2="104" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="56" y1="96" x2="56" y2="104" stroke="#8b7355" strokeWidth="1.5" />
-              <text x="38" y="90" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+              {/* X — слева (охранное расстояние между левым краем лого-бокса и пунктирной рамкой) */}
+              <line x1="20" y1="155" x2="56" y2="155" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="20" y1="151" x2="20" y2="159" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="56" y1="151" x2="56" y2="159" stroke="#8b7355" strokeWidth="1.5" />
+              <text x="38" y="172" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
             </svg>
           </div>
 
@@ -258,7 +256,8 @@ export function LogoClearspaceSection() {
             </p>
             <p className="leading-relaxed text-brand-navy/70">
               Охранное поле равно <span className="font-semibold text-brand-orange-dark">X</span> 
-              со всех сторон, где X — высота знака в этом масштабе.
+              (диаметр колеса) со всех сторон. Это минимальное расстояние от логотипа до края носителя 
+              или соседних элементов.
             </p>
           </div>
         </div>
