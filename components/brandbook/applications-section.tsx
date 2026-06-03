@@ -1,5 +1,9 @@
 import { SlideWrapper } from "./slide-wrapper"
 import { MobileAppMockup } from "./mobile-app-mockup"
+import { BusinessCardMockup } from "./business-card-mockup"
+import { FlyerMockup } from "./flyer-mockup"
+import { UniformMockup } from "./uniform-mockup"
+import { BadgeMockup } from "./badge-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
@@ -13,18 +17,18 @@ const allCarriers = [
     number: "01",
     category: "Полиграфия",
     categoryIcon: FileText,
-    src: "/carriers/carrier-business-card.png",
+    custom: "business-card" as const,
     title: "Визитные карточки",
-    desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами.",
+    desc: "Контактные карточки для водителей и менеджеров с логотипом и реквизитами — лицевая и оборотная стороны.",
   },
   {
     id: "carrier-02",
     number: "02",
     category: "Полиграфия",
     categoryIcon: FileText,
-    src: "/carriers/carrier-flyer.png",
+    custom: "flyer" as const,
     title: "Флаер / листовка",
-    desc: "Рекламный флаер с логотипом «Кибитка» и призывом к действию.",
+    desc: "Рекламный флаер «Кибитка» с акцией, промокодом и призывом к действию — фирменные цвета и логотип.",
   },
   // Форма и документация
   {
@@ -32,18 +36,18 @@ const allCarriers = [
     number: "03",
     category: "Форма и документация",
     categoryIcon: Shirt,
-    src: "/carriers/carrier-uniform.png",
+    custom: "uniform" as const,
     title: "Форменная одежда водителей",
-    desc: "Поло и кепка с вышитым логотипом «Кибитка» и графическими элементами.",
+    desc: "Футболка фирменного цвета с логотипом «Кибитка» на груди — основа форменной одежды водителей.",
   },
   {
     id: "carrier-04",
     number: "04",
     category: "Форма и документация",
     categoryIcon: Shirt,
-    src: "/carriers/carrier-badge.png",
+    custom: "badge" as const,
     title: "Бейдж водителя",
-    desc: "Идентификационный бейдж с фото, именем и логотипом компании.",
+    desc: "Идентификационный бейдж на шнурке с фото, именем, должностью и логотипом «Кибитка».",
   },
   // Цифровые носители
   {
@@ -116,6 +120,14 @@ function CarrierCard({
     <article className="flex flex-col overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
       {"custom" in carrier && carrier.custom === "app" ? (
         <MobileAppMockup />
+      ) : "custom" in carrier && carrier.custom === "business-card" ? (
+        <BusinessCardMockup />
+      ) : "custom" in carrier && carrier.custom === "flyer" ? (
+        <FlyerMockup />
+      ) : "custom" in carrier && carrier.custom === "uniform" ? (
+        <UniformMockup />
+      ) : "custom" in carrier && carrier.custom === "badge" ? (
+        <BadgeMockup />
       ) : (
         <div className="relative aspect-[4/3]">
           <Image
