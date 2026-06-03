@@ -5,8 +5,7 @@ import { SlideWrapper } from "./slide-wrapper"
 export function LogoColorsSection() {
   return (
     <SlideWrapper slideNumber={6} totalSlides={21} variant="light">
-      <section id="logo-colors" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="logo-colors" className="scroll-mt-20">
           <SectionHeading
             index="02.2"
             kicker="Цветовые версии"
@@ -96,8 +95,7 @@ export function LogoColorsSection() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }

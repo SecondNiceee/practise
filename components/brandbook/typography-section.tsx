@@ -27,8 +27,7 @@ const typoDonts = [
 export function TypographySection() {
   return (
     <SlideWrapper slideNumber={9} totalSlides={21} variant="light">
-      <section id="typography" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="typography" className="scroll-mt-20">
           <SectionHeading
             index="05"
             kicker="Типографика"
@@ -118,8 +117,7 @@ export function TypographySection() {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }

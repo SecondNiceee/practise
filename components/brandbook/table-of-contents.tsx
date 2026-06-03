@@ -18,8 +18,7 @@ const sections = [
 export function TableOfContents() {
   return (
     <SlideWrapper slideNumber={2} totalSlides={21} variant="light">
-      <section id="contents" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="contents" className="scroll-mt-20">
           <SectionHeading
             kicker="Содержание"
             title="Оглавление"
@@ -45,8 +44,7 @@ export function TableOfContents() {
               </a>
             ))}
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }

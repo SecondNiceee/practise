@@ -23,8 +23,7 @@ const donts = [
 export function LogoRulesSection() {
   return (
     <SlideWrapper slideNumber={7} totalSlides={21} variant="light">
-      <section id="logo-rules" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="logo-rules" className="scroll-mt-20">
           <SectionHeading
             index="03"
             kicker="Правила логотипа"
@@ -162,8 +161,7 @@ export function LogoRulesSection() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }

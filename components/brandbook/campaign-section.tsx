@@ -44,8 +44,7 @@ function PosterLogo({ tone }: { tone: "onDark" | "onOrange" | "onLight" }) {
 function CampaignOverviewSlide() {
   return (
     <SlideWrapper slideNumber={17} totalSlides={21} variant="light" autoHeight>
-      <section id="campaign" className="scroll-mt-20 px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div id="campaign" className="scroll-mt-20">
           <SectionHeading
             index="09"
             kicker="Реклама"
@@ -63,8 +62,7 @@ function CampaignOverviewSlide() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+      </div>
     </SlideWrapper>
   )
 }
@@ -73,8 +71,7 @@ function CampaignOverviewSlide() {
 function CampaignSlide1() {
   return (
     <SlideWrapper slideNumber={18} totalSlides={21} variant="light" autoHeight>
-      <div className="px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div>
           <div className="grid items-start gap-6 lg:grid-cols-2">
             {/* Билборд */}
             <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
@@ -153,7 +150,6 @@ function CampaignSlide1() {
               </div>
             </article>
           </div>
-        </div>
       </div>
     </SlideWrapper>
   )
@@ -163,8 +159,7 @@ function CampaignSlide1() {
 function CampaignSlide2() {
   return (
     <SlideWrapper slideNumber={19} totalSlides={21} variant="light" autoHeight>
-      <div className="px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div>
           <div className="grid items-start gap-6 lg:grid-cols-2">
             {/* Ролл-ап */}
             <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
@@ -253,7 +248,6 @@ function CampaignSlide2() {
               </div>
             </article>
           </div>
-        </div>
       </div>
     </SlideWrapper>
   )
@@ -263,8 +257,7 @@ function CampaignSlide2() {
 function CampaignSlide3() {
   return (
     <SlideWrapper slideNumber={20} totalSlides={21} variant="light" autoHeight>
-      <div className="px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+      <div>
           <div className="grid items-start gap-6 lg:grid-cols-2">
             {/* Брендирование борта */}
             <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm lg:col-span-2">
@@ -305,7 +298,6 @@ function CampaignSlide3() {
               </div>
             </article>
           </div>
-        </div>
       </div>
     </SlideWrapper>
   )
