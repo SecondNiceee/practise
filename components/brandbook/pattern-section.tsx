@@ -73,67 +73,216 @@ export function PatternSection() {
           Правила использования паттернов
         </h3>
 
-        {/* Visual examples */}
-        <div className="mb-7 grid gap-6 md:grid-cols-2">
-          {/* Do example */}
-          <div className="overflow-hidden rounded-2xl border-2 border-brand-green/40">
-            <div
-              className="relative aspect-video flex items-center justify-center overflow-hidden"
-              style={{
-                backgroundImage: `url('data:image/svg+xml;utf8,<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="cars" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="20" fill="none" stroke="%23FF9500" stroke-width="2"/><path d="M20,30 L40,30" stroke="%23FF9500" stroke-width="1.5"/></pattern></defs><rect width="200" height="200" fill="%23F5F0E8"/><rect width="100" height="200" x="50" y="0" fill="url(%23cars)" opacity="0.15"/></svg>')`,
-                backgroundSize: "auto",
-              }}
-            >
-              <div className="rounded-lg bg-white/90 px-6 py-3">
-                <span className="font-display font-semibold text-brand-navy text-sm">
-                  10-20% площади макета
-                </span>
+        {/* Visual grid: each rule as a do/don't pair */}
+        <div className="mb-7 flex flex-col gap-8">
+
+          {/* Rule 1: opacity / density */}
+          <div className="grid gap-4 md:grid-cols-2">
+            {/* DO: light opacity on solid bg */}
+            <div className="overflow-hidden rounded-2xl border-2 border-[#27ae60]/50">
+              <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#F5F0E8]">
+                <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
+                  <defs>
+                    <pattern id="do-cars" x="0" y="0" width="64" height="48" patternUnits="userSpaceOnUse">
+                      {/* simple car silhouette */}
+                      <rect x="8" y="18" width="48" height="18" rx="5" fill="#F39C12" opacity="0.18" />
+                      <rect x="16" y="10" width="28" height="14" rx="4" fill="#F39C12" opacity="0.18" />
+                      <circle cx="18" cy="36" r="5" fill="#2c3e50" opacity="0.18" />
+                      <circle cx="46" cy="36" r="5" fill="#2c3e50" opacity="0.18" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#do-cars)" />
+                </svg>
+                {/* Card content on top */}
+                <div className="relative z-10 flex flex-col items-center gap-3 rounded-xl bg-white px-8 py-5 shadow-lg">
+                  <span className="font-display text-sm font-bold text-brand-navy">Кибитка</span>
+                  <span className="text-xs text-brand-navy/60">Такси-сервис</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 border-t border-[#27ae60]/20 bg-[#27ae60]/8 p-4">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#27ae60]" aria-hidden="true" />
+                <p className="text-sm text-brand-navy/80">
+                  <strong className="text-[#27ae60]">Правильно.</strong> Паттерн тихий — opacity 15-20%, однотонный фон, контент читается свободно.
+                </p>
               </div>
             </div>
-            <div className="bg-brand-green/8 p-5 border-t border-brand-green/20">
-              <h4 className="mb-3 flex items-center gap-2 font-display font-semibold text-brand-green text-sm">
-                <Check className="h-4 w-4" aria-hidden="true" /> Правильно
-              </h4>
-              <ul className="flex flex-col gap-2">
-                {patternDos.map((d) => (
-                  <li key={d} className="flex items-start gap-2 text-xs text-brand-navy/80">
-                    <Check className="mt-0.5 h-3 w-3 shrink-0 text-brand-green" aria-hidden="true" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
+
+            {/* DON'T: heavy opacity, cluttered */}
+            <div className="overflow-hidden rounded-2xl border-2 border-[#e74c3c]/50">
+              <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#F5F0E8]">
+                <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
+                  <defs>
+                    <pattern id="dont-dense" x="0" y="0" width="28" height="22" patternUnits="userSpaceOnUse">
+                      <rect x="2" y="5" width="24" height="12" rx="3" fill="#F39C12" opacity="0.85" />
+                      <rect x="6" y="1" width="14" height="8" rx="2" fill="#F39C12" opacity="0.85" />
+                      <circle cx="7" cy="17" r="3" fill="#2c3e50" opacity="0.85" />
+                      <circle cx="21" cy="17" r="3" fill="#2c3e50" opacity="0.85" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#dont-dense)" />
+                </svg>
+                {/* Card content — unreadable */}
+                <div className="relative z-10 flex flex-col items-center gap-3 rounded-xl bg-white/50 px-8 py-5 shadow-lg backdrop-blur-none">
+                  <span className="font-display text-sm font-bold text-brand-navy opacity-50">Кибитка</span>
+                  <span className="text-xs text-brand-navy/40">Такси-сервис</span>
+                </div>
+                {/* Red X badge */}
+                <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#e74c3c]">
+                  <X className="h-4 w-4 text-white" aria-hidden="true" />
+                </div>
+              </div>
+              <div className="flex items-start gap-3 border-t border-[#e74c3c]/20 bg-[#e74c3c]/8 p-4">
+                <X className="mt-0.5 h-4 w-4 shrink-0 text-[#e74c3c]" aria-hidden="true" />
+                <p className="text-sm text-brand-navy/80">
+                  <strong className="text-[#e74c3c]">Недопустимо.</strong> Слишком плотно и ярко — контент теряется, паттерн перебивает сообщение.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Don't example */}
-          <div className="overflow-hidden rounded-2xl border-2 border-brand-red/40">
-            <div
-              className="relative aspect-video flex items-center justify-center overflow-hidden"
-              style={{
-                backgroundImage: `url('data:image/svg+xml;utf8,<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dense" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="8" fill="none" stroke="%23E74C3C" stroke-width="2"/></pattern></defs><rect width="200" height="200" fill="url(%23dense)" opacity="0.8"/><image x="0" y="0" width="200" height="200" href="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22><circle cx=%22100%22 cy=%22100%22 r=%2280%22 fill=%22%23999%22/></svg>" opacity="0.3" style="mix-blend-mode:multiply"/></svg>')`,
-                backgroundSize: "auto",
-              }}
-            >
-              <div className="rounded-lg bg-white/90 px-6 py-3">
-                <span className="font-display font-semibold text-brand-red text-sm">
-                  Избыточно и на фото
-                </span>
+          {/* Rule 2: one pattern at a time vs multiple */}
+          <div className="grid gap-4 md:grid-cols-2">
+            {/* DO: one pattern only */}
+            <div className="overflow-hidden rounded-2xl border-2 border-[#27ae60]/50">
+              <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#2c3e50]">
+                <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
+                  <defs>
+                    <pattern id="do-one" x="0" y="0" width="56" height="56" patternUnits="userSpaceOnUse">
+                      {/* steering wheel */}
+                      <circle cx="28" cy="28" r="18" fill="none" stroke="#F39C12" strokeWidth="3" opacity="0.2" />
+                      <circle cx="28" cy="28" r="5" fill="none" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
+                      <line x1="28" y1="10" x2="28" y2="23" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
+                      <line x1="28" y1="33" x2="28" y2="46" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
+                      <line x1="10" y1="28" x2="23" y2="28" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
+                      <line x1="33" y1="28" x2="46" y2="28" stroke="#F39C12" strokeWidth="2" opacity="0.2" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#do-one)" />
+                </svg>
+                <div className="relative z-10 rounded-xl bg-[#F39C12] px-8 py-4">
+                  <span className="font-display text-sm font-bold text-white">Один паттерн</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 border-t border-[#27ae60]/20 bg-[#27ae60]/8 p-4">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#27ae60]" aria-hidden="true" />
+                <p className="text-sm text-brand-navy/80">
+                  <strong className="text-[#27ae60]">Правильно.</strong> Один тип паттерна на макете — единый ритм, нет визуального шума.
+                </p>
               </div>
             </div>
-            <div className="bg-brand-red/8 p-5 border-t border-brand-red/20">
-              <h4 className="mb-3 flex items-center gap-2 font-display font-semibold text-brand-red text-sm">
-                <X className="h-4 w-4" aria-hidden="true" /> Недопустимо
-              </h4>
-              <ul className="flex flex-col gap-2">
-                {patternDonts.map((d) => (
-                  <li key={d} className="flex items-start gap-2 text-xs text-brand-navy/80">
-                    <X className="mt-0.5 h-3 w-3 shrink-0 text-brand-red" aria-hidden="true" />
-                    {d}
-                  </li>
-                ))}
-              </ul>
+
+            {/* DON'T: two patterns mixed */}
+            <div className="overflow-hidden rounded-2xl border-2 border-[#e74c3c]/50">
+              <div className="relative flex aspect-video items-end overflow-hidden bg-[#2c3e50]">
+                {/* Left half — cars */}
+                <svg className="absolute inset-0 h-full w-1/2" aria-hidden="true">
+                  <defs>
+                    <pattern id="mix-cars" x="0" y="0" width="44" height="34" patternUnits="userSpaceOnUse">
+                      <rect x="4" y="8" width="36" height="14" rx="4" fill="#F39C12" opacity="0.55" />
+                      <rect x="10" y="3" width="20" height="10" rx="3" fill="#F39C12" opacity="0.55" />
+                      <circle cx="12" cy="22" r="4" fill="#ecf0f1" opacity="0.55" />
+                      <circle cx="32" cy="22" r="4" fill="#ecf0f1" opacity="0.55" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#mix-cars)" />
+                </svg>
+                {/* Right half — pins */}
+                <svg className="absolute inset-0 left-1/2 h-full w-1/2" aria-hidden="true">
+                  <defs>
+                    <pattern id="mix-pins" x="0" y="0" width="36" height="44" patternUnits="userSpaceOnUse">
+                      <circle cx="18" cy="14" r="8" fill="#e74c3c" opacity="0.55" />
+                      <path d="M18 22 L12 36 Q18 30 24 36 Z" fill="#e74c3c" opacity="0.55" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#mix-pins)" />
+                </svg>
+                {/* Divider */}
+                <div className="absolute inset-y-0 left-1/2 w-0.5 bg-white/30" />
+                {/* Red X badge */}
+                <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#e74c3c]">
+                  <X className="h-4 w-4 text-white" aria-hidden="true" />
+                </div>
+                <div className="relative z-10 flex w-full justify-around pb-4">
+                  <span className="rounded bg-black/40 px-2 py-1 text-xs text-white">Машинки</span>
+                  <span className="rounded bg-black/40 px-2 py-1 text-xs text-white">Геометки</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 border-t border-[#e74c3c]/20 bg-[#e74c3c]/8 p-4">
+                <X className="mt-0.5 h-4 w-4 shrink-0 text-[#e74c3c]" aria-hidden="true" />
+                <p className="text-sm text-brand-navy/80">
+                  <strong className="text-[#e74c3c]">Недопустимо.</strong> Несколько паттернов одновременно — хаос, нет единого стиля.
+                </p>
+              </div>
             </div>
           </div>
+
+          {/* Rule 3: clean bg vs photo */}
+          <div className="grid gap-4 md:grid-cols-2">
+            {/* DO: pattern on solid colour */}
+            <div className="overflow-hidden rounded-2xl border-2 border-[#27ae60]/50">
+              <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-[#1ABC9C]">
+                <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
+                  <defs>
+                    <pattern id="do-solid" x="0" y="0" width="60" height="46" patternUnits="userSpaceOnUse">
+                      <rect x="6" y="12" width="48" height="18" rx="5" fill="white" opacity="0.12" />
+                      <rect x="14" y="5" width="28" height="13" rx="4" fill="white" opacity="0.12" />
+                      <circle cx="16" cy="30" r="5" fill="white" opacity="0.12" />
+                      <circle cx="44" cy="30" r="5" fill="white" opacity="0.12" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#do-solid)" />
+                </svg>
+                <div className="relative z-10 rounded-xl bg-white/90 px-8 py-4">
+                  <span className="font-display text-sm font-bold text-brand-navy">Фирменный фон</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 border-t border-[#27ae60]/20 bg-[#27ae60]/8 p-4">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#27ae60]" aria-hidden="true" />
+                <p className="text-sm text-brand-navy/80">
+                  <strong className="text-[#27ae60]">Правильно.</strong> Паттерн на однотонном фирменном фоне — чистый, узнаваемый, фирменный.
+                </p>
+              </div>
+            </div>
+
+            {/* DON'T: pattern over photo */}
+            <div className="overflow-hidden rounded-2xl border-2 border-[#e74c3c]/50">
+              <div className="relative flex aspect-video items-center justify-center overflow-hidden">
+                {/* Simulated photo background with grey gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-500 via-slate-400 to-slate-600" />
+                {/* Fake photo texture */}
+                <div className="absolute inset-0 opacity-40"
+                  style={{
+                    backgroundImage: "radial-gradient(ellipse at 30% 40%, rgba(255,255,255,0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(0,0,0,0.4) 0%, transparent 50%)"
+                  }}
+                />
+                {/* Pattern on top of photo */}
+                <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
+                  <defs>
+                    <pattern id="dont-photo" x="0" y="0" width="44" height="34" patternUnits="userSpaceOnUse">
+                      <rect x="4" y="8" width="36" height="14" rx="4" fill="#F39C12" opacity="0.7" />
+                      <rect x="10" y="3" width="20" height="10" rx="3" fill="#F39C12" opacity="0.7" />
+                      <circle cx="12" cy="22" r="4" fill="#2c3e50" opacity="0.7" />
+                      <circle cx="32" cy="22" r="4" fill="#2c3e50" opacity="0.7" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#dont-photo)" />
+                </svg>
+                <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-[#e74c3c]">
+                  <X className="h-4 w-4 text-white" aria-hidden="true" />
+                </div>
+                <div className="relative z-10 rounded-xl bg-white/30 px-8 py-4 backdrop-blur-sm">
+                  <span className="font-display text-sm font-bold text-white opacity-60">Не читается</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 border-t border-[#e74c3c]/20 bg-[#e74c3c]/8 p-4">
+                <X className="mt-0.5 h-4 w-4 shrink-0 text-[#e74c3c]" aria-hidden="true" />
+                <p className="text-sm text-brand-navy/80">
+                  <strong className="text-[#e74c3c]">Недопустимо.</strong> Паттерн поверх фотографии — грязь, паттерн не читается, фото теряется.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* Additional graphic elements - Mascot */}
