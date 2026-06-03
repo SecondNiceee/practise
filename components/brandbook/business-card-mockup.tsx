@@ -2,14 +2,13 @@ import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
 import { Phone, Globe, MapPin } from "lucide-react"
 
 /**
- * Мокап визитных карточек «Кибитка».
- * Лицевая и оборотная стороны взяты со страницы /visitka и
- * собраны на чистом CSS/Tailwind, чтобы оставаться чёткими на любом разрешении.
- * Карточки показаны в перспективе, как реальный фотомокап полиграфии.
+ * Реалистичный мокап визитных карточек «Кибитка».
+ * Лицевая и оборотная стороны взяты со страницы /visitka и собраны на чистом
+ * CSS/Tailwind. Карточки лежат на настоящем деревянном столе с 3D-наклоном,
+ * контактными тенями и мягким бликом — как настоящий фотомокап полиграфии.
  */
 
-// Общие размеры карточки (соотношение 85×55 мм)
-const CARD = "h-[180px] w-[284px] overflow-hidden rounded-lg shadow-xl"
+const CARD = "h-[180px] w-[284px] overflow-hidden rounded-lg"
 
 function FrontCard() {
   return (
@@ -31,6 +30,9 @@ function FrontCard() {
       </p>
 
       <div className="relative -mx-5 -mb-5 mt-1 h-1.5 bg-brand-orange" />
+
+      {/* мягкий блик от освещения */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-black/10" />
     </div>
   )
 }
@@ -71,23 +73,47 @@ function BackCard() {
           Москва, ул. Дорожная, 12
         </span>
       </div>
+
+      {/* мягкий блик от освещения */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-black/5" />
     </div>
   )
 }
 
 export function BusinessCardMockup() {
   return (
-    <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-brand-navy/5 px-6">
-      {/* мягкая подсветка фона */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange/10 blur-3xl" />
+    <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden">
+      {/* Фотореалистичная поверхность стола */}
+      <img
+        src="/mockups/desk-surface.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* лёгкое затемнение по краям для глубины */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.18)_100%)]" />
 
-      {/* Две карточки в перспективе: оборотная сзади, лицевая спереди */}
-      <div className="relative">
-        <div className="absolute -right-10 -top-8 rotate-6 opacity-95">
-          <BackCard />
-        </div>
-        <div className="relative -rotate-3">
-          <FrontCard />
+      {/* Сцена с перспективой: карточки лежат на столе */}
+      <div className="relative" style={{ perspective: "1100px" }}>
+        <div
+          className="relative"
+          style={{ transformStyle: "preserve-3d", transform: "rotateX(52deg) rotateZ(-22deg)" }}
+        >
+          {/* Оборотная карточка — сзади/слева */}
+          <div className="absolute -left-28 -top-24">
+            <div className="absolute inset-0 translate-x-3 translate-y-4 rounded-lg bg-black/35 blur-xl" aria-hidden="true" />
+            <div className="relative">
+              <BackCard />
+            </div>
+          </div>
+
+          {/* Лицевая карточка — спереди, частично перекрывает */}
+          <div className="relative">
+            <div className="absolute inset-0 translate-x-4 translate-y-5 rounded-lg bg-black/40 blur-xl" aria-hidden="true" />
+            <div className="relative">
+              <FrontCard />
+            </div>
+          </div>
         </div>
       </div>
     </div>

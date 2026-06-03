@@ -2,10 +2,10 @@ import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
 import { Phone, Globe, Clock, Wallet, ShieldCheck, Sparkles } from "lucide-react"
 
 /**
- * Мокап рекламного флаера «Кибитка».
- * Дизайн взят со страницы /visitka и собран на чистом CSS/Tailwind,
- * чтобы оставаться чётким на любом разрешении. Флаер показан в перспективе,
- * как реальный фотомокап полиграфии.
+ * Реалистичный мокап рекламного флаера «Кибитка».
+ * Дизайн взят со страницы /visitka и собран на чистом CSS/Tailwind.
+ * Флаер лежит на настоящем деревянном столе с 3D-наклоном, контактной тенью
+ * и мягким бликом — как настоящий фотомокап полиграфии.
  */
 
 const benefits = [
@@ -14,8 +14,7 @@ const benefits = [
   { icon: ShieldCheck, title: "Проверенные водители" },
 ]
 
-// Флаер A5 (~1:1.41) в уменьшенном масштабе для карточки носителя
-const FLYER = "h-[300px] w-[212px] overflow-hidden rounded-lg shadow-xl"
+const FLYER = "h-[300px] w-[212px] overflow-hidden rounded-lg"
 
 function Flyer() {
   return (
@@ -80,18 +79,38 @@ function Flyer() {
           kibitka.ru
         </span>
       </div>
+
+      {/* мягкий блик от освещения */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-black/10" />
     </div>
   )
 }
 
 export function FlyerMockup() {
   return (
-    <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-brand-navy/5 px-6">
-      {/* мягкая подсветка фона */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange/10 blur-3xl" />
+    <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden">
+      {/* Фотореалистичная поверхность стола */}
+      <img
+        src="/mockups/desk-surface-dark.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      {/* лёгкое затемнение по краям для глубины */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.28)_100%)]" />
 
-      <div className="relative -rotate-3">
-        <Flyer />
+      {/* Сцена с перспективой: флаер лежит на столе */}
+      <div className="relative" style={{ perspective: "1200px" }}>
+        <div style={{ transform: "rotateX(48deg) rotateZ(-18deg)" }}>
+          {/* контактная тень под флаером */}
+          <div
+            className="absolute inset-0 translate-x-5 translate-y-7 rounded-lg bg-black/45 blur-xl"
+            aria-hidden="true"
+          />
+          <div className="relative">
+            <Flyer />
+          </div>
+        </div>
       </div>
     </div>
   )
