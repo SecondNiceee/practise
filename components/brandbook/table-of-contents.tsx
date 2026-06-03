@@ -12,12 +12,12 @@ const sections = [
   { num: "06", title: "Паттерн. Доп. графические элементы", href: "#patterns", page: 10 },
   { num: "07", title: "Фотостиль. Правила / Промт", href: "#photostyle", page: 11 },
   { num: "08", title: "Носители (по видам)", href: "#applications", page: 12 },
-  { num: "09", title: "Рекламная кампания. Выбор носителей", href: "#campaign", page: 23 },
+  { num: "09", title: "Рекламная кампания. Выбор носителей", href: "#campaign", page: 17 },
 ]
 
 export function TableOfContents() {
   return (
-    <SlideWrapper slideNumber={2} totalSlides={24} variant="light">
+    <SlideWrapper slideNumber={2} totalSlides={21} variant="light">
       <section id="contents" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeading

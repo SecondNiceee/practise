@@ -3,7 +3,7 @@ import { MobileAppMockup } from "./mobile-app-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
-const TOTAL_SLIDES = 24
+const TOTAL_SLIDES = 21
 
 // Все носители с нумерацией
 const allCarriers = [

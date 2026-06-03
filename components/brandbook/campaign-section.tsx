@@ -43,7 +43,7 @@ function PosterLogo({ tone }: { tone: "onDark" | "onOrange" | "onLight" }) {
 // Первый слайд рекламной кампании - обзор
 function CampaignOverviewSlide() {
   return (
-    <SlideWrapper slideNumber={17} totalSlides={24} variant="light">
+    <SlideWrapper slideNumber={17} totalSlides={21} variant="light">
       <section id="campaign" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
@@ -72,7 +72,7 @@ function CampaignOverviewSlide() {
 // Второй слайд - Билборд и Сити-лайт
 function CampaignSlide1() {
   return (
-    <SlideWrapper slideNumber={18} totalSlides={24} variant="light">
+    <SlideWrapper slideNumber={18} totalSlides={21} variant="light">
       <div className="flex min-h-screen flex-col justify-center px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 lg:grid-cols-2">
@@ -162,7 +162,7 @@ function CampaignSlide1() {
 // Третий слайд - Ролл-ап и Digital
 function CampaignSlide2() {
   return (
-    <SlideWrapper slideNumber={19} totalSlides={24} variant="light">
+    <SlideWrapper slideNumber={19} totalSlides={21} variant="light">
       <div className="flex min-h-screen flex-col justify-center px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 lg:grid-cols-2">
@@ -262,7 +262,7 @@ function CampaignSlide2() {
 // Четвёртый слайд - Транспорт
 function CampaignSlide3() {
   return (
-    <SlideWrapper slideNumber={20} totalSlides={24} variant="light">
+    <SlideWrapper slideNumber={20} totalSlides={21} variant="light">
       <div className="flex min-h-screen flex-col justify-center px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 lg:grid-cols-2">

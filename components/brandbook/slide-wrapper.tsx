@@ -1,4 +1,4 @@
-const TOTAL_SLIDES = 21
+const TOTAL_SLIDES = 21  // 1-Cover, 2-TOC, 3-About, 4-Logo, 5-Clearspace, 6-LogoColors, 7-LogoRules, 8-Colors, 9-Typography, 10-Patterns, 11-Photostyle, 12-16 Carriers, 17-20 Campaign, 21-Final
 
 interface SlideWrapperProps {
   children: React.ReactNode
