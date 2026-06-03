@@ -7,52 +7,6 @@ import { Heart, MessageCircle, Send, Bookmark, MoreHorizontal, BadgeCheck } from
  * Instagram-стиля. Всё собрано на чистом CSS/Tailwind в фирменных цветах.
  */
 
-/** Квадратный промо-пост для ленты соцсетей */
-function PostTile({
-  variant,
-  className = "",
-}: {
-  variant: "promo" | "city"
-  className?: string
-}) {
-  if (variant === "promo") {
-    return (
-      <div
-        className={`relative flex aspect-square flex-col justify-between overflow-hidden rounded-xl bg-brand-orange p-3 shadow-xl ${className}`}
-      >
-        <div className="flex items-center gap-1">
-          <KibitkaMark className="h-4 w-6" />
-          <span className="font-display text-[8px] font-extrabold tracking-[0.2em] text-brand-navy">КИБИТКА</span>
-        </div>
-        <div>
-          <p className="font-display text-2xl font-extrabold leading-none text-brand-navy">−50%</p>
-          <p className="mt-1 font-sans text-[8px] font-semibold leading-tight text-brand-navy/80">
-            на первую поездку
-          </p>
-        </div>
-        <span className="self-start rounded-md bg-brand-navy px-2 py-1 font-mono text-[8px] font-bold tracking-wider text-brand-cream">
-          ДОМОЙ50
-        </span>
-      </div>
-    )
-  }
-  return (
-    <div
-      className={`relative flex aspect-square flex-col justify-between overflow-hidden rounded-xl bg-brand-navy p-3 shadow-xl ${className}`}
-    >
-      <div className="pointer-events-none absolute -right-6 -top-6 h-16 w-16 rounded-full bg-brand-orange/20 blur-xl" />
-      <div className="flex items-center gap-1">
-        <KibitkaMark className="h-4 w-6" />
-        <span className="font-display text-[8px] font-extrabold tracking-[0.2em] text-brand-cream">КИБИТКА</span>
-      </div>
-      <p className="relative font-display text-[13px] font-extrabold leading-tight text-brand-cream">
-        Домчим <span className="text-brand-orange">по-домашнему</span>
-      </p>
-      <span className="relative font-sans text-[7px] font-medium text-brand-cream/70">kibitka.ru</span>
-    </div>
-  )
-}
-
 /** Телефон с постом в Instagram-стиле */
 function SocialPhone() {
   return (
@@ -135,14 +89,6 @@ export function SocialMockup() {
       {/* мягкие фирменные акценты на фоне */}
       <div className="pointer-events-none absolute -left-10 top-6 h-40 w-40 rounded-full bg-brand-orange/10 blur-3xl" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-12 bottom-8 h-44 w-44 rounded-full bg-brand-navy/10 blur-3xl" aria-hidden="true" />
-
-      {/* Квадратные посты-баннеры слева, выглядывают из-за телефона */}
-      <div className="absolute left-4 top-16 hidden w-28 -rotate-6 sm:block">
-        <PostTile variant="promo" />
-      </div>
-      <div className="absolute bottom-16 left-8 hidden w-24 rotate-3 sm:block">
-        <PostTile variant="city" />
-      </div>
 
       {/* Телефон с постом */}
       <div className="relative z-10">

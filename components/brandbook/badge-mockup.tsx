@@ -22,14 +22,14 @@ export function BadgeMockup() {
         style={{ left: "25.4%", top: "52.4%", width: "49.2%", height: "45%" }}
       >
         <div className="relative flex h-full w-full flex-col overflow-hidden bg-brand-cream">
-          {/* Шапка с логотипом */}
-          <div className="flex shrink-0 items-center gap-[3px] bg-brand-navy px-2 py-1">
-            <KibitkaMark className="h-[14px] w-[22px]" />
-            <div className="flex flex-col leading-none">
-              <span className="font-display text-[8px] font-extrabold tracking-[0.18em] text-brand-cream">
+          {/* Шапка с крупным логотипом */}
+          <div className="flex shrink-0 flex-col items-center gap-[2px] bg-brand-navy px-2 py-[5px]">
+            <KibitkaMark className="h-[22px] w-[34px]" />
+            <div className="flex flex-col items-center leading-none">
+              <span className="font-display text-[9px] font-extrabold tracking-[0.22em] text-brand-cream">
                 КИБИТКА
               </span>
-              <span className="font-display text-[3.5px] font-semibold uppercase tracking-[0.25em] text-brand-orange">
+              <span className="mt-[1px] font-display text-[3.5px] font-semibold uppercase tracking-[0.3em] text-brand-orange">
                 Такси-сервис
               </span>
             </div>
@@ -37,7 +37,7 @@ export function BadgeMockup() {
 
           {/* Тело: фото + данные */}
           <div className="flex min-h-0 flex-1 items-center gap-2 overflow-hidden px-2 py-1.5">
-            <div className="aspect-square w-[36%] shrink-0 overflow-hidden rounded-[2px] ring-1 ring-brand-orange/40">
+            <div className="aspect-square w-[38%] shrink-0 overflow-hidden rounded-[2px] ring-1 ring-brand-orange/40">
               <img
                 src="/mockups/driver-portrait.png"
                 alt="Фото водителя"
