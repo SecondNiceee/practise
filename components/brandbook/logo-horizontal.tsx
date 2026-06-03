@@ -1,7 +1,7 @@
 import { KibitkaMark } from "@/components/moodboard/kibitka-mark"
 
 interface LogoHorizontalProps {
-  size?: "sm" | "md" | "lg" | "xl"
+  size?: "sm" | "md" | "lg" | "xl" | "xxl"
   className?: string
 }
 
@@ -10,6 +10,7 @@ const sizeMap = {
   md: { mark: "h-12 w-20", text: "text-lg" },
   lg: { mark: "h-16 w-28", text: "text-2xl" },
   xl: { mark: "h-20 w-32", text: "text-3xl" },
+  xxl: { mark: "h-28 w-44", text: "text-4xl" },
 }
 
 export function LogoHorizontal({ size = "md", className = "" }: LogoHorizontalProps) {
