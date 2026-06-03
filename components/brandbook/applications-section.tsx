@@ -4,6 +4,7 @@ import { BusinessCardMockup } from "./business-card-mockup"
 import { FlyerMockup } from "./flyer-mockup"
 import { UniformMockup } from "./uniform-mockup"
 import { BadgeMockup } from "./badge-mockup"
+import { SocialMockup } from "./social-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
@@ -64,9 +65,9 @@ const allCarriers = [
     number: "06",
     category: "Цифровые носители",
     categoryIcon: Smartphone,
-    src: "/carriers/carrier-social.png",
+    custom: "social" as const,
     title: "Соцсети и баннеры",
-    desc: "Шаблоны для социальных сетей, рекламные баннеры и digital-креативы.",
+    desc: "Оформление профиля и постов в соцсетях, промо-баннеры и digital-креативы в фирменном стиле.",
   },
   // Сувенирная продукция
   {
@@ -128,6 +129,8 @@ function CarrierCard({
         <UniformMockup />
       ) : "custom" in carrier && carrier.custom === "badge" ? (
         <BadgeMockup />
+      ) : "custom" in carrier && carrier.custom === "social" ? (
+        <SocialMockup />
       ) : (
         <div className="relative aspect-[4/3]">
           <Image

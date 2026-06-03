@@ -99,12 +99,12 @@ export function FlyerMockup() {
       {/* лёгкое затемнение по краям для глубины */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.28)_100%)]" />
 
-      {/* Сцена с перспективой: флаер лежит на столе */}
-      <div className="relative" style={{ perspective: "1200px" }}>
-        <div style={{ transform: "rotateX(48deg) rotateZ(-18deg)" }}>
+      {/* Сцена с перспективой: флаер повёрнут к зрителю «лицом» */}
+      <div className="relative" style={{ perspective: "1600px" }}>
+        <div style={{ transform: "rotateX(6deg) rotateZ(-3deg)" }}>
           {/* контактная тень под флаером */}
           <div
-            className="absolute inset-0 translate-x-5 translate-y-7 rounded-lg bg-black/45 blur-xl"
+            className="absolute inset-0 translate-x-2 translate-y-4 rounded-lg bg-black/50 blur-xl"
             aria-hidden="true"
           />
           <div className="relative">
