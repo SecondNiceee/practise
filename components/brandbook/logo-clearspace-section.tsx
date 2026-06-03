@@ -186,76 +186,88 @@ export function LogoClearspaceSection() {
         <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-8">
             {/*
-              Горизонтальная версия = KibitkaMark + текст "КИБИТКА"
-              KibitkaMark viewBox: x=16 y=18 w=110 h=72, колесо r=12 → X=24
-              Масштаб 1.2: машинка 132x86, X=28.8≈29
-              Текст справа от машинки
+              Координаты:
+              Логотип (лого-зона): x=60 y=50 w=330 h=90
+                — машинка: от x=60 до x=192 (ширина=132), scale 1.2 от оригинала 110px
+                — текст КИБИТКА: от x=204 до x=390
+              X = диаметр колеса при scale 1.2 = 12*2*1.2 = 28.8 ≈ 29
+
+              Охранное поле (пунктир): прилегает к лого-зоне снаружи на X=29
+                left:   60 - 29 = 31   → x=31
+                right:  390 + 29 = 419 → x+w = 419 → w = 419-31 = 388
+                top:    50 - 29 = 21   → y=21
+                bottom: 140 + 29 = 169 → h = 169-21 = 148
             */}
             <svg
-              viewBox="0 0 480 160"
+              viewBox="0 0 460 190"
               className="h-auto w-full max-w-lg"
               role="img"
               aria-label="Схема охранного поля горизонтальной версии логотипа"
             >
-              {/* Охранное поле — пунктирная рамка */}
-              {/* X ≈ 29 (диаметр колеса при scale 1.2) */}
-              <rect x="20" y="20" width="440" height="120" fill="none" stroke="#bdc3c7" strokeWidth="1.5" strokeDasharray="6,6" />
-              
-              {/* Лого-зона — сплошная граница */}
-              <rect x="49" y="44" width="382" height="72" fill="none" stroke="#2c3e50" strokeWidth="1" opacity="0.4" />
+              {/* Охранное поле — пунктирная рамка, прилегает к лого-зоне с отступом X=29 */}
+              <rect x="31" y="21" width="388" height="148" fill="none" stroke="#bdc3c7" strokeWidth="1.5" strokeDasharray="6,6" />
 
-              {/* Машинка — точная копия KibitkaMark, scale 1.2 */}
-              {/* Оригинал viewBox: 16 18 110 72. При scale 1.2: 132x86 */}
-              {/* Центр по вертикали лого-зоны: 44 + 72/2 = 80 */}
-              {/* Машинка центрируется по y: y_center = 80, машинка h=86*0.8≈69, top = 80 - 34.5 ≈ 45 */}
-              {/* translate: x=49+10=59 (небольшой отступ слева), y такой чтобы машинка по центру */}
-              <g transform="translate(40, 6) scale(1.2)">
-                {/* Кузов */}
+              {/* Лого-зона — сплошная граница */}
+              <rect x="60" y="50" width="330" height="90" fill="none" stroke="#2c3e50" strokeWidth="1" opacity="0.4" />
+
+              {/* Машинка, scale 1.2, вписана в лого-зону слева */}
+              {/* Оригинал: viewBox 16 18 110 72 → scale 1.2 → 132×86.4 */}
+              {/* translate так, чтобы машинка заняла x=60..192, центр по y=95: */}
+              {/* tx = 60 - 16*1.2 = 60 - 19.2 = 40.8, ty = 95 - (18+36)*1.2 = 95 - 64.8 = 30.2 */}
+              <g transform="translate(40.8, 30.2) scale(1.2)">
                 <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
-                {/* Крыша */}
                 <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
-                {/* Окна */}
                 <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
                 <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50" />
-                {/* Бампер */}
                 <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7" />
-                {/* Фары */}
                 <circle cx="26" cy="58" r="5" fill="#ecf0f1" />
                 <circle cx="114" cy="58" r="5" fill="#ecf0f1" />
-                {/* Левое колесо: диаметр 24 → X */}
                 <circle cx="40" cy="76" r="12" fill="#2c3e50" />
                 <circle cx="40" cy="76" r="8" fill="#ecf0f1" />
                 <circle cx="40" cy="76" r="4" fill="#2c3e50" />
-                {/* Правое колесо */}
                 <circle cx="100" cy="76" r="12" fill="#2c3e50" />
                 <circle cx="100" cy="76" r="8" fill="#ecf0f1" />
                 <circle cx="100" cy="76" r="4" fill="#2c3e50" />
               </g>
 
-              {/* Текст КИБИТКА — справа от машинки */}
+              {/* Текст КИБИТКА — справа от машинки, x=204, baseline y=101 */}
               <text
-                x="210"
-                y="88"
+                x="204"
+                y="101"
                 fontFamily="var(--font-display)"
-                fontSize="26"
+                fontSize="28"
                 fontWeight="700"
                 fill="#2c3e50"
-                letterSpacing="7"
+                letterSpacing="6"
               >
                 КИБИТКА
               </text>
 
-              {/* X-разметка сверху (расстояние от пунктира до лого-зоны = 29 ≈ X) */}
-              <line x1="35" y1="20" x2="35" y2="44" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="29" y1="20" x2="41" y2="20" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="29" y1="44" x2="41" y2="44" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
-              <text x="20" y="36" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+              {/* ── Разметка X ── */}
 
-              {/* X-разметка слева снизу */}
-              <line x1="20" y1="136" x2="49" y2="136" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="20" y1="130" x2="20" y2="142" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="49" y1="130" x2="49" y2="142" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
-              <text x="35" y="152" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+              {/* СЛЕВА: пунктир → машинка (x: 31 → 60), y=95 */}
+              <line x1="31" y1="95" x2="60" y2="95" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="31" y1="89" x2="31" y2="101" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="60" y1="89" x2="60" y2="101" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="45.5" y="86" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+
+              {/* СПРАВА: надпись → пунктир (x: 390 → 419), y=95 */}
+              <line x1="390" y1="95" x2="419" y2="95" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="390" y1="89" x2="390" y2="101" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="419" y1="89" x2="419" y2="101" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="404.5" y="86" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+
+              {/* СВЕРХУ: пунктир → лого-зона (y: 21 → 50), x=225 */}
+              <line x1="225" y1="21" x2="225" y2="50" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="219" y1="21" x2="231" y2="21" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="219" y1="50" x2="231" y2="50" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="238" y="39" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
+
+              {/* СНИЗУ: лого-зона → пунктир (y: 140 → 169), x=225 */}
+              <line x1="225" y1="140" x2="225" y2="169" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="219" y1="140" x2="231" y2="140" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="219" y1="169" x2="231" y2="169" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="238" y="160" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
             </svg>
           </div>
 
