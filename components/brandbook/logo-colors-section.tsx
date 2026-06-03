@@ -57,6 +57,87 @@ export function LogoColorsSection() {
           </div>
         </div>
 
+        {/* Дополнительные цветные версии */}
+        <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
+          Дополнительные цветные версии
+        </h3>
+        <p className="mb-5 text-sm text-brand-navy/70">
+          Расширенные варианты для специальных носителей и рекламных материалов — на бирюзовом, красном, золотом и индиго фонах.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {/* На бирюзовом */}
+          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl p-8" style={{ backgroundColor: "#1ABC9C" }}>
+            <KibitkaLogo
+              size="md"
+              bodyColor="#ffffff"
+              windowColor="#0d8e74"
+              bumperColor="#ffffff"
+              lightColor="#0d8e74"
+              wheelColor="#ffffff"
+              wheelInner="#0d8e74"
+              wordmarkClassName="text-white"
+            />
+            <div className="text-center">
+              <span className="block font-display text-sm font-semibold text-white">На бирюзовом</span>
+              <span className="text-xs text-white/70">Бонусы, акции</span>
+            </div>
+          </div>
+
+          {/* На красном */}
+          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl p-8" style={{ backgroundColor: "#E74C3C" }}>
+            <KibitkaLogo
+              size="md"
+              bodyColor="#ffffff"
+              windowColor="#c0392b"
+              bumperColor="#ffffff"
+              lightColor="#c0392b"
+              wheelColor="#ffffff"
+              wheelInner="#c0392b"
+              wordmarkClassName="text-white"
+            />
+            <div className="text-center">
+              <span className="block font-display text-sm font-semibold text-white">На красном</span>
+              <span className="text-xs text-white/70">Срочные CTA</span>
+            </div>
+          </div>
+
+          {/* На золотом */}
+          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl p-8" style={{ backgroundColor: "#D4AF37" }}>
+            <KibitkaLogo
+              size="md"
+              bodyColor="#2c3e50"
+              windowColor="#b8941e"
+              bumperColor="#2c3e50"
+              lightColor="#b8941e"
+              wheelColor="#2c3e50"
+              wheelInner="#d4af37"
+              wordmarkClassName="text-brand-navy"
+            />
+            <div className="text-center">
+              <span className="block font-display text-sm font-semibold text-brand-navy">На золотом</span>
+              <span className="text-xs text-brand-navy/70">VIP, премиум</span>
+            </div>
+          </div>
+
+          {/* На индиго */}
+          <div className="flex flex-col items-center justify-center gap-4 rounded-2xl p-8" style={{ backgroundColor: "#1A237E" }}>
+            <KibitkaLogo
+              size="md"
+              bodyColor="#F39C12"
+              windowColor="#0d1550"
+              bumperColor="#F39C12"
+              lightColor="#0d1550"
+              wheelColor="#F39C12"
+              wheelInner="#0d1550"
+              wordmarkClassName="text-white"
+            />
+            <div className="text-center">
+              <span className="block font-display text-sm font-semibold text-white">На индиго</span>
+              <span className="text-xs text-white/70">Ночной режим</span>
+            </div>
+          </div>
+        </div>
+
         {/* Монохромные версии */}
         <h3 className="mb-5 mt-10 font-display text-lg font-semibold text-brand-navy">
           Монохромные версии
@@ -147,7 +228,7 @@ export function LogoColorsSection() {
           Выбирайте версию логотипа в зависимости от тона изображения.
         </p>
       </div>
-      <PageNumber number={5} />
+      <PageNumber number={6} total={13} />
     </section>
   )
 }

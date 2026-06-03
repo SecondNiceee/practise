@@ -257,7 +257,7 @@ export function LogoClearspaceSection() {
           </p>
         </div>
       </div>
-      <PageNumber number={4} />
+      <PageNumber number={5} total={13} />
     </section>
   )
 }

@@ -2,17 +2,17 @@ import { SectionHeading } from "@/components/moodboard/section-heading"
 import { PageNumber } from "./page-number"
 
 const sections = [
-  { num: "01", title: "О бренде / О компании", href: "#about" },
-  { num: "02", title: "Логотип. Все варианты", href: "#logo" },
-  { num: "02.1", title: "Охранное поле логотипа", href: "#logo-clearspace" },
-  { num: "02.2", title: "Цветовые сочетания логотипа", href: "#logo-colors" },
-  { num: "03", title: "Правила использования логотипа", href: "#logo-rules" },
-  { num: "04", title: "Фирменные цвета. Правила использования", href: "#colors" },
-  { num: "05", title: "Фирменные шрифты. Правила использования", href: "#typography" },
-  { num: "06", title: "Паттерн. Доп. графические элементы", href: "#patterns" },
-  { num: "07", title: "Фотостиль. Правила / Промт", href: "#photostyle" },
-  { num: "08", title: "Носители (по видам)", href: "#applications" },
-  { num: "09", title: "Рекламная кампания. Выбор носителей", href: "#campaign" },
+  { num: "01", title: "О бренде / О компании", href: "#about", page: 3 },
+  { num: "02", title: "Логотип. Все варианты", href: "#logo", page: 4 },
+  { num: "02.1", title: "Охранное поле логотипа", href: "#logo-clearspace", page: 5 },
+  { num: "02.2", title: "Цветовые сочетания логотипа", href: "#logo-colors", page: 6 },
+  { num: "03", title: "Правила использования логотипа", href: "#logo-rules", page: 7 },
+  { num: "04", title: "Фирменные цвета. Правила использования", href: "#colors", page: 8 },
+  { num: "05", title: "Фирменные шрифты. Правила использования", href: "#typography", page: 9 },
+  { num: "06", title: "Паттерн. Доп. графические элементы", href: "#patterns", page: 10 },
+  { num: "07", title: "Фотостиль. Правила / Промт", href: "#photostyle", page: 11 },
+  { num: "08", title: "Носители (по видам)", href: "#applications", page: 12 },
+  { num: "09", title: "Рекламная кампания. Выбор носителей", href: "#campaign", page: 13 },
 ]
 
 export function TableOfContents() {
@@ -35,14 +35,17 @@ export function TableOfContents() {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-orange/12 font-display text-sm font-bold text-brand-orange-dark transition-colors group-hover:bg-brand-orange group-hover:text-white">
                 {s.num}
               </span>
-              <span className="font-display text-sm font-semibold text-brand-navy">
+              <span className="flex-1 font-display text-sm font-semibold text-brand-navy">
                 {s.title}
+              </span>
+              <span className="font-mono text-xs text-brand-sand shrink-0">
+                {String(s.page).padStart(2, "0")}
               </span>
             </a>
           ))}
         </div>
       </div>
-      <PageNumber number={2} />
+      <PageNumber number={2} total={13} />
     </section>
   )
 }

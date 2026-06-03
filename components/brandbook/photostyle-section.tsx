@@ -125,7 +125,7 @@ export function PhotoStyleSection() {
 
 
       </div>
-      <PageNumber number={10} />
+      <PageNumber number={11} total={13} />
     </section>
   )
 }

@@ -126,7 +126,7 @@ export function PatternSection() {
           </div>
         </div>
       </div>
-      <PageNumber number={9} />
+      <PageNumber number={10} total={13} />
     </section>
   )
 }

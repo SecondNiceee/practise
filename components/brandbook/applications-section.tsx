@@ -143,7 +143,7 @@ export function ApplicationsSection() {
           </div>
         ))}
       </div>
-      <PageNumber number={11} />
+      <PageNumber number={12} total={13} />
     </section>
   )
 }

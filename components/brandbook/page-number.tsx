@@ -3,7 +3,7 @@ interface PageNumberProps {
   total?: number
 }
 
-export function PageNumber({ number, total = 12 }: PageNumberProps) {
+export function PageNumber({ number, total = 13 }: PageNumberProps) {
   return (
     <div className="flex items-center justify-end px-5 py-4">
       <span className="font-mono text-sm text-brand-sand">
