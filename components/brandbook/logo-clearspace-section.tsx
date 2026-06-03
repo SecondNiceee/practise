@@ -1,6 +1,5 @@
 import { SectionHeading } from "@/components/moodboard/section-heading"
 import { KibitkaLogo } from "@/components/moodboard/kibitka-logo"
-import { LogoHorizontal } from "./logo-horizontal"
 import { PageNumber } from "./page-number"
 
 export function LogoClearspaceSection() {
@@ -134,26 +133,32 @@ export function LogoClearspaceSection() {
                 strokeWidth="1"
                 opacity="0.4"
               />
-              {/* the mark */}
-              <g transform="translate(10, 20) scale(1.6)">
+              {/* the mark — centered inside rect(56,56,168,108): center=(140,110) */}
+              {/* scale=1.6: original viewBox x=16..126 w=110, y=18..90 h=72 */}
+              {/* scaled w=176, h=115.2; tx=140-(16+55)*1.6=140-113.6=26.4; ty=110-(18+36)*1.6=110-86.4=23.6 */}
+              <g transform="translate(26, 24) scale(1.6)">
                 <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
                 <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
                 <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
                 <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50" />
                 <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7" />
+                <circle cx="26" cy="58" r="5" fill="#ecf0f1" />
+                <circle cx="114" cy="58" r="5" fill="#ecf0f1" />
                 <circle cx="40" cy="76" r="12" fill="#2c3e50" />
                 <circle cx="40" cy="76" r="8" fill="#ecf0f1" />
+                <circle cx="40" cy="76" r="4" fill="#2c3e50" />
                 <circle cx="100" cy="76" r="12" fill="#2c3e50" />
                 <circle cx="100" cy="76" r="8" fill="#ecf0f1" />
+                <circle cx="100" cy="76" r="4" fill="#2c3e50" />
               </g>
 
-              {/* X measurement */}
+              {/* X measurement — top */}
               <line x1="140" y1="20" x2="140" y2="56" stroke="#8b7355" strokeWidth="1.5" />
               <line x1="136" y1="20" x2="144" y2="20" stroke="#8b7355" strokeWidth="1.5" />
               <line x1="136" y1="56" x2="144" y2="56" stroke="#8b7355" strokeWidth="1.5" />
               <text x="150" y="42" fontFamily="var(--font-display)" fontSize="13" fontWeight="700" fill="#8b7355">X</text>
 
-              {/* left */}
+              {/* X measurement — left */}
               <line x1="20" y1="110" x2="56" y2="110" stroke="#8b7355" strokeWidth="1.5" />
               <line x1="20" y1="106" x2="20" y2="114" stroke="#8b7355" strokeWidth="1.5" />
               <line x1="56" y1="106" x2="56" y2="114" stroke="#8b7355" strokeWidth="1.5" />
@@ -180,44 +185,70 @@ export function LogoClearspaceSection() {
         </h3>
         <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex items-center justify-center rounded-2xl border border-brand-navy/10 bg-card p-8">
-            <div className="relative w-full max-w-lg">
-              <div
-                className="relative rounded-lg border-2 border-dashed border-brand-navy/20"
-                style={{ paddingTop: "40%", aspectRatio: "2.5/1" }}
+            {/*
+              SVG схема горизонтальной версии:
+              viewBox 0 0 460 200
+              Пунктирная рамка (охранное поле): x=20 y=20 w=420 h=160
+              Сплошной прямоугольник (лого-зона): x=56 y=52 w=348 h=96
+              Машинка: scale=1.1, centered at ~105,100 inside logo-rect
+              Текст "КИБИТКА": справа от машинки
+              X-разметки: сверху и слева
+            */}
+            <svg
+              viewBox="0 0 460 200"
+              className="h-auto w-full max-w-lg"
+              role="img"
+              aria-label="Схема охранного поля горизонтальной версии логотипа"
+            >
+              {/* clear space dashed box */}
+              <rect x="20" y="20" width="420" height="160" fill="none" stroke="#bdc3c7" strokeWidth="1.5" strokeDasharray="6,6" />
+              {/* logo bounding box */}
+              <rect x="56" y="52" width="348" height="96" fill="none" stroke="#2c3e50" strokeWidth="1" opacity="0.4" />
+
+              {/* машинка — scale=1.1, center of logo-rect: (230,100) */}
+              {/* mark width=110*1.1=121, height=72*1.1=79.2 */}
+              {/* left column: mark centered at x≈105 → tx=105-(16+55)*1.1=105-78.1=26.9; ty=100-(18+36)*1.1=100-59.4=40.6 */}
+              <g transform="translate(27, 41) scale(1.1)">
+                <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
+                <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
+                <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
+                <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50" />
+                <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7" />
+                <circle cx="26" cy="58" r="5" fill="#ecf0f1" />
+                <circle cx="114" cy="58" r="5" fill="#ecf0f1" />
+                <circle cx="40" cy="76" r="12" fill="#2c3e50" />
+                <circle cx="40" cy="76" r="8" fill="#ecf0f1" />
+                <circle cx="40" cy="76" r="4" fill="#2c3e50" />
+                <circle cx="100" cy="76" r="12" fill="#2c3e50" />
+                <circle cx="100" cy="76" r="8" fill="#ecf0f1" />
+                <circle cx="100" cy="76" r="4" fill="#2c3e50" />
+              </g>
+
+              {/* текст КИБИТКА — справа от машинки */}
+              <text
+                x="175"
+                y="107"
+                fontFamily="var(--font-display)"
+                fontSize="26"
+                fontWeight="700"
+                fill="#2c3e50"
+                letterSpacing="7"
               >
-                {/* Grid background for clearspace visualization */}
-                <div
-                  className="absolute inset-0 rounded-lg"
-                  style={{
-                    backgroundImage: `linear-gradient(90deg, rgba(52, 73, 94, 0.03) 1px, transparent 1px), linear-gradient(rgba(52, 73, 94, 0.03) 1px, transparent 1px)`,
-                    backgroundSize: "20px 20px",
-                  }}
-                />
+                КИБИТКА
+              </text>
 
-                {/* Clear space box */}
-                <div className="absolute inset-0 flex items-center justify-center rounded-lg border border-dashed border-brand-navy/30 p-4">
-                  {/* Inner content area with logo */}
-                  <div className="flex items-center gap-8 w-full justify-center">
-                    {/* X measurement indicator */}
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 flex flex-col items-center gap-1">
-                      <div className="h-3 w-px bg-brand-sand" />
-                      <span className="font-display text-xs font-bold text-brand-sand whitespace-nowrap">X</span>
-                      <div className="h-3 w-px bg-brand-sand" />
-                    </div>
+              {/* X — сверху */}
+              <line x1="230" y1="20" x2="230" y2="52" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="226" y1="20" x2="234" y2="20" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="226" y1="52" x2="234" y2="52" stroke="#8b7355" strokeWidth="1.5" />
+              <text x="238" y="40" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355">X</text>
 
-                    {/* Logo */}
-                    <LogoHorizontal size="sm" />
-
-                    {/* Right X measurement */}
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 flex flex-col items-center gap-1">
-                      <div className="h-3 w-px bg-brand-sand" />
-                      <span className="font-display text-xs font-bold text-brand-sand whitespace-nowrap">X</span>
-                      <div className="h-3 w-px bg-brand-sand" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              {/* X — слева */}
+              <line x1="20" y1="100" x2="56" y2="100" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="20" y1="96" x2="20" y2="104" stroke="#8b7355" strokeWidth="1.5" />
+              <line x1="56" y1="96" x2="56" y2="104" stroke="#8b7355" strokeWidth="1.5" />
+              <text x="38" y="90" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+            </svg>
           </div>
 
           <div className="flex flex-col justify-center gap-4 rounded-2xl border border-brand-navy/10 bg-card p-8">
