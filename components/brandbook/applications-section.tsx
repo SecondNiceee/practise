@@ -2,6 +2,7 @@ import { SlideWrapper } from "./slide-wrapper"
 import { MobileAppMockup } from "./mobile-app-mockup"
 import { BusinessCardMockup } from "./business-card-mockup"
 import { FlyerMockup } from "./flyer-mockup"
+import { UniformMockup } from "./uniform-mockup"
 import Image from "next/image"
 import { FileText, Shirt, Smartphone, Gift, Car } from "lucide-react"
 
@@ -34,9 +35,9 @@ const allCarriers = [
     number: "03",
     category: "Форма и документация",
     categoryIcon: Shirt,
-    src: "/carriers/carrier-uniform.png",
+    custom: "uniform" as const,
     title: "Форменная одежда водителей",
-    desc: "Поло и кепка с вышитым логотипом «Кибитка» и графическими элементами.",
+    desc: "Футболка фирменного цвета с логотипом «Кибитка» на груди — основа форменной одежды водителей.",
   },
   {
     id: "carrier-04",
@@ -122,6 +123,8 @@ function CarrierCard({
         <BusinessCardMockup />
       ) : "custom" in carrier && carrier.custom === "flyer" ? (
         <FlyerMockup />
+      ) : "custom" in carrier && carrier.custom === "uniform" ? (
+        <UniformMockup />
       ) : (
         <div className="relative aspect-[4/3]">
           <Image

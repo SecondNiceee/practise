@@ -93,15 +93,15 @@ export function BusinessCardMockup() {
       {/* лёгкое затемнение по краям для глубины */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.18)_100%)]" />
 
-      {/* Сцена с перспективой: карточки лежат на столе */}
-      <div className="relative" style={{ perspective: "1100px" }}>
+      {/* Сцена с лёгкой перспективой: карточки лежат на столе, но повёрнуты к зрителю */}
+      <div className="relative" style={{ perspective: "1600px" }}>
         <div
           className="relative"
-          style={{ transformStyle: "preserve-3d", transform: "rotateX(52deg) rotateZ(-22deg)" }}
+          style={{ transformStyle: "preserve-3d", transform: "rotateX(18deg) rotateZ(-6deg)" }}
         >
           {/* Оборотная карточка — сзади/слева */}
-          <div className="absolute -left-28 -top-24">
-            <div className="absolute inset-0 translate-x-3 translate-y-4 rounded-lg bg-black/35 blur-xl" aria-hidden="true" />
+          <div className="absolute -left-24 -top-20">
+            <div className="absolute inset-0 translate-x-2 translate-y-3 rounded-lg bg-black/30 blur-lg" aria-hidden="true" />
             <div className="relative">
               <BackCard />
             </div>
@@ -109,7 +109,7 @@ export function BusinessCardMockup() {
 
           {/* Лицевая карточка — спереди, частично перекрывает */}
           <div className="relative">
-            <div className="absolute inset-0 translate-x-4 translate-y-5 rounded-lg bg-black/40 blur-xl" aria-hidden="true" />
+            <div className="absolute inset-0 translate-x-2 translate-y-4 rounded-lg bg-black/35 blur-lg" aria-hidden="true" />
             <div className="relative">
               <FrontCard />
             </div>
