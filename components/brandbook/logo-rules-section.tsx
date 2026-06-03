@@ -227,7 +227,7 @@ export function LogoRulesSection() {
           </p>
         </div>
       </div>
-      <PageNumber number={6} />
+      <PageNumber number={7} total={13} />
     </section>
   )
 }

@@ -91,7 +91,7 @@ export function LogoSection() {
           </span>
         </div>
       </div>
-      <PageNumber number={3} />
+      <PageNumber number={4} total={13} />
     </section>
   )
 }

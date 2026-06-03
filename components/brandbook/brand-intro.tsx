@@ -93,7 +93,7 @@ export function BrandIntro() {
           </div>
         </div>
       </div>
-      <PageNumber number={2} />
+      <PageNumber number={3} total={13} />
     </section>
   )
 }

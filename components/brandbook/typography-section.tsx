@@ -126,7 +126,7 @@ export function TypographySection() {
           </div>
         </div>
       </div>
-      <PageNumber number={8} />
+      <PageNumber number={9} total={13} />
     </section>
   )
 }

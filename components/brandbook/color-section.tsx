@@ -22,6 +22,17 @@ const neutral = [
   { name: "Графит", hex: "#34495E", rgb: "52, 73, 94", cmyk: "45, 22, 0, 63", note: "Вторичный текст", light: false },
 ]
 
+const extended = [
+  { name: "Янтарный", hex: "#F0A500", rgb: "240, 165, 0", cmyk: "0, 31, 100, 6", note: "Уведомления, бейджи", light: false },
+  { name: "Коралловый", hex: "#E8573F", rgb: "232, 87, 63", cmyk: "0, 63, 73, 9", note: "Предупреждения, отмены", light: false },
+  { name: "Индиго", hex: "#1A237E", rgb: "26, 35, 126", cmyk: "79, 72, 0, 51", note: "Ночной режим, премиум", light: false },
+  { name: "Сапфировый", hex: "#0D47A1", rgb: "13, 71, 161", cmyk: "92, 56, 0, 37", note: "Ссылки, интерактив", light: false },
+  { name: "Охра", hex: "#C8860A", rgb: "200, 134, 10", cmyk: "0, 33, 95, 22", note: "VIP-блоки, акценты", light: false },
+  { name: "Мятный", hex: "#00BFA5", rgb: "0, 191, 165", cmyk: "100, 0, 14, 25", note: "Статусы, онлайн", light: false },
+  { name: "Персиковый", hex: "#FFCCBC", rgb: "255, 204, 188", cmyk: "0, 20, 26, 0", note: "Фоны промо-блоков", light: true },
+  { name: "Угольный", hex: "#212121", rgb: "33, 33, 33", cmyk: "0, 0, 0, 87", note: "Контрастный текст", light: false },
+]
+
 const colorDos = [
   "Использовать оранжевый как главный акцентный цвет",
   "Применять тёмно-синий для текстов и фонов",
@@ -108,6 +119,28 @@ export function ColorSection() {
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {neutral.map((c) => (
             <Swatch key={c.hex} {...c} />
+          ))}
+        </div>
+
+        <h3 className="mb-2 mt-10 font-display text-lg font-semibold text-brand-navy">
+          Расширенная палитра
+        </h3>
+        <p className="mb-5 text-sm text-brand-navy/65">
+          Дополнительные цвета для интерфейсов, рекламных носителей и цифровых коммуникаций. Применяются точечно и не заменяют основную палитру.
+        </p>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+          {extended.map((c) => (
+            <div key={c.hex} className="group overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
+              <div
+                className="h-20 transition-transform duration-300 group-hover:scale-[1.04]"
+                style={{ backgroundColor: c.hex }}
+              />
+              <div className="flex flex-col gap-0.5 p-3">
+                <span className="font-display text-xs font-semibold text-brand-navy leading-tight">{c.name}</span>
+                <span className="font-mono text-[10px] text-brand-navy/50">{c.hex}</span>
+                <span className="text-[10px] text-brand-sand leading-snug">{c.note}</span>
+              </div>
+            </div>
           ))}
         </div>
 
@@ -211,7 +244,7 @@ export function ColorSection() {
           </p>
         </div>
       </div>
-      <PageNumber number={7} />
+      <PageNumber number={8} total={13} />
     </section>
   )
 }

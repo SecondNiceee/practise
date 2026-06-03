@@ -269,7 +269,7 @@ export function CampaignSection() {
           </article>
         </div>
       </div>
-      <PageNumber number={12} />
+      <PageNumber number={13} total={13} />
     </section>
   )
 }
