@@ -195,57 +195,72 @@ export function LogoClearspaceSection() {
               X-разметки: сверху и слева
             */}
             <svg
-              viewBox="0 0 460 200"
+              viewBox="0 0 560 180"
               className="h-auto w-full max-w-lg"
               role="img"
               aria-label="Схема охранного поля горизонтальной версии логотипа"
             >
-              {/* clear space dashed box */}
-              <rect x="20" y="20" width="420" height="160" fill="none" stroke="#bdc3c7" strokeWidth="1.5" strokeDasharray="6,6" />
-              {/* logo bounding box */}
-              <rect x="56" y="52" width="348" height="96" fill="none" stroke="#2c3e50" strokeWidth="1" opacity="0.4" />
+              {/* Охранное поле — пунктирная рамка: отступ X со всех сторон */}
+              {/* X = диаметр колеса = 24 */}
+              <rect x="24" y="24" width="512" height="132" fill="none" stroke="#bdc3c7" strokeWidth="1.5" strokeDasharray="6,6" />
+              
+              {/* Лого-зона — сплошная граница */}
+              <rect x="48" y="42" width="464" height="96" fill="none" stroke="#2c3e50" strokeWidth="1.5" opacity="0.5" />
 
-              {/* машинка — scale=1.1, сдвинута правее: x≈145, y≈100 */}
-              <g transform="translate(100, 41) scale(1.1)">
-                <path d="M20 55 Q20 48 30 48 L110 48 Q120 48 120 55 L120 68 Q120 72 116 72 L24 72 Q20 72 20 68 Z" fill="#f39c12" />
-                <path d="M38 48 L42 28 Q44 22 52 22 L88 22 Q96 22 98 28 L102 48" fill="#f39c12" />
-                <path d="M46 46 L49 30 Q50 28 54 28 L66 28 Q68 28 68 30 L68 46 Z" fill="#2c3e50" />
-                <path d="M72 46 L72 30 Q72 28 74 28 L86 28 Q90 28 91 30 L94 46 Z" fill="#2c3e50" />
-                <rect x="18" y="68" width="104" height="4" rx="2" fill="#bdc3c7" />
-                <circle cx="26" cy="58" r="5" fill="#ecf0f1" />
-                <circle cx="114" cy="58" r="5" fill="#ecf0f1" />
-                <circle cx="40" cy="76" r="12" fill="#2c3e50" />
-                <circle cx="40" cy="76" r="8" fill="#ecf0f1" />
-                <circle cx="40" cy="76" r="4" fill="#2c3e50" />
-                <circle cx="100" cy="76" r="12" fill="#2c3e50" />
-                <circle cx="100" cy="76" r="8" fill="#ecf0f1" />
-                <circle cx="100" cy="76" r="4" fill="#2c3e50" />
+              {/* Машинка — правильная, с диаметром колеса = 24 (X) */}
+              {/* Машинка: ширина ~80, высота ~44, колёса диаметром 24 */}
+              {/* Размещаем: левый край машинки на x=80, центр по y=90 */}
+              <g>
+                {/* Кузов */}
+                <rect x="80" y="82" width="56" height="16" rx="2" fill="#f39c12" />
+                {/* Крыша */}
+                <rect x="92" y="68" width="32" height="14" rx="2" fill="#f39c12" />
+                {/* Передний бампер */}
+                <rect x="76" y="98" width="8" height="4" fill="#bdc3c7" />
+                {/* Задний бампер */}
+                <rect x="136" y="98" width="8" height="4" fill="#bdc3c7" />
+                
+                {/* Окна */}
+                <rect x="95" y="72" width="8" height="8" rx="1" fill="#2c3e50" />
+                <rect x="112" y="72" width="8" height="8" rx="1" fill="#2c3e50" />
+                
+                {/* Левое колесо: центр (95, 106), диаметр 24 */}
+                <circle cx="95" cy="106" r="12" fill="#2c3e50" />
+                <circle cx="95" cy="106" r="8" fill="#34495e" />
+                <circle cx="95" cy="106" r="4" fill="#ecf0f1" />
+                
+                {/* Правое колесо: центр (137, 106), диаметр 24 */}
+                <circle cx="137" cy="106" r="12" fill="#2c3e50" />
+                <circle cx="137" cy="106" r="8" fill="#34495e" />
+                <circle cx="137" cy="106" r="4" fill="#ecf0f1" />
               </g>
 
-              {/* текст КИБИТКА — справа от машинки */}
+              {/* Текст КИБИТКА */}
               <text
-                x="250"
-                y="107"
+                x="280"
+                y="104"
                 fontFamily="var(--font-display)"
-                fontSize="26"
+                fontSize="32"
                 fontWeight="700"
                 fill="#2c3e50"
-                letterSpacing="7"
+                letterSpacing="8"
               >
                 КИБИТКА
               </text>
 
-              {/* X — сверху (охранное расстояние между верхом лого-бокса и пунктирной рамкой) */}
-              <line x1="40" y1="20" x2="40" y2="52" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="36" y1="20" x2="44" y2="20" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="36" y1="52" x2="44" y2="52" stroke="#8b7355" strokeWidth="1.5" />
-              <text x="25" y="40" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+              {/* X-разметка сверху (вертикальная, показывает охранное расстояние) */}
+              {/* X = 24 */}
+              <line x1="36" y1="24" x2="36" y2="48" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="30" y1="24" x2="42" y2="24" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="30" y1="48" x2="42" y2="48" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="18" y="41" fontFamily="var(--font-display)" fontSize="16" fontWeight="700" fill="#8b7355" textAnchor="middle" dominantBaseline="middle">X</text>
 
-              {/* X — слева (охранное расстояние между левым краем лого-бокса и пунктирной рамкой) */}
-              <line x1="20" y1="155" x2="56" y2="155" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="20" y1="151" x2="20" y2="159" stroke="#8b7355" strokeWidth="1.5" />
-              <line x1="56" y1="151" x2="56" y2="159" stroke="#8b7355" strokeWidth="1.5" />
-              <text x="38" y="172" fontFamily="var(--font-display)" fontSize="14" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
+              {/* X-разметка слева (горизонтальная, показывает охранное расстояние) */}
+              {/* X = 24 */}
+              <line x1="24" y1="156" x2="48" y2="156" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="24" y1="150" x2="24" y2="162" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <line x1="48" y1="150" x2="48" y2="162" stroke="#8b7355" strokeWidth="1.5" strokeLinecap="round" />
+              <text x="36" y="172" fontFamily="var(--font-display)" fontSize="16" fontWeight="700" fill="#8b7355" textAnchor="middle">X</text>
             </svg>
           </div>
 
