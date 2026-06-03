@@ -26,7 +26,7 @@ export function SlideWrapper({
       data-slide={slideNumber}
     >
       {/* Единый контейнер — одинаковая ширина для всех слайдов */}
-      <div className="mx-auto flex w-full max-w-6xl flex-col px-5 py-16 md:py-24">
+      <div className="mx-auto flex w-full max-w-6xl flex-col px-5 py-8 md:py-12">
         {children}
 
         {/* Нумерация слайда — внутри контентной зоны, выровнена вправо */}
