@@ -6,6 +6,7 @@ interface SlideWrapperProps {
   totalSlides?: number
   className?: string
   variant?: "light" | "dark"
+  autoHeight?: boolean
 }
 
 export function SlideWrapper({
@@ -14,13 +15,15 @@ export function SlideWrapper({
   totalSlides,
   className = "",
   variant = "light",
+  autoHeight = false,
 }: SlideWrapperProps) {
   const bgClass = variant === "dark" ? "bg-brand-navy" : "bg-brand-cream"
   const textClass = variant === "dark" ? "text-white/60" : "text-brand-sand"
+  const heightClass = autoHeight ? "" : "min-h-screen"
 
   return (
     <section
-      className={`relative min-h-screen ${bgClass} ${className}`}
+      className={`relative ${heightClass} ${bgClass} ${className} pb-14`}
       data-slide={slideNumber}
     >
       {children}

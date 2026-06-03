@@ -43,8 +43,8 @@ function PosterLogo({ tone }: { tone: "onDark" | "onOrange" | "onLight" }) {
 // Первый слайд рекламной кампании - обзор
 function CampaignOverviewSlide() {
   return (
-    <SlideWrapper slideNumber={17} totalSlides={21} variant="light">
-      <section id="campaign" className="flex min-h-screen flex-col justify-center scroll-mt-20 px-5 py-16 md:py-24">
+    <SlideWrapper slideNumber={17} totalSlides={21} variant="light" autoHeight>
+      <section id="campaign" className="scroll-mt-20 px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             index="09"
@@ -72,10 +72,10 @@ function CampaignOverviewSlide() {
 // Второй слайд - Билборд и Сити-лайт
 function CampaignSlide1() {
   return (
-    <SlideWrapper slideNumber={18} totalSlides={21} variant="light">
-      <div className="flex min-h-screen flex-col justify-center px-5 py-16 md:py-24">
+    <SlideWrapper slideNumber={18} totalSlides={21} variant="light" autoHeight>
+      <div className="px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid items-start gap-6 lg:grid-cols-2">
             {/* Билборд */}
             <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
               <div className="relative aspect-[2/1] overflow-hidden bg-brand-navy">
@@ -162,10 +162,10 @@ function CampaignSlide1() {
 // Третий слайд - Ролл-ап и Digital
 function CampaignSlide2() {
   return (
-    <SlideWrapper slideNumber={19} totalSlides={21} variant="light">
-      <div className="flex min-h-screen flex-col justify-center px-5 py-16 md:py-24">
+    <SlideWrapper slideNumber={19} totalSlides={21} variant="light" autoHeight>
+      <div className="px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid items-start gap-6 lg:grid-cols-2">
             {/* Ролл-ап */}
             <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm">
               <div className="relative aspect-[3/4] overflow-hidden bg-brand-cream">
@@ -262,10 +262,10 @@ function CampaignSlide2() {
 // Четвёртый слайд - Транспорт
 function CampaignSlide3() {
   return (
-    <SlideWrapper slideNumber={20} totalSlides={21} variant="light">
-      <div className="flex min-h-screen flex-col justify-center px-5 py-16 md:py-24">
+    <SlideWrapper slideNumber={20} totalSlides={21} variant="light" autoHeight>
+      <div className="px-5 py-16 md:py-24">
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid items-start gap-6 lg:grid-cols-2">
             {/* Брендирование борта */}
             <article className="overflow-hidden rounded-2xl border border-brand-navy/10 bg-card shadow-sm lg:col-span-2">
               <div className="relative aspect-[2/1] overflow-hidden bg-brand-cream">
